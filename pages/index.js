@@ -12,9 +12,7 @@ class Home extends React.Component {
   render() {
     return (
       <>
-       {this.props.data.productos.map((product) => (
-        <h1 key={product._id}>{product.name}</h1>
-      ))}
+    
      
         <h1>esta es la home page con sus estilos</h1>
         <style jsx>{`
