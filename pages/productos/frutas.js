@@ -13,7 +13,7 @@ class TodaFruta extends React.Component {
           <div>
             <h1>Frutas</h1>
             <p>
-              Disponemos de una gran variedad de fruta , escoge ¡desde tan solo
+              Disponemos de una gran variedad de fruta , ¡escoge desde tan solo
               medio kilo!. Nuestra fruta y verdura es recogida unas horas
               después de su pedido y será entregada en tan solo 24/48 horas.
             </p>
