@@ -18,7 +18,7 @@ class TodaFruta extends React.Component {
               después de su pedido y será entregada en tan solo 24/48 horas.
             </p>
             <p>
-              <span>IMPORTANTE:</span> Damos especial atención a la calidad de
+              Damos especial atención a la calidad de
               nuestros productos,por lo tanto, si la fruta y verdura recibida
               está dañada , <span>le devolveremos el dinero.</span>
             </p>
