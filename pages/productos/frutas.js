@@ -29,9 +29,10 @@ class TodaFruta extends React.Component {
           </div>
         </div>
         <div className="container">
-          {this.props.data.map((product) => {
+          {this.props.data.map((product,index) => {
+
             return (
-              <div key={product._id}>
+              <div  className={index > 1 ? "noneDisplay" : ""} key={product._id}>
                 <img src={product.imageUrl} alt={product.imageAlt} />
                 <h2>{product.name}</h2>
                 <span>
@@ -116,6 +117,9 @@ class TodaFruta extends React.Component {
             width: 25%;
           }
 
+          .noneDisplay{
+            display:none;
+          }
           @media (max-width: 575.98px) {
             .container {
               display: flex;
