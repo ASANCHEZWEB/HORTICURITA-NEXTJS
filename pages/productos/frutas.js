@@ -6,11 +6,6 @@ class TodaFruta extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    [...document.querySelectorAll(".container>div>img")].forEach((element) => {
-      element.removeAttribute("style");
-    });
-  }
   render() {
     return (
       <>
@@ -38,11 +33,7 @@ class TodaFruta extends React.Component {
             if (product.name) {
               return (
                 <div key={product._id}>
-                  <img
-                    style={index <= 1 ? { display: "" } : { display: "none" }}
-                    src={product.imageUrl}
-                    alt={product.imageAlt}
-                  />
+                  <img src={product.imageUrl} alt={product.imageAlt} />
                   <h2>{product.name}</h2>
                   <span>
                     {product.price}€ /
