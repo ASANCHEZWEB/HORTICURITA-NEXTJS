@@ -23,7 +23,7 @@ class TodaFruta extends React.Component {
               está dañada , <span>le devolveremos el dinero.</span>
             </p>
             <img
-              src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1592682172/imagenes%20estaticas/frutas_y_verduras_fbgk4u.webp"
+              src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1592682651/imagenes%20estaticas/frutas_y_verduras_joyikh.jpg"
               alt="frutas y verduras"
             />
           </div>
