@@ -30,7 +30,6 @@ class TodaFruta extends React.Component {
         </div>
         <div className="container">
           {this.props.data.map((product,index) => {
-//className={index > 1 ? "noneDisplay" : ""}
             return (
               <div key={product._id}>
                 <img src={product.imageUrl} alt={product.imageAlt} />
