@@ -6,6 +6,11 @@ class TodaFruta extends React.Component {
     this.state = {};
   }
 
+  componentDidMount() {
+    [...document.querySelectorAll(".container>div>img")].forEach((element) => {
+      element.removeAttribute("style");
+    });
+  }
   render() {
     return (
       <>
@@ -18,9 +23,9 @@ class TodaFruta extends React.Component {
               después de su pedido y será entregada en tan solo 24/48 horas.
             </p>
             <p>
-              Damos especial atención a la calidad de
-              nuestros productos,por lo tanto, si la fruta y verdura recibida
-              está dañada , <span>le devolveremos el dinero.</span>
+              Damos especial atención a la calidad de nuestros productos,por lo
+              tanto, si la fruta y verdura recibida está dañada ,{" "}
+              <span>le devolveremos el dinero.</span>
             </p>
             <img
               src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1592682651/imagenes%20estaticas/frutas_y_verduras_joyikh.jpg"
@@ -29,29 +34,28 @@ class TodaFruta extends React.Component {
           </div>
         </div>
         <div className="container">
-          {this.props.data.map((product,index) => {
-            if(product.name){
+          {this.props.data.map((product, index) => {
+            if (product.name) {
               return (
-              <div key={product._id}>
-                <img src={product.imageUrl} alt={product.imageAlt} />
-                <h2>{product.name}</h2>
-                <span>
-                  {product.price}€ /
-                  {product.type === "kilogramos" ? "Kg" : "Ud"}
-                </span>
-                <div>
-                  <button type="button" >
-                    -
-                  </button>
-                  <input value="0" name="inputProduct" />
-                  <button type="button" >
-                    +
-                  </button>
+                <div key={product._id}>
+                  <img
+                    style={index <= 1 ? { display: "" } : { display: "none" }}
+                    src={product.imageUrl}
+                    alt={product.imageAlt}
+                  />
+                  <h2>{product.name}</h2>
+                  <span>
+                    {product.price}€ /
+                    {product.type === "kilogramos" ? "Kg" : "Ud"}
+                  </span>
+                  <div>
+                    <button type="button">-</button>
+                    <input value="0" name="inputProduct" />
+                    <button type="button">+</button>
+                  </div>
                 </div>
-              </div>
-            )
+              );
             }
-           
           })}
         </div>
         <style jsx>{`
@@ -119,8 +123,8 @@ class TodaFruta extends React.Component {
             width: 25%;
           }
 
-          .noneDisplay{
-            display:none;
+          .noneDisplay {
+            display: none;
           }
           @media (max-width: 575.98px) {
             .container {
