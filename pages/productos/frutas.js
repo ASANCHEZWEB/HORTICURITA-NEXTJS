@@ -28,33 +28,29 @@ class TodaFruta extends React.Component {
             />
           </div>
         </div>
-
         <div className="container">
-          {this.props.data.productos.map((product) => {
-            if (product.category === "fruta") {
-              return (
-                <div key={product._id}>
-                  <img src={product.imageUrl} alt={product.imageAlt} />
-                  <h2>{product.name}</h2>
-                  <span>
-                    {product.price}€ /
-                    {product.type === "kilogramos" ? "Kg" : "Ud"}
-                  </span>
-                  <div>
-                    <button type="button" onclick="alert('Hello world!')">
-                      -
-                    </button>
-                    <input value="0" name="inputProduct" />
-                    <button type="button" onclick="alert('Hello world!')">
-                      +
-                    </button>
-                  </div>
+          {this.props.data.map((product) => {
+            return (
+              <div key={product._id}>
+                <img src={product.imageUrl} alt={product.imageAlt} />
+                <h2>{product.name}</h2>
+                <span>
+                  {product.price}€ /
+                  {product.type === "kilogramos" ? "Kg" : "Ud"}
+                </span>
+                <div>
+                  <button type="button" onclick="alert('Hello world!')">
+                    -
+                  </button>
+                  <input value="0" name="inputProduct" />
+                  <button type="button" onclick="alert('Hello world!')">
+                    +
+                  </button>
                 </div>
-              );
-            }
+              </div>
+            );
           })}
         </div>
-
         <style jsx>{`
           .metaDiv {
             max-width: 768px;
@@ -261,9 +257,30 @@ export async function getStaticProps() {
   );
   const data = await res.json();
 
+  let dataMapped = () => {
+    return [...data.productos]
+      .map((product) => {
+        if (product.category === "fruta") {
+          return {
+            _id: product._id,
+            name: product.name,
+            price: product.price,
+            description: product.description,
+            generalcategory: product.generalcategory,
+            imageUrl: product.imageUrl,
+            imageAlt: product.imageAlt,
+            type: product.type,
+          };
+        } else {
+          return {};
+        }
+      })
+      .sort((a, b) => a.generalcategory - b.generalcategory);
+  };
+
   return {
     props: {
-      data,
+      data: dataMapped(),
     },
   };
 }
