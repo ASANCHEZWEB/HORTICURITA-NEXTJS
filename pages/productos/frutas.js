@@ -30,9 +30,9 @@ class TodaFruta extends React.Component {
         </div>
         <div className="container">
           {this.props.data.map((product,index) => {
-
+//className={index > 1 ? "noneDisplay" : ""}
             return (
-              <div  className={index > 1 ? "noneDisplay" : ""} key={product._id}>
+              <div key={product._id}>
                 <img src={product.imageUrl} alt={product.imageAlt} />
                 <h2>{product.name}</h2>
                 <span>
@@ -40,11 +40,11 @@ class TodaFruta extends React.Component {
                   {product.type === "kilogramos" ? "Kg" : "Ud"}
                 </span>
                 <div>
-                  <button type="button" onclick="alert('Hello world!')">
+                  <button type="button" >
                     -
                   </button>
                   <input value="0" name="inputProduct" />
-                  <button type="button" onclick="alert('Hello world!')">
+                  <button type="button" >
                     +
                   </button>
                 </div>
