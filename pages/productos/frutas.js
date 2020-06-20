@@ -30,7 +30,8 @@ class TodaFruta extends React.Component {
         </div>
         <div className="container">
           {this.props.data.map((product,index) => {
-            return (
+            if(product.name){
+              return (
               <div key={product._id}>
                 <img src={product.imageUrl} alt={product.imageAlt} />
                 <h2>{product.name}</h2>
@@ -48,7 +49,9 @@ class TodaFruta extends React.Component {
                   </button>
                 </div>
               </div>
-            );
+            )
+            }
+           
           })}
         </div>
         <style jsx>{`
