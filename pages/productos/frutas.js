@@ -1,5 +1,7 @@
 import React from "react";
 
+import Link from "next/link";
+
 class TodaFruta extends React.Component {
   constructor(props) {
     super(props);
@@ -34,7 +36,11 @@ class TodaFruta extends React.Component {
               return (
                 <div key={product._id}>
                   <img src={product.imageUrl} alt={product.imageAlt} />
-                  <h2>{product.name}</h2>
+                  <Link href="/productos/[productDetail]" as={`/productos/${product.urlRoute}`}>
+                    <a>
+                      <h2>{product.name}</h2>
+                    </a>
+                  </Link>
                   <span>
                     {product.price}€ /
                     {product.type === "kilogramos" ? "Kg" : "Ud"}
@@ -271,6 +277,7 @@ export async function getStaticProps() {
             imageUrl: product.imageUrl,
             imageAlt: product.imageAlt,
             type: product.type,
+            urlRoute: product.urlRoute,
           };
         } else {
           return {};

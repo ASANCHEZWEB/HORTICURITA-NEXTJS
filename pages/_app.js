@@ -9,7 +9,9 @@ function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
 
       <style jsx global>{`
-      
+      a{
+        text-decoration:none;
+      }
        
       `}</style>
     </main>
