@@ -25,17 +25,7 @@ class Home extends React.Component {
   }
 }
 
-export async function getStaticProps() {
-    
-  const res = await fetch('https://gestorhorticurita.herokuapp.com/api/getAllProducts')
-  const data = await res.json()
 
-  return {
-    props: {
-      data,
-    },
-  }
-}
 
 
 export default Home;
