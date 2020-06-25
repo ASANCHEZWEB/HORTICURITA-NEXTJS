@@ -22,6 +22,11 @@ function MyApp({ Component, pageProps }) {
                 <a>FRUTAS</a>
               </Link>
             </li>
+            <li>
+              <Link href="/productos/verduras-y-hortalizas">
+                <a>VERDURAS Y HORTALIZAS</a>
+              </Link>
+            </li>
           </ul>
         </nav>
       </header>

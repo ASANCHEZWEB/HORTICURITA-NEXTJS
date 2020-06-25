@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-class TodaVerdura extends React.Component {
+class TodaFruta extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -12,9 +12,9 @@ class TodaVerdura extends React.Component {
       <>
         <div className="metaDiv">
           <div>
-            <h1>Frutas</h1>
+            <h1>Verduras y hortalizas</h1>
             <p>
-              Disponemos de una gran variedad de fruta , ¡escoge desde tan solo
+              Disponemos de una gran variedad de verduras y hortalizas , ¡escoge desde tan solo
               medio kilo!. Nuestra fruta y verdura es recogida unas horas
               después de su pedido y será entregada en tan solo 24/48 horas.
             </p>
@@ -25,7 +25,7 @@ class TodaVerdura extends React.Component {
             </p>
             <img
               src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1592682651/imagenes%20estaticas/frutas_y_verduras_joyikh.jpg"
-              alt="frutas y verduras"
+              alt="verduras y hortalizas"
             />
           </div>
         </div>
@@ -36,8 +36,8 @@ class TodaVerdura extends React.Component {
                 <div key={product._id}>
                   <img src={product.imageUrl} alt={product.imageAlt} />
                   <Link
-                    href="/productos/frutas/[id]"
-                    as={`/productos/frutas/${product.urlRoute}`}
+                    href="/productos/verduras-y-hortalizas/[id]"
+                    as={`/productos/verduras-y-hortalizas/${product.urlRoute}`}
                   >
                     <a>
                       <h2>{product.name}</h2>
@@ -270,7 +270,7 @@ export async function getStaticProps() {
   let dataMapped = () => {
     return [...data.productos]
       .map((product) => {
-        if (product.category === "fruta") {
+        if (product.category === "verdura y hortaliza") {
           return {
             _id: product._id,
             name: product.name,
@@ -296,4 +296,4 @@ export async function getStaticProps() {
   };
 }
 
-export default TodaVerdura;
+export default TodaFruta;

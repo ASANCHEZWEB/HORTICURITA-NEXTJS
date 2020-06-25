@@ -1,6 +1,6 @@
 // pages/posts/[id].js
 
-function Fruta({ objectProp }) {
+function Verdura({ objectProp }) {
   return (
     <div>
       <h1>nombre:{objectProp.name}</h1>
@@ -51,4 +51,4 @@ export async function getStaticProps({ params }) {
   return { props: { objectProp } };
 }
 
-export default Fruta;
+export default Verdura;
