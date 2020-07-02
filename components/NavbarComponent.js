@@ -456,7 +456,9 @@ class NavbarComponent extends React.Component {
             (0)
           </a>
         </div>
+        <script src="nav.js"></script>
       </nav>
+      
     );
   }
 }
