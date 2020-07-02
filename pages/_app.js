@@ -21,12 +21,12 @@ function MyApp({ Component, pageProps }) {
 
       <header>
         <NavbarComponent />
+        <script src="nav.js"></script>
       </header>
       <main>
         <Component {...pageProps} />
       </main>
       <Footer />
-      <script src="nav.js"></script>
 
       <style jsx global>{`
         body {
