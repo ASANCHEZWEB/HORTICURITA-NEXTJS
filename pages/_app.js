@@ -138,6 +138,9 @@ function MyApp({ Component, pageProps }) {
             margin-top: 10px;
             width: max-content;
           }
+          .showUlProducts > li > a {
+            color: black;
+          }
 
           /* OCULTAR IMAGENES EN VERSION MOBILE */
           .showUlProducts > li > a > img {
@@ -169,7 +172,9 @@ function MyApp({ Component, pageProps }) {
             font-family: pacifico;
             width: max-content;
           }
-
+          .showfruits > li > a {
+            color: black;
+          }
           /* ESTILOS PARA LOS ICONOS DE FRUTAS */
           .showfruits > li > a > img {
             width: 22px;
@@ -203,7 +208,9 @@ function MyApp({ Component, pageProps }) {
             font-family: Pacifico;
             width: max-content;
           }
-
+          .showVerduras > li > a {
+            color: black;
+          }
           /* AJUSTAR TAMAÑO ICONOS VERDURA */
           .showVerduras > li > a > img {
             width: 22px;
@@ -323,7 +330,9 @@ function MyApp({ Component, pageProps }) {
             margin-top: 10px;
             width: max-content;
           }
-
+          .showUlProducts > li > a {
+            color: black;
+          }
           /* OCULTAR IMAGENES EN VERSION MOBILE */
           .showUlProducts > li > a > img {
             display: none;
@@ -354,7 +363,9 @@ function MyApp({ Component, pageProps }) {
             font-family: pacifico;
             width: max-content;
           }
-
+          .showfruits > li > a {
+            color: black;
+          }
           /* ESTILOS PARA LOS ICONOS DE FRUTAS */
           .showfruits > li > a > img {
             width: 22px;
@@ -388,7 +399,9 @@ function MyApp({ Component, pageProps }) {
             font-family: Pacifico;
             width: max-content;
           }
-
+          .showVerduras > li > a {
+            color: black;
+          }
           /* AJUSTAR TAMAÑO ICONOS VERDURA */
           .showVerduras > li > a > img {
             width: 22px;
@@ -552,6 +565,7 @@ function MyApp({ Component, pageProps }) {
           .showUlProducts > li > a {
             display: flex;
             align-items: center;
+            color: black;
           }
 
           .showUlProducts > li > a > img {
@@ -571,6 +585,7 @@ function MyApp({ Component, pageProps }) {
           .showfruits > li > a {
             font-size: 14px;
             font-weight: 600;
+            color: black;
           }
 
           .ulFruits {
@@ -608,6 +623,7 @@ function MyApp({ Component, pageProps }) {
           .showVerduras > li > a {
             font-size: 14px;
             font-weight: 600;
+            color: black;
           }
 
           .showVerduras > li > a > img {
@@ -744,6 +760,7 @@ function MyApp({ Component, pageProps }) {
           .showUlProducts > li > a {
             display: flex;
             align-items: center;
+            color: black;
           }
 
           .showUlProducts > li > a > img {
@@ -763,6 +780,7 @@ function MyApp({ Component, pageProps }) {
           .showfruits > li > a {
             font-size: 14px;
             font-weight: 600;
+            color: black;
           }
 
           .ulFruits {
@@ -800,6 +818,7 @@ function MyApp({ Component, pageProps }) {
           .showVerduras > li > a {
             font-size: 14px;
             font-weight: 600;
+            color: black;
           }
 
           .showVerduras > li > a > img {
@@ -936,6 +955,7 @@ function MyApp({ Component, pageProps }) {
           .showUlProducts > li > a {
             display: flex;
             align-items: center;
+            color: black;
           }
 
           .showUlProducts > li > a > img {
@@ -955,6 +975,7 @@ function MyApp({ Component, pageProps }) {
           .showfruits > li > a {
             font-size: 14px;
             font-weight: 600;
+            color: black;
           }
 
           .ulFruits {
@@ -992,6 +1013,7 @@ function MyApp({ Component, pageProps }) {
           .showVerduras > li > a {
             font-size: 14px;
             font-weight: 600;
+            color: black;
           }
 
           .showVerduras > li > a > img {
