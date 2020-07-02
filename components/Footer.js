@@ -10,9 +10,12 @@ class Footer extends React.Component {
 
   render() {
     return (
+      
         <footer>
       este es el footer
       </footer>
+      
+      
     );
   }
 }

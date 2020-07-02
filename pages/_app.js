@@ -21,7 +21,6 @@ function MyApp({ Component, pageProps }) {
 
       <header>
         <NavbarComponent />
-        <script src="nav.js"></script>
       </header>
       <main>
         <Component {...pageProps} />
@@ -1022,6 +1021,7 @@ function MyApp({ Component, pageProps }) {
           }
         }
       `}</style>
+      <script src="/scripts/nav.js"></script>
     </>
   );
 }

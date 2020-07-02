@@ -73,6 +73,10 @@ class NavbarComponent extends React.Component {
     }
   };
 
+
+
+
+
   render() {
     return (
       <nav>
@@ -457,6 +461,7 @@ class NavbarComponent extends React.Component {
           </a>
         </div>
       </nav>
+      
     );
   }
 }
