@@ -1,12 +1,645 @@
 // pages/posts/[id].js
+import React from "react";
 
-function Fruta({ objectProp }) {
-  return (
-    <div>
-      <h1>nombre:{objectProp.name}</h1>
-      <h1>precio{objectProp.price}</h1>
-    </div>
-  );
+class Fruta extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {};
+    this.objectData = props.objectProp;
+  }
+
+  render() {
+    return (
+      <>
+        <div className="containerDetail">
+          <div>
+            <img
+              src={this.objectData.imageUrl}
+              alt={this.objectData.imageAlt}
+            />
+          </div>
+
+          <div>
+            <h1>{this.objectData.name}</h1>
+            <span>{this.objectData.price} /Kg</span>
+            <p>Origen: España</p>
+            <p>
+              <img
+                src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"
+                alt="icono disponible"
+                srcset=""
+              />{" "}
+              Disponible
+            </p>
+            <div className="buttonsCart">
+              <button type="button" className="buttonIzq">
+                -
+              </button>
+              <input name="inputProduct" className="inputButtons" value="0" />
+              <button type="button" className="buttonDer">
+                +
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div className="detailDescription">
+          <hr></hr>
+          <span>DESCRIPCIÓN</span>
+          <hr></hr>
+          <p>
+            El tomate pertenece a la familia de las solanáceas y necesita de
+            climas templados, para crecer sin problemas. El tomate de pera es
+            una hortaliza de riquísimas propiedades culinarias y para la salud.
+            Como anécdota destacaremos que el tomate esta catalogado como una
+            fruta y no como una verdura. Los términos de frutas y verduras son
+            populares y no científicos. Se utilizaron antiguamente para dividir
+            alimentos dulces y salados provenientes de las plantas. Por esta
+            razón el tomate fue clasificado como una verdura, actualmente una
+            planta está clasificada de diferente manera.
+          </p>
+        </div>
+
+        <style jsx>{`
+          @media (max-width: 575.98px) {
+            .containerDetail {
+              display: flex;
+              flex-direction: column;
+              justify-content: right;
+              align-items: center;
+              padding-top: 20px;
+            }
+
+            .containerDetail > div > h1 {
+              font-family: Pacifico;
+            }
+
+            .containerDetail > div:nth-child(1) {
+              max-width: 86%;
+            }
+
+            .containerDetail > div:nth-child(2) {
+              width: 100%;
+              text-align: center;
+              font-family: Montserrat;
+            }
+
+            .containerDetail > div:nth-child(1) > img {
+              width: 100%;
+            }
+
+            .containerDetail > div:nth-child(2) > p:nth-child(4) {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .containerDetail > div:nth-child(2) > p:nth-child(4) > img {
+              width: 22px;
+            }
+
+            .buttonsCart {
+              display: flex;
+              -webkit-box-pack: center;
+              justify-content: center;
+              height: 35px;
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+
+            .buttonIzq {
+              border-radius: 15px 0px 0px 15px;
+              color: green;
+              text-align: center;
+              font-size: 16px;
+              background-color: greenyellow;
+              width: 14%;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              text-decoration: none;
+              outline: none;
+              touch-action: manipulation;
+            }
+
+            .inputButtons {
+              max-width: 90px;
+              text-align: center;
+              border-width: thin;
+              border-left: none rgb(255, 235, 0);
+              border-right: none rgb(255, 235, 0);
+              border-color: rgb(255, 235, 0);
+              border-top: 1px solid rgb(255, 235, 0);
+            }
+
+            .buttonDer {
+              border-radius: 0px 15px 15px 0px;
+              color: green;
+              text-align: center;
+              font-size: 16px;
+              background-color: greenyellow;
+              width: 14%;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              text-decoration: none;
+              outline: none;
+              touch-action: manipulation;
+            }
+
+            .detailDescription {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 70%;
+              margin: 0 auto;
+              margin-top: 20px;
+              text-align: center;
+              font-family: montserrat;
+              padding-bottom: 30px;
+            }
+
+            .detailDescription > hr {
+              border-radius: 10px;
+              width: 100%;
+              height: 2px;
+              border-width: 0;
+              background-color: #27e01b;
+            }
+
+            .detailDescription > hr:nth-child(1) {
+              width: 50%;
+            }
+
+            .detailDescription > p {
+              font-size: small;
+            }
+          }
+
+          @media (min-width: 576px) and (max-width: 767.98px) {
+            .containerDetail {
+              display: flex;
+              flex-direction: column;
+              justify-content: right;
+              align-items: center;
+              padding-top: 20px;
+            }
+
+            .containerDetail > div > h1 {
+              font-family: Pacifico;
+            }
+
+            .containerDetail > div:nth-child(1) {
+              max-width: 86%;
+            }
+
+            .containerDetail > div:nth-child(2) {
+              width: 100%;
+              text-align: center;
+              font-family: Montserrat;
+            }
+
+            .containerDetail > div:nth-child(1) > img {
+              width: 100%;
+            }
+
+            .containerDetail > div:nth-child(2) > p:nth-child(4) {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .containerDetail > div:nth-child(2) > p:nth-child(4) > img {
+              width: 22px;
+            }
+
+            .buttonsCart {
+              display: flex;
+              -webkit-box-pack: center;
+              justify-content: center;
+              height: 35px;
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+
+            .buttonIzq {
+              border-radius: 15px 0px 0px 15px;
+              color: green;
+              text-align: center;
+              font-size: 16px;
+              background-color: greenyellow;
+              width: 14%;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              text-decoration: none;
+              outline: none;
+              touch-action: manipulation;
+            }
+
+            .inputButtons {
+              max-width: 90px;
+              text-align: center;
+              border-width: thin;
+              border-left: none rgb(255, 235, 0);
+              border-right: none rgb(255, 235, 0);
+              border-color: rgb(255, 235, 0);
+              border-top: 1px solid rgb(255, 235, 0);
+            }
+
+            .buttonDer {
+              border-radius: 0px 15px 15px 0px;
+              color: green;
+              text-align: center;
+              font-size: 16px;
+              background-color: greenyellow;
+              width: 14%;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              text-decoration: none;
+              outline: none;
+              touch-action: manipulation;
+            }
+
+            .detailDescription {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 70%;
+              margin: 0 auto;
+              margin-top: 20px;
+              text-align: center;
+              font-family: montserrat;
+              padding-bottom: 30px;
+            }
+
+            .detailDescription > hr {
+              border-radius: 10px;
+              width: 100%;
+              height: 2px;
+              border-width: 0;
+              background-color: #27e01b;
+            }
+
+            .detailDescription > hr:nth-child(1) {
+              width: 50%;
+            }
+          }
+
+          @media (min-width: 768px) and (max-width: 991.98px) {
+            .containerDetail {
+              display: flex;
+              justify-content: right;
+              align-items: center;
+              margin: 0 auto;
+              width: 699px;
+              padding-top: 34px;
+              padding-bottom: 50px;
+            }
+
+            .containerDetail > div > h1 {
+              font-family: Pacifico;
+            }
+
+            .containerDetail > div:nth-child(1) {
+              max-width: 600px;
+            }
+
+            .containerDetail > div:nth-child(2) {
+              width: 600px;
+              text-align: center;
+              font-family: Montserrat;
+            }
+
+            .containerDetail > div:nth-child(1) > img {
+              width: 100%;
+            }
+
+            .containerDetail > div:nth-child(2) > p:nth-child(4) {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .containerDetail > div:nth-child(2) > p:nth-child(4) > img {
+              width: 22px;
+            }
+
+            .buttonsCart {
+              display: flex;
+              -webkit-box-pack: center;
+              justify-content: center;
+              height: 35px;
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+
+            .buttonIzq {
+              border-radius: 15px 0px 0px 15px;
+              color: green;
+              text-align: center;
+              font-size: 16px;
+              background-color: greenyellow;
+              width: 14%;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              text-decoration: none;
+              outline: none;
+              touch-action: manipulation;
+            }
+
+            .inputButtons {
+              max-width: 90px;
+              text-align: center;
+              border-width: thin;
+              border-left: none rgb(255, 235, 0);
+              border-right: none rgb(255, 235, 0);
+              border-color: rgb(255, 235, 0);
+              border-top: 1px solid rgb(255, 235, 0);
+            }
+
+            .buttonDer {
+              border-radius: 0px 15px 15px 0px;
+              color: green;
+              text-align: center;
+              font-size: 16px;
+              background-color: greenyellow;
+              width: 14%;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              text-decoration: none;
+              outline: none;
+              touch-action: manipulation;
+            }
+
+            .detailDescription {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 70%;
+              margin: 0 auto;
+              margin-top: 20px;
+              text-align: center;
+              font-family: montserrat;
+              padding-bottom: 30px;
+            }
+
+            .detailDescription > hr {
+              border-radius: 10px;
+              width: 100%;
+              height: 2px;
+              border-width: 0;
+              background-color: #27e01b;
+            }
+
+            .detailDescription > hr:nth-child(1) {
+              width: 50%;
+            }
+          }
+
+          @media (min-width: 992px) and (max-width: 1199.98px) {
+            .containerDetail {
+              display: flex;
+              justify-content: right;
+              align-items: center;
+              margin: 0 auto;
+              width: 699px;
+              padding-top: 34px;
+              padding-bottom: 50px;
+            }
+
+            .containerDetail > div > h1 {
+              font-family: Pacifico;
+            }
+
+            .containerDetail > div:nth-child(1) {
+              max-width: 600px;
+            }
+
+            .containerDetail > div:nth-child(2) {
+              width: 600px;
+              text-align: center;
+              font-family: Montserrat;
+            }
+
+            .containerDetail > div:nth-child(1) > img {
+              width: 100%;
+            }
+
+            .containerDetail > div:nth-child(2) > p:nth-child(4) {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .containerDetail > div:nth-child(2) > p:nth-child(4) > img {
+              width: 22px;
+            }
+
+            .buttonsCart {
+              display: flex;
+              -webkit-box-pack: center;
+              justify-content: center;
+              height: 35px;
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+
+            .buttonIzq {
+              border-radius: 15px 0px 0px 15px;
+              color: green;
+              text-align: center;
+              font-size: 16px;
+              background-color: greenyellow;
+              width: 14%;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              text-decoration: none;
+              outline: none;
+              touch-action: manipulation;
+            }
+
+            .inputButtons {
+              max-width: 90px;
+              text-align: center;
+              border-width: thin;
+              border-left: none rgb(255, 235, 0);
+              border-right: none rgb(255, 235, 0);
+              border-color: rgb(255, 235, 0);
+              border-top: 1px solid rgb(255, 235, 0);
+            }
+
+            .buttonDer {
+              border-radius: 0px 15px 15px 0px;
+              color: green;
+              text-align: center;
+              font-size: 16px;
+              background-color: greenyellow;
+              width: 14%;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              text-decoration: none;
+              outline: none;
+              touch-action: manipulation;
+            }
+
+            .detailDescription {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: 70%;
+              margin: 0 auto;
+              margin-top: 20px;
+              text-align: center;
+              font-family: montserrat;
+              padding-bottom: 30px;
+            }
+
+            .detailDescription > hr {
+              border-radius: 10px;
+              width: 100%;
+              height: 2px;
+              border-width: 0;
+              background-color: #27e01b;
+            }
+
+            .detailDescription > hr:nth-child(1) {
+              width: 50%;
+            }
+          }
+
+          @media (min-width: 1200px) {
+            .containerDetail {
+              display: flex;
+              justify-content: right;
+              align-items: center;
+              margin: 0 auto;
+              width: 699px;
+              padding-top: 34px;
+              padding-bottom: 50px;
+            }
+
+            .containerDetail > div > h1 {
+              font-family: Pacifico;
+            }
+
+            .containerDetail > div:nth-child(1) {
+              max-width: 600px;
+            }
+
+            .containerDetail > div:nth-child(2) {
+              width: 600px;
+              text-align: center;
+              font-family: Montserrat;
+            }
+
+            .containerDetail > div:nth-child(1) > img {
+              width: 100%;
+            }
+
+            .containerDetail > div:nth-child(2) > p:nth-child(4) {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+
+            .containerDetail > div:nth-child(2) > p:nth-child(4) > img {
+              width: 22px;
+            }
+
+            .buttonsCart {
+              display: flex;
+              -webkit-box-pack: center;
+              justify-content: center;
+              height: 35px;
+              margin-top: 15px;
+              margin-bottom: 15px;
+            }
+
+            .buttonIzq {
+              border-radius: 15px 0px 0px 15px;
+              color: green;
+              text-align: center;
+              font-size: 16px;
+              background-color: greenyellow;
+              width: 14%;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              text-decoration: none;
+              outline: none;
+              touch-action: manipulation;
+            }
+
+            .inputButtons {
+              max-width: 90px;
+              text-align: center;
+              border-width: thin;
+              border-left: none rgb(255, 235, 0);
+              border-right: none rgb(255, 235, 0);
+              border-color: rgb(255, 235, 0);
+              border-top: 1px solid rgb(255, 235, 0);
+            }
+
+            .buttonDer {
+              border-radius: 0px 15px 15px 0px;
+              color: green;
+              text-align: center;
+              font-size: 16px;
+              background-color: greenyellow;
+              width: 14%;
+              border-width: initial;
+              border-style: none;
+              border-color: initial;
+              border-image: initial;
+              text-decoration: none;
+              outline: none;
+              touch-action: manipulation;
+            }
+
+            .detailDescription {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              max-width: 839px;
+              margin: 0 auto;
+              margin-top: 20px;
+              text-align: center;
+              font-family: montserrat;
+              padding-bottom: 30px;
+            }
+
+            .detailDescription > hr {
+              border-radius: 10px;
+              width: 100%;
+              height: 2px;
+              border-width: 0;
+              background-color: #27e01b;
+            }
+
+            .detailDescription > hr:nth-child(1) {
+              width: 50%;
+            }
+          }
+        `}</style>
+      </>
+    );
+  }
 }
 
 // This function gets called at build time

@@ -17,9 +17,8 @@ function MyApp({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap"
           rel="stylesheet"
         />
-       
-<script src="/scripts/chatDirecto.js"></script>
 
+        <script src="/scripts/chatDirecto.js"></script>
       </Head>
 
       <header>
