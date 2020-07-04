@@ -337,6 +337,7 @@ export async function getStaticProps() {
             imageUrl: product.imageUrl,
             imageAlt: product.imageAlt,
             type: product.type,
+            
             stock: product.stock,
             urlRoute: product.urlRoute,
           };
