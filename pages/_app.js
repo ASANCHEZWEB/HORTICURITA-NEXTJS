@@ -7,11 +7,8 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo | Pacifico&display=swap | Montserrat:wght@300;400&display=swap"
+          href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat"
         />
-        
-
-        
       </Head>
 
       <header>
