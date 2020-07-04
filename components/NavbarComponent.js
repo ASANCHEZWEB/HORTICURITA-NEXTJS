@@ -73,10 +73,6 @@ class NavbarComponent extends React.Component {
     }
   };
 
-
-
-
-
   render() {
     return (
       <nav>
@@ -94,7 +90,9 @@ class NavbarComponent extends React.Component {
           </button>
           <ul className="listProducts">
             <li>
-              <a>INICIO</a>
+              <Link href="/">
+                <a>INICIO</a>
+              </Link>
             </li>
             <li>
               <button
@@ -148,112 +146,136 @@ class NavbarComponent extends React.Component {
                       </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/cereza_ufuh5p.png"
-                          alt="icono cerezas"
-                        />{" "}
-                        Cerezas y picotas
-                      </a>
+                      <Link href="/productos/frutas/cerezas-y-picotas">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/cereza_ufuh5p.png"
+                            alt="icono cerezas"
+                          />{" "}
+                          Cerezas y picotas
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/platano_wmlyqw.png"
-                          alt="icono platanos"
-                        />{" "}
-                        Platanos
-                      </a>
+                      <Link href="/productos/frutas/platanos">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/platano_wmlyqw.png"
+                            alt="icono platanos"
+                          />{" "}
+                          Platanos
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/pina_y0wz8v.png"
-                          alt="icono piña"
-                        />{" "}
-                        Piñas
-                      </a>
+                      <Link href="/productos/frutas/pinas">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/pina_y0wz8v.png"
+                            alt="icono piña"
+                          />{" "}
+                          Piñas
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/pera_c6liyz.png"
-                          alt="icono pera"
-                        />{" "}
-                        Peras
-                      </a>
+                      <Link href="/productos/frutas/peras">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/pera_c6liyz.png"
+                            alt="icono pera"
+                          />{" "}
+                          Peras
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/naranja_ezabbd.png"
-                          alt="icono naranja"
-                        />{" "}
-                        Naranjas
-                      </a>
+                      <Link href="/productos/frutas/naranjas">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/naranja_ezabbd.png"
+                            alt="icono naranja"
+                          />{" "}
+                          Naranjas
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/sandia_xgvhxy.png"
-                          alt="icono sandía"
-                        />{" "}
-                        Melones y sandias
-                      </a>
+                      <Link href="/productos/frutas/melones-y-sandias">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/sandia_xgvhxy.png"
+                            alt="icono sandía"
+                          />{" "}
+                          Melones y sandias
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/melocoton_xmlpla.png"
-                          alt="icono melocotón"
-                        />{" "}
-                        Melocotones y ciruelas
-                      </a>
+                      <Link href="/productos/frutas/melocotones-y-ciruelas">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/melocoton_xmlpla.png"
+                            alt="icono melocotón"
+                          />{" "}
+                          Melocotones y ciruelas
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/manzana_dzern7.png"
-                          alt="icono manzana"
-                        />{" "}
-                        Manzanas
-                      </a>
+                      <Link href="/productos/frutas/manzanas">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/manzana_dzern7.png"
+                            alt="icono manzana"
+                          />{" "}
+                          Manzanas
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/limon_vvrjd6.png"
-                          alt="icono limón"
-                        />{" "}
-                        Limas y limones
-                      </a>
+                      <Link href="/productos/frutas/limas-y-limones">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/limon_vvrjd6.png"
+                            alt="icono limón"
+                          />{" "}
+                          Limas y limones
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/kiwi_vys7rx.png"
-                          alt="icono kiwi"
-                        />{" "}
-                        Kiwis
-                      </a>
+                      <Link href="/productos/frutas/kiwis">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/kiwi_vys7rx.png"
+                            alt="icono kiwi"
+                          />{" "}
+                          Kiwis
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/delbosque_vuvk7x.png"
-                          alt="icono arbol"
-                        />{" "}
-                        Frutas del bosque
-                      </a>
+                      <Link href="/productos/frutas/frutas-del-bosque">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/delbosque_vuvk7x.png"
+                            alt="icono arbol"
+                          />{" "}
+                          Frutas del bosque
+                        </a>
+                      </Link>
                     </li>
                     <li>
-                      <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638703/iconosHorticurita/uva_crvyzl.png"
-                          alt="icono uvas"
-                        />{" "}
-                        Uvas
-                      </a>
+                      <Link href="/productos/frutas/uvas">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638703/iconosHorticurita/uva_crvyzl.png"
+                            alt="icono uvas"
+                          />{" "}
+                          Uvas
+                        </a>
+                      </Link>
                     </li>
                     <li>
                       <a>+ Otras frutas</a>
@@ -461,7 +483,6 @@ class NavbarComponent extends React.Component {
           </a>
         </div>
       </nav>
-      
     );
   }
 }

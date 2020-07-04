@@ -1,7 +1,7 @@
 // pages/posts/[id].js
 import React from "react";
 
-class Fruta extends React.Component {
+class LimaOLimon extends React.Component {
   constructor(props) {
     super(props);
 
@@ -690,4 +690,4 @@ export async function getStaticProps({ params }) {
   return { props: { objectProp } };
 }
 
-export default Fruta;
+export default LimaOLimon;
