@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-class TodaFruta extends React.Component {
+class TodaVerdura extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -296,4 +296,4 @@ export async function getStaticProps() {
   };
 }
 
-export default TodaFruta;
+export default TodaVerdura;
