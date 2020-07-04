@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }) {
           rel="stylesheet"
         />
 
-        <script src="/scripts/chatDirecto.js"></script>
+        
       </Head>
 
       <header>
