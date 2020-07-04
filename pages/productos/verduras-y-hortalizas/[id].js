@@ -1,4 +1,5 @@
 // pages/posts/[id].js
+import React from "react";
 
 class Verdura extends React.Component {
   constructor(props) {
@@ -683,8 +684,6 @@ export async function getStaticProps({ params }) {
     type: product.type,
     stock: product.stock,
     urlRoute: product.urlRoute,
-    origin:product.origin,
-
   };
   // Pass post data to the page via props
   return { props: { objectProp } };
