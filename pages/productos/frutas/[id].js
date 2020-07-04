@@ -22,30 +22,16 @@ class Fruta extends React.Component {
 
           <div>
             <h1>{this.objectData.name}</h1>
-            <span>
-              {this.objectData.price} /
-              {this.objectData.type === "kilogramos" ? "Kg" : "Ud"}
-            </span>
+            <span>{this.objectData.price} /Kg</span>
             <p>Origen: España</p>
-
-            {this.objectData.stock === "si" ? (
-              <p>
-                <img
-                  src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"
-                  alt="icono disponible"
-                />
-                Disponible
-              </p>
-            ) : (
-              <p>
-                <img
-                  src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593731819/iconosHorticurita/icono_sin_stock_ihhw8q.png"
-                  alt="icono sin stock"
-                />
-                No disponible
-              </p>
-            )}
-
+            <p>
+              <img
+                src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"
+                alt="icono disponible"
+                srcset=""
+              />{" "}
+              Disponible
+            </p>
             <div className="buttonsCart">
               <button type="button" className="buttonIzq">
                 -
@@ -62,7 +48,17 @@ class Fruta extends React.Component {
           <hr></hr>
           <span>DESCRIPCIÓN</span>
           <hr></hr>
-          <p>{this.objectData.description}</p>
+          <p>
+            El tomate pertenece a la familia de las solanáceas y necesita de
+            climas templados, para crecer sin problemas. El tomate de pera es
+            una hortaliza de riquísimas propiedades culinarias y para la salud.
+            Como anécdota destacaremos que el tomate esta catalogado como una
+            fruta y no como una verdura. Los términos de frutas y verduras son
+            populares y no científicos. Se utilizaron antiguamente para dividir
+            alimentos dulces y salados provenientes de las plantas. Por esta
+            razón el tomate fue clasificado como una verdura, actualmente una
+            planta está clasificada de diferente manera.
+          </p>
         </div>
 
         <style jsx>{`
@@ -682,7 +678,6 @@ export async function getStaticProps({ params }) {
     imageUrl: product.imageUrl,
     imageAlt: product.imageAlt,
     type: product.type,
-    stock: product.stock,
     urlRoute: product.urlRoute,
   };
   // Pass post data to the page via props

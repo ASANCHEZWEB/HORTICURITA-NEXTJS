@@ -1,8 +1,7 @@
-
 import React from "react";
 import Link from "next/link";
 
-class TodaVerdura extends React.Component {
+class TodaFruta extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -15,18 +14,18 @@ class TodaVerdura extends React.Component {
           <div>
             <h1>Verduras y hortalizas</h1>
             <p>
-            Disponemos de una gran variedad de verduras y hortalizas , ¡escoge desde tan solo
+              Disponemos de una gran variedad de verduras y hortalizas , ¡escoge desde tan solo
               medio kilo!. Nuestra fruta y verdura es recogida unas horas
               después de su pedido y será entregada en tan solo 24/48 horas.
             </p>
             <p>
-              *Damos especial atención a la calidad de nuestros productos,por lo
+              Damos especial atención a la calidad de nuestros productos,por lo
               tanto, si la fruta y verdura recibida está dañada ,
               <span>le devolveremos el dinero.</span>
             </p>
             <img
               src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1592682651/imagenes%20estaticas/frutas_y_verduras_joyikh.jpg"
-              alt="frutas y verduras"
+              alt="verduras y hortalizas"
             />
           </div>
         </div>
@@ -35,16 +34,10 @@ class TodaVerdura extends React.Component {
             if (product.name) {
               return (
                 <div key={product._id}>
+                  <img src={product.imageUrl} alt={product.imageAlt} />
                   <Link
-                    href="/productos/frutas/[id]"
-                    as={`/productos/frutas/${product.urlRoute}`}
-                  >
-                    <img src={product.imageUrl} alt={product.imageAlt} />
-                  </Link>
-
-                  <Link
-                    href="/productos/frutas/[id]"
-                    as={`/productos/frutas/${product.urlRoute}`}
+                    href="/productos/verduras-y-hortalizas/[id]"
+                    as={`/productos/verduras-y-hortalizas/${product.urlRoute}`}
                   >
                     <a>
                       <h2>{product.name}</h2>
@@ -54,25 +47,6 @@ class TodaVerdura extends React.Component {
                   <span>
                     {product.price}€ /
                     {product.type === "kilogramos" ? "Kg" : "Ud"}
-                  </span>
-                  <span>
-                    {product.stock === "si" ? (
-                      <p>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"
-                          alt="icono disponible"
-                        />
-                        Disponible
-                      </p>
-                    ) : (
-                      <p>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593731819/iconosHorticurita/icono_sin_stock_ihhw8q.png"
-                          alt="icono sin stock"
-                        />
-                        No disponible
-                      </p>
-                    )}
                   </span>
                   <div>
                     <button type="button">-</button>
@@ -91,24 +65,10 @@ class TodaVerdura extends React.Component {
             margin-bottom: 5%;
             border-bottom: 1px solid green;
             padding-bottom: 3%;
-            font-family: montserrat;
-            padding-left: 25px;
-            padding-right: 25px;
           }
-
-          .container > div > span {
-            font-family: montserrat;
-            font-size: 13px;
-          }
-          .container > div > span > p {
-            display: flex;
-            justify-content: center;
-            font-size: 12px;
-            align-items: center;
-            font-family: montserrat;
-          }
-          .container > div > span > p > img {
-            width: 20px;
+          span {
+            font-weight: bold;
+            font-size: 16px;
           }
           .metaDiv > div > h1 {
             text-align: center;
@@ -125,7 +85,7 @@ class TodaVerdura extends React.Component {
           }
           h2 {
             font-size: large;
-            color: black;
+            color: #8bc34a;
           }
           .container > div > div {
             display: flex;
@@ -143,10 +103,6 @@ class TodaVerdura extends React.Component {
             border-right: none;
             border-color: #ffeb00;
             border-top: 1px solid #ffeb00;
-          }
-
-          .container > div > a > h2 {
-            font-family: pacifico;
           }
 
           .container > div > div > :nth-child(1) {
@@ -180,7 +136,7 @@ class TodaVerdura extends React.Component {
 
             .container > div > img {
               width: 100%;
-              cursor: pointer;
+              height: 142px;
             }
 
             .container > div {
@@ -192,9 +148,6 @@ class TodaVerdura extends React.Component {
               margin-bottom: 18px;
               border-radius: 4px;
               border-width: thin;
-            }
-            .metaDiv > div > p {
-              font-size: 13px;
             }
           }
 
@@ -208,7 +161,7 @@ class TodaVerdura extends React.Component {
 
             .container > div > img {
               width: 100%;
-              cursor: pointer;
+              height: 169px;
             }
 
             .container > div {
@@ -234,14 +187,11 @@ class TodaVerdura extends React.Component {
 
             .container > div > img {
               width: 100%;
-              cursor: pointer;
+              height: 165px;
             }
-            .container > div > span {
-              font-family: montserrat;
-              font-size: 14px;
-            }
+
             .container > div {
-              width: 175px;
+              width: 165px;
               text-align: center;
               margin-left: 2%;
               border-style: solid;
@@ -263,14 +213,11 @@ class TodaVerdura extends React.Component {
 
             .container > div > img {
               width: 100%;
-              cursor: pointer;
+              height: 214px;
             }
-            .container > div > span {
-              font-family: montserrat;
-              font-size: 14px;
-            }
+
             .container > div {
-              width: 225px;
+              width: 214px;
               text-align: center;
               margin-left: 2%;
               border-style: solid;
@@ -288,20 +235,15 @@ class TodaVerdura extends React.Component {
               /* or inline-flex */
               flex-wrap: wrap;
               justify-content: center;
-              max-width: 1325px;
-              margin: 0 auto;
             }
 
             .container > div > img {
               width: 100%;
-              cursor: pointer;
+              height: 260px;
             }
-            .container > div > span {
-              font-family: montserrat;
-              font-size: 14px;
-            }
+
             .container > div {
-              width: 271px;
+              width: 260px;
               text-align: center;
               margin-left: 2%;
               border-style: solid;
@@ -338,8 +280,7 @@ export async function getStaticProps() {
             imageUrl: product.imageUrl,
             imageAlt: product.imageAlt,
             type: product.type,
-            stock: product.stock,
-            urlRoute: product.urlRoute,
+            urlRoute:product.urlRoute
           };
         } else {
           return {};
@@ -355,4 +296,4 @@ export async function getStaticProps() {
   };
 }
 
-export default TodaVerdura;
+export default TodaFruta;
