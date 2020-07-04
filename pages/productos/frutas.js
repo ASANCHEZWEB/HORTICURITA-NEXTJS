@@ -337,7 +337,7 @@ export async function getStaticProps() {
             imageUrl: product.imageUrl,
             imageAlt: product.imageAlt,
             type: product.type,
-            stock: product.stock !== "si" ? "no" : product.stock,
+            stock: product.stock,
             urlRoute: product.urlRoute,
           };
         } else {
