@@ -340,13 +340,16 @@ class NavbarComponent extends React.Component {
                       
                     </li>
                     <li>
-                      <a>
+                    <Link href="/productos/verduras-y-hortalizas/patatas">
+                    <a>
                         <img
                           src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/patata_nwhhtm.png"
                           alt="icono patatas"
                         />{" "}
                         Patatas
                       </a>
+                      </Link>
+                     
                     </li>
                     <li>
                       <a>
