@@ -1,7 +1,7 @@
-
+// pages/posts/[id].js
 import React from "react";
 
-class Verdura extends React.Component {
+class Tomate extends React.Component {
   constructor(props) {
     super(props);
 
@@ -26,7 +26,7 @@ class Verdura extends React.Component {
               {this.objectData.price} /
               {this.objectData.type === "kilogramos" ? "Kg" : "Ud"}
             </span>
-            <p>Origen: España</p>
+            <p>Origen: {this.objectData.origin}</p>
 
             {this.objectData.stock === "si" ? (
               <p>
@@ -684,9 +684,10 @@ export async function getStaticProps({ params }) {
     type: product.type,
     stock: product.stock,
     urlRoute: product.urlRoute,
+    origin:product.origin
   };
   // Pass post data to the page via props
   return { props: { objectProp } };
 }
 
-export default Verdura;
+export default Tomate;
