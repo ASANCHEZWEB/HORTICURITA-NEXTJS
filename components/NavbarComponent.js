@@ -364,31 +364,40 @@ class NavbarComponent extends React.Component {
                       
                     </li>
                     <li>
-                      <a>
+                    <Link href="/productos/verduras-y-hortalizas/setas-y-champinones">
+                    <a>
                         <img
                           src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/seta_dsxwjc.png"
                           alt="icono seta"
                         />{" "}
                         Setas y champiñones
                       </a>
+                      </Link>
+                      
                     </li>
                     <li>
-                      <a>
+                    <Link href="/productos/verduras-y-hortalizas/de-tierra">
+                    <a>
                         <img
                           src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/tierra_qi5qga.png"
                           alt="icono tierra"
                         />{" "}
                         De tierra
                       </a>
+                      </Link>
+                      
                     </li>
                     <li>
-                      <a>
+                    <Link href="/productos/verduras-y-hortalizas/germinados">
+                    <a>
                         <img
                           src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/germinado_unduc0.png"
                           alt="icono semilla"
                         />{" "}
                         Germinados
                       </a>
+                      </Link>
+                      
                     </li>
                   </ul>
                 </li>
