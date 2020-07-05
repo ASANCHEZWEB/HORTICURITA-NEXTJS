@@ -1,8 +1,7 @@
-
 import React from "react";
 import Link from "next/link";
 
-class TodaVerdura extends React.Component {
+class Lechugas extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -13,21 +12,19 @@ class TodaVerdura extends React.Component {
       <>
         <div className="metaDiv">
           <div>
-            <h1>Verduras y hortalizas</h1>
+            <h1>🥬Lechugas🥬</h1>
             <p>
-            Disponemos de una gran variedad de verduras y hortalizas , ¡escoge desde tan solo
-              medio kilo!. Nuestra fruta y verdura es recogida unas horas
-              después de su pedido y será entregada en tan solo 24/48 horas.
+            Junto al tomate , la lechuga es clave en ensaladas, usala a tu gusto!😉
             </p>
             <p>
               *Damos especial atención a la calidad de nuestros productos,por lo
               tanto, si la fruta y verdura recibida está dañada ,
               <span>le devolveremos el dinero.</span>
             </p>
-            <img
+            {/* <img
               src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1592682651/imagenes%20estaticas/frutas_y_verduras_joyikh.jpg"
               alt="frutas y verduras"
-            />
+            /> */}
           </div>
         </div>
         <div className="container">
@@ -36,15 +33,15 @@ class TodaVerdura extends React.Component {
               return (
                 <div key={product._id}>
                   <Link
-                    href="/productos/verduras-y-hortalizas/[id]"
-                    as={`/productos/verduras-y-hortalizas/${product.urlRoute}`}
+                    href="/productos/verduras-y-hortalizas/lechugas/[id]"
+                    as={`/productos/verduras-y-hortalizas/lechugas/${product.urlRoute}`}
                   >
                     <img src={product.imageUrl} alt={product.imageAlt} />
                   </Link>
 
                   <Link
-                    href="/productos/verduras-y-hortalizas/[id]"
-                    as={`/productos/verduras-y-hortalizas/${product.urlRoute}`}
+                    href="/productos/verduras-y-hortalizas/lechugas/[id]"
+                    as={`/productos/verduras-y-hortalizas/lechugas/${product.urlRoute}`}
                   >
                     <a>
                       <h2>{product.name}</h2>
@@ -328,7 +325,7 @@ export async function getStaticProps() {
   let dataMapped = () => {
     return [...data.productos]
       .map((product) => {
-        if (product.category === "verdura y hortaliza") {
+        if (product.subcategory === "lechugas") {
           return {
             _id: product._id,
             name: product.name,
@@ -345,7 +342,7 @@ export async function getStaticProps() {
           return {};
         }
       })
-      .sort((a, b) => a.generalcategory - b.generalcategory);
+      .sort((a, b) => a.subcategoryPos - b.subcategoryPos);
   };
 
   return {
@@ -355,4 +352,4 @@ export async function getStaticProps() {
   };
 }
 
-export default TodaVerdura;
+export default Lechugas;

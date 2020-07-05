@@ -316,22 +316,28 @@ class NavbarComponent extends React.Component {
                       </Link>
                     </li>
                     <li>
-                      <a>
+                    <Link href="/productos/verduras-y-hortalizas/cebollas-y-ajos">
+                    <a>
                         <img
                           src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/cebolla_xjy7rb.png"
                           alt="icono cebolla"
                         />{" "}
                         Cebollas y ajos
                       </a>
+                      </Link>
+                      
                     </li>
                     <li>
-                      <a>
+                    <Link href="/productos/verduras-y-hortalizas/lechugas">
+                    <a>
                         <img
                           src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/lechuga_brykvg.png"
                           alt="icono lechuga"
                         />{" "}
                         Lechugas
                       </a>
+                      </Link>
+                      
                     </li>
                     <li>
                       <a>
