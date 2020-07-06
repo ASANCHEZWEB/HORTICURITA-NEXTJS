@@ -402,31 +402,41 @@ class NavbarComponent extends React.Component {
                   </ul>
                 </li>
                 <li>
-                  <a>
+                <Link href="/productos/legumbres">
+                <a>
                     <img
                       src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/garbanzo_ko0nop.jpg"
                       alt="legumbres"
                     />{" "}
                     Legumbres
                   </a>
+                      </Link>
+                 
                 </li>
                 <li>
-                  <a>
+
+                <Link href="/productos/frutos-secos">
+                <a>
                     <img
                       src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/cacahuete_dzkay0.png"
                       alt="icono cacahuete"
                     />{" "}
                     Frutos secos
                   </a>
+                      </Link>
+                 
                 </li>
                 <li>
-                  <a>
+                <Link href="/productos/encurtidos">
+                <a>
                     <img
                       src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/tapa_gobalf.png"
                       alt="icono tapa"
                     />{" "}
                     Encurtidos
                   </a>
+                      </Link>
+                  
                 </li>
                 <li>
                   <a>
