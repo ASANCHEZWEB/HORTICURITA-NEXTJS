@@ -316,172 +316,174 @@ class NavbarComponent extends React.Component {
                       </Link>
                     </li>
                     <li>
-                    <Link href="/productos/verduras-y-hortalizas/cebollas-y-ajos">
-                    <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/cebolla_xjy7rb.png"
-                          alt="icono cebolla"
-                        />{" "}
-                        Cebollas y ajos
-                      </a>
+                      <Link href="/productos/verduras-y-hortalizas/cebollas-y-ajos">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/cebolla_xjy7rb.png"
+                            alt="icono cebolla"
+                          />{" "}
+                          Cebollas y ajos
+                        </a>
                       </Link>
-                      
                     </li>
                     <li>
-                    <Link href="/productos/verduras-y-hortalizas/lechugas">
-                    <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/lechuga_brykvg.png"
-                          alt="icono lechuga"
-                        />{" "}
-                        Lechugas
-                      </a>
+                      <Link href="/productos/verduras-y-hortalizas/lechugas">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/lechuga_brykvg.png"
+                            alt="icono lechuga"
+                          />{" "}
+                          Lechugas
+                        </a>
                       </Link>
-                      
                     </li>
                     <li>
-                    <Link href="/productos/verduras-y-hortalizas/patatas">
-                    <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/patata_nwhhtm.png"
-                          alt="icono patatas"
-                        />{" "}
-                        Patatas
-                      </a>
+                      <Link href="/productos/verduras-y-hortalizas/patatas">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/patata_nwhhtm.png"
+                            alt="icono patatas"
+                          />{" "}
+                          Patatas
+                        </a>
                       </Link>
-                     
                     </li>
                     <li>
-                    <Link href="/productos/verduras-y-hortalizas/pimientos">
-                    <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/pimiento_vqhmci.png"
-                          alt="icono pimiento"
-                        />{" "}
-                        Pimientos
-                      </a>
+                      <Link href="/productos/verduras-y-hortalizas/pimientos">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/pimiento_vqhmci.png"
+                            alt="icono pimiento"
+                          />{" "}
+                          Pimientos
+                        </a>
                       </Link>
-                      
                     </li>
                     <li>
-                    <Link href="/productos/verduras-y-hortalizas/setas-y-champinones">
-                    <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/seta_dsxwjc.png"
-                          alt="icono seta"
-                        />{" "}
-                        Setas y champiñones
-                      </a>
+                      <Link href="/productos/verduras-y-hortalizas/setas-y-champinones">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/seta_dsxwjc.png"
+                            alt="icono seta"
+                          />{" "}
+                          Setas y champiñones
+                        </a>
                       </Link>
-                      
                     </li>
                     <li>
-                    <Link href="/productos/verduras-y-hortalizas/de-tierra">
-                    <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/tierra_qi5qga.png"
-                          alt="icono tierra"
-                        />{" "}
-                        De tierra
-                      </a>
+                      <Link href="/productos/verduras-y-hortalizas/de-tierra">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/tierra_qi5qga.png"
+                            alt="icono tierra"
+                          />{" "}
+                          De tierra
+                        </a>
                       </Link>
-                      
                     </li>
                     <li>
-                    <Link href="/productos/verduras-y-hortalizas/germinados">
-                    <a>
-                        <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/germinado_unduc0.png"
-                          alt="icono semilla"
-                        />{" "}
-                        Germinados
-                      </a>
+                      <Link href="/productos/verduras-y-hortalizas/germinados">
+                        <a>
+                          <img
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/germinado_unduc0.png"
+                            alt="icono semilla"
+                          />{" "}
+                          Germinados
+                        </a>
                       </Link>
-                      
                     </li>
                   </ul>
                 </li>
                 <li>
-                <Link href="/productos/legumbres">
+                  <Link href="/productos/legumbres">
+                    <a>
+                      <img
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/garbanzo_ko0nop.jpg"
+                        alt="legumbres"
+                      />{" "}
+                      Legumbres
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/productos/frutos-secos">
+                    <a>
+                      <img
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/cacahuete_dzkay0.png"
+                        alt="icono cacahuete"
+                      />{" "}
+                      Frutos secos
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/productos/encurtidos">
+                    <a>
+                      <img
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/tapa_gobalf.png"
+                        alt="icono tapa"
+                      />{" "}
+                      Encurtidos
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/productos/especias">
+                    <a>
+                      <img
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/especias_xhao5g.png"
+                        alt="icono especias"
+                      />{" "}
+                      Especias
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/productos/miel">
+                    <a>
+                      <img
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/miel_cbnqrg.png"
+                        alt="icono tarro de miel"
+                      />{" "}
+                      Miel
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                <Link href="/productos/dulces">
                 <a>
-                    <img
-                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/garbanzo_ko0nop.jpg"
-                      alt="legumbres"
-                    />{" "}
-                    Legumbres
-                  </a>
-                      </Link>
-                 
-                </li>
-                <li>
-
-                <Link href="/productos/frutos-secos">
-                <a>
-                    <img
-                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/cacahuete_dzkay0.png"
-                      alt="icono cacahuete"
-                    />{" "}
-                    Frutos secos
-                  </a>
-                      </Link>
-                 
-                </li>
-                <li>
-                <Link href="/productos/encurtidos">
-                <a>
-                    <img
-                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/tapa_gobalf.png"
-                      alt="icono tapa"
-                    />{" "}
-                    Encurtidos
-                  </a>
-                      </Link>
-                  
-                </li>
-                <li>
-                  <a>
-                    <img
-                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/especias_xhao5g.png"
-                      alt="icono especias"
-                    />{" "}
-                    Especias
-                  </a>
-                </li>
-                <li>
-                  <a>
-                    <img
-                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/miel_cbnqrg.png"
-                      alt="icono tarro de miel"
-                    />{" "}
-                    Miel
-                  </a>
-                </li>
-                <li>
-                  <a>
                     <img
                       src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/pastel_e7tonk.png"
                       alt="icono pastel"
                     />{" "}
                     Dulces
                   </a>
+                      </Link>
+                  
                 </li>
                 <li>
-                  <a>
+                <Link href="/productos/galletas-y-cereales">
+                <a>
                     <img
                       src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/galleta_wwldkz.png"
                       alt="icono galleta"
                     />{" "}
                     Galletas y cereales
                   </a>
+                      </Link>
+                  
                 </li>
                 <li>
-                  <a>
+                <Link href="/productos/aperitivos-snack">
+                <a>
                     <img
                       src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638720/iconosHorticurita/aperitivos_snack_wqkwwb.png"
                       alt="aperitivo snack"
                     />{" "}
                     Aperitivos Snack
                   </a>
+                      </Link>
+                  
                 </li>
               </ul>
             </li>
