@@ -450,72 +450,79 @@ class NavbarComponent extends React.Component {
                   </Link>
                 </li>
                 <li>
-                <Link href="/productos/dulces">
-                <a>
-                    <img
-                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/pastel_e7tonk.png"
-                      alt="icono pastel"
-                    />{" "}
-                    Dulces
-                  </a>
-                      </Link>
-                  
+                  <Link href="/productos/dulces">
+                    <a>
+                      <img
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638702/iconosHorticurita/pastel_e7tonk.png"
+                        alt="icono pastel"
+                      />{" "}
+                      Dulces
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                <Link href="/productos/galletas-y-cereales">
-                <a>
-                    <img
-                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/galleta_wwldkz.png"
-                      alt="icono galleta"
-                    />{" "}
-                    Galletas y cereales
-                  </a>
-                      </Link>
-                  
+                  <Link href="/productos/galletas-y-cereales">
+                    <a>
+                      <img
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/galleta_wwldkz.png"
+                        alt="icono galleta"
+                      />{" "}
+                      Galletas y cereales
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                <Link href="/productos/aperitivos-snack">
-                <a>
-                    <img
-                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638720/iconosHorticurita/aperitivos_snack_wqkwwb.png"
-                      alt="aperitivo snack"
-                    />{" "}
-                    Aperitivos Snack
-                  </a>
-                      </Link>
-                  
+                  <Link href="/productos/aperitivos-snack">
+                    <a>
+                      <img
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638720/iconosHorticurita/aperitivos_snack_wqkwwb.png"
+                        alt="aperitivo snack"
+                      />{" "}
+                      Aperitivos Snack
+                    </a>
+                  </Link>
                 </li>
               </ul>
             </li>
             <li>
-              <a>PARA OFICINAS</a>
+              <Link href="/fruta-para-oficinas">
+                <a>PARA OFICINAS</a>
+              </Link>
             </li>
             <li>
-              <a>NOSOTROS</a>
+              <Link href="/sobre-nosotros">
+                <a>NOSOTROS</a>
+              </Link>
             </li>
             <li>
-              <a>CONTACTO</a>
+              <Link href="/contacto">
+                <a>CONTACTO</a>
+              </Link>
             </li>
             <li className="cartStyleLI">
-              <a>
-                <img
-                  src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/carritomenu_nsscxy.png"
-                  alt="icono carrito verde"
-                />
-                CARRITO ( 0 )
-              </a>
+              <Link href="/carrito">
+                <a>
+                  <img
+                    src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/carritomenu_nsscxy.png"
+                    alt="icono carrito verde"
+                  />
+                  CARRITO ( 0 )
+                </a>
+              </Link>
             </li>
           </ul>
         </div>
         <div>
-          <a className="buttonCart disableZoombutton">
-            <span>Carrito: </span>
-            <img
-              src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/carritoIcons_mgpns6.png"
-              alt="icono carrito blanco"
-            />
-            (0)
-          </a>
+          <Link href="/carrito">
+            <a className="buttonCart disableZoombutton">
+              <span>Carrito: </span>
+              <img
+                src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/carritoIcons_mgpns6.png"
+                alt="icono carrito blanco"
+              />
+              (0)
+            </a>
+          </Link>
         </div>
       </nav>
     );
