@@ -26,6 +26,9 @@ function MyApp({ Component, pageProps }) {
         main {
           padding-top: 66px;
         }
+        button{
+          touch-action: manipulation;
+        }
         a {
           text-decoration: none;
         }
