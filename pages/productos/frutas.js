@@ -13,7 +13,30 @@ class TodaFruta extends React.Component {
     };
   }
 
-  addNewProduct = (product) => {};
+  addNewProduct = (product) => {
+    let arrayLsCopy = [...this.state.productInLS];
+
+    if (product.added !== 0) {
+      //SI YA ESTA EN EL CARRO MODIFICAMOS EL QUE YA ESTA
+
+      arrayLsCopy.forEach((elLS) => {
+        if (elLS._id == product._id) {
+          elLS.added++;
+        }
+      });
+    } else {
+      product.added += 1;
+      arrayLsCopy.push(product);
+    }
+
+    this.setState({ productInLS: arrayLsCopy }, function () {
+      localStorage.setItem(
+        "cartProducts",
+        JSON.stringify(this.state.productInLS)
+      );
+      this.actualizarLS();
+    });
+  };
 
   actualizarLS = () => {
     this.setState({ productInLS: JSON.parse(getLocalData()) }, function () {
