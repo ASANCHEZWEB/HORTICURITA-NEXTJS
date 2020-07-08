@@ -1,25 +1,46 @@
 import React from "react";
 import Link from "next/link";
-import getLocalData from "../../components/getLocalStorage";
+import { getLocalData } from "../../components/getLocalStorage";
 
 class TodaFruta extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // ARRAY DE LOCALSTORAGE
       productInLS: [],
-      productProps:[...this.props.data]
+      //ARRAY DE PRODUCTOS DE BASE DE DATOS
+      productProps: [...this.props.data],
     };
   }
 
   addNewProduct = (product) => {
-    let arrayCopy=[...this.state.productInLS];
-    product.added++
-    arrayCopy.push(product)
-    localStorage.setItem('cartProducts', JSON.stringify(arrayCopy));
-    this.componentDidMount()
-    console.log(this.state.productProps)
+    //comprobamos si esta el producto en local  si no esta lo metemos
+    product.added++;
+    if (!this.state.productInLS.includes(product)) {
+      let copyArray = [...this.state.productInLS];
+      copyArray.push(product);
+      this.setState({ productInLS: copyArray }, function () {
+        localStorage.setItem(
+          "cartProducts",
+          JSON.stringify(this.state.productInLS)
+        );
+      });
+    } else {
+      //si esta metido actualizamos el contador "added"
+      let arrayCopyTwo = [...this.state.productInLS];
+      arrayCopyTwo.forEach((productoRecorrido) => {
+        if (productoRecorrido._id == product._id) {
+          productoRecorrido = product;
+        }
+        this.setState({ productInLS: arrayCopyTwo }, function () {
+          localStorage.setItem(
+            "cartProducts",
+            JSON.stringify(this.state.productInLS)
+          );
+        });
+      });
+    }
   };
-  
 
   componentDidMount() {
     this.setState({
@@ -95,10 +116,20 @@ class TodaFruta extends React.Component {
                   </span>
                   <div>
                     <button type="button">-</button>
+                    <input
+                      value={
+                        product.type === "kilogramos"
+                          ? this.state.productProps[index].added / 2
+                          : this.state.productProps[index].added
+                      }
+                    />
 
-                    <input value={this.state.productProps[index].added} />
-                    
-                    <button type="button" onClick={() => this.addNewProduct(product)}>+</button>
+                    <button
+                      type="button"
+                      onClick={() => this.addNewProduct(product)}
+                    >
+                      +
+                    </button>
                   </div>
                 </div>
               );
@@ -361,7 +392,7 @@ export async function getStaticProps() {
             type: product.type,
             stock: product.stock,
             urlRoute: product.urlRoute,
-            added:0
+            added: 0,
           };
         } else {
           return {};

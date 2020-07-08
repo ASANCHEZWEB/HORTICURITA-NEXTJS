@@ -1,6 +1,6 @@
 
 
-function getLocalData(props){
+export function getLocalData(props){
     if (!window.localStorage.cartProducts) {
         localStorage.setItem("cartProducts", "[]");
       }
@@ -14,4 +14,9 @@ function getLocalData(props){
 }
 
 
-export default getLocalData;
+ export function actualizarLocal(){
+
+    return "hola"
+}
+
+
