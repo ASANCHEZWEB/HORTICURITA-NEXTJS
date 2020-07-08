@@ -42,10 +42,14 @@ class TodaFruta extends React.Component {
     }
   };
 
-  componentDidMount() {
+  actualizarLS = () => {
     this.setState({
       productInLS: JSON.parse(getLocalData()),
     });
+  };
+
+  componentDidMount() {
+    this.actualizarLS();
   }
 
   render() {
