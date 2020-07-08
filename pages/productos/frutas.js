@@ -13,38 +13,21 @@ class TodaFruta extends React.Component {
     };
   }
 
-  addNewProduct = (product) => {
-    //comprobamos si esta el producto en local  si no esta lo metemos
-    product.added++;
-    if (!this.state.productInLS.includes(product)) {
-      let copyArray = [...this.state.productInLS];
-      copyArray.push(product);
-      this.setState({ productInLS: copyArray }, function () {
-        localStorage.setItem(
-          "cartProducts",
-          JSON.stringify(this.state.productInLS)
-        );
-      });
-    } else {
-      //si esta metido actualizamos el contador "added"
-      let arrayCopyTwo = [...this.state.productInLS];
-      arrayCopyTwo.forEach((productoRecorrido) => {
-        if (productoRecorrido._id == product._id) {
-          productoRecorrido = product;
-        }
-        this.setState({ productInLS: arrayCopyTwo }, function () {
-          localStorage.setItem(
-            "cartProducts",
-            JSON.stringify(this.state.productInLS)
-          );
-        });
-      });
-    }
-  };
+  addNewProduct = (product) => {};
 
   actualizarLS = () => {
-    this.setState({
-      productInLS: JSON.parse(getLocalData()),
+    this.setState({ productInLS: JSON.parse(getLocalData()) }, function () {
+      let arrayLsCopy = [...this.state.productInLS];
+      let arrayPropsCopy = [...this.state.productProps];
+      arrayLsCopy.forEach((elLS) => {
+        arrayPropsCopy.forEach((elProp) => {
+          if (elLS._id == elProp._id) {
+            elProp.added = elLS.added;
+          }
+        });
+      });
+
+      this.setState({ productProps: arrayPropsCopy });
     });
   };
 
