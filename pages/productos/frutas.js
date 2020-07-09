@@ -56,8 +56,11 @@ class TodaFruta extends React.Component {
       });
     }
     if (product.added > 1) {
-      //COMO ESTA POR ENCIMA DE 1 LE RESTAMOS UNO AL PRODUCTO  Y ACTUALIZAMOS EL STORAGE
-      console.log("ES MAYOR QUE UNO");
+      arrayLsCopy.forEach((elLS) => {
+        if (elLS._id == product._id) {
+          elLS.added--;
+        }
+      });
     }
 
     this.setState(
