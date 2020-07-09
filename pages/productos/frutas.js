@@ -38,6 +38,40 @@ class TodaFruta extends React.Component {
     });
   };
 
+  restProduct = (product) => {
+    let arrayLsCopy = [...this.state.productInLS];
+    let arrayPropsCopy = [...this.state.productProps];
+
+    if (product.added == 1) {
+      //como es uno lo eliminamos del storage
+      arrayLsCopy.forEach(function (elem, index) {
+        if (elem._id == product._id) {
+          arrayLsCopy.splice(index, 1);
+          arrayPropsCopy.forEach((elProp) => {
+            if (elProp._id == product._id) {
+              elProp.added = 0;
+            }
+          });
+        }
+      });
+    }
+    if (product.added > 1) {
+      //COMO ESTA POR ENCIMA DE 1 LE RESTAMOS UNO AL PRODUCTO  Y ACTUALIZAMOS EL STORAGE
+      console.log("ES MAYOR QUE UNO");
+    }
+
+    this.setState(
+      { productInLS: arrayLsCopy, productProps: arrayPropsCopy },
+      function () {
+        localStorage.setItem(
+          "cartProducts",
+          JSON.stringify(this.state.productInLS)
+        );
+        this.actualizarLS();
+      }
+    );
+  };
+
   actualizarLS = () => {
     this.setState({ productInLS: JSON.parse(getLocalData()) }, function () {
       let arrayLsCopy = [...this.state.productInLS];
@@ -125,7 +159,12 @@ class TodaFruta extends React.Component {
                     )}
                   </span>
                   <div>
-                    <button type="button">-</button>
+                    <button
+                      type="button"
+                      onClick={() => this.restProduct(product)}
+                    >
+                      -
+                    </button>
                     <input
                       value={
                         product.type === "kilogramos"
