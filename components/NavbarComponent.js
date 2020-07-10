@@ -5,8 +5,18 @@ class NavbarComponent extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+      cartItems: [],
+    };
   }
+
+  actualizarCarro = () => {
+    setInterval(() => {
+      let miStorage = JSON.parse(window.localStorage.cartProducts);
+
+      this.setState({ cartItems: miStorage });
+    }, 500);
+  };
 
   //MOSTRAR MENÚ mobile
   showList = () => {
@@ -72,6 +82,10 @@ class NavbarComponent extends React.Component {
         .setAttribute("class", "ulVerduras");
     }
   };
+
+  componentDidMount() {
+    this.actualizarCarro();
+  }
 
   render() {
     return (
@@ -506,7 +520,7 @@ class NavbarComponent extends React.Component {
                     src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/carritomenu_nsscxy.png"
                     alt="icono carrito verde"
                   />
-                  CARRITO ( 0 )
+                  CARRITO ( {this.state.cartItems.length} )
                 </a>
               </Link>
             </li>
@@ -520,7 +534,7 @@ class NavbarComponent extends React.Component {
                 src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/carritoIcons_mgpns6.png"
                 alt="icono carrito blanco"
               />
-              (0)
+              ( {this.state.cartItems.length} )
             </a>
           </Link>
         </div>
