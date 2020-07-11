@@ -116,7 +116,7 @@ class TodaFruta extends React.Component {
               <span>le devolveremos el dinero.</span>
             </p>
             <img
-              src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1592682651/imagenes%20estaticas/frutas_y_verduras_joyikh.jpg"
+              src="/frutas_y_verduras.jpg"
               alt="frutas y verduras"
             />
           </div>
