@@ -132,7 +132,7 @@ class TodaFruta extends React.Component {
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                    <img src={output} alt={product.imageAlt} />
+                    <img src={output} alt={product.imageAlt} loading="lazy" />
                   </Link>
 
                   <Link
