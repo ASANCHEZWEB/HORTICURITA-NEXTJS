@@ -287,7 +287,7 @@ class TodaFruta extends React.Component {
             }
 
             .container > div > img {
-              /* width: 100%; */
+               width: 100%; 
               cursor: pointer;
             }
 

@@ -1043,7 +1043,7 @@ function MyApp({ Component, pageProps }) {
       `}</style>
       
       
-<script src="/scripts/onLoad.js"></script> 
+<script src="/scripts/nav.js" async></script> 
 
       {/* <script src="/scripts/chatDirecto.js"></script> */}
     </>
