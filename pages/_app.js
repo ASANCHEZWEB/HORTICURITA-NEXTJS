@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat"
+          href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
         />
       </Head>
 
@@ -29,9 +29,7 @@ function MyApp({ Component, pageProps }) {
         button{
           touch-action: manipulation;
         }
-        *{
-          font-display: swap;
-        }
+       
         a {
           text-decoration: none;
         }
