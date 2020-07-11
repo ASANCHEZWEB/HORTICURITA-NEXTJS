@@ -2,11 +2,11 @@
 function showList(){
   document.querySelector(".listProducts").classList.toggle("showList");
   if (
-    document.querySelector("nav>div:nth-child(2)>button>img").getAttribute("src") === "/icono menu.svg"
+    document.querySelector("nav>div:nth-child(2)>button>img").getAttribute("src") === "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg"
   ) {
-    document.querySelector("nav>div:nth-child(2)>button>img").setAttribute("src", "/closeMenu.png");
+    document.querySelector("nav>div:nth-child(2)>button>img").setAttribute("src", "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638701/iconosHorticurita/closeMenu_ovofxv.png");
   } else {
-    document.querySelector("nav>div:nth-child(2)>button>img").setAttribute("src", "/icono menu.svg");
+    document.querySelector("nav>div:nth-child(2)>button>img").setAttribute("src", "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg");
   }
 };
 

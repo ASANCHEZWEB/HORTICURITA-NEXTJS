@@ -25,20 +25,20 @@ class NavbarComponent extends React.Component {
       document
         .querySelector("nav>div:nth-child(2)>button>img")
         .getAttribute("src") ===
-      "/icono menu.svg"
+      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg"
     ) {
       document
         .querySelector("nav>div:nth-child(2)>button>img")
         .setAttribute(
           "src",
-          "/closeMenu.png"
+          "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638701/iconosHorticurita/closeMenu_ovofxv.png"
         );
     } else {
       document
         .querySelector("nav>div:nth-child(2)>button>img")
         .setAttribute(
           "src",
-          "/icono menu.svg"
+          "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg"
         );
     }
   };
@@ -98,7 +98,7 @@ class NavbarComponent extends React.Component {
         <div>
           <button onClick={this.showList} className="disableZoombutton">
             <img
-              src="/icono menu.svg"
+              src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg"
               alt="icono menú"
             />
           </button>
@@ -115,9 +115,9 @@ class NavbarComponent extends React.Component {
               >
                 PRODUCTOS{" "}
                 <img
-                  src="/arrowMenu.png"
+                  src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png"
                   alt="flecha hacia abajo"
-                  style={{ width: "15px", marginLeft: "5px" }}
+                  style={{ marginLeft: "5px" }}
                 />
               </button>
               <ul className="ulProducts">
@@ -125,7 +125,7 @@ class NavbarComponent extends React.Component {
                   <Link href="/productos">
                     <a>
                       <img
-                        src="/catalog.png"
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/catalog_l5yzgl.png"
                         alt="icono catálogo"
                       />
                       Catálogo completo
@@ -143,12 +143,12 @@ class NavbarComponent extends React.Component {
                     className="displayButtonsProds disableZoombutton frutasListButton"
                   >
                     <img
-                      src="/cereza.png"
+                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/cereza_ufuh5p.png"
                       alt="icono cerezas"
                     />
                     Frutas
                     <img
-                      src="/arrowMenu.png"
+                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png"
                       alt="flecha hacia abajo"
                       style={{ width: "15px", marginLeft: "5px" }}
                     />
@@ -163,7 +163,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/cerezas-y-picotas">
                         <a>
                           <img
-                            src="/cereza.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/cereza_ufuh5p.png"
                             alt="icono cerezas"
                           />{" "}
                           Cerezas y picotas
@@ -174,7 +174,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/platanos">
                         <a>
                           <img
-                            src="/platano.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/platano_wmlyqw.png"
                             alt="icono platanos"
                           />{" "}
                           Platanos
@@ -185,7 +185,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/pinas">
                         <a>
                           <img
-                            src="/pina.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pina_y0wz8v.png"
                             alt="icono piña"
                           />{" "}
                           Piñas
@@ -196,7 +196,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/peras">
                         <a>
                           <img
-                            src="/pera.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pera_c6liyz.png"
                             alt="icono pera"
                           />{" "}
                           Peras
@@ -207,7 +207,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/naranjas">
                         <a>
                           <img
-                            src="/naranja.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/naranja_ezabbd.png"
                             alt="icono naranja"
                           />{" "}
                           Naranjas
@@ -218,7 +218,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/melones-y-sandias">
                         <a>
                           <img
-                            src="/sandia.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/sandia_xgvhxy.png"
                             alt="icono sandía"
                           />{" "}
                           Melones y sandias
@@ -229,7 +229,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/melocotones-y-ciruelas">
                         <a>
                           <img
-                            src="/melocoton.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/melocoton_xmlpla.png"
                             alt="icono melocotón"
                           />{" "}
                           Melocotones y ciruelas
@@ -240,7 +240,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/manzanas">
                         <a>
                           <img
-                            src="/manzana.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/manzana_dzern7.png"
                             alt="icono manzana"
                           />{" "}
                           Manzanas
@@ -251,7 +251,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/limas-y-limones">
                         <a>
                           <img
-                            src="/limon.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/limon_vvrjd6.png"
                             alt="icono limón"
                           />{" "}
                           Limas y limones
@@ -262,7 +262,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/kiwis">
                         <a>
                           <img
-                            src="/kiwi.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/kiwi_vys7rx.png"
                             alt="icono kiwi"
                           />{" "}
                           Kiwis
@@ -273,7 +273,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/frutas-del-bosque">
                         <a>
                           <img
-                            src="/delbosque.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/delbosque_vuvk7x.png"
                             alt="icono arbol"
                           />{" "}
                           Frutas del bosque
@@ -284,7 +284,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/frutas/uvas">
                         <a>
                           <img
-                            src="/uva.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638703/iconosHorticurita/uva_crvyzl.png"
                             alt="icono uvas"
                           />{" "}
                           Uvas
@@ -302,12 +302,12 @@ class NavbarComponent extends React.Component {
                     className="displayButtonsProds disableZoombutton verdurasListButton"
                   >
                     <img
-                      src="/cebolla.png"
+                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/cebolla_xjy7rb.png"
                       alt="icono cebollas"
                     />
                     Verduras y hortalizas
                     <img
-                      src="/arrowMenu.png"
+                      src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png"
                       alt="flecha hacia abajo"
                       style={{ width: "15px", marginLeft: "5px" }}
                     />
@@ -322,7 +322,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/verduras-y-hortalizas/tomates">
                         <a>
                           <img
-                            src="/tomate.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638703/iconosHorticurita/tomate_ahrlar.png"
                             alt="icono tomate"
                           />{" "}
                           Tomates
@@ -333,7 +333,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/verduras-y-hortalizas/cebollas-y-ajos">
                         <a>
                           <img
-                            src="/cebolla.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/cebolla_xjy7rb.png"
                             alt="icono cebolla"
                           />{" "}
                           Cebollas y ajos
@@ -344,7 +344,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/verduras-y-hortalizas/lechugas">
                         <a>
                           <img
-                            src="/lechuga.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/lechuga_brykvg.png"
                             alt="icono lechuga"
                           />{" "}
                           Lechugas
@@ -355,7 +355,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/verduras-y-hortalizas/patatas">
                         <a>
                           <img
-                            src="/patata.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/patata_nwhhtm.png"
                             alt="icono patatas"
                           />{" "}
                           Patatas
@@ -366,7 +366,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/verduras-y-hortalizas/pimientos">
                         <a>
                           <img
-                            src="/pimiento.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pimiento_vqhmci.png"
                             alt="icono pimiento"
                           />{" "}
                           Pimientos
@@ -377,7 +377,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/verduras-y-hortalizas/setas-y-champinones">
                         <a>
                           <img
-                            src="/seta.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/seta_dsxwjc.png"
                             alt="icono seta"
                           />{" "}
                           Setas y champiñones
@@ -388,7 +388,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/verduras-y-hortalizas/de-tierra">
                         <a>
                           <img
-                            src="/tierra.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/tierra_qi5qga.png"
                             alt="icono tierra"
                           />{" "}
                           De tierra
@@ -399,7 +399,7 @@ class NavbarComponent extends React.Component {
                       <Link href="/productos/verduras-y-hortalizas/germinados">
                         <a>
                           <img
-                            src="/germinado.png"
+                            src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/germinado_unduc0.png"
                             alt="icono semilla"
                           />{" "}
                           Germinados
@@ -412,7 +412,7 @@ class NavbarComponent extends React.Component {
                   <Link href="/productos/legumbres">
                     <a>
                       <img
-                        src="/garbanzo.png"
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/garbanzo_ko0nop.jpg"
                         alt="legumbres"
                       />{" "}
                       Legumbres
@@ -423,7 +423,7 @@ class NavbarComponent extends React.Component {
                   <Link href="/productos/frutos-secos">
                     <a>
                       <img
-                        src="/cacahuete.png"
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/cacahuete_dzkay0.png"
                         alt="icono cacahuete"
                       />{" "}
                       Frutos secos
@@ -434,7 +434,7 @@ class NavbarComponent extends React.Component {
                   <Link href="/productos/encurtidos">
                     <a>
                       <img
-                        src="/tapa.png"
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/tapa_gobalf.png"
                         alt="icono tapa"
                       />{" "}
                       Encurtidos
@@ -445,7 +445,7 @@ class NavbarComponent extends React.Component {
                   <Link href="/productos/especias">
                     <a>
                       <img
-                        src="/especias.png"
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/especias_xhao5g.png"
                         alt="icono especias"
                       />{" "}
                       Especias
@@ -456,7 +456,7 @@ class NavbarComponent extends React.Component {
                   <Link href="/productos/miel">
                     <a>
                       <img
-                        src="/miel.png"
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/miel_cbnqrg.png"
                         alt="icono tarro de miel"
                       />{" "}
                       Miel
@@ -467,7 +467,7 @@ class NavbarComponent extends React.Component {
                   <Link href="/productos/dulces">
                     <a>
                       <img
-                        src="/pastel.png"
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pastel_e7tonk.png"
                         alt="icono pastel"
                       />{" "}
                       Dulces
@@ -478,7 +478,7 @@ class NavbarComponent extends React.Component {
                   <Link href="/productos/galletas-y-cereales">
                     <a>
                       <img
-                        src="/galleta.png"
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/galleta_wwldkz.png"
                         alt="icono galleta"
                       />{" "}
                       Galletas y cereales
@@ -489,7 +489,7 @@ class NavbarComponent extends React.Component {
                   <Link href="/productos/aperitivos-snack">
                     <a>
                       <img
-                        src="/aperitivos_snack.png"
+                        src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638720/iconosHorticurita/aperitivos_snack_wqkwwb.png"
                         alt="aperitivo snack"
                       />{" "}
                       Aperitivos Snack
@@ -517,7 +517,7 @@ class NavbarComponent extends React.Component {
               <Link href="/carrito">
                 <a>
                   <img
-                    src="/carritomenu.png"
+                    src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_40,q_10,w_40/v1593638701/iconosHorticurita/carritomenu_nsscxy.png"
                     alt="icono carrito verde"
                   />
                   CARRITO ( {this.state.cartItems.length} )
@@ -531,7 +531,7 @@ class NavbarComponent extends React.Component {
             <a className="buttonCart disableZoombutton">
               <span>Carrito: </span>
               <img
-                src="/carritoIcons.png"
+                src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_30,q_10,w_30/v1593638701/iconosHorticurita/carritoIcons_mgpns6.png"
                 alt="icono carrito blanco"
               />
               ( {this.state.cartItems.length} )
