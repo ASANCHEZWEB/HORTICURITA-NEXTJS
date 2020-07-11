@@ -127,7 +127,7 @@ modifySize(){
 
             let productUrlImage = `${product.imageUrl}`;
             var a = productUrlImage;
-var b = "c_scale,h_939,w_626/";
+var b = "c_scale,h_0.3,w_0.3/";
 var position = 50;
 var output = [a.slice(0, position), b, a.slice(position)].join('');
 console.log(output)
