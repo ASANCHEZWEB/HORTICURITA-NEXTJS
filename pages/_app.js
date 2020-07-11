@@ -1039,7 +1039,7 @@ function MyApp({ Component, pageProps }) {
         }
       `}</style>
       <script src="/scripts/nav.js"></script>
-      <script src="/scripts/chatDirecto.js"></script>
+      {/* <script src="/scripts/chatDirecto.js"></script> */}
     </>
   );
 }
