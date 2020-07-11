@@ -95,9 +95,7 @@ class TodaFruta extends React.Component {
     this.actualizarLS();
   }
 
-  modifySize() {
-    return "hola";
-  }
+  
 
   render() {
     return (
@@ -122,11 +120,7 @@ class TodaFruta extends React.Component {
         </div>
         <div className="container">
           {this.props.data.map((product, index) => {
-            let productUrlImage = `${product.imageUrl}`;
-            var a = productUrlImage;
-            var b = "c_scale,h_0.22,w_0.22/";
-            var position = 50;
-            var output = [a.slice(0, position), b, a.slice(position)].join("");
+           
 
             if (product.name) {
               return (
@@ -135,7 +129,7 @@ class TodaFruta extends React.Component {
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                    <img src={output} alt={product.imageAlt} />
+                    <img src={product.imageUrl} alt={product.imageAlt} />
                   </Link>
 
                   <Link
@@ -155,7 +149,7 @@ class TodaFruta extends React.Component {
                     {product.stock === "si" ? (
                       <p>
                         <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"
+                          src={"https://res.cloudinary.com/dfsni6m2x/image/upload/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"}
                           alt="icono disponible"
                         />
                         Disponible
