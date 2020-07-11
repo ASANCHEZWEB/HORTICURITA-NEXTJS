@@ -4,12 +4,7 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
-        />
-      </Head>
+      
 
       <header>
         <NavbarComponent />
@@ -18,7 +13,12 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </main>
       <Footer />
-
+      <Head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
+        />
+      </Head>
       <style jsx global>{`
         body {
           margin: 0px;
