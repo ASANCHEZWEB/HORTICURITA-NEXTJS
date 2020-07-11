@@ -25,20 +25,20 @@ class NavbarComponent extends React.Component {
       document
         .querySelector("nav>div:nth-child(2)>button>img")
         .getAttribute("src") ===
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/menu_y9uxib.svg"
+      "/icono menu.svg"
     ) {
       document
         .querySelector("nav>div:nth-child(2)>button>img")
         .setAttribute(
           "src",
-          "https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638701/iconosHorticurita/closeMenu_ovofxv.png"
+          "/closeMenu.png"
         );
     } else {
       document
         .querySelector("nav>div:nth-child(2)>button>img")
         .setAttribute(
           "src",
-          "https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/menu_y9uxib.svg"
+          "/icono menu.svg"
         );
     }
   };
@@ -98,7 +98,7 @@ class NavbarComponent extends React.Component {
         <div>
           <button onClick={this.showList} className="disableZoombutton">
             <img
-              src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593638715/iconosHorticurita/menu_y9uxib.svg"
+              src="/icono menu.svg"
               alt="icono menú"
             />
           </button>
