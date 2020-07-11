@@ -29,6 +29,9 @@ function MyApp({ Component, pageProps }) {
         button{
           touch-action: manipulation;
         }
+        *{
+          font-display: swap;
+        }
         a {
           text-decoration: none;
         }
