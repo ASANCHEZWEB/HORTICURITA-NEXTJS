@@ -106,11 +106,11 @@ class TodaFruta extends React.Component {
               medio kilo!. Nuestra fruta y verdura es recogida unas horas
               después de su pedido y será entregada en tan solo 24/48 horas.
             </p> */}
-            <p>
+            {/* <p>
               *Damos especial atención a la calidad de nuestros productos,por lo
               tanto, si la fruta y verdura recibida está dañada ,le devolveremos
               el dinero.
-            </p>
+            </p> */}
             {/* <img
               src="/frutas_y_verduras.jpg"
               alt="frutas y verduras"
