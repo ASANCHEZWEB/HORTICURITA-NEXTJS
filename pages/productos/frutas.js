@@ -112,8 +112,7 @@ class TodaFruta extends React.Component {
             </p>
             <p>
               *Damos especial atención a la calidad de nuestros productos,por lo
-              tanto, si la fruta y verdura recibida está dañada ,
-              <span>le devolveremos el dinero.</span>
+              tanto, si la fruta y verdura recibida está dañada ,le devolveremos el dinero.
             </p>
             {/* <img
               src="/frutas_y_verduras.jpg"
