@@ -190,6 +190,7 @@ class TodaFruta extends React.Component {
               );
             }
           })}
+          
         </div>
         <style jsx>{`
           .metaDiv {

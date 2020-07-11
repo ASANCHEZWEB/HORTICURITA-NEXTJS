@@ -4,18 +4,23 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-       <Head>
        
-      </Head>
 
       <header>
         <NavbarComponent />
       </header>
       <main>
         <Component {...pageProps} />
+        
       </main>
       <Footer />
      
+    
+
+
+
+
+
       <style jsx global>{`
         body {
           margin: 0px;
@@ -1036,7 +1041,10 @@ function MyApp({ Component, pageProps }) {
           }
         }
       `}</style>
-      <script src="/scripts/nav.js"></script>
+      
+      
+<script src="/scripts/onLoad.js"></script> 
+
       {/* <script src="/scripts/chatDirecto.js"></script> */}
     </>
   );
