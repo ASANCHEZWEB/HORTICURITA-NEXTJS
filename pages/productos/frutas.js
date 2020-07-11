@@ -95,10 +95,9 @@ class TodaFruta extends React.Component {
     this.actualizarLS();
   }
 
-modifySize(){
-  return "hola"
-}
-
+  modifySize() {
+    return "hola";
+  }
 
   render() {
     return (
@@ -124,13 +123,12 @@ modifySize(){
         </div>
         <div className="container">
           {this.props.data.map((product, index) => {
-
             let productUrlImage = `${product.imageUrl}`;
             var a = productUrlImage;
-var b = "c_scale,h_0.3,w_0.3/";
-var position = 50;
-var output = [a.slice(0, position), b, a.slice(position)].join('');
-console.log(output)
+            var b = "c_scale,h_0.3,w_0.3/";
+            var position = 50;
+            var output = [a.slice(0, position), b, a.slice(position)].join("");
+            
 
             if (product.name) {
               return (
@@ -139,12 +137,7 @@ console.log(output)
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-
-
-
-
-
-                <img src={output} alt={product.imageAlt} /> 
+                    <img src={output} alt={product.imageAlt} />
                   </Link>
 
                   <Link
@@ -417,7 +410,6 @@ console.log(output)
             .container > div > img {
               width: 100%;
               cursor: pointer;
-              
             }
             .container > div > span {
               font-family: montserrat;

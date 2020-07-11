@@ -412,7 +412,7 @@ class NavbarComponent extends React.Component {
                   <Link href="/productos/legumbres">
                     <a>
                       <img
-                        src="/garbanzo.jpg"
+                        src="/garbanzo.png"
                         alt="legumbres"
                       />{" "}
                       Legumbres
