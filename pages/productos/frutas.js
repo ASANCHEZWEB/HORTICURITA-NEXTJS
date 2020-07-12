@@ -105,7 +105,7 @@ class TodaFruta extends React.Component {
               Disponemos de una gran variedad de fruta , ¡escoge desde tan solo
               medio kilo!. Nuestra fruta y verdura es recogida unas horas
               después de su pedido y será entregada en tan solo 24/48 horas.
-            </p> */}
+            </p>
              <p>
               *Damos especial atención a la calidad de nuestros productos,por lo
               tanto, si la fruta y verdura recibida está dañada ,le devolveremos
@@ -121,7 +121,7 @@ class TodaFruta extends React.Component {
           {this.props.data.map((product, index) => {
             let productUrlImage = `${product.imageUrl}`;
             var a = productUrlImage;
-            var b = "c_scale,h_100,w_100/";
+            var b = "c_scale,h_0.22,w_0.22/";
             var position = 50;
             var output = [a.slice(0, position), b, a.slice(position)].join("");
 
@@ -143,7 +143,6 @@ class TodaFruta extends React.Component {
                       <h2>{product.name}</h2>
                     </a>
                   </Link>
-
                   <span>
                     {product.price}€ /
                     {product.type === "kilogramos" ? "Kg" : "Ud"}
