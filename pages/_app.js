@@ -1040,7 +1040,7 @@ function MyApp({ Component, pageProps }) {
 
       <script src="/scripts/nav.js" async></script>
       
-       <script src="/scripts/chatDirecto.js" async></script>
+       {/* <script src="/scripts/chatDirecto.js" async></script> */}
     </>
   );
 }
