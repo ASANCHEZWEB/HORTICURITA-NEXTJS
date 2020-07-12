@@ -4,7 +4,9 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Head></Head>
+      <Head>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"/>
+      </Head>
 
       <header>
         <NavbarComponent />
@@ -1035,16 +1037,10 @@ function MyApp({ Component, pageProps }) {
         }
       `}</style>
 
-      <script src="/scripts/nav.js" async>
-      <Head>
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
-          />
-        </Head>
-      </script>
+
+      <script src="/scripts/nav.js" async></script>
       
-      {/* <script src="/scripts/chatDirecto.js"></script> */}
+       <script src="/scripts/chatDirecto.js" async></script>
     </>
   );
 }

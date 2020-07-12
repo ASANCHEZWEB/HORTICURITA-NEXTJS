@@ -1,3 +1,6 @@
+
+
+
 //MOSTRAR MENÚ mobile
 function showList(){
   document.querySelector(".listProducts").classList.toggle("showList");
@@ -89,4 +92,5 @@ let menuVerduras = document.querySelector(".verdurasListButton").contains(event.
     }
    }
  };
+
 
