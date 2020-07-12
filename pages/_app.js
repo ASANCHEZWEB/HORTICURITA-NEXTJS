@@ -1035,16 +1035,15 @@ function MyApp({ Component, pageProps }) {
         }
       `}</style>
 
-      <script src="/scripts/nav.js" async></script>
-      <script async>
-        {" "}
-        <Head>
+      <script src="/scripts/nav.js" async>
+      <Head>
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
           />
         </Head>
       </script>
+      
       {/* <script src="/scripts/chatDirecto.js"></script> */}
     </>
   );
