@@ -4,28 +4,15 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-       <Head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
-        />
-
-      </Head>
+      <Head></Head>
 
       <header>
         <NavbarComponent />
       </header>
       <main>
         <Component {...pageProps} />
-        
       </main>
       <Footer />
-     
-    
-
-
-
-
 
       <style jsx global>{`
         body {
@@ -34,10 +21,10 @@ function MyApp({ Component, pageProps }) {
         main {
           padding-top: 66px;
         }
-        button{
+        button {
           touch-action: manipulation;
         }
-       
+
         a {
           text-decoration: none;
         }
@@ -1047,10 +1034,17 @@ function MyApp({ Component, pageProps }) {
           }
         }
       `}</style>
-      
-      
-<script src="/scripts/nav.js" async></script> 
 
+      <script src="/scripts/nav.js" async></script>
+      <script async>
+        {" "}
+        <Head>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
+          />
+        </Head>
+      </script>
       {/* <script src="/scripts/chatDirecto.js"></script> */}
     </>
   );
