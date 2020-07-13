@@ -4,9 +4,9 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Head>
+      {/* <Head>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"/>
-      </Head>
+      </Head> */}
 
       <header>
         <NavbarComponent />
