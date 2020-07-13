@@ -152,7 +152,7 @@ class TodaFruta extends React.Component {
                       <p>
                         <img
                           src={
-                            "https://res.cloudinary.com/dfsni6m2x/image/upload/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"
+                            "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_20,q_10,w_20/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"
                           }
                           alt="icono disponible"
                         />
@@ -161,7 +161,7 @@ class TodaFruta extends React.Component {
                     ) : (
                       <p>
                         <img
-                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593731819/iconosHorticurita/icono_sin_stock_ihhw8q.png"
+                          src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_20,q_10,w_20/v1593731819/iconosHorticurita/icono_sin_stock_ihhw8q.png"
                           alt="icono sin stock"
                         />
                         No disponible

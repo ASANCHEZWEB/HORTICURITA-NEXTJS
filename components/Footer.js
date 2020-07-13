@@ -54,34 +54,54 @@ class Footer extends React.Component {
             <h5>Categorías</h5>
             <ul>
               <li>
-                <a>Frutas</a>
+                <Link href="/productos/frutas">
+                  <a>Frutas</a>
+                </Link>
               </li>
               <li>
-                <a>Verduras y hortalizas</a>
+                <Link href="/productos/verduras-y-hortalizas">
+                  <a>Verduras y hortalizas</a>
+                </Link>
               </li>
               <li>
-                <a>Legumbres</a>
+                <Link href="/productos/legumbres">
+                  <a>Legumbres</a>
+                </Link>
               </li>
               <li>
-                <a>Frutos secos</a>
+                <Link href="/productos/frutos-secos">
+                  <a>Frutos secos</a>
+                </Link>
               </li>
               <li>
-                <a>Encurtidos</a>
+                <Link href="/productos/encurtidos">
+                  <a>Encurtidos</a>
+                </Link>
               </li>
               <li>
-                <a>Especias</a>
+                <Link href="/productos/especias">
+                  <a>Especias</a>
+                </Link>
               </li>
               <li>
-                <a>Miel</a>
+                <Link href="/productos/miel">
+                  <a>Miel</a>
+                </Link>
               </li>
               <li>
-                <a>Dulces</a>
+                <Link href="/productos/dulces">
+                  <a>Dulces</a>
+                </Link>
               </li>
               <li>
-                <a>Galletas y cereales</a>
+                <Link href="/productos/galletas-y-cereales">
+                  <a>Galletas y cereales</a>
+                </Link>
               </li>
               <li>
-                <a>Aperitivos Snack</a>
+                <Link href="/productos/aperitivos-snack">
+                  <a>Aperitivos Snack</a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -114,7 +134,10 @@ class Footer extends React.Component {
 
           <div className="footerCopyright">
             <hr></hr>
-            2020 © Copyright Horticurita | <a>Desarrollado por Alberto S.</a>
+            2020 © Copyright Horticurita |{" "}
+            <Link href="/">
+              <a>Desarrollado por Alberto S.</a>
+            </Link>
           </div>
         </footer>
         <style jsx>{`
@@ -130,7 +153,9 @@ class Footer extends React.Component {
           footer > div {
             padding: 38px 15px 38px 15px;
           }
-
+          footer > div > ul > li > a {
+            color: white;
+          }
           footer > div > h5 {
             font-size: 2em;
             color: white;
