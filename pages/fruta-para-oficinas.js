@@ -8,7 +8,184 @@ class ParaOficinas extends React.Component {
   }
 
   render() {
-    return <h1>esta es la pagina para oficinas</h1>;
+    return (
+      <>
+      <div className="oficinaFormContainer">
+      <div className="infoOficina">
+          <h1>Fruta para oficinas</h1>
+          <p>Realiza tu pedido personalizado para tu oficina con entrega diaria o semanal a tu gusto. En
+              horticurita.es
+              disponemos de gran variedad de productos siempre frescos y de alta calidad.¿Te apetece fresas , manzanas
+              o
+              chocolate?, no importa . Lo tenemos 😉</p>
+      </div>
+
+      <div className="formDiv">
+          <form action="/action_page.php" method="get">
+              <h2>Formulario de contacto</h2>
+              <hr></hr>
+              <div>
+                  <label>Nombre:</label>
+                  <input type="text" name="nombre" placeholder=" Nombre"/>
+              </div>
+              <div>
+                  <label>Email:</label>
+                  <input type="text" name="email" placeholder=" Ejemplo@empresa.com"/>
+              </div>
+              <div>
+                  <label>Empresa:</label>
+                  <input type="text" name="empresa" placeholder=" Ejemplo empresa"/>
+              </div>
+              <div>
+                  <label>Teléfono de contacto:</label>
+                  <input type="text" name="telefono" placeholder=" Ej. 612345678"/>
+              </div>
+              <div><label>
+                      Descripción:</label>
+                  <textarea className="textAreaOfi" value="" onChange="{this.handleChange}"
+                      placeholder="¿Que necesitas?"></textarea>
+              </div>
+              <div>
+                  <label className="rgpdCheckbox"><input type="checkbox" id="cbox1" value="first_checkbox"/> He leído y
+                      acepto los terminos y condiciones de esta web.</label>
+              </div>
+
+              <div><input className="buttonOfiForm" type="submit" value="ENVIAR"/></div>
+
+          </form>
+
+      </div>
+      <h3>O utiliza un botón :</h3>
+      <div className="buttonsContactOfi">
+          <a href="tel:+34612345678" ><img
+                  src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_33,q_10,w_33/v1594757149/iconosHorticurita/icono_telefono_xhpkyd.png"
+                  alt="icono teléfono" />Teléfono</a>
+          <a href="https://api.whatsapp.com/send?phone=34612345678"><img
+                  src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_33,q_10,w_33/v1594578040/iconosHorticurita/whatsapp-64_wdhynx.png"
+                  alt="icono whatsapp" />Whatsapp</a>
+          <button className="buttonChatLinea"><img
+                  src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_33,q_10,w_33/v1594578971/iconosHorticurita/icono-charla_znjdc4.png"
+                  alt="icono chat en línea" /> Chat en línea</button>
+      </div>
+  </div>
+  <style jsx>{`
+  .infoOficina {
+    padding: 20px;
+    font-family: montserrat;
+}
+
+.infoOficina>h1 {
+    text-align: center;
+    color: green;
+}
+
+.infoOficina>p {
+    max-width: 874px;
+    text-align: center;
+    margin: auto
+}
+
+.oficinaFormContainer>.formDiv {
+    padding: 20px;
+    margin: auto;
+    max-width: 874px;
+    padding-top: 30px;
+}
+
+.oficinaFormContainer>h3 {
+    text-align: center;
+    font-family: Montserrat;
+}
+
+.formDiv>form>h2 {
+    text-align: center;
+    font-size: 18px;
+    font-family: Montserrat;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.formDiv>form {
+    margin: auto;
+    max-width: 454px;
+    background-color: #2ecc71;
+    display: flex;
+    font-family: Montserrat;
+    color: white;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 11px 0px rgba(0, 0, 0, 0.75);
+}
+
+.formDiv>form>hr {
+    width: 60%;
+    margin: auto;
+    border: none;
+    height: 1px;
+    background-color: white;
+}
+
+.formDiv>form>div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 15px 40px 15px 40px;
+
+}
+
+.formDiv>form>div>input {
+    border: none;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.buttonOfiForm {
+    width: 80px;
+    margin: auto;
+    color: #2ecc71;
+    background-color: white;
+    border-radius: 6px;
+}
+
+.rgpdCheckbox {
+    font-size: 12px;
+}
+
+.buttonsContactOfi {
+    display: flex;
+    justify-content: center;
+    max-width: 350px;
+    padding-top: 11px;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.buttonChatLinea {
+    border: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px;
+    font-size: 14px;
+    outline: none;
+}
+
+.buttonsContactOfi>a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.textAreaOfi{
+    border: none;
+    margin-top: 10px;
+}
+        `}</style>
+  </>
+    )
   }
 }
 
