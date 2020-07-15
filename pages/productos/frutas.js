@@ -134,6 +134,7 @@ class TodaFruta extends React.Component {
                   >
                     <img src={output} alt={product.imageAlt} loading="lazy" />
                   </Link>
+                  
 
                   <Link
                     href="/productos/frutas/[id]"
