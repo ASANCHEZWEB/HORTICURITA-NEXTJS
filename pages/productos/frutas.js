@@ -121,7 +121,7 @@ class TodaFruta extends React.Component {
           {this.props.data.map((product, index) => {
             let productUrlImage = `${product.imageUrl}`;
             var a = productUrlImage;
-            var b = "c_scale,h_0.22,w_0.22/";
+            var b = "c_scale,h_0.22,q_80,w_0.22/";
             var position = 50;
             var output = [a.slice(0, position), b, a.slice(position)].join("");
 
