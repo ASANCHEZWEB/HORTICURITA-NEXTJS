@@ -46,7 +46,7 @@ class ParaOficinas extends React.Component {
                       placeholder="¿Que necesitas?"></textarea>
               </div>
               <div>
-                  <label className="rgpdCheckbox"><input type="checkbox" id="cbox1" value="first_checkbox"/> He leído y
+                  <label className="rgpdCheckbox"><input type="checkbox" id="cbox1" value="first_checkbox" required/> He leído y
                       acepto los terminos y condiciones de esta web.</label>
               </div>
 
