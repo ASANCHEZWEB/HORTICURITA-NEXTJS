@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import Head from "next/link";
+import Head from "next/head";
 import { getLocalData } from "../../components/getLocalStorage";
 
 class TodaFruta extends React.Component {
