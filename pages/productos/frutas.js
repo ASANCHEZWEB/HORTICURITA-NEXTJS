@@ -117,7 +117,8 @@ class TodaFruta extends React.Component {
             "description": "las mejores manzanas de españa",
             "offers": {
                 "@type": "Offer",
-                "price": "1.45 EUR"
+                "price": "1.45",
+                "priceCurrency": "EUR"
             }
         },
         {
@@ -128,7 +129,8 @@ class TodaFruta extends React.Component {
             "description": "las mejores peras",
             "offers": {
                 "@type": "Offer",
-                "price": "3 EUR"
+                "price": "3",
+                "priceCurrency": "EUR"
             }
         },
         {
@@ -139,7 +141,8 @@ class TodaFruta extends React.Component {
             "description": "el mejor platano",
             "offers": {
                 "@type": "Offer",
-                "price": "1.80 EUR"
+                "price": "1.80",
+                "priceCurrency": "EUR"
             }
         }
     ]
