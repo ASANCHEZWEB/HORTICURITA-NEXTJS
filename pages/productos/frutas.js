@@ -11,6 +11,7 @@ class TodaFruta extends React.Component {
       productInLS: [],
       //ARRAY DE PRODUCTOS DE BASE DE DATOS
       productProps: [...this.props.data],
+      jsonDataFromState:""
     };
   }
 
@@ -94,6 +95,63 @@ class TodaFruta extends React.Component {
 
   componentDidMount() {
     this.actualizarLS();
+
+    
+      this.setState({jsonDataFromState:<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "http://schema.org",
+        "@type": "ItemList",
+        "url": "https://shop-horticurita.vercel.app/productos/frutas",
+        "numberOfItems": "315",
+        "itemListElement": [
+            {
+              
+                "@type": "Product",
+                "position": 1,
+                "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
+                "name": "manzana",
+                "url": "https://shop-horticurita.vercel.app/productos/frutas/pera-conferencia-t20",
+                "description": "las mejores manzanas de españa",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "http://schema.org/InStock",
+                    "price": "1.45",
+                    "priceCurrency": "EUR"
+                }
+            },
+            { 
+                "@type": "Product",
+                "position": 2,
+                "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
+                "name": "pera",
+                "url": "https://shop-horticurita.vercel.app/productos/frutas/sandia-entera-sin-pepitas",
+                "description": "las mejores peras",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "http://schema.org/InStock",
+                    "price": "3",
+                    "priceCurrency": "EUR"
+                }
+            },
+            {
+                "@type": "Product",
+                "position": 3,
+                "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
+                "name": "platano",
+                "url": "https://shop-horticurita.vercel.app/productos/frutas/albaricoques-extra",
+                "description": "el mejor platano",
+                "offers": {
+                    "@type": "Offer",
+                    "availability": "http://schema.org/InStock",
+                    "price": "1.80",
+                    "priceCurrency": "EUR"
+                }
+            }
+        ]
+      }) }} />})
+    
+
+
+
   }
 
   render() {
@@ -103,57 +161,7 @@ class TodaFruta extends React.Component {
 <title>Frutas</title>
 <meta name="description" content="Fruta al mejor precio , calidad insuperable"></meta>
 
-<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-    "@context": "http://schema.org",
-    "@type": "ItemList",
-    "url": "https://shop-horticurita.vercel.app/productos/frutas",
-    "numberOfItems": "315",
-    "itemListElement": [
-        {
-          
-            "@type": "Product",
-            "position": 1,
-            "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
-            "name": "manzana",
-            "url": "https://shop-horticurita.vercel.app/productos/frutas/pera-conferencia-t20",
-            "description": "las mejores manzanas de españa",
-            "offers": {
-                "@type": "Offer",
-                "availability": "http://schema.org/InStock",
-                "price": "1.45",
-                "priceCurrency": "EUR"
-            }
-        },
-        { 
-            "@type": "Product",
-            "position": 2,
-            "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
-            "name": "pera",
-            "url": "https://shop-horticurita.vercel.app/productos/frutas/sandia-entera-sin-pepitas",
-            "description": "las mejores peras",
-            "offers": {
-                "@type": "Offer",
-                "availability": "http://schema.org/InStock",
-                "price": "3",
-                "priceCurrency": "EUR"
-            }
-        },
-        {
-            "@type": "Product",
-            "position": 3,
-            "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
-            "name": "platano",
-            "url": "https://shop-horticurita.vercel.app/productos/frutas/albaricoques-extra",
-            "description": "el mejor platano",
-            "offers": {
-                "@type": "Offer",
-                "availability": "http://schema.org/InStock",
-                "price": "1.80",
-                "priceCurrency": "EUR"
-            }
-        }
-    ]
-}) }} />
+{this.state.jsonDataFromState}
 </Head>
         <div className="metaDiv">
           <div>
