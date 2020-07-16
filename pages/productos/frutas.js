@@ -136,6 +136,7 @@ class TodaFruta extends React.Component {
                   </Link>
 
 
+
                   <Link
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
