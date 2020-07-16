@@ -114,9 +114,10 @@ class TodaFruta extends React.Component {
             "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
             "url": "https://shop-horticurita.vercel.app/productos/frutas/pera-conferencia-t20",
             "name": "manzana",
+            "description": "las mejores manzanas de españa",
             "offers": {
                 "@type": "Offer",
-                "price": "1.45€/Kg"
+                "price": "1.45€"
             }
         },
         {
@@ -124,9 +125,10 @@ class TodaFruta extends React.Component {
             "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
             "url": "https://shop-horticurita.vercel.app/productos/frutas/sandia-entera-sin-pepitas",
             "name": "pera",
+            "description": "las mejores peras",
             "offers": {
                 "@type": "Offer",
-                "price": "3 €/Kg"
+                "price": "3€"
             }
         },
         {
@@ -134,9 +136,10 @@ class TodaFruta extends React.Component {
             "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
             "url": "https://shop-horticurita.vercel.app/productos/frutas/albaricoques-extra",
             "name": "platano",
+            "description": "el mejor platano",
             "offers": {
                 "@type": "Offer",
-                "price": "1.80€/Kg"
+                "price": "1.80€"
             }
         }
     ]
