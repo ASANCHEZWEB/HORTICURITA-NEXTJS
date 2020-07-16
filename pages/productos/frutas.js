@@ -111,17 +111,33 @@ class TodaFruta extends React.Component {
     "itemListElement": [
         {
             "@type": "Product",
-            "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
-            "url": "http://multivarki.ru/brand_502/",
-            "name": "Brand 502",
+            "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
+            "url": "https://shop-horticurita.vercel.app/productos/frutas/pera-conferencia-t20",
+            "name": "manzana",
             "offers": {
                 "@type": "Offer",
-                "price": "4399 p."
+                "price": "1.45€/Kg"
             }
         },
         {
             "@type": "Product",
-            "name": "..."
+            "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
+            "url": "https://shop-horticurita.vercel.app/productos/frutas/sandia-entera-sin-pepitas",
+            "name": "pera",
+            "offers": {
+                "@type": "Offer",
+                "price": "3 €/Kg"
+            }
+        },
+        {
+            "@type": "Product",
+            "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
+            "url": "https://shop-horticurita.vercel.app/productos/frutas/albaricoques-extra",
+            "name": "platano",
+            "offers": {
+                "@type": "Offer",
+                "price": "1.80€/Kg"
+            }
         }
     ]
 }) }} />
