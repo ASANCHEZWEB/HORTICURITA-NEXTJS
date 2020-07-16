@@ -1,24 +1,38 @@
-
-
-
 //MOSTRAR MENÚ mobile
-function showList(){
+function showList() {
   document.querySelector(".listProducts").classList.toggle("showList");
   if (
-    document.querySelector("nav>div:nth-child(2)>button>img").getAttribute("src") === "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg"
+    document
+      .querySelector("nav>div:nth-child(2)>button>img")
+      .getAttribute("src") ===
+    "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg"
   ) {
-    document.querySelector("nav>div:nth-child(2)>button>img").setAttribute("src", "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638701/iconosHorticurita/closeMenu_ovofxv.png");
+    document
+      .querySelector("nav>div:nth-child(2)>button>img")
+      .setAttribute(
+        "src",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638701/iconosHorticurita/closeMenu_ovofxv.png"
+      );
   } else {
-    document.querySelector("nav>div:nth-child(2)>button>img").setAttribute("src", "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg");
+    document
+      .querySelector("nav>div:nth-child(2)>button>img")
+      .setAttribute(
+        "src",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg"
+      );
   }
-};
+}
 
 //MOSTRAR LISTA DE PRODUCTOS en desktop
 let showProductsList = () => {
   if (document.querySelector(".ulProducts")) {
-    document.querySelector(".ulProducts").setAttribute("class", "showUlProducts");
+    document
+      .querySelector(".ulProducts")
+      .setAttribute("class", "showUlProducts");
   } else {
-    document.querySelector(".showUlProducts").setAttribute("class", "ulProducts");
+    document
+      .querySelector(".showUlProducts")
+      .setAttribute("class", "ulProducts");
   }
 };
 
@@ -65,7 +79,7 @@ let arrayElements = [];
     }
   }
 );
-arrayElements.push(document.querySelector("nav>div:nth-child(1)>a"))
+arrayElements.push(document.querySelector("nav>div:nth-child(1)>a"));
 
 for (i = 0; i < arrayElements.length; i++) {
   arrayElements[i].onclick = function () {
@@ -78,30 +92,32 @@ for (i = 0; i < arrayElements.length; i++) {
   };
 }
 // CERRAR MENU SI EL CLIENTE CLICKEA FUERA DEL MENÚ
-window.onclick = function(event){
-let mobileMenu = document.querySelector("nav > div:nth-child(2) > button").contains(event.target);
-let desktopMenu = document.querySelector("nav > div:nth-child(2) > ul > li:nth-child(2) > button").contains(event.target);
-let menuFrutas = document.querySelector(".frutasListButton").contains(event.target);
-let menuVerduras = document.querySelector(".verdurasListButton").contains(event.target);
-  if (!mobileMenu && !desktopMenu && !menuFrutas && !menuVerduras){
+window.onclick = function (event) {
+  let mobileMenu = document
+    .querySelector("nav > div:nth-child(2) > button")
+    .contains(event.target);
+  let desktopMenu = document
+    .querySelector("nav > div:nth-child(2) > ul > li:nth-child(2) > button")
+    .contains(event.target);
+  let menuFrutas = document
+    .querySelector(".frutasListButton")
+    .contains(event.target);
+  let menuVerduras = document
+    .querySelector(".verdurasListButton")
+    .contains(event.target);
+  if (!mobileMenu && !desktopMenu && !menuFrutas && !menuVerduras) {
     if (document.querySelector(".showList")) {
       showList();
     }
     if (document.querySelector(".showUlProducts")) {
       showProductsList();
     }
-   }
- };
+  }
+};
 
-let fontCharge= document.createElement("link");
-
-fontCharge.setAttribute("href", "https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap");
-fontCharge.setAttribute("rel", "stylesheet");
-
-
-
-
-
-
-document.querySelector("head").appendChild(fontCharge)
-
+window.onload = function () {
+  let fontCharge = document.createElement("link");
+  fontCharge.setAttribute("href","https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap");
+  fontCharge.setAttribute("rel", "stylesheet");
+  document.querySelector("head").appendChild(fontCharge);
+};
