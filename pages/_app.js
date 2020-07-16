@@ -4,13 +4,13 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    {/* <Head>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"/>
-      </Head>   */}
+    <Head>
+      
+      </Head>   
 
       
       <header>
-      <link href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap" rel="stylesheet" lazyload></link>
+      
         <NavbarComponent />
       </header>
       <main>
