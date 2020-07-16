@@ -110,7 +110,7 @@ class TodaFruta extends React.Component {
           "@type": "Product",
                 "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
                 "name": "manzana",
-                "url": "https://shop-horticurita.vercel.app/productos/frutas/pera-conferencia-t20",
+                "url": "https://shop-horticurita.vercel.app/productos/frutas",
                 "description": "las mejores manzanas de españa",
                 "offers": {
                     "@type": "Offer",
@@ -125,7 +125,7 @@ class TodaFruta extends React.Component {
           "@type": "Product",
                 "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
                 "name": "pera",
-                "url": "https://shop-horticurita.vercel.app/productos/frutas/pera-conferencia-t2",
+                "url": "https://shop-horticurita.vercel.app/productos/frutas",
                 "description": "las mejores peras de españa",
                 "offers": {
                     "@type": "Offer",
@@ -140,7 +140,7 @@ class TodaFruta extends React.Component {
           "@type": "Product",
                 "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
                 "name": "platano",
-                "url": "https://shop-horticurita.vercel.app/productos/frutas/pera-conferencia-t",
+                "url": "https://shop-horticurita.vercel.app/productos/frutas",
                 "description": "las mejores platano de españa",
                 "offers": {
                     "@type": "Offer",
