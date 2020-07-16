@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Head from "next/link";
 import { getLocalData } from "../../components/getLocalStorage";
 
 class TodaFruta extends React.Component {
@@ -98,32 +99,55 @@ class TodaFruta extends React.Component {
   render() {
     return (
       <>
+<Head>
+<title>Frutas</title>
+<meta name="description" content="Fruta al mejor precio , calidad insuperable"></meta>
+<script type="application/ld+json">{
+{
+    "@context": "http://schema.org",
+    "@type": "ItemList",
+    "url": "http://multivarki.ru?filters%5Bprice%5D%5BLTE%5D=39600",
+    "numberOfItems": "315",
+    "itemListElement": [
+        {
+            "@type": "Product",
+            "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
+            "url": "http://multivarki.ru/brand_502/",
+            "name": "Brand 502",
+            "offers": {
+                "@type": "Offer",
+                "price": "4399 p."
+            }
+        },
+        {
+            "@type": "Product",
+            "name": "..."
+        }
+    ]
+}}
+</script>
+</Head>
         <div className="metaDiv">
           <div>
             <h1>Frutas</h1>
-            <p>
+             <p>
               Disponemos de una gran variedad de fruta , ¡escoge desde tan solo
               medio kilo!. Nuestra fruta y verdura es recogida unas horas
               después de su pedido y será entregada en tan solo 24/48 horas.
             </p>
-            <p>
+             <p>
               *Damos especial atención a la calidad de nuestros productos,por lo
               tanto, si la fruta y verdura recibida está dañada ,le devolveremos
               el dinero.
-            </p>
-            <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" />
+            </p> 
+            <img
+              src="/frutas_y_verduras.jpg"
+              alt="frutas y verduras"
+            />
           </div>
         </div>
-        <div
-          className="container"
-          itemscope
-          itemtype="http://schema.org/ItemList"
-        >
-          <link
-            itemprop="url"
-            href="https://shop-horticurita.vercel.app/productos/frutas"
-          />
-          <span itemprop="numberOfItems">{this.props.data.length}</span>
+        <div className="container">
+        
           {this.props.data.map((product, index) => {
             let productUrlImage = `${product.imageUrl}`;
             var a = productUrlImage;
@@ -133,35 +157,28 @@ class TodaFruta extends React.Component {
 
             if (product.name) {
               return (
-                <div
-                  key={product._id}
-                  itemprop="itemListElement"
-                  itemscope
-                  itemtype="http://schema.org/Product"
-                >
+                <div key={product._id}>
                   <Link
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                    <img itemprop="image" src={output} alt={product.imageAlt} />
+                    <img src={output} alt={product.imageAlt}  />
                   </Link>
+
+
 
                   <Link
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                    <a itemprop="url">
-                      <h2 itemprop="name">{product.name}</h2>
+                    <a>
+                      <h2>{product.name}</h2>
                     </a>
                   </Link>
-                  <div itemprop="offers" itemscope itemtype="http://schema.org/Offer"
-                  >
-                    <span  itemprop="price" className="spanPrice" >
-                      {product.price}€ /
-                      {product.type === "kilogramos" ? "Kg" : "Ud"}
-                    </span>
-                  </div>
-
+                  <span>
+                    {product.price}€ /
+                    {product.type === "kilogramos" ? "Kg" : "Ud"}
+                  </span>
                   <span>
                     {product.stock === "si" ? (
                       <p>
@@ -295,10 +312,6 @@ class TodaFruta extends React.Component {
 
           .noneDisplay {
             display: none;
-          }
-          .spanPrice {
-            font-family: montserrat;
-            font-size: 14px;
           }
           @media (max-width: 575.98px) {
             .container {
