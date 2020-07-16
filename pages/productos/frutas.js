@@ -111,9 +111,10 @@ class TodaFruta extends React.Component {
     "itemListElement": [
         {
             "@type": "Product",
+            "position": "1",
             "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
-            "url": "https://shop-horticurita.vercel.app/productos/frutas/pera-conferencia-t20",
             "name": "manzana",
+            "url": "https://shop-horticurita.vercel.app/productos/frutas/pera-conferencia-t20",
             "description": "las mejores manzanas de españa",
             "offers": {
                 "@type": "Offer",
@@ -124,9 +125,10 @@ class TodaFruta extends React.Component {
         },
         {
             "@type": "Product",
+            "position": "2",
             "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
-            "url": "https://shop-horticurita.vercel.app/productos/frutas/sandia-entera-sin-pepitas",
             "name": "pera",
+            "url": "https://shop-horticurita.vercel.app/productos/frutas/sandia-entera-sin-pepitas",
             "description": "las mejores peras",
             "offers": {
                 "@type": "Offer",
@@ -137,9 +139,10 @@ class TodaFruta extends React.Component {
         },
         {
             "@type": "Product",
+            "position": "3",
             "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
-            "url": "https://shop-horticurita.vercel.app/productos/frutas/albaricoques-extra",
             "name": "platano",
+            "url": "https://shop-horticurita.vercel.app/productos/frutas/albaricoques-extra",
             "description": "el mejor platano",
             "offers": {
                 "@type": "Offer",
