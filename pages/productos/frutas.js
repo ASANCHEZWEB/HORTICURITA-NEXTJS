@@ -110,9 +110,9 @@ class TodaFruta extends React.Component {
     "numberOfItems": "315",
     "itemListElement": [
         {
-          "position": "1",
+          
             "@type": "Product",
-            
+            "position": 1,
             "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
             "name": "manzana",
             "url": "https://shop-horticurita.vercel.app/productos/frutas/pera-conferencia-t20",
@@ -124,9 +124,9 @@ class TodaFruta extends React.Component {
                 "priceCurrency": "EUR"
             }
         },
-        { "position": "2",
+        { 
             "@type": "Product",
-           
+            "position": 2,
             "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
             "name": "pera",
             "url": "https://shop-horticurita.vercel.app/productos/frutas/sandia-entera-sin-pepitas",
@@ -138,9 +138,9 @@ class TodaFruta extends React.Component {
                 "priceCurrency": "EUR"
             }
         },
-        {"position": "3",
+        {
             "@type": "Product",
-            
+            "position": 3,
             "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
             "name": "platano",
             "url": "https://shop-horticurita.vercel.app/productos/frutas/albaricoques-extra",
