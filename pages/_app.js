@@ -8,7 +8,9 @@ function MyApp({ Component, pageProps }) {
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"/>
       </Head>   */}
 
+      
       <header>
+      <link href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap" rel="stylesheet" lazyload></link>
         <NavbarComponent />
       </header>
       <main>
