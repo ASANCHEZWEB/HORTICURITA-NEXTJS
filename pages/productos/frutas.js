@@ -214,7 +214,6 @@ class TodaFruta extends React.Component {
             if (product.name) {
               return (
 
-
                 <div key={product._id}>
                   <Link
                     href="/productos/frutas/[id]"
