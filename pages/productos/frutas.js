@@ -11,7 +11,7 @@ class TodaFruta extends React.Component {
       productInLS: [],
       //ARRAY DE PRODUCTOS DE BASE DE DATOS
       productProps: [...this.props.data],
-      jsonDataFromState:""
+      screenSize: 0,
     };
   }
 
@@ -96,132 +96,53 @@ class TodaFruta extends React.Component {
   componentDidMount() {
     this.actualizarLS();
 
-    
-      this.setState({jsonDataFromState:<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "http://schema.org",
-        "@type": "ItemList",
-        "url": "http://en.wikipedia.org/wiki/Billboard_200",
-        "name": "Top music artists",
-        "description": "The artists with the most cumulative weeks at number one according to Billboard 200",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "item": {
-              "@type": "Product",
-                  "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
-                  "url": "http://multivarki.ru/brand_50233/",
-                  "name": "platano de canarias",
-                  "offers": {
-                      "@type": "Offer",
-                      "price": "55.00",
-                      "priceCurrency": "EUR",
-                      "availability": "http://schema.org/InStock",
-                  }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 2,
-            "item": {
-              "@type": "Product",
-                  "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
-                  "url": "http://multivarki.ru/brand_50233/",
-                  "name": "Banana",
-                  "offers": {
-                      "@type": "Offer",
-                      "price": "55.00",
-                      "priceCurrency": "EUR",
-                      "availability": "http://schema.org/InStock",
-                  }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 3,
-            "item": {
-              "@type": "Product",
-                  "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
-                  "url": "http://multivarki.ru/brand_50233/",
-                  "name": "Pera",
-                  "offers": {
-                      "@type": "Offer",
-                      "price": "55.00",
-                      "priceCurrency": "EUR",
-                      "availability": "http://schema.org/InStock",
-                  }
-            }
-          },
-          {
-            "@type": "ListItem",
-            "position": 4,
-            "item": {
-              "@type": "Product",
-                  "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
-                  "url": "http://multivarki.ru/brand_50233/",
-                  "name": "Manzana",
-                  "offers": {
-                      "@type": "Offer",
-                      "price": "55.00",
-                      "priceCurrency": "EUR",
-                      "availability": "http://schema.org/InStock",
-                  }
-            }
-          }
-        ]
-      }) }} />})
-    
-
-
-
+    this.setState({ screenSize: 767 });
   }
 
   render() {
     return (
       <>
-<Head>
-<title>Frutas</title>
-<meta name="description" content="Fruta al mejor precio , calidad insuperable"></meta>
-
-{this.state.jsonDataFromState}
-</Head>
+        <Head>
+          <title>Frutas</title>
+          <meta
+            name="description"
+            content="Fruta al mejor precio , calidad insuperable"
+          ></meta>
+        </Head>
         <div className="metaDiv">
           <div>
             <h1>Frutas</h1>
-             <p>
+            <p>
               Disponemos de una gran variedad de fruta , ¡escoge desde tan solo
               medio kilo!. Nuestra fruta y verdura es recogida unas horas
               después de su pedido y será entregada en tan solo 24/48 horas.
             </p>
-             <p>
+            <p>
               *Damos especial atención a la calidad de nuestros productos,por lo
               tanto, si la fruta y verdura recibida está dañada ,le devolveremos
               el dinero.
-            </p> 
-            <img
-              src="/frutas_y_verduras.jpg"
-              alt="frutas y verduras"
-            />
+            </p>
+            <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" />
           </div>
         </div>
         <div className="container">
-        
-
-        
           {this.props.data.map((product, index) => {
- 
-
             if (product.name) {
               return (
-
                 <div key={product._id}>
                   <Link
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                    <img src={product.imageUrl} alt={product.imageAlt}  />
-                  </Link>
+                    <img
+                      src="/271pxImages/pruebajp.jpg"
+                      srcSet="/142pxImages/pruebajp.jpg 142w, /175pxImages/pruebajp.jpg 175w, /271pxImages/pruebajp.jpg 271w"
+                      sizes="(max-width: 767.98px) 142px, (max-width: 1199.98px) 175px, 271px"
+                      alt={product.imageAlt}
+                    ></img>
 
+                   
+                  </Link>
 
                   <Link
                     href="/productos/frutas/[id]"
@@ -378,7 +299,7 @@ class TodaFruta extends React.Component {
             }
 
             .container > div > img {
-               width: 100%; 
+              width: 100%;
               cursor: pointer;
             }
 
