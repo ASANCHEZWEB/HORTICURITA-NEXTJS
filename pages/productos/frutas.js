@@ -100,55 +100,66 @@ class TodaFruta extends React.Component {
       this.setState({jsonDataFromState:<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         "@context": "http://schema.org",
         "@type": "ItemList",
-        "url": "https://shop-horticurita.vercel.app/productos/frutas",
-        "numberOfItems": "315",
+        "url": "http://en.wikipedia.org/wiki/Billboard_200",
+        "name": "Top music artists",
+        "description": "The artists with the most cumulative weeks at number one according to Billboard 200",
         "itemListElement": [
-            {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "Product",
-                "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
-                "name": "manzana",
-                "url": "https://shop-horticurita.vercel.app/productos/frutas",
-                "description": "las mejores manzanas de españa",
-                "offers": {
-                    "@type": "Offer",
-                    "availability": "http://schema.org/InStock",
-                    "price": "1.45",
-                    "priceCurrency": "EUR"
-        }
-      }}, {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "Product",
-                "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
-                "name": "pera",
-                "url": "https://shop-horticurita.vercel.app/productos/frutas",
-                "description": "las mejores peras de españa",
-                "offers": {
-                    "@type": "Offer",
-                    "availability": "http://schema.org/InStock",
-                    "price": "1.45",
-                    "priceCurrency": "EUR"
-        }
-      }}, {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "Product",
-                "image": "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_0.22,q_99,w_0.22/v1594911677/productos/cebolla.jpg",
-                "name": "platano",
-                "url": "https://shop-horticurita.vercel.app/productos/frutas",
-                "description": "las mejores platano de españa",
-                "offers": {
-                    "@type": "Offer",
-                    "availability": "http://schema.org/InStock",
-                    "price": "1.45",
-                    "priceCurrency": "EUR"
-        }
-      }}
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Product",
+                  "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
+                  "url": "http://multivarki.ru/brand_502/",
+                  "name": "Brand 502",
+                  "offers": {
+                      "@type": "Offer",
+                      "price": "4399 p."
+                  }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Product",
+                  "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
+                  "url": "http://multivarki.ru/brand_50233/",
+                  "name": "Brand 502",
+                  "offers": {
+                      "@type": "Offer",
+                      "price": "4399 p."
+                  }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Product",
+                  "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
+                  "url": "http://multivarki.ru/brand_502444/",
+                  "name": "Brand 502",
+                  "offers": {
+                      "@type": "Offer",
+                      "price": "4399 p."
+                  }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Product",
+                  "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
+                  "url": "http://multivarki.ru/brand_5024444/",
+                  "name": "Brand 502",
+                  "offers": {
+                      "@type": "Offer",
+                      "price": "4399 p."
+                  }
+            }
+          }
         ]
       }) }} />})
     
