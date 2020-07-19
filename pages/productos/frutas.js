@@ -206,24 +206,22 @@ class TodaFruta extends React.Component {
         </div>
         <div className="container">
         
+
+        
           {this.props.data.map((product, index) => {
-            let productUrlImage = `${product.imageUrl}`;
-            var a = productUrlImage;
-            var b = "c_scale,h_0.22,q_99,w_0.22/";
-            var position = 50;
-            var output = [a.slice(0, position), b, a.slice(position)].join("");
+ 
 
             if (product.name) {
               return (
+
+
                 <div key={product._id}>
                   <Link
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                    <img src={output} alt={product.imageAlt}  />
+                    <img src={product.imageUrl} alt={product.imageAlt}  />
                   </Link>
-
-
 
                   <Link
                     href="/productos/frutas/[id]"
@@ -380,7 +378,7 @@ class TodaFruta extends React.Component {
             }
 
             .container > div > img {
-              /* width: 100%; */
+               width: 100%; 
               cursor: pointer;
             }
 
