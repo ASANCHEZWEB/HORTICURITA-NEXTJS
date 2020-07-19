@@ -110,11 +110,13 @@ class TodaFruta extends React.Component {
             "item": {
               "@type": "Product",
                   "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
-                  "url": "http://multivarki.ru/brand_502/",
-                  "name": "Brand 502",
+                  "url": "http://multivarki.ru/brand_50233/",
+                  "name": "platano de canarias",
                   "offers": {
                       "@type": "Offer",
-                      "price": "4399 p."
+                      "price": "55.00",
+                      "priceCurrency": "EUR",
+                      "availability": "http://schema.org/InStock",
                   }
             }
           },
@@ -125,10 +127,12 @@ class TodaFruta extends React.Component {
               "@type": "Product",
                   "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
                   "url": "http://multivarki.ru/brand_50233/",
-                  "name": "Brand 502",
+                  "name": "Banana",
                   "offers": {
                       "@type": "Offer",
-                      "price": "4399 p."
+                      "price": "55.00",
+                      "priceCurrency": "EUR",
+                      "availability": "http://schema.org/InStock",
                   }
             }
           },
@@ -138,11 +142,13 @@ class TodaFruta extends React.Component {
             "item": {
               "@type": "Product",
                   "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
-                  "url": "http://multivarki.ru/brand_502444/",
-                  "name": "Brand 502",
+                  "url": "http://multivarki.ru/brand_50233/",
+                  "name": "Pera",
                   "offers": {
                       "@type": "Offer",
-                      "price": "4399 p."
+                      "price": "55.00",
+                      "priceCurrency": "EUR",
+                      "availability": "http://schema.org/InStock",
                   }
             }
           },
@@ -152,11 +158,13 @@ class TodaFruta extends React.Component {
             "item": {
               "@type": "Product",
                   "image": "http://img01.multivarki.ru.ru/c9/f1/a5fe6642-18d0-47ad-b038-6fca20f1c923.jpeg",
-                  "url": "http://multivarki.ru/brand_5024444/",
-                  "name": "Brand 502",
+                  "url": "http://multivarki.ru/brand_50233/",
+                  "name": "Manzana",
                   "offers": {
                       "@type": "Offer",
-                      "price": "4399 p."
+                      "price": "55.00",
+                      "priceCurrency": "EUR",
+                      "availability": "http://schema.org/InStock",
                   }
             }
           }
