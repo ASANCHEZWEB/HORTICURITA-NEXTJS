@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-import LazyLoad from "react-lazy-load";
+
 import { getLocalData } from "../../components/getLocalStorage";
 
 class TodaFruta extends React.Component {
@@ -134,7 +134,7 @@ class TodaFruta extends React.Component {
             if (product.name) {
               return (
                 <div key={product._id}>
-                  <LazyLoad>
+                  
                     <Link
                       href="/productos/frutas/[id]"
                       as={`/productos/frutas/${product.urlRoute}`}
@@ -146,7 +146,7 @@ class TodaFruta extends React.Component {
                         alt={product.imageAlt}
                       ></img>
                     </Link>
-                  </LazyLoad>
+                 
 
                   <Link
                     href="/productos/frutas/[id]"
@@ -188,6 +188,7 @@ class TodaFruta extends React.Component {
                     >
                       -
                     </button>
+                    <label></label>
                     <input
                       value={
                         product.type === "kilogramos"
