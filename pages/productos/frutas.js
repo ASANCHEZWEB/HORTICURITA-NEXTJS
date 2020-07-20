@@ -110,6 +110,7 @@ class TodaFruta extends React.Component {
             content="Fruta al mejor precio , calidad insuperable"
           ></meta>
         </Head>
+        
         <div className="metaDiv">
           <div>
             <h1>Frutas</h1>
