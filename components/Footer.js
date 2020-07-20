@@ -115,18 +115,19 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Redes sociales</h5>
-            <a target="_blank" href="https://www.instagram.com/horticurita.es/">
+            <a target="_blank" href="https://www.instagram.com/horticurita.es/" rel="noreferrer">
               <img src={this.state.iconoInstagram} alt="icono instagram" />
               Instagram
             </a>
             <a
               target="_blank"
               href="https://www.facebook.com/Horticurita-110947830690065"
+              rel="noreferrer"
             >
               <img src={this.state.iconoFacebook} alt="icono facebook" />
               Facebook
             </a>
-            <a target="_blank" href="https://twitter.com/horticurita.es">
+            <a target="_blank" href="https://twitter.com/horticurita.es" rel="noreferrer">
               <img src={this.state.iconoTwitter} alt="icono facebook" />
               Twitter
             </a>
