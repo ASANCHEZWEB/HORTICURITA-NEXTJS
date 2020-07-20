@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 
+
+
 class NavbarComponent extends React.Component {
   constructor(props) {
     super(props);

@@ -5,6 +5,7 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <>
+    <html lang="es">
     <Head>
     
       </Head>   
@@ -1049,6 +1050,7 @@ function MyApp({ Component, pageProps }) {
 
     
        {/* <script src="/scripts/chatDirecto.js" async></script> */}
+       </html>
     </>
   );
 }
