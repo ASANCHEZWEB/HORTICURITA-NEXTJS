@@ -1,14 +1,12 @@
 import NavbarComponent from "../components/NavbarComponent";
 import Footer from "../components/Footer";
-import Head from "next/head";
+
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
     <html lang="es">
-    <Head>
-    
-      </Head>   
+      
 
       
       <header>
