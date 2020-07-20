@@ -107,11 +107,22 @@ class Footer extends React.Component {
           </div>
           <div>
             <h5>Información</h5>
+            <Link href="/">
             <a>Condiciones generales</a>
-            <a>Política de privacidad</a>
-            <a>Política de Cookies</a>
-            <a>Condiciones de compra</a>
-            <a>Calidad</a>
+                </Link>
+                <Link href="/">
+                <a>Política de privacidad</a>
+                </Link>
+                <Link href="/">
+                <a>Política de Cookies</a>
+                </Link>
+                <Link href="/">
+                <a>Condiciones de compra</a>
+                </Link>
+                <Link href="/">
+                <a>Calidad</a>
+                </Link>
+            
           </div>
           <div>
             <h5>Redes sociales</h5>

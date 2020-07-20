@@ -334,9 +334,7 @@ class NavbarComponent extends React.Component {
                         </a>
                       </Link>
                     </li>
-                    <li>
-                      <a>+ Otras frutas</a>
-                    </li>
+                   
                   </ul>
                 </li>
                 <li>
