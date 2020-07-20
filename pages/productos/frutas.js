@@ -300,8 +300,8 @@ class TodaFruta extends React.Component {
             }
 
             .container > div > img {
-              width: 100%;
-              cursor: pointer;
+              
+             cursor: pointer;
             }
 
             .container > div {
@@ -328,7 +328,7 @@ class TodaFruta extends React.Component {
             }
 
             .container > div > img {
-              width: 100%;
+              
               cursor: pointer;
             }
 
@@ -354,7 +354,7 @@ class TodaFruta extends React.Component {
             }
 
             .container > div > img {
-              width: 100%;
+              
               cursor: pointer;
             }
             .container > div > span {
@@ -383,7 +383,7 @@ class TodaFruta extends React.Component {
             }
 
             .container > div > img {
-              width: 100%;
+              
               cursor: pointer;
             }
             .container > div > span {
@@ -412,9 +412,20 @@ class TodaFruta extends React.Component {
               max-width: 1325px;
               margin: 0 auto;
             }
-
+            .inputProducts {
+              min-width: 53px;
+              text-align: center;
+              margin: 0px;
+              padding: 6px;
+              border-width: thin;
+              border-left: none;
+              border-right: none;
+              border-color: #ffeb00;
+              border-top: 1px solid #ffeb00;
+              border-bottom: 1px solid #ffeb00;
+            }
             .container > div > img {
-              width: 100%;
+              
               cursor: pointer;
             }
             .container > div > span {
