@@ -140,9 +140,9 @@ class TodaFruta extends React.Component {
                       as={`/productos/frutas/${product.urlRoute}`}
                     >
                       <img
-                        src="/271pxImages/pruebajp.jpg"
-                        srcSet={`/142pxImages/${"pruebajp.jpg"} 142w, /175pxImages/${"pruebajp.jpg"} 175w, /271pxImages/${"pruebajp.jpg"} 271w`}
-                        sizes="(max-width: 767.98px) 142px, (max-width: 1199.98px) 175px, 271px"
+                        src="/270pxImages/pruebajp.jpg"
+                        srcSet={`/141pxImages/${"pruebajp.jpg"} 141w, /174pxImages/${"pruebajp.jpg"} 174w, /270pxImages/${"pruebajp.jpg"} 270w`}
+                        sizes="(max-width: 767.98px) 141px, (max-width: 1199.98px) 174px, 270px"
                         alt={product.imageAlt}
                       ></img>
                     </Link>
