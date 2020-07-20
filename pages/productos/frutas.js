@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-import LazyLoad from 'react-lazyload';
+import LazyLoad from "react-lazyload";
 import { getLocalData } from "../../components/getLocalStorage";
 
 class TodaFruta extends React.Component {
@@ -135,19 +135,16 @@ class TodaFruta extends React.Component {
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                   <LazyLoad height={200} offset={100}>
-                   <img
-                      src="/271pxImages/pruebajp.jpg"
-                      srcSet="/142pxImages/pruebajp.jpg 142w, /175pxImages/pruebajp.jpg 175w, /271pxImages/pruebajp.jpg 271w"
-                      sizes="(max-width: 767.98px) 142px, (max-width: 1199.98px) 175px, 271px"
-                      alt={product.imageAlt}
-                    ></img>
-      </LazyLoad>
-                    
-
-                   
+                    <LazyLoad height={200}>
+                      <img
+                        src="/271pxImages/pruebajp.jpg"
+                        srcSet={`/142pxImages/${"pruebajp.jpg"} 142w, /175pxImages/${"pruebajp.jpg"} 175w, /271pxImages/${"pruebajp.jpg"} 271w`}
+                        sizes="(max-width: 767.98px) 142px, (max-width: 1199.98px) 175px, 271px"
+                        alt={product.imageAlt}
+                      ></img>
+                    </LazyLoad>
                   </Link>
-
+                  
                   <Link
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}

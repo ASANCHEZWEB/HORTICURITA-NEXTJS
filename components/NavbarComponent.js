@@ -12,11 +12,11 @@ class NavbarComponent extends React.Component {
   }
 
   actualizarCarro = () => {
-     setInterval(() => {
-      let miStorage = JSON.parse(window.localStorage.cartProducts);
+    //  setInterval(() => {
+    //   let miStorage = JSON.parse(window.localStorage.cartProducts);
 
-      this.setState({ cartItems: miStorage });
-    }, 500);
+    //   this.setState({ cartItems: miStorage });
+    // }, 500);
   };
 
   //MOSTRAR MENÚ mobile
