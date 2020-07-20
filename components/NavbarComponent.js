@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import LazyLoad from "react-lazy-load";
+
 
 class NavbarComponent extends React.Component {
   constructor(props) {
@@ -156,13 +156,13 @@ class NavbarComponent extends React.Component {
                 className="displayButtonsProds disableZoombutton"
               >
                 PRODUCTOS{" "}
-                <LazyLoad>
+                
                   <img
                     src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png"
                     alt="flecha hacia abajo"
                     style={{ marginLeft: "5px" }}
                   />
-                </LazyLoad>
+                
               </button>
               <ul className="ulProducts">
                 <li>
@@ -571,12 +571,12 @@ class NavbarComponent extends React.Component {
           <Link href="/carrito">
             <a className="buttonCart disableZoombutton">
               <span>Carrito: </span>
-              <LazyLoad>
+              
               <img
                 src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_30,q_10,w_30/v1593638701/iconosHorticurita/carritoIcons_mgpns6.png"
                 alt="icono carrito blanco"
               />
-              </LazyLoad>
+              
               ( {this.state.cartItems.length} )
             </a>
           </Link>
