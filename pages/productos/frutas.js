@@ -139,9 +139,7 @@ class TodaFruta extends React.Component {
                   >
                     <img
                       className="imagenProduct"
-                      src="/270pxImages/pruebajp.jpg"
-                      srcSet={`/141pxImages/${"pruebajp.jpg"} 141w, /174pxImages/${"pruebajp.jpg"} 174w, /270pxImages/${"pruebajp.jpg"} 270w`}
-                      sizes="(max-width: 767.98px) 141px, (max-width: 1199.98px) 174px, 270px"
+                      src="/141pxImages/pruebajp.jpg"
                       alt={product.imageAlt}
                     ></img>
                   </Link>
