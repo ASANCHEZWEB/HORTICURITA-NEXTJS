@@ -138,6 +138,7 @@ class TodaFruta extends React.Component {
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
                     <img
+                      className="imagenProduct"
                       src="/270pxImages/pruebajp.jpg"
                       srcSet={`/141pxImages/${"pruebajp.jpg"} 141w, /174pxImages/${"pruebajp.jpg"} 174w, /270pxImages/${"pruebajp.jpg"} 270w`}
                       sizes="(max-width: 767.98px) 141px, (max-width: 1199.98px) 174px, 270px"
@@ -299,9 +300,9 @@ class TodaFruta extends React.Component {
               justify-content: center;
             }
 
-            .container > div > img {
-              
-             cursor: pointer;
+            .imagenProduct {
+              cursor: pointer;
+              max-width: 100%;
             }
 
             .containerDivInfo {
@@ -327,9 +328,9 @@ class TodaFruta extends React.Component {
               justify-content: center;
             }
 
-            .container > div > img {
-              
+            .imagenProduct {
               cursor: pointer;
+              max-width: 100%;
             }
 
             .containerDivInfo {
@@ -353,9 +354,9 @@ class TodaFruta extends React.Component {
               justify-content: center;
             }
 
-            .container > div > img {
-              
+            .imagenProduct {
               cursor: pointer;
+              max-width: 100%;
             }
             .container > div > span {
               font-family: montserrat;
@@ -382,9 +383,9 @@ class TodaFruta extends React.Component {
               justify-content: center;
             }
 
-            .container > div > img {
-              
+            .imagenProduct {
               cursor: pointer;
+              max-width: 100%;
             }
             .container > div > span {
               font-family: montserrat;
@@ -424,9 +425,9 @@ class TodaFruta extends React.Component {
               border-top: 1px solid #ffeb00;
               border-bottom: 1px solid #ffeb00;
             }
-            .container > div > img {
-              
+            .imagenProduct {
               cursor: pointer;
+              max-width: 100%;
             }
             .container > div > span {
               font-family: montserrat;
