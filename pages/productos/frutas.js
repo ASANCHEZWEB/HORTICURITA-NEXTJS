@@ -137,7 +137,7 @@ class TodaFruta extends React.Component {
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                    <picture>
+                    <picture className="imagenProduct">
                       <source
                         media="(max-width: 767.98px)"
                         srcset="/141pxImages/pruebajp.jpg"
@@ -147,7 +147,6 @@ class TodaFruta extends React.Component {
                         srcset="/174pxImages/pruebajp.jpg"
                       />
                       <img
-                        className="imagenProduct"
                         src="/270pxImages/pruebajp.jpg"
                         alt={product.imageAlt}
                       />
