@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+import LazyLoad from "react-lazy-load";
 class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -38,16 +38,22 @@ class Footer extends React.Component {
           <div>
             <h5>Contacto</h5>
             <a href="tel:+34612345678">
-              <img src={this.state.imagenTelefono} alt="icono teléfono" />
+              <LazyLoad>
+                <img src={this.state.imagenTelefono} alt="icono teléfono" />
+              </LazyLoad>
               Teléfono
             </a>
             <a href="https://api.whatsapp.com/send?phone=34612345678">
-              <img src={this.state.imagenWhatsapp} alt="icono whatsapp" />
+              <LazyLoad>
+                <img src={this.state.imagenWhatsapp} alt="icono whatsapp" />
+              </LazyLoad>
               Whatsapp
             </a>
             <button>
-              <img src={this.state.imagenChat} alt="icono chat en línea" /> Chat
-              en línea
+              <LazyLoad>
+                <img src={this.state.imagenChat} alt="icono chat en línea" />
+              </LazyLoad>{" "}
+              Chat en línea
             </button>
           </div>
           <div>
@@ -108,26 +114,31 @@ class Footer extends React.Component {
           <div>
             <h5>Información</h5>
             <Link href="/">
-            <a>Condiciones generales</a>
-                </Link>
-                <Link href="/">
-                <a>Política de privacidad</a>
-                </Link>
-                <Link href="/">
-                <a>Política de Cookies</a>
-                </Link>
-                <Link href="/">
-                <a>Condiciones de compra</a>
-                </Link>
-                <Link href="/">
-                <a>Calidad</a>
-                </Link>
-            
+              <a>Condiciones generales</a>
+            </Link>
+            <Link href="/">
+              <a>Política de privacidad</a>
+            </Link>
+            <Link href="/">
+              <a>Política de Cookies</a>
+            </Link>
+            <Link href="/">
+              <a>Condiciones de compra</a>
+            </Link>
+            <Link href="/">
+              <a>Calidad</a>
+            </Link>
           </div>
           <div>
             <h5>Redes sociales</h5>
-            <a target="_blank" href="https://www.instagram.com/horticurita.es/" rel="noreferrer">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/horticurita.es/"
+              rel="noreferrer"
+            >
+            <LazyLoad>
               <img src={this.state.iconoInstagram} alt="icono instagram" />
+              </LazyLoad>
               Instagram
             </a>
             <a
@@ -135,11 +146,19 @@ class Footer extends React.Component {
               href="https://www.facebook.com/Horticurita-110947830690065"
               rel="noreferrer"
             >
+            <LazyLoad>
               <img src={this.state.iconoFacebook} alt="icono facebook" />
+              </LazyLoad>
               Facebook
             </a>
-            <a target="_blank" href="https://twitter.com/horticurita.es" rel="noreferrer">
+            <a
+              target="_blank"
+              href="https://twitter.com/horticurita.es"
+              rel="noreferrer"
+            >
+            <LazyLoad>
               <img src={this.state.iconoTwitter} alt="icono facebook" />
+              </LazyLoad>
               Twitter
             </a>
           </div>

@@ -124,7 +124,9 @@ class TodaFruta extends React.Component {
               tanto, si la fruta y verdura recibida está dañada ,le devolveremos
               el dinero.
             </p>
+            
             <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" />
+            
           </div>
         </div>
         <div className="container">

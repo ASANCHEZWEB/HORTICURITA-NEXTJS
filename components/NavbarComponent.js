@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
-
+import LazyLoad from "react-lazy-load";
 
 class NavbarComponent extends React.Component {
   constructor(props) {
@@ -9,14 +8,13 @@ class NavbarComponent extends React.Component {
 
     this.state = {
       cartItems: [],
-      imagenesNavBar:[]
+      imagenesNavBar: [],
     };
   }
 
   actualizarCarro = () => {
     //  setInterval(() => {
     //   let miStorage = JSON.parse(window.localStorage.cartProducts);
-
     //   this.setState({ cartItems: miStorage });
     // }, 500);
   };
@@ -89,45 +87,44 @@ class NavbarComponent extends React.Component {
   componentDidMount() {
     this.actualizarCarro();
 
-  this.setState({
-    imagenesNavBar:[
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/catalog_l5yzgl.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/cereza_ufuh5p.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/cereza_ufuh5p.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/platano_wmlyqw.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pina_y0wz8v.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pera_c6liyz.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/naranja_ezabbd.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/sandia_xgvhxy.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/melocoton_xmlpla.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/manzana_dzern7.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/limon_vvrjd6.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/kiwi_vys7rx.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/delbosque_vuvk7x.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638703/iconosHorticurita/uva_crvyzl.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/cebolla_xjy7rb.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638703/iconosHorticurita/tomate_ahrlar.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/cebolla_xjy7rb.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/lechuga_brykvg.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/patata_nwhhtm.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pimiento_vqhmci.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/seta_dsxwjc.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/tierra_qi5qga.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/germinado_unduc0.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/garbanzo_ko0nop.jpg",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/cacahuete_dzkay0.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/tapa_gobalf.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/especias_xhao5g.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/miel_cbnqrg.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pastel_e7tonk.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/galleta_wwldkz.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638720/iconosHorticurita/aperitivos_snack_wqkwwb.png",
-      "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_40,q_10,w_40/v1593638701/iconosHorticurita/carritomenu_nsscxy.png"
-      
-    ]
-  })
+    this.setState({
+      imagenesNavBar: [
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/catalog_l5yzgl.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/cereza_ufuh5p.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/cereza_ufuh5p.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/platano_wmlyqw.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pina_y0wz8v.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pera_c6liyz.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/naranja_ezabbd.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/sandia_xgvhxy.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/melocoton_xmlpla.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/manzana_dzern7.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/limon_vvrjd6.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/kiwi_vys7rx.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/delbosque_vuvk7x.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638703/iconosHorticurita/uva_crvyzl.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/cebolla_xjy7rb.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638703/iconosHorticurita/tomate_ahrlar.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/cebolla_xjy7rb.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/lechuga_brykvg.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/patata_nwhhtm.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pimiento_vqhmci.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/seta_dsxwjc.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/tierra_qi5qga.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/germinado_unduc0.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/garbanzo_ko0nop.jpg",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/cacahuete_dzkay0.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/tapa_gobalf.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638715/iconosHorticurita/especias_xhao5g.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/miel_cbnqrg.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638702/iconosHorticurita/pastel_e7tonk.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/galleta_wwldkz.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638720/iconosHorticurita/aperitivos_snack_wqkwwb.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_40,q_10,w_40/v1593638701/iconosHorticurita/carritomenu_nsscxy.png",
+      ],
+    });
   }
 
   render() {
@@ -140,10 +137,12 @@ class NavbarComponent extends React.Component {
         </div>
         <div>
           <button onClick={this.showList} className="disableZoombutton">
+          
             <img
               src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg"
               alt="icono menú"
             />
+            
           </button>
           <ul className="listProducts">
             <li>
@@ -157,11 +156,13 @@ class NavbarComponent extends React.Component {
                 className="displayButtonsProds disableZoombutton"
               >
                 PRODUCTOS{" "}
-                <img
-                  src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png"
-                  alt="flecha hacia abajo"
-                  style={{ marginLeft: "5px" }}
-                />
+                <LazyLoad>
+                  <img
+                    src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png"
+                    alt="flecha hacia abajo"
+                    style={{ marginLeft: "5px" }}
+                  />
+                </LazyLoad>
               </button>
               <ul className="ulProducts">
                 <li>
@@ -334,7 +335,6 @@ class NavbarComponent extends React.Component {
                         </a>
                       </Link>
                     </li>
-                   
                   </ul>
                 </li>
                 <li>
@@ -571,10 +571,12 @@ class NavbarComponent extends React.Component {
           <Link href="/carrito">
             <a className="buttonCart disableZoombutton">
               <span>Carrito: </span>
+              <LazyLoad>
               <img
                 src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_30,q_10,w_30/v1593638701/iconosHorticurita/carritoIcons_mgpns6.png"
                 alt="icono carrito blanco"
               />
+              </LazyLoad>
               ( {this.state.cartItems.length} )
             </a>
           </Link>
