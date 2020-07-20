@@ -132,7 +132,7 @@ class TodaFruta extends React.Component {
           {this.props.data.map((product, index) => {
             if (product.name) {
               return (
-                <div key={product._id}>
+                <div className="containerDivInfo" key={product._id}>
                   <Link
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
@@ -304,7 +304,7 @@ class TodaFruta extends React.Component {
              cursor: pointer;
             }
 
-            .container > div {
+            .containerDivInfo {
               width: 142px;
               text-align: center;
               margin-left: 1%;
@@ -332,7 +332,7 @@ class TodaFruta extends React.Component {
               cursor: pointer;
             }
 
-            .container > div {
+            .containerDivInfo {
               width: 169px;
               text-align: center;
               margin-left: 2%;
@@ -361,7 +361,7 @@ class TodaFruta extends React.Component {
               font-family: montserrat;
               font-size: 14px;
             }
-            .container > div {
+            .containerDivInfo {
               width: 175px;
               text-align: center;
               margin-left: 2%;
@@ -390,7 +390,7 @@ class TodaFruta extends React.Component {
               font-family: montserrat;
               font-size: 14px;
             }
-            .container > div {
+            .containerDivInfo {
               width: 225px;
               text-align: center;
               margin-left: 2%;
@@ -432,7 +432,7 @@ class TodaFruta extends React.Component {
               font-family: montserrat;
               font-size: 14px;
             }
-            .container > div {
+            .containerDivInfo {
               width: 271px;
               text-align: center;
               margin-left: 2%;
