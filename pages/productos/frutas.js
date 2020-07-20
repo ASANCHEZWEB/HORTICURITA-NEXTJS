@@ -124,9 +124,8 @@ class TodaFruta extends React.Component {
               tanto, si la fruta y verdura recibida está dañada ,le devolveremos
               el dinero.
             </p>
-           
+
             {/* <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" /> */}
-           
           </div>
         </div>
         <div className="container">
@@ -134,19 +133,17 @@ class TodaFruta extends React.Component {
             if (product.name) {
               return (
                 <div key={product._id}>
-                  
-                    <Link
-                      href="/productos/frutas/[id]"
-                      as={`/productos/frutas/${product.urlRoute}`}
-                    >
-                      <img
-                        src="/270pxImages/pruebajp.jpg"
-                        srcSet={`/141pxImages/${"pruebajp.jpg"} 141w, /174pxImages/${"pruebajp.jpg"} 174w, /270pxImages/${"pruebajp.jpg"} 270w`}
-                        sizes="(max-width: 767.98px) 141px, (max-width: 1199.98px) 174px, 270px"
-                        alt={product.imageAlt}
-                      ></img>
-                    </Link>
-                 
+                  <Link
+                    href="/productos/frutas/[id]"
+                    as={`/productos/frutas/${product.urlRoute}`}
+                  >
+                    <img
+                      src="/270pxImages/pruebajp.jpg"
+                      srcSet={`/141pxImages/${"pruebajp.jpg"} 141w, /174pxImages/${"pruebajp.jpg"} 174w, /270pxImages/${"pruebajp.jpg"} 270w`}
+                      sizes="(max-width: 767.98px) 141px, (max-width: 1199.98px) 174px, 270px"
+                      alt={product.imageAlt}
+                    ></img>
+                  </Link>
 
                   <Link
                     href="/productos/frutas/[id]"
@@ -188,14 +185,12 @@ class TodaFruta extends React.Component {
                     >
                       -
                     </button>
-                    <label></label>
-                    <input
-                      value={
-                        product.type === "kilogramos"
-                          ? this.state.productProps[index].added / 2
-                          : this.state.productProps[index].added
-                      }
-                    />
+
+                    <p className="inputProducts">
+                      {product.type === "kilogramos"
+                        ? this.state.productProps[index].added / 2
+                        : this.state.productProps[index].added}
+                    </p>
 
                     <button
                       type="button"
@@ -220,7 +215,18 @@ class TodaFruta extends React.Component {
             padding-left: 25px;
             padding-right: 25px;
           }
-
+          .inputProducts {
+            min-width: 34px;
+            text-align: center;
+            margin: 0px;
+            padding: 6px;
+            border-width: thin;
+            border-left: none;
+            border-right: none;
+            border-color: #ffeb00;
+            border-top: 1px solid #ffeb00;
+            border-bottom: 1px solid #ffeb00;
+          }
           .container > div > span {
             font-family: montserrat;
             font-size: 13px;
@@ -258,16 +264,6 @@ class TodaFruta extends React.Component {
             height: 28px;
             margin-top: 15px;
             margin-bottom: 15px;
-          }
-
-          .container > div > div > input {
-            max-width: 50px;
-            text-align: center;
-            border-width: thin;
-            border-left: none;
-            border-right: none;
-            border-color: #ffeb00;
-            border-top: 1px solid #ffeb00;
           }
 
           .container > div > a > h2 {
