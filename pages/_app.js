@@ -1035,7 +1035,7 @@ function MyApp({ Component, pageProps }) {
         `}</style>
 
         <script src="/scripts/nav.js" async></script>
-        {/* <script src="/scripts/fonts.js" async></script> */}
+     <script src="/scripts/fonts.js" async></script> 
 
 
         {/* <script src="/scripts/chatDirecto.js" async></script> */}

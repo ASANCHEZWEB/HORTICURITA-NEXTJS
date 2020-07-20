@@ -125,7 +125,7 @@ class TodaFruta extends React.Component {
               el dinero.
             </p>
             
-            <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" />
+            <img src="/frutas-y-verduras.jpg" alt="frutas y verduras" />
             
           </div>
         </div>
