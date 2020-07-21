@@ -137,11 +137,13 @@ class TodaFruta extends React.Component {
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                    <img
-                      className="imagenProduct"
-                      src="/141pxImages/pruebajp.jpg"
-                      alt={product.imageAlt}
-                    />
+                    
+                      <img
+                        className="imagenProduct"
+                        src="/141pxImages/pruebajp.jpg"
+                        alt={product.imageAlt}
+                      />
+                    
                   </Link>
 
                   <Link
@@ -300,8 +302,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
-              height: auto;
+              width: 40px;
+              height:40px;
             }
 
             .containerDivInfo {
@@ -329,8 +331,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
-              height: auto;
+              width: 40px;
+              height:40px;
             }
 
             .containerDivInfo {
@@ -356,8 +358,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
-              height: auto;
+              width: 40px;
+              height:40px;
             }
             .container > div > span {
               font-family: montserrat;
@@ -386,8 +388,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
-              height: auto;
+              width: 40px;
+              height:40px;
             }
             .container > div > span {
               font-family: montserrat;
@@ -429,8 +431,8 @@ class TodaFruta extends React.Component {
             }
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
-              height: auto;
+              width: 40px;
+              height:40px;
             }
             .container > div > span {
               font-family: montserrat;
