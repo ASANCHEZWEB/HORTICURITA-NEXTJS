@@ -151,7 +151,7 @@ class TodaFruta extends React.Component {
                         srcSet="/270pxImages/pruebajp.jpg"
                       />
                       <img
-                        className="imagenProduct"
+                        
                         src="/141pxImages/pruebajp.jpg"
                         alt={product.imageAlt}
                       />
