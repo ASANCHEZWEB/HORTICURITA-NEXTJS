@@ -151,7 +151,7 @@ class TodaFruta extends React.Component {
                         srcSet="/270pxImages/pruebajp.jpg"
                       />
                       <img
-                        
+                        className="imagenProduct"
                         src="/141pxImages/pruebajp.jpg"
                         alt={product.imageAlt}
                       />
@@ -314,9 +314,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 287px;
-              max-height: 152px;
-              width: auto;
+              object-fit: contain;
+              width: 100%;
               height: auto;
             }
 
@@ -345,9 +344,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 287px;
-              max-height: 152px;
-              width: auto;
+              object-fit: contain;
+              width: 100%;
               height: auto;
             }
 
@@ -374,9 +372,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 320px;
-              max-height: 185px;
-              width: auto;
+              object-fit: contain;
+              width: 100%;
               height: auto;
             }
             .container > div > span {
@@ -406,9 +403,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 320px;
-              max-height: 185px;
-              width: auto;
+              object-fit: contain;
+              width: 100%;
               height: auto;
             }
             .container > div > span {
@@ -451,9 +447,8 @@ class TodaFruta extends React.Component {
             }
             .imagenProduct {
               cursor: pointer;
-              max-width: 419px;
-              max-height: 284px;
-              width: auto;
+              object-fit: contain;
+              width: 100%;
               height: auto;
             }
             .container > div > span {
