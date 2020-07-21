@@ -455,6 +455,7 @@ class TodaFruta extends React.Component {
   }
 }
 
+
 export async function getStaticProps() {
   const res = await fetch(
     "https://gestorhorticurita.herokuapp.com/api/getAllProducts"
