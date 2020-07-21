@@ -137,11 +137,25 @@ class TodaFruta extends React.Component {
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                    <img
-                      className="imagenProduct"
-                      src="/141pxImages/pruebajp.jpg"
-                      alt={product.imageAlt}
-                    />
+                    <picture>
+                      <source
+                        media="(max-width: 767.98px)"
+                        srcSet="/141pxImages/pruebajp.jpg"
+                      />
+                      <source
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        srcSet="/174pxImages/pruebajp.jpg"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet="/270pxImages/pruebajp.jpg"
+                      />
+                      <img
+                        className="imagenProduct"
+                        src="/141pxImages/pruebajp.jpg"
+                        alt={product.imageAlt}
+                      />
+                    </picture>
                   </Link>
 
                   <Link
@@ -300,7 +314,9 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
+              max-width: 230px;
+              max-height: 158px;
+              width: auto;
               height: auto;
             }
 
@@ -329,7 +345,9 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
+              max-width: 230px;
+              max-height: 158px;
+              width: auto;
               height: auto;
             }
 
@@ -356,7 +374,9 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
+              max-width: 230px;
+              max-height: 195px;
+              width: auto;
               height: auto;
             }
             .container > div > span {
@@ -386,7 +406,9 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
+              max-width: 230px;
+              max-height: 195px;
+              width: auto;
               height: auto;
             }
             .container > div > span {
@@ -429,7 +451,9 @@ class TodaFruta extends React.Component {
             }
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
+              max-width: 263px;
+              max-height: 299px;
+              width: auto;
               height: auto;
             }
             .container > div > span {
@@ -454,7 +478,6 @@ class TodaFruta extends React.Component {
     );
   }
 }
-
 
 export async function getStaticProps() {
   const res = await fetch(
