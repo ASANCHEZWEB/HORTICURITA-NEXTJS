@@ -162,7 +162,6 @@ class TodaFruta extends React.Component {
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                  
                     <a>
                       <h2>{product.name}</h2>
                     </a>
@@ -315,8 +314,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 230px;
-              max-height: 95px;
+              max-width: 287px;
+              max-height: 152px;
               width: auto;
               height: auto;
             }
@@ -346,8 +345,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 230px;
-              max-height: 95px;
+              max-width: 287px;
+              max-height: 152px;
               width: auto;
               height: auto;
             }
@@ -375,8 +374,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 230px;
-              max-height: 95px;
+              max-width: 320px;
+              max-height: 185px;
               width: auto;
               height: auto;
             }
@@ -407,8 +406,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 230px;
-              max-height: 95px;
+              max-width: 320px;
+              max-height: 185px;
               width: auto;
               height: auto;
             }
@@ -452,8 +451,8 @@ class TodaFruta extends React.Component {
             }
             .imagenProduct {
               cursor: pointer;
-              max-width: 230px;
-              max-height: 95px;
+              max-width: 419px;
+              max-height: 284px;
               width: auto;
               height: auto;
             }
