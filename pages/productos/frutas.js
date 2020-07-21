@@ -141,14 +141,20 @@ class TodaFruta extends React.Component {
                       <source
                         media="(max-width: 767.98px)"
                         srcSet="/141pxImages/pruebajp.jpg"
+                        
                       />
                       <source
-                        media="(max-width: 1199.98px)"
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        
                         srcSet="/174pxImages/pruebajp.jpg"
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet="/270pxImages/pruebajp.jpg"
                       />
                       <img
                         className="imagenProduct"
-                        src="/270pxImages/pruebajp.jpg"
+                        src="/141pxImages/pruebajp.jpg"
                         alt={product.imageAlt}
                       />
                     </picture>
@@ -310,7 +316,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-    width: 100%;
+              width: 100%;
             }
 
             .containerDivInfo {
@@ -338,7 +344,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-    width: 100%;
+              width: 100%;
             }
 
             .containerDivInfo {
@@ -364,7 +370,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-    width: 100%;
+              width: 100%;
             }
             .container > div > span {
               font-family: montserrat;
@@ -393,7 +399,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-    width: 100%;
+              width: 100%;
             }
             .container > div > span {
               font-family: montserrat;
@@ -435,7 +441,7 @@ class TodaFruta extends React.Component {
             }
             .imagenProduct {
               cursor: pointer;
-    width: 100%;
+              width: 100%;
             }
             .container > div > span {
               font-family: montserrat;
