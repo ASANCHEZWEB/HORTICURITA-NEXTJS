@@ -137,16 +137,17 @@ class TodaFruta extends React.Component {
                     href="/productos/frutas/[id]"
                     as={`/productos/frutas/${product.urlRoute}`}
                   >
-                    <picture className="imagenProduct">
+                    <picture>
                       <source
                         media="(max-width: 767.98px)"
-                        srcset="/141pxImages/pruebajp.jpg"
+                        srcSet="/141pxImages/pruebajp.jpg"
                       />
                       <source
                         media="(max-width: 1199.98px)"
-                        srcset="/174pxImages/pruebajp.jpg"
+                        srcSet="/174pxImages/pruebajp.jpg"
                       />
                       <img
+                        className="imagenProduct"
                         src="/270pxImages/pruebajp.jpg"
                         alt={product.imageAlt}
                       />
@@ -309,7 +310,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 100%;
+              /* max-width: 27%; */
+              width: 89%;
             }
 
             .containerDivInfo {
@@ -337,7 +339,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 100%;
+              /* max-width: 27%; */
+              width: 89%;
             }
 
             .containerDivInfo {
@@ -363,7 +366,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 100%;
+              /* max-width: 27%; */
+              width: 89%;
             }
             .container > div > span {
               font-family: montserrat;
@@ -392,7 +396,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 100%;
+              /* max-width: 27%; */
+              width: 89%;
             }
             .container > div > span {
               font-family: montserrat;
@@ -434,7 +439,8 @@ class TodaFruta extends React.Component {
             }
             .imagenProduct {
               cursor: pointer;
-              max-width: 100%;
+              /* max-width: 27%; */
+              width: 89%;
             }
             .container > div > span {
               font-family: montserrat;
