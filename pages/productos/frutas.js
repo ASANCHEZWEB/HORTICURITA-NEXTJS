@@ -300,9 +300,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 230px;
-              max-height: 95px;
-              width: auto;
+              width: 100%;
               height: auto;
             }
 
@@ -331,9 +329,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 230px;
-              max-height: 95px;
-              width: auto;
+              width: 100%;
               height: auto;
             }
 
@@ -360,9 +356,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 230px;
-              max-height: 95px;
-              width: auto;
+              width: 100%;
               height: auto;
             }
             .container > div > span {
@@ -392,9 +386,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              max-width: 230px;
-              max-height: 95px;
-              width: auto;
+              width: 100%;
               height: auto;
             }
             .container > div > span {
@@ -437,9 +429,7 @@ class TodaFruta extends React.Component {
             }
             .imagenProduct {
               cursor: pointer;
-              max-width: 230px;
-              max-height: 95px;
-              width: auto;
+              width: 100%;
               height: auto;
             }
             .container > div > span {
