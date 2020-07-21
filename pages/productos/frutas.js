@@ -303,6 +303,7 @@ class TodaFruta extends React.Component {
             .imagenProduct {
               cursor: pointer;
               width: 100%;
+              h
             }
 
             .containerDivInfo {
@@ -356,7 +357,8 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              width: 100%;
+              width: 40px;
+              height:40px;
             }
             .container > div > span {
               font-family: montserrat;
