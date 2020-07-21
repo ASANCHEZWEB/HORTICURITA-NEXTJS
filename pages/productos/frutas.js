@@ -310,8 +310,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              /* max-width: 27%; */
-              width: 89%;
+    width: 100%;
             }
 
             .containerDivInfo {
@@ -339,8 +338,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              /* max-width: 27%; */
-              width: 89%;
+    width: 100%;
             }
 
             .containerDivInfo {
@@ -366,8 +364,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              /* max-width: 27%; */
-              width: 89%;
+    width: 100%;
             }
             .container > div > span {
               font-family: montserrat;
@@ -396,8 +393,7 @@ class TodaFruta extends React.Component {
 
             .imagenProduct {
               cursor: pointer;
-              /* max-width: 27%; */
-              width: 89%;
+    width: 100%;
             }
             .container > div > span {
               font-family: montserrat;
@@ -439,8 +435,7 @@ class TodaFruta extends React.Component {
             }
             .imagenProduct {
               cursor: pointer;
-              /* max-width: 27%; */
-              width: 89%;
+    width: 100%;
             }
             .container > div > span {
               font-family: montserrat;
