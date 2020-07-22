@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <html lang="es">
+      
         <header>
           <NavbarComponent />
         </header>
@@ -1035,11 +1035,11 @@ function MyApp({ Component, pageProps }) {
         `}</style>
 
         <script src="/scripts/nav.js" async></script>
-     <script src="/scripts/fonts.js" async></script> 
+        <script src="/scripts/fonts.js" async></script> 
 
 
         {/* <script src="/scripts/chatDirecto.js" async></script> */}
-      </html>
+      
     </>
   );
 }
