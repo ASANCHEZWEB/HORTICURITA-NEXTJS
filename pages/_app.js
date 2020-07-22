@@ -108,7 +108,7 @@ function MyApp({ Component, pageProps }) {
             padding-top: 16px;
             padding-bottom: 16px;
             overflow: scroll;
-            height: -webkit-fill-available;
+            height: 95vh;
           }
 
           /* OCULTAR DROPDOWN DE PRODUCTOS */
@@ -300,7 +300,7 @@ function MyApp({ Component, pageProps }) {
             padding-top: 16px;
             padding-bottom: 16px;
             overflow: scroll;
-            height: -webkit-fill-available;
+            height: 95vh;
           }
 
           /* OCULTAR DROPDOWN DE PRODUCTOS */
