@@ -12,10 +12,10 @@ class NavbarComponent extends React.Component {
   }
 
   actualizarCarro = () => {
-     setInterval(() => {
+    setInterval(() => {
       let miStorage = JSON.parse(window.localStorage.cartProducts);
-       this.setState({ cartItems: miStorage });
-     }, 500);
+      this.setState({ cartItems: miStorage });
+    }, 500);
   };
 
   //MOSTRAR MENÚ mobile
@@ -129,21 +129,16 @@ class NavbarComponent extends React.Component {
 
     let changeFunction = this.changeImageState();
 
-     window.onload = function () {
-       let fontCharge = document.createElement("link");
-       
-       
+    window.onload = function () {
+      let fontCharge = document.createElement("link");
       fontCharge.setAttribute(
         "href",
-         "https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
-       );
-       fontCharge.setAttribute("rel", "stylesheet");
-
-
-       document.querySelector("head").appendChild(fontCharge)
-       changeFunction;
-
-     };
+        "https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
+      );
+      fontCharge.setAttribute("rel", "stylesheet");
+      document.querySelector("head").appendChild(fontCharge);
+      changeFunction;
+    };
   }
 
   render() {
@@ -156,10 +151,10 @@ class NavbarComponent extends React.Component {
         </div>
         <div>
           <button onClick={this.showList} className="disableZoombutton">
-           <img
+            <img
               src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_23,q_10,w_23/v1593638715/iconosHorticurita/menu_y9uxib.svg"
               alt="icono menú"
-            /> 
+            />
           </button>
           <ul className="listProducts">
             <li>
@@ -177,7 +172,7 @@ class NavbarComponent extends React.Component {
                   src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_15,q_10,w_15/v1593638701/iconosHorticurita/arrowMenu_g1nsml.png"
                   alt="flecha hacia abajo"
                   style={{ marginLeft: "5px" }}
-                /> 
+                />
               </button>
               <ul className="ulProducts">
                 <li>

@@ -13,13 +13,21 @@ function MyApp({ Component, pageProps }) {
           name="description"
           content="Fruta al mejor precio , calidad insuperable"
         ></meta>
-       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169048148-2"></script>
+        
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169048148-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)}
+  gtag('js', new Date());
+  gtag('config', 'UA-169048148-3');
+</script>
+
+
+
+
       </Head>
       <Helmet>
         <html lang="es"></html>
-        
-
-
       </Helmet>
 
       <header>
