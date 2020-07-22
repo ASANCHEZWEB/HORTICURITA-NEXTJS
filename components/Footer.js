@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import LazyLoad from "react-lazy-load";
+
 class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -38,21 +38,21 @@ class Footer extends React.Component {
           <div>
             <h5>Contacto</h5>
             <a href="tel:+34612345678">
-              <LazyLoad>
+              
                 <img src={this.state.imagenTelefono} alt="icono teléfono" />
-              </LazyLoad>
+              
               Teléfono
             </a>
             <a href="https://api.whatsapp.com/send?phone=34612345678">
-              <LazyLoad>
+              
                 <img src={this.state.imagenWhatsapp} alt="icono whatsapp" />
-              </LazyLoad>
+              
               Whatsapp
             </a>
             <button>
-              <LazyLoad>
+             
                 <img src={this.state.imagenChat} alt="icono chat en línea" />
-              </LazyLoad>{" "}
+            
               Chat en línea
             </button>
           </div>
@@ -136,9 +136,9 @@ class Footer extends React.Component {
               href="https://www.instagram.com/horticurita.es/"
               rel="noreferrer"
             >
-            <LazyLoad>
+            
               <img src={this.state.iconoInstagram} alt="icono instagram" />
-              </LazyLoad>
+              
               Instagram
             </a>
             <a
@@ -146,9 +146,9 @@ class Footer extends React.Component {
               href="https://www.facebook.com/Horticurita-110947830690065"
               rel="noreferrer"
             >
-            <LazyLoad>
+            
               <img src={this.state.iconoFacebook} alt="icono facebook" />
-              </LazyLoad>
+              
               Facebook
             </a>
             <a
@@ -156,9 +156,9 @@ class Footer extends React.Component {
               href="https://twitter.com/horticurita.es"
               rel="noreferrer"
             >
-            <LazyLoad>
+            
               <img src={this.state.iconoTwitter} alt="icono facebook" />
-              </LazyLoad>
+              
               Twitter
             </a>
           </div>
