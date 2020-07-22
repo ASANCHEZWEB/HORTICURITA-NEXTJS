@@ -1,9 +1,23 @@
 import NavbarComponent from "../components/NavbarComponent";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
+import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <>
+      <Head>
+        <title>
+          Horticurita | Frutas y verdura al mejor precio | Alta calidad
+        </title>
+        <meta
+          name="description"
+          content="Fruta al mejor precio , calidad insuperable"
+        ></meta>
+        <meta
+          name="google-site-verification"
+          content="xNVGHPndXCWiyVOrPTjj-_PvASUC0TI0K1sEXDCvMZ0"
+        />
+      </Head>
       <Helmet>
         <html lang="es"></html>
       </Helmet>
