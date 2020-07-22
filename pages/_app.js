@@ -13,14 +13,20 @@ function MyApp({ Component, pageProps }) {
           name="description"
           content="Fruta al mejor precio , calidad insuperable"
         ></meta>
-        <meta
-          name="google-site-verification"
-          content="xNVGHPndXCWiyVOrPTjj-_PvASUC0TI0K1sEXDCvMZ0"
-        />
       </Head>
       <Helmet>
         <html lang="es"></html>
       </Helmet>
+
+      <noscript>
+        <iframe
+          src="https://www.googletagmanager.com/ns.html?id=GTM-5VZPJQC"
+          height="0"
+          width="0"
+          style={{ display: "none", visibility: "hidden" }}
+        ></iframe>
+      </noscript>
+
       <header>
         <NavbarComponent />
       </header>
