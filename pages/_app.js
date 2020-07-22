@@ -13,19 +13,14 @@ function MyApp({ Component, pageProps }) {
           name="description"
           content="Fruta al mejor precio , calidad insuperable"
         ></meta>
+       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169048148-2"></script>
       </Head>
       <Helmet>
         <html lang="es"></html>
-      </Helmet>
+        
 
-      <noscript>
-        <iframe
-          src="https://www.googletagmanager.com/ns.html?id=GTM-5VZPJQC"
-          height="0"
-          width="0"
-          style={{ display: "none", visibility: "hidden" }}
-        ></iframe>
-      </noscript>
+
+      </Helmet>
 
       <header>
         <NavbarComponent />
