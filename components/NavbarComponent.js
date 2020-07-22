@@ -131,12 +131,20 @@ class NavbarComponent extends React.Component {
 
     window.onload = function () {
       let fontCharge = document.createElement("link");
+      let anaTag = document.createElement("script");
+      anaTag.innerHTML = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-169048148-3');
+`;
       fontCharge.setAttribute(
         "href",
         "https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
       );
       fontCharge.setAttribute("rel", "stylesheet");
       document.querySelector("head").appendChild(fontCharge);
+      document.querySelector("head").appendChild(anaTag);
       changeFunction;
     };
   }
