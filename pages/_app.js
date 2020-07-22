@@ -106,9 +106,9 @@ function MyApp({ Component, pageProps }) {
             margin-top: 18px;
             margin-left: -2%;
             padding-top: 16px;
-            padding-bottom: 16px;
+            padding-bottom: 100%;
             overflow: scroll;
-            height: 95vh;
+            height: 84vh;
           }
 
           /* OCULTAR DROPDOWN DE PRODUCTOS */
@@ -298,9 +298,9 @@ function MyApp({ Component, pageProps }) {
             margin-top: 18px;
             margin-left: -2%;
             padding-top: 16px;
-            padding-bottom: 16px;
+            padding-bottom: 100%;
             overflow: scroll;
-            height: 95vh;
+            height: 84vh;
           }
 
           /* OCULTAR DROPDOWN DE PRODUCTOS */
