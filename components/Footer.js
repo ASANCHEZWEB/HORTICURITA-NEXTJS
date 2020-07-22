@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+import { Helmet } from "react-helmet";
 class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -30,6 +30,12 @@ class Footer extends React.Component {
       iconoTwitter:
         "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_33,q_10,w_33/v1594585327/iconosHorticurita/icono_twitter_jvqpup.png",
     });
+  
+
+
+
+
+
   }
   render() {
     return (
@@ -268,7 +274,11 @@ class Footer extends React.Component {
             border-color: transparent;
           }
         `}</style>
+        <Helmet>
+<link href="https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&amp;display=swap" rel="stylesheet"></link>
+      </Helmet>
       </>
+      
     );
   }
 }
