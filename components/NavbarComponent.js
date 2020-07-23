@@ -129,7 +129,7 @@ class NavbarComponent extends React.Component {
 
     let changeFunction = this.changeImageState();
 
-    window.onload = function () {
+    setTimeout(() => {
       let fontCharge = document.createElement("link");
 
       fontCharge.setAttribute(
@@ -140,7 +140,7 @@ class NavbarComponent extends React.Component {
       document.querySelector("head").appendChild(fontCharge);
 
       changeFunction;
-    };
+    }, 2000);
   }
 
   render() {
