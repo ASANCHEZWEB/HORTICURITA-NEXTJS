@@ -28,25 +28,7 @@ class Home extends React.Component {
             color: blue;
           }
         `}</style>
-        <Head>
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=UA-169048148-3`}
-          />
-          <script
-          async
-            dangerouslySetInnerHTML={{
-              __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-169048148-3', {
-              page_path: window.location.pathname,
-            });
-          `,
-            }}
-          />
-        </Head>
+        
       </>
     );
   }

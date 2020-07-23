@@ -1,9 +1,17 @@
 import NavbarComponent from "../components/NavbarComponent";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
-import Head from "next/head";
+import ReactGA from 'react-ga';
+import { useEffect } from "react";
+
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    ReactGA.initialize('UA-000000-01');
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  });
+
+
   return (
     <>
       
