@@ -94,13 +94,10 @@ class TodaFruta extends React.Component {
     });
   };
 
-
-  
   componentDidMount() {
     this.actualizarLS();
 
     this.setState({ screenSize: 767 });
-  
   }
 
   render() {
@@ -112,6 +109,22 @@ class TodaFruta extends React.Component {
             name="description"
             content="Fruta al mejor precio , calidad insuperable"
           ></meta>
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=UA-169048148-3`}
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-169048148-3', {
+              page_path: window.location.pathname,
+            });
+          `,
+            }}
+          />
         </Head>
 
         <div className="metaDiv">

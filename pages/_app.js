@@ -2,22 +2,8 @@ import NavbarComponent from "../components/NavbarComponent";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
 import Head from "next/head";
-import { useEffect } from 'react'
-import Router from 'next/router'
-import * as gtag from '../components/gtag'
 
 function MyApp({ Component, pageProps }) {
-
-  useEffect(() => {
-    const handleRouteChange = (url) => {
-      gtag.pageview(url)
-    }
-    Router.events.on('routeChangeComplete', handleRouteChange)
-    return () => {
-      Router.events.off('routeChangeComplete', handleRouteChange)
-    }
-  }, [])
-
   return (
     <>
       <Head>
@@ -28,11 +14,6 @@ function MyApp({ Component, pageProps }) {
           name="description"
           content="Fruta al mejor precio , calidad insuperable"
         ></meta>
-        
-
-
-
-
       </Head>
       <Helmet>
         <html lang="es"></html>
