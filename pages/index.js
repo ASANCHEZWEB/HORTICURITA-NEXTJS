@@ -31,8 +31,8 @@ class Home extends React.Component {
       document.querySelector('scriptTagManager').innerHTML=`
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'UA-169048148-3');
+      gtag('js', new Date()) ; 
+      gtag('config', 'UA-169048148-3')
     `
     }
 
