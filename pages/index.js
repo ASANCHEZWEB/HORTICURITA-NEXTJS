@@ -18,6 +18,7 @@ class Home extends React.Component {
             src={`https://www.googletagmanager.com/gtag/js?id=UA-169048148-3`}
           />
           <script
+            async
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
