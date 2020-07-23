@@ -6,15 +6,7 @@ import Head from "next/head";
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Head>
-        <title>
-          Horticurita | Frutas y verdura al mejor precio | Alta calidad
-        </title>
-        <meta
-          name="description"
-          content="Fruta al mejor precio , calidad insuperable"
-        ></meta>
-      </Head>
+      
       <Helmet>
         <html lang="es"></html>
       </Helmet>

@@ -13,12 +13,28 @@ class Home extends React.Component {
     return (
       <>
         <Head>
+        <title>
+          Horticurita | Frutas y verdura al mejor precio | Alta calidad
+        </title>
+        <meta
+          name="description"
+          content="Fruta al mejor precio , calidad insuperable"
+        ></meta>
+      </Head>
+
+        <h1>esta es la home page con sus estilos</h1>
+        <style jsx>{`
+          * {
+            color: blue;
+          }
+        `}</style>
+        <Head>
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=UA-169048148-3`}
           />
           <script
-            async
+          async
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
@@ -31,13 +47,6 @@ class Home extends React.Component {
             }}
           />
         </Head>
-
-        <h1>esta es la home page con sus estilos</h1>
-        <style jsx>{`
-          * {
-            color: blue;
-          }
-        `}</style>
       </>
     );
   }
