@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
         ></meta>
         
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-169048148-3"> </script>
+
 
 
       </Head>

@@ -93,11 +93,44 @@ class TodaFruta extends React.Component {
       this.setState({ productProps: arrayPropsCopy });
     });
   };
+  tagManager() {
+    if (!document.querySelector(".tagManager")) {
+      let element = document.createElement("script");
+      element.setAttribute("class", "tagManager");
+      element.setAttribute("async", "");
+      element.setAttribute("src","https://www.googletagmanager.com/gtag/js?id=UA-169048148-3");
+      document.querySelector("head").appendChild(element);
+    }else{
+      document.querySelector('.tagManager').setAttribute('src','https://www.googletagmanager.com/gtag/js?id=UA-169048148-3')
+    }
+    if (!document.querySelector("scriptTagManager")) {
+      let anaTag = document.createElement("script");
+      anaTag.setAttribute("class", "scriptTagManager");
+      anaTag.innerHTML = `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-169048148-3');
+`;
+      document.querySelector("head").appendChild(anaTag);
+    }else{
+      document.querySelector('scriptTagManager').innerHTML=`
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-169048148-3');
+    `
+    }
 
+
+  }
+
+  
   componentDidMount() {
     this.actualizarLS();
 
     this.setState({ screenSize: 767 });
+    this.tagManager()
   }
 
   render() {
