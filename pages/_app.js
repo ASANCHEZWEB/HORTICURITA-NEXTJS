@@ -1,20 +1,17 @@
 import NavbarComponent from "../components/NavbarComponent";
 import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 import { useEffect } from "react";
-
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    ReactGA.initialize('UA-169048148-3');
+    ReactGA.initialize("UA-169048148-3");
     ReactGA.pageview(window.location.pathname + window.location.search);
   });
 
-
   return (
     <>
-      
       <Helmet>
         <html lang="es"></html>
       </Helmet>
@@ -38,6 +35,7 @@ function MyApp({ Component, pageProps }) {
           touch-action: manipulation;
         }
 
+        
         a {
           text-decoration: none;
         }
@@ -123,7 +121,10 @@ function MyApp({ Component, pageProps }) {
             overflow: scroll;
             height: 84vh;
           }
-
+          /* COLOR DE LOS TEXTOS A */
+          .listProducts > li > a {
+          color: black;
+        }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -315,7 +316,10 @@ function MyApp({ Component, pageProps }) {
             overflow: scroll;
             height: 84vh;
           }
-
+          /* COLOR DE LOS TEXTOS A */
+          .listProducts > li > a {
+          color: black;
+        }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -508,7 +512,10 @@ function MyApp({ Component, pageProps }) {
             font-family: Montserrat;
             font-size: 14px;
           }
-
+          /* COLOR DE LOS TEXTOS A */
+          .listProducts > li > a {
+          color: white;
+        }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -703,7 +710,10 @@ function MyApp({ Component, pageProps }) {
             font-family: Montserrat;
             font-size: 14px;
           }
-
+          /* COLOR DE LOS TEXTOS A */
+          .listProducts > li > a {
+          color: white;
+        }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -898,7 +908,10 @@ function MyApp({ Component, pageProps }) {
             font-family: Montserrat;
             font-size: 14px;
           }
-
+          /* COLOR DE LOS TEXTOS A */
+          .listProducts > li > a {
+          color: white;
+        }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
