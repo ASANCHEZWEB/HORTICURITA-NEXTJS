@@ -169,10 +169,10 @@ class NavbarComponent extends React.Component {
                 <li>
                   <Link href="/productos">
                     <a>
-                      {/* <img
+                      <img
                         src={this.state.imagenesNavBar[0]}
                         alt="icono catálogo"
-                      /> */}
+                      /> 
                       Catálogo completo
                     </a>
                   </Link>
@@ -187,16 +187,16 @@ class NavbarComponent extends React.Component {
                     onClick={this.showFruitsList}
                     className="displayButtonsProds disableZoombutton frutasListButton"
                   >
-                    {/* <img
+                     <img
                       src={this.state.imagenesNavBar[1]}
                       alt="icono cerezas"
-                    /> */}
+                    /> 
                     Frutas
-                    {/* <img
+                     <img
                       src={this.state.imagenesNavBar[2]}
                       alt="flecha hacia abajo"
                       style={{ width: "15px", marginLeft: "5px" }}
-                    /> */}
+                    /> 
                   </button>
                   <ul className="ulFruits">
                     <li>
@@ -207,10 +207,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/cerezas-y-picotas">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[3]}
                             alt="icono cerezas"
-                          />{" "} */}
+                          />{" "} 
                           Cerezas y picotas
                         </a>
                       </Link>
@@ -218,10 +218,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/platanos">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[4]}
                             alt="icono platanos"
-                          />{" "} */}
+                          />{" "} 
                           Platanos
                         </a>
                       </Link>
@@ -229,10 +229,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/pinas">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[5]}
                             alt="icono piña"
-                          />{" "} */}
+                          />{" "} 
                           Piñas
                         </a>
                       </Link>
@@ -240,10 +240,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/peras">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[6]}
                             alt="icono pera"
-                          />{" "} */}
+                          />{" "} 
                           Peras
                         </a>
                       </Link>
@@ -251,10 +251,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/naranjas">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[7]}
                             alt="icono naranja"
-                          />{" "} */}
+                          />{" "} 
                           Naranjas
                         </a>
                       </Link>
@@ -262,10 +262,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/melones-y-sandias">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[8]}
                             alt="icono sandía"
-                          />{" "} */}
+                          />{" "} 
                           Melones y sandias
                         </a>
                       </Link>
@@ -273,10 +273,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/melocotones-y-ciruelas">
                         <a>
-                          {/* <img
+                          <img
                             src={this.state.imagenesNavBar[9]}
                             alt="icono melocotón"
-                          />{" "} */}
+                          />{" "} 
                           Melocotones y ciruelas
                         </a>
                       </Link>
@@ -284,10 +284,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/manzanas">
                         <a>
-                          {/* <img
+                          <img
                             src={this.state.imagenesNavBar[10]}
                             alt="icono manzana"
-                          />{" "} */}
+                          />{" "} 
                           Manzanas
                         </a>
                       </Link>
@@ -295,10 +295,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/limas-y-limones">
                         <a>
-                          {/* <img
+                          <img
                             src={this.state.imagenesNavBar[11]}
                             alt="icono limón"
-                          />{" "} */}
+                          />{" "} 
                           Limas y limones
                         </a>
                       </Link>
@@ -306,10 +306,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/kiwis">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[12]}
                             alt="icono kiwi"
-                          />{" "} */}
+                          />{" "} 
                           Kiwis
                         </a>
                       </Link>
@@ -317,10 +317,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/frutas-del-bosque">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[13]}
                             alt="icono arbol"
-                          />{" "} */}
+                          />{" "} 
                           Frutas del bosque
                         </a>
                       </Link>
@@ -328,10 +328,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/frutas/uvas">
                         <a>
-                          {/* <img
+                          <img
                             src={this.state.imagenesNavBar[14]}
                             alt="icono uvas"
-                          />{" "} */}
+                          />{" "} 
                           Uvas
                         </a>
                       </Link>
@@ -343,16 +343,16 @@ class NavbarComponent extends React.Component {
                     onClick={this.showVerduras}
                     className="displayButtonsProds disableZoombutton verdurasListButton"
                   >
-                    {/* <img
+                     <img
                       src={this.state.imagenesNavBar[15]}
                       alt="icono cebollas"
-                    /> */}
+                    /> 
                     Verduras y hortalizas
-                    {/* <img
+                    <img
                       src={this.state.imagenesNavBar[16]}
                       alt="flecha hacia abajo"
                       style={{ width: "15px", marginLeft: "5px" }}
-                    /> */}
+                    /> 
                   </button>
                   <ul className="ulVerduras">
                     <li>
@@ -363,10 +363,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/verduras-y-hortalizas/tomates">
                         <a>
-                          {/* <img
+                          <img
                             src={this.state.imagenesNavBar[17]}
                             alt="icono tomate"
-                          />{" "} */}
+                          />{" "} 
                           Tomates
                         </a>
                       </Link>
@@ -374,10 +374,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/verduras-y-hortalizas/cebollas-y-ajos">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[18]}
                             alt="icono cebolla"
-                          />{" "} */}
+                          />{" "} 
                           Cebollas y ajos
                         </a>
                       </Link>
@@ -385,10 +385,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/verduras-y-hortalizas/lechugas">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[19]}
                             alt="icono lechuga"
-                          />{" "} */}
+                          />{" "} 
                           Lechugas
                         </a>
                       </Link>
@@ -396,10 +396,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/verduras-y-hortalizas/patatas">
                         <a>
-                          {/* <img
+                          <img
                             src={this.state.imagenesNavBar[20]}
                             alt="icono patatas"
-                          />{" "} */}
+                          />{" "} 
                           Patatas
                         </a>
                       </Link>
@@ -407,10 +407,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/verduras-y-hortalizas/pimientos">
                         <a>
-                          {/* <img
+                         <img
                             src={this.state.imagenesNavBar[21]}
                             alt="icono pimiento"
-                          />{" "} */}
+                          />{" "} 
                           Pimientos
                         </a>
                       </Link>
@@ -418,10 +418,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/verduras-y-hortalizas/setas-y-champinones">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[22]}
                             alt="icono seta"
-                          />{" "} */}
+                          />{" "} 
                           Setas y champiñones
                         </a>
                       </Link>
@@ -429,10 +429,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/verduras-y-hortalizas/de-tierra">
                         <a>
-                          {/* <img
+                          <img
                             src={this.state.imagenesNavBar[23]}
                             alt="icono tierra"
-                          />{" "} */}
+                          />{" "} 
                           De tierra
                         </a>
                       </Link>
@@ -440,10 +440,10 @@ class NavbarComponent extends React.Component {
                     <li>
                       <Link href="/productos/verduras-y-hortalizas/germinados">
                         <a>
-                          {/* <img
+                           <img
                             src={this.state.imagenesNavBar[24]}
                             alt="icono semilla"
-                          />{" "} */}
+                          />{" "} 
                           Germinados
                         </a>
                       </Link>
@@ -453,10 +453,10 @@ class NavbarComponent extends React.Component {
                 <li>
                   <Link href="/productos/legumbres">
                     <a>
-                      {/* <img
+                       <img
                         src={this.state.imagenesNavBar[25]}
                         alt="legumbres"
-                      />{" "} */}
+                      />{" "} 
                       Legumbres
                     </a>
                   </Link>
@@ -464,10 +464,10 @@ class NavbarComponent extends React.Component {
                 <li>
                   <Link href="/productos/frutos-secos">
                     <a>
-                      {/* <img
+                       <img
                         src={this.state.imagenesNavBar[26]}
                         alt="icono cacahuete"
-                      />{" "} */}
+                      />{" "} 
                       Frutos secos
                     </a>
                   </Link>
@@ -475,10 +475,10 @@ class NavbarComponent extends React.Component {
                 <li>
                   <Link href="/productos/encurtidos">
                     <a>
-                      {/* <img
+                      <img
                         src={this.state.imagenesNavBar[27]}
                         alt="icono tapa"
-                      />{" "} */}
+                      />{" "} 
                       Encurtidos
                     </a>
                   </Link>
@@ -486,10 +486,10 @@ class NavbarComponent extends React.Component {
                 <li>
                   <Link href="/productos/especias">
                     <a>
-                      {/* <img
+                      <img
                         src={this.state.imagenesNavBar[28]}
                         alt="icono especias"
-                      />{" "} */}
+                      />{" "} 
                       Especias
                     </a>
                   </Link>
@@ -497,10 +497,10 @@ class NavbarComponent extends React.Component {
                 <li>
                   <Link href="/productos/miel">
                     <a>
-                      {/* <img
+                       <img
                         src={this.state.imagenesNavBar[29]}
                         alt="icono tarro de miel"
-                      />{" "} */}
+                      />{" "} 
                       Miel
                     </a>
                   </Link>
@@ -508,10 +508,10 @@ class NavbarComponent extends React.Component {
                 <li>
                   <Link href="/productos/dulces">
                     <a>
-                      {/* <img
+                      <img
                         src={this.state.imagenesNavBar[30]}
                         alt="icono pastel"
-                      />{" "} */}
+                      />{" "} 
                       Dulces
                     </a>
                   </Link>
@@ -519,10 +519,10 @@ class NavbarComponent extends React.Component {
                 <li>
                   <Link href="/productos/galletas-y-cereales">
                     <a>
-                      {/* <img
+                       <img
                         src={this.state.imagenesNavBar[31]}
                         alt="icono galleta"
-                      />{" "} */}
+                      />{" "} 
                       Galletas y cereales
                     </a>
                   </Link>
@@ -530,10 +530,10 @@ class NavbarComponent extends React.Component {
                 <li>
                   <Link href="/productos/aperitivos-snack">
                     <a>
-                      {/* <img
+                       <img
                         src={this.state.imagenesNavBar[32]}
                         alt="aperitivo snack"
-                      />{" "} */}
+                      />{" "} 
                       Aperitivos Snack
                     </a>
                   </Link>
@@ -572,10 +572,10 @@ class NavbarComponent extends React.Component {
           <Link href="/carrito">
             <a className="buttonCart disableZoombutton">
               <span>Carrito: </span>
-              {/* <img
+               <img
                 src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_30,q_10,w_30/v1593638701/iconosHorticurita/carritoIcons_mgpns6.png"
                 alt="icono carrito blanco"
-              /> */}
+              /> 
               ( {this.state.cartItems.length} )
             </a>
           </Link>

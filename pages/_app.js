@@ -50,6 +50,7 @@ function MyApp({ Component, pageProps }) {
           align-items: center;
           position: fixed;
           width: 100%;
+          z-index: 9;
           box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
         }
 

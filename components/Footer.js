@@ -40,7 +40,7 @@ class Footer extends React.Component {
     fontCharge.setAttribute('async','')
     fontCharge.setAttribute(
       "href",
-      "https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
+      "https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Pacifico|Montserrat&display=swap"
     );
     fontCharge.setAttribute("rel", "stylesheet");
     document.querySelector("head").appendChild(fontCharge);
