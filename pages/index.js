@@ -271,7 +271,7 @@ class Home extends React.Component {
               z-index: 1;
               max-width: 1440px;
               width: 100%;
-              margin-top: 25%;
+              margin-top: -33%;
               display: flex;
               justify-content: space-between;
             }
@@ -552,7 +552,7 @@ class Home extends React.Component {
               z-index: 1;
               max-width: 1440px;
               width: 100%;
-              margin-top: 25%;
+              margin-top: -32%;
               display: flex;
               justify-content: space-between;
             }
@@ -829,7 +829,7 @@ class Home extends React.Component {
               z-index: 1;
               max-width: 1440px;
               width: 100%;
-              margin-top: 25%;
+              margin-top: -31%;
               display: flex;
               justify-content: space-between;
             }
@@ -1111,7 +1111,7 @@ class Home extends React.Component {
               z-index: 1;
               max-width: 1440px;
               width: 100%;
-              margin-top: 25%;
+              margin-top: -32%;
               display: flex;
               justify-content: space-between;
             }
@@ -1396,7 +1396,7 @@ class Home extends React.Component {
               max-width: 1440px;
               width: 100%;
               display: flex;
-              padding-top: 306px;
+              margin-top: -34%;
               justify-content: space-between;
             }
             .buttonLeft {
