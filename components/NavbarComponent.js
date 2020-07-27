@@ -20,6 +20,7 @@ class NavbarComponent extends React.Component {
 
   //MOSTRAR MENÚ mobile
   showList = () => {
+    this.changeImageState()
     document.querySelector(".listProducts").classList.toggle("showList");
     if (
       document
@@ -128,7 +129,7 @@ class NavbarComponent extends React.Component {
     this.actualizarCarro();
 
     
-      this.changeImageState()
+      
     
   }
 
