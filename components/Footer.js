@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
+
 class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -48,7 +49,7 @@ class Footer extends React.Component {
     fontCharge.setAttribute("rel", "stylesheet");
     document.querySelector("head").appendChild(fontCharge);
 
-  
+
     };
   
     
@@ -60,6 +61,7 @@ class Footer extends React.Component {
   render() {
     return (
       <>
+      
         <footer>
           <div>
             <h5>Contacto</h5>
