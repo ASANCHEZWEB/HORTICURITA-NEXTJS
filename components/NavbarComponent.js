@@ -45,6 +45,7 @@ class NavbarComponent extends React.Component {
   };
   //MOSTRAR LISTA DE PRODUCTOS en desktop
   showProductsList = () => {
+    this.changeImageState()
     if (document.querySelector(".ulProducts")) {
       document
         .querySelector(".ulProducts")
