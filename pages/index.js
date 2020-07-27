@@ -258,6 +258,13 @@ class Home extends React.Component {
           </form>
         </div>
         <style jsx>{`
+          .buttonLeft {
+            object-fit: contain;
+          }
+
+          .buttonRight {
+            object-fit: contain;
+          }
           @media (max-width: 575.98px) {
             .buttonsContainerSlider {
               position: absolute;
