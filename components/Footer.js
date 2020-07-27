@@ -11,9 +11,12 @@ class Footer extends React.Component {
       imagenChat: "",
       iconoInstagram: "",
       iconoFacebook: "",
-      iconoTwitter: ""
+      iconoTwitter: "",
+    
     };
   }
+
+
 
   componentDidMount() {
     this.setState({
@@ -32,9 +35,10 @@ class Footer extends React.Component {
     });
   
 
-
+   
   
     window.onload = function() {
+
       let fontCharge = document.createElement("link");
     fontCharge.setAttribute('async','')
     fontCharge.setAttribute(
@@ -43,6 +47,8 @@ class Footer extends React.Component {
     );
     fontCharge.setAttribute("rel", "stylesheet");
     document.querySelector("head").appendChild(fontCharge);
+
+  
     };
   
     

@@ -1,3 +1,4 @@
+
 //MOSTRAR MENÚ mobile
 function showList() {
   document.querySelector(".listProducts").classList.toggle("showList");
@@ -115,4 +116,7 @@ window.onclick = function (event) {
   }
 };
 
-
+useEffect(() => {
+  ReactGA.initialize("UA-169048148-3");
+  ReactGA.pageview(window.location.pathname + window.location.search);
+})

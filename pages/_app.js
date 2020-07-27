@@ -5,10 +5,7 @@ import ReactGA from "react-ga";
 import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    ReactGA.initialize("UA-169048148-3");
-    ReactGA.pageview(window.location.pathname + window.location.search);
-  });
+ 
 
   return (
     <>
@@ -1062,7 +1059,13 @@ function MyApp({ Component, pageProps }) {
         }
       `}</style>
 
-      <script src="/scripts/nav.js" async></script>
+      <script src="/scripts/nav.js" async>
+      {useEffect(() => {
+  ReactGA.initialize("UA-169048148-3");
+  ReactGA.pageview(window.location.pathname + window.location.search);
+})}
+      </script>
+      
       {/* <script src="/scripts/fonts.js" async></script> */}
 
       {/* <script src="/scripts/chatDirecto.js" async></script> */}
