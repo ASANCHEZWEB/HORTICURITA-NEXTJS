@@ -290,10 +290,14 @@ class Home extends React.Component {
           }
           .buttonLeft {
             object-fit: contain;
+            cursor: pointer;
+            touch-action: manipulation;
           }
 
           .buttonRight {
             object-fit: contain;
+            cursor: pointer;
+            touch-action: manipulation;
           }
           @media (max-width: 575.98px) {
             .buttonsContainerSlider {
