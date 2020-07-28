@@ -4,9 +4,31 @@ import Head from "next/head";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      sliderPosition: 0,
+    };
   }
 
+  buttonDer = () => {
+    if (this.state.sliderPosition !== 200) {
+      let positionSlider = this.state.sliderPosition + 100;
+      this.setState({ sliderPosition: positionSlider });
+
+      document.querySelector(
+        ".containerCarrouselContent"
+      ).style.left = `-${positionSlider}%`;
+    }
+  };
+  buttonIzq = () => {
+    if (this.state.sliderPosition !== 0) {
+      let positionSlider = this.state.sliderPosition - 100;
+      this.setState({ sliderPosition: positionSlider });
+
+      document.querySelector(
+        ".containerCarrouselContent"
+      ).style.left = `-${positionSlider}%`;
+    }
+  };
   componentDidMount() {}
 
   render() {
@@ -76,11 +98,13 @@ class Home extends React.Component {
               className="buttonLeft"
               src="home/icono-flecha-izquierda.png"
               alt="icono flecha izquierda"
+              onClick={this.buttonIzq}
             />
             <img
               className="buttonRight"
               src="home/icono-flecha-derecha.png"
               alt="icono flecha derecha"
+              onClick={this.buttonDer}
             />
           </div>
         </div>
@@ -261,6 +285,9 @@ class Home extends React.Component {
           </form>
         </div>
         <style jsx>{`
+          .containerCarrouselContent {
+            left: 0%;
+          }
           .buttonLeft {
             object-fit: contain;
           }
