@@ -68,7 +68,9 @@ class Home extends React.Component {
               />
             </div>
           </div>
+        </section>
 
+        <div className="container4k">
           <div className="buttonsContainerSlider">
             <img
               className="buttonLeft"
@@ -81,9 +83,8 @@ class Home extends React.Component {
               alt="icono flecha derecha"
             />
           </div>
-        </section>
-        <div className="buttonsContainerSlider"><img  className="buttonLeft" src="home/icono-flecha-izquierda.png" alt="icono flecha izquierda" />
-        <img className="buttonRight" src="home/icono-flecha-derecha.png" alt="icono flecha derecha" /></div>
+        </div>
+
         <section id="sectionTwo">
           <h2>Bienvenido a horticurita</h2>
           <div className="containerWelcome">
@@ -1398,7 +1399,7 @@ class Home extends React.Component {
               max-width: 1440px;
               width: 100%;
               display: flex;
-              padding-top: 301px;
+              margin-top: -429px;
               justify-content: space-between;
             }
             .buttonLeft {
@@ -1407,6 +1408,11 @@ class Home extends React.Component {
 
             .buttonRight {
               height: 89px;
+            }
+
+            .container4k {
+              display: flex;
+              justify-content: center;
             }
 
             #sectionOne {

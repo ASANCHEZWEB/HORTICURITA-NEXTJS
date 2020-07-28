@@ -1,4 +1,3 @@
-
 //MOSTRAR MENÚ mobile
 function showList() {
   document.querySelector(".listProducts").classList.toggle("showList");
@@ -115,4 +114,5 @@ window.onclick = function (event) {
     }
   }
 };
+
 

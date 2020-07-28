@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 
-
 class Footer extends React.Component {
   constructor(props) {
     super(props);
@@ -12,12 +11,9 @@ class Footer extends React.Component {
       imagenChat: "",
       iconoInstagram: "",
       iconoFacebook: "",
-      iconoTwitter: "",
-    
+      iconoTwitter: ""
     };
   }
-
-
 
   componentDidMount() {
     this.setState({
@@ -36,11 +32,11 @@ class Footer extends React.Component {
     });
   
 
-   
-  
-    window.onload = function() {
 
-      let fontCharge = document.createElement("link");
+  
+
+  
+    let fontCharge = document.createElement("link");
     fontCharge.setAttribute('async','')
     fontCharge.setAttribute(
       "href",
@@ -50,18 +46,12 @@ class Footer extends React.Component {
     document.querySelector("head").appendChild(fontCharge);
 
 
-    };
-  
-    
-
-
 
 
   }
   render() {
     return (
       <>
-      
         <footer>
           <div>
             <h5>Contacto</h5>

@@ -4,15 +4,11 @@ import { Helmet } from "react-helmet";
 import ReactGA from "react-ga";
 import { useEffect } from "react";
 
-
-
-
 function MyApp({ Component, pageProps }) {
-
-
- 
-
-
+  useEffect(() => {
+    ReactGA.initialize("UA-169048148-3");
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  });
 
   return (
     <>
@@ -26,7 +22,7 @@ function MyApp({ Component, pageProps }) {
       <main>
         <Component {...pageProps} />
       </main>
-     <Footer/>
+      <Footer />
 
       <style jsx global>{`
         body {
@@ -39,6 +35,7 @@ function MyApp({ Component, pageProps }) {
           touch-action: manipulation;
         }
 
+        
         a {
           text-decoration: none;
         }
@@ -126,8 +123,8 @@ function MyApp({ Component, pageProps }) {
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
-            color: black;
-          }
+          color: black;
+        }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -321,8 +318,8 @@ function MyApp({ Component, pageProps }) {
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
-            color: black;
-          }
+          color: black;
+        }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -517,8 +514,8 @@ function MyApp({ Component, pageProps }) {
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
-            color: white;
-          }
+          color: white;
+        }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -715,8 +712,8 @@ function MyApp({ Component, pageProps }) {
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
-            color: white;
-          }
+          color: white;
+        }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -913,8 +910,8 @@ function MyApp({ Component, pageProps }) {
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
-            color: white;
-          }
+          color: white;
+        }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -1065,24 +1062,12 @@ function MyApp({ Component, pageProps }) {
         }
       `}</style>
 
-   
-  
-
       <script src="/scripts/nav.js" async></script>
-       
-
       {/* <script src="/scripts/fonts.js" async></script> */}
 
       {/* <script src="/scripts/chatDirecto.js" async></script> */}
-      {useEffect(() => {
-      ReactGA.initialize("UA-169048148-3");
-      ReactGA.pageview(window.location.pathname + window.location.search)
-    })} 
     </>
-    
-  )
- 
+  );
 }
-
 
 export default MyApp;
