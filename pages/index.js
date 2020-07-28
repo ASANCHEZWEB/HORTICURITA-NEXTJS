@@ -609,22 +609,25 @@ class Home extends React.Component {
             }
 
             .containerCarrouselContent {
-              width: 100%;
+              width: 767px;
               position: relative;
             }
-
+            .containerCarrouselContent > div:nth-child(1) {
+              position: absolute;
+              margin-left: 0%;
+              width: 101vw;
+            }
             .containerCarrouselContent > div:nth-child(2) {
-              position: relative;
-              top: -100%;
-              left: 100%;
+              position: absolute;
+              margin-left: 101vw;
+              width: 101vw;
             }
 
             .containerCarrouselContent > div:nth-child(3) {
-              position: relative;
-              top: -200%;
-              left: 200%;
+              position: absolute;
+              margin-left: 202vw;
+              width: 101vw;
             }
-
             .imagenOneSlider {
               width: 100%;
             }
@@ -893,20 +896,25 @@ class Home extends React.Component {
             }
 
             .containerCarrouselContent {
-              width: 100%;
+              width: 991px;
               position: relative;
             }
 
+            .containerCarrouselContent > div:nth-child(1) {
+              position: absolute;
+              margin-left: 0%;
+              width: 101vw;
+            }
             .containerCarrouselContent > div:nth-child(2) {
-              position: relative;
-              top: -100%;
-              left: 100%;
+              position: absolute;
+              margin-left: 101vw;
+              width: 101vw;
             }
 
             .containerCarrouselContent > div:nth-child(3) {
-              position: relative;
-              top: -200%;
-              left: 200%;
+              position: absolute;
+              margin-left: 202vw;
+              width: 101vw;
             }
 
             .imagenOneSlider {
@@ -1176,20 +1184,25 @@ class Home extends React.Component {
             }
 
             .containerCarrouselContent {
-              width: 100%;
+              width: 1199px;
               position: relative;
             }
 
+            .containerCarrouselContent > div:nth-child(1) {
+              position: absolute;
+              margin-left: 0%;
+              width: 101vw;
+            }
             .containerCarrouselContent > div:nth-child(2) {
-              position: relative;
-              top: -100%;
-              left: 100%;
+              position: absolute;
+              margin-left: 101vw;
+              width: 101vw;
             }
 
             .containerCarrouselContent > div:nth-child(3) {
-              position: relative;
-              top: -200%;
-              left: 200%;
+              position: absolute;
+              margin-left: 202vw;
+              width: 101vw;
             }
 
             .imagenOneSlider {
@@ -1460,20 +1473,29 @@ class Home extends React.Component {
             }
 
             .containerCarrouselContent {
-              width: 100%;
+              max-width: 1440px;
+              width: 101vw;
               position: relative;
             }
 
+            .containerCarrouselContent > div:nth-child(1) {
+              position: absolute;
+              margin-left: 0%;
+              width: 101vw;
+              max-width: 1440px;
+            }
             .containerCarrouselContent > div:nth-child(2) {
-              position: relative;
-              top: -100%;
-              left: 100%;
+              position: absolute;
+              margin-left: 100%;
+              width: 101vw;
+              max-width: 1440px;
             }
 
             .containerCarrouselContent > div:nth-child(3) {
-              position: relative;
-              top: -200%;
-              left: 200%;
+              position: absolute;
+              margin-left: 200%;
+              width: 101vw;
+              max-width: 1440px;
             }
 
             .imagenOneSlider {
