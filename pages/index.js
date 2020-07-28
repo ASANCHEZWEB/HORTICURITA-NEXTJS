@@ -16,7 +16,7 @@ class Home extends React.Component {
 
       document.querySelector(
         ".containerCarrouselContent"
-      ).style.left = `-${positionSlider}%`;
+      ).style.marginLeft = `-${positionSlider}%`;
     }
   };
   buttonIzq = () => {
@@ -26,7 +26,7 @@ class Home extends React.Component {
 
       document.querySelector(
         ".containerCarrouselContent"
-      ).style.left = `-${positionSlider}%`;
+      ).style.marginLeft = `-${positionSlider}%`;
     }
   };
   componentDidMount() {}
@@ -286,7 +286,7 @@ class Home extends React.Component {
         </div>
         <style jsx>{`
           .containerCarrouselContent {
-            left: 0%;
+            
           }
           .buttonLeft {
             object-fit: contain;
