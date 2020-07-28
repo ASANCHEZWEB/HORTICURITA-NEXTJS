@@ -16,7 +16,7 @@ class Home extends React.Component {
 
       document.querySelector(
         ".containerCarrouselContent"
-      ).style.left = `-${positionSlider}%`;
+      ).style.marginLeft = `-${positionSlider}%`;
     }
   };
   buttonIzq = () => {
@@ -26,7 +26,7 @@ class Home extends React.Component {
 
       document.querySelector(
         ".containerCarrouselContent"
-      ).style.left = `-${positionSlider}%`;
+      ).style.marginLeft = `-${positionSlider}%`;
     }
   };
   componentDidMount() {}
@@ -286,7 +286,6 @@ class Home extends React.Component {
         </div>
         <style jsx>{`
           .containerCarrouselContent {
-            left: 0%;
           }
           .buttonLeft {
             object-fit: contain;
@@ -329,17 +328,21 @@ class Home extends React.Component {
               width: 575px;
               position: relative;
             }
-
+            .containerCarrouselContent > div:nth-child(1) {
+              position: absolute;
+              margin-left: 0%;
+              width: 100vw;
+            }
             .containerCarrouselContent > div:nth-child(2) {
-              position: relative;
-              top: -100%;
-              left: 100%;
+              position: absolute;
+              margin-left: 100vw;
+              width: 100vw;
             }
 
             .containerCarrouselContent > div:nth-child(3) {
-              position: relative;
-              top: -200%;
-              left: 200%;
+              position: absolute;
+              margin-left: 200vw;
+              width: 100vw;
             }
 
             .imagenOneSlider {
