@@ -33,10 +33,8 @@ class Footer extends React.Component {
   
 
 
-  
-
-  
-    let fontCharge = document.createElement("link");
+    window.onload = function() {
+      let fontCharge = document.createElement("link");
     fontCharge.setAttribute('async','')
     fontCharge.setAttribute(
       "href",
@@ -44,6 +42,10 @@ class Footer extends React.Component {
     );
     fontCharge.setAttribute("rel", "stylesheet");
     document.querySelector("head").appendChild(fontCharge);
+    };
+
+  
+    
 
 
 
