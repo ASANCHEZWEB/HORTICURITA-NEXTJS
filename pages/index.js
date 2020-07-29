@@ -4,16 +4,9 @@ import Head from "next/head";
 class Home extends React.Component {
   constructor(props) {
     super(props);
+    this.functionInterval='';
     this.state = {
-      intervalCarrousel:setInterval(()=> {
-        if (document.querySelector(".containerCarrouselContent").style.marginLeft == "0%") {
-          document.querySelector(".containerCarrouselContent").style.marginLeft = `-100%`;
-        } else if (document.querySelector(".containerCarrouselContent").style.marginLeft == "-100%") {
-          document.querySelector(".containerCarrouselContent").style.marginLeft = `-200%`;
-        } else if (document.querySelector(".containerCarrouselContent").style.marginLeft == "-200%") {
-          document.querySelector(".containerCarrouselContent").style.marginLeft = `0%`;
-        }
-      }, 5000),
+      
     };
   }
 
@@ -35,8 +28,21 @@ class Home extends React.Component {
     }
   };
 
+componentDidMount(){
+  this.functionInterval=setInterval(()=> {
+
+    if (document.querySelector(".containerCarrouselContent").style.marginLeft == "0%") {
+      document.querySelector(".containerCarrouselContent").style.marginLeft = `-100%`;
+    } else if (document.querySelector(".containerCarrouselContent").style.marginLeft == "-100%") {
+      document.querySelector(".containerCarrouselContent").style.marginLeft = `-200%`;
+    } else if (document.querySelector(".containerCarrouselContent").style.marginLeft == "-200%") {
+      document.querySelector(".containerCarrouselContent").style.marginLeft = `0%`;
+    }
+  }, 5000)
+}
+
 componentWillUnmount(){
-  clearInterval(this.state.intervalCarrousel)
+  clearInterval(this.functionInterval)
 }
 
   render() {
