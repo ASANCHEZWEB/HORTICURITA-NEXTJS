@@ -85,7 +85,7 @@ class Home extends React.Component {
 
               <img
                 className="imagenOneSlider"
-                src="home/comida-organica-verduras-canasta_135427-2767.jpg"
+                src="home/repartidor.jpg"
                 alt=""
               />
             </div>
@@ -285,6 +285,9 @@ class Home extends React.Component {
           </form>
         </div>
         <style jsx>{`
+        #sectionOne{
+          overflow-y: hidden;
+        }
           .containerCarrouselContent {
           }
           .buttonLeft {
