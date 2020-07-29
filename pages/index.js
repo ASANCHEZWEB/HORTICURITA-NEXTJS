@@ -5,58 +5,39 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      sliderPosition: 0,
-      time: 5000,
+      intervalCarrousel:setInterval(()=> {
+        if (document.querySelector(".containerCarrouselContent").style.marginLeft == "0%") {
+          document.querySelector(".containerCarrouselContent").style.marginLeft = `-100%`;
+        } else if (document.querySelector(".containerCarrouselContent").style.marginLeft == "-100%") {
+          document.querySelector(".containerCarrouselContent").style.marginLeft = `-200%`;
+        } else if (document.querySelector(".containerCarrouselContent").style.marginLeft == "-200%") {
+          document.querySelector(".containerCarrouselContent").style.marginLeft = `0%`;
+        }
+      }, 5000),
     };
   }
 
-  buttonDer = () => {
-    if (this.state.sliderPosition !== 200) {
-      let positionSlider = this.state.sliderPosition + 100;
-      this.setState({ sliderPosition: positionSlider });
-
-      document.querySelector(
-        ".containerCarrouselContent"
-      ).style.marginLeft = `-${positionSlider}%`;
+  buttonDer(){
+    if (document.querySelector(".containerCarrouselContent").style.marginLeft =="0%") {
+      document.querySelector(".containerCarrouselContent").style.marginLeft = `-100%`;
+    } else if (document.querySelector(".containerCarrouselContent").style.marginLeft =="-100%") {
+      document.querySelector(".containerCarrouselContent").style.marginLeft = `-200%`;
+    } else if (
+      document.querySelector(".containerCarrouselContent").style.marginLeft =="-200%") {
+      document.querySelector(".containerCarrouselContent").style.marginLeft = `0%`;
     }
   };
-  buttonIzq = () => {
-    if (this.state.sliderPosition !== 0) {
-      let positionSlider = this.state.sliderPosition - 100;
-      this.setState({ sliderPosition: positionSlider });
-
-      document.querySelector(
-        ".containerCarrouselContent"
-      ).style.marginLeft = `-${positionSlider}%`;
+  buttonIzq(){
+    if (document.querySelector(".containerCarrouselContent").style.marginLeft =="-100%") {
+      document.querySelector(".containerCarrouselContent").style.marginLeft = `0%`;
+    } else if (document.querySelector(".containerCarrouselContent").style.marginLeft =="-200%") {
+      document.querySelector(".containerCarrouselContent").style.marginLeft = `-100%`;
     }
   };
 
-  autochange() {
-    setInterval(() => {
-      if (this.state.sliderPosition == 0) {
-        document.querySelector(
-          ".containerCarrouselContent"
-        ).style.marginLeft = `-100%`;
-        let positionSlider = this.state.sliderPosition + 100;
-        this.setState({ sliderPosition: positionSlider });
-      } else if (this.state.sliderPosition == 100) {
-        document.querySelector(
-          ".containerCarrouselContent"
-        ).style.marginLeft = `-200%`;
-        let positionSlider = this.state.sliderPosition + 100;
-        this.setState({ sliderPosition: positionSlider });
-      } else if (this.state.sliderPosition == 200) {
-        document.querySelector(
-          ".containerCarrouselContent"
-        ).style.marginLeft = `0%`;
-        this.setState({ sliderPosition: 0 });
-      }
-    }, this.state.time);
-  }
-
-  componentDidMount() {
-    this.autochange();
-  }
+componentWillUnmount(){
+  clearInterval(this.state.intervalCarrousel)
+}
 
   render() {
     return (
@@ -72,7 +53,10 @@ class Home extends React.Component {
         </Head>
 
         <section id="sectionOne">
-          <div className="containerCarrouselContent">
+          <div
+            className="containerCarrouselContent"
+            style={{ marginLeft: "0%" }}
+          >
             <div>
               <div className="divContainerOneSlider">
                 <h1>
