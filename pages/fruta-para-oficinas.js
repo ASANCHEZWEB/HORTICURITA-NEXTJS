@@ -1,5 +1,5 @@
 import React from "react";
-
+import Head from "next/head";
 class ParaOficinas extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +10,15 @@ class ParaOficinas extends React.Component {
   render() {
     return (
       <>
+<Head>
+          <title>
+            Horticurita | Fruta para oficinas | Alta calidad 
+          </title>
+          <meta
+            name="description"
+            content="Realiza tu pedido personalizado para tu oficina con entrega diaria o semanal a tu gusto. En horticurita.es disponemos de gran variedad de productos siempre frescos y de alta calidad.¿Te apetece fresas , manzanas o chocolate?, no importa . Lo tenemos"
+          ></meta>
+        </Head>
       <div className="oficinaFormContainer">
       <div className="infoOficina">
           <h1>Fruta para oficinas</h1>
