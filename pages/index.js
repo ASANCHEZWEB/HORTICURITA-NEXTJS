@@ -6,6 +6,7 @@ class Home extends React.Component {
     super(props);
     this.state = {
       sliderPosition: 0,
+      time: 5000,
     };
   }
 
@@ -29,7 +30,33 @@ class Home extends React.Component {
       ).style.marginLeft = `-${positionSlider}%`;
     }
   };
-  componentDidMount() {}
+
+  autochange() {
+    setInterval(() => {
+      if (this.state.sliderPosition == 0) {
+        document.querySelector(
+          ".containerCarrouselContent"
+        ).style.marginLeft = `-100%`;
+        let positionSlider = this.state.sliderPosition + 100;
+        this.setState({ sliderPosition: positionSlider });
+      } else if (this.state.sliderPosition == 100) {
+        document.querySelector(
+          ".containerCarrouselContent"
+        ).style.marginLeft = `-200%`;
+        let positionSlider = this.state.sliderPosition + 100;
+        this.setState({ sliderPosition: positionSlider });
+      } else if (this.state.sliderPosition == 200) {
+        document.querySelector(
+          ".containerCarrouselContent"
+        ).style.marginLeft = `0%`;
+        this.setState({ sliderPosition: 0 });
+      }
+    }, this.state.time);
+  }
+
+  componentDidMount() {
+    this.autochange();
+  }
 
   render() {
     return (
@@ -285,9 +312,9 @@ class Home extends React.Component {
           </form>
         </div>
         <style jsx>{`
-        #sectionOne{
-          overflow-y: hidden;
-        }
+          #sectionOne {
+            overflow-y: hidden;
+          }
           .containerCarrouselContent {
           }
           .buttonLeft {
