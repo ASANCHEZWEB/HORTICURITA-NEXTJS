@@ -74,10 +74,9 @@ class Nosotros extends React.Component {
             <iframe
               className="iframeGoogleMaps"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6188.372204100779!2d-4.158568424428898!3d39.14774861813081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6bb14b83eb9fdd%3A0xd9c3d2bbfc6a73b4!2s13120%20Porzuna%2C%20Cdad.%20Real!5e0!3m2!1ses!2ses!4v1596203416632!5m2!1ses!2ses"
-              frameborder="0"
-              allowfullscreen=""
-              aria-hidden="false"
-              tabindex="0"
+              frameBorder="0"
+              allowFullScreen=""
+              tabIndex="0"
             ></iframe>
           </div>
         </section>
@@ -90,7 +89,8 @@ class Nosotros extends React.Component {
           section {
             max-width: 1000px;
             margin: 0 auto;
-            padding-top: 43px;
+            padding-top: 25px;
+            margin-bottom: 66px;
           }
 
           @media (max-width: 575.98px) {
