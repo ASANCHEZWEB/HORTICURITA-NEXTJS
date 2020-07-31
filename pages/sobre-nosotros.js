@@ -32,7 +32,30 @@ class Nosotros extends React.Component {
           </p>
 
           <div className="imagenPrincipalNos">
-            <img src="nosotros/huerta.jpg" alt="huerta de tomates" />
+            <picture>
+              <source
+                media="(max-width: 320px)"
+                srcSet="nosotros/huerta/320/huerta.jpg"
+              />
+              
+              <source
+                media="(max-width: 575px) and (min-width: 320px)"
+                srcSet="nosotros/huerta/575/huerta.jpg"
+              />
+               <source
+                media="(max-width: 767px) and (min-width: 576px)"
+                srcSet="nosotros/huerta/767/huerta.jpg"
+              />
+              <source
+                media="(max-width: 991px) and (min-width: 768px)"
+                srcSet="nosotros/huerta/991/huerta.jpg"
+              />
+              <source
+                media="(max-width: 1199px) and (min-width: 992px)"
+                srcSet="nosotros/huerta/1199/huerta.jpg"
+              />
+              <img className="imagenPrincipalNosImg" src="nosotros/huerta.jpg" alt="huerta de tomates" />
+            </picture>
           </div>
           <div className="calidadDiv">
             <div>
@@ -83,7 +106,7 @@ class Nosotros extends React.Component {
               Estamos ubicados en Porzuna , un pueblo perteneciente a la
               provincia de Ciudad Real , Castilla-La Mancha.
               <br></br>
-               Mapa ubicación :
+              Mapa ubicación :
             </p>
             <LazyLoad width={"100%"}>
               <iframe
@@ -97,10 +120,6 @@ class Nosotros extends React.Component {
           </div>
         </section>
         <style jsx>{`
-          .nose {
-            width: 100%;
-          }
-
           .iframeGoogleMaps {
             width: 100%;
             height: 450px;
@@ -112,7 +131,10 @@ class Nosotros extends React.Component {
             padding-top: 25px;
             margin-bottom: 66px;
           }
-
+          .imagenPrincipalNosImg {
+              width: 100%;
+              object-fit: contain;
+            }
           @media (max-width: 575.98px) {
             section > h1 {
               text-align: center;
@@ -130,10 +152,7 @@ class Nosotros extends React.Component {
               font-size: 3.5vw;
             }
 
-            .imagenPrincipalNos > img {
-              width: 100%;
-              object-fit: contain;
-            }
+            
 
             .calidadDiv {
               font-family: montserrat;
