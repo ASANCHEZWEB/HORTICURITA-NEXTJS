@@ -1,5 +1,5 @@
 import React from "react";
-
+import Head from "next/head";
 class Nosotros extends React.Component {
   constructor(props) {
     super(props);
@@ -10,6 +10,16 @@ class Nosotros extends React.Component {
   render() {
     return (
       <>
+        <Head>
+          <title>¿Quienes somos? | Horticurita</title>
+          <meta
+            name="description"
+            content="Somos un grupo de autónomos enfocados en cultivar productos de
+            terreno de alta calidad ofreciendo precios altamente competitivos a
+            nuestros clientes.En horticurita.es no utilizamos abonos
+            artificiales para el cultivo de fruta , verdura y hortalizas ."
+          ></meta>
+        </Head>
         <section>
           <h1>¿Quienes somos? | Horticurita</h1>
           <p>
