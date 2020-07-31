@@ -80,7 +80,9 @@ class Nosotros extends React.Component {
             <h3>¿Donde estamos?</h3>
             <p>
               Estamos ubicados en Porzuna , un pueblo perteneciente a la
-              provincia de Ciudad Real , Castilla-La Mancha
+              provincia de Ciudad Real , Castilla-La Mancha.
+              <br></br>
+               Mapa ubicación :
             </p>
             <LazyLoad width={"100%"}>
               <iframe
