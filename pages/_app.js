@@ -4,10 +4,31 @@ import { Helmet } from "react-helmet";
 import ReactGA from "react-ga";
 import { useEffect } from "react";
 
+let firstVisitCount = 0;
+
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    ReactGA.initialize("UA-169048148-3");
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    function sumarUno() {
+      ReactGA.initialize("UA-169048148-3");
+      ReactGA.pageview(window.location.pathname + window.location.search);
+      firstVisitCount++;
+    }
+
+    window.onload = function () {
+      let fontCharge = document.createElement("link");
+      fontCharge.setAttribute("async", "");
+      fontCharge.setAttribute(
+        "href",
+        "https://fonts.googleapis.com/css?family=Miltonian+Tattoo|Pacifico|Montserrat&display=swap"
+      );
+      fontCharge.setAttribute("rel", "stylesheet");
+      document.querySelector("head").appendChild(fontCharge);
+      sumarUno();
+    };
+    if (firstVisitCount == 1) {
+      ReactGA.initialize("UA-169048148-3");
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
   });
 
   return (
@@ -35,7 +56,6 @@ function MyApp({ Component, pageProps }) {
           touch-action: manipulation;
         }
 
-        
         a {
           text-decoration: none;
         }
@@ -123,8 +143,8 @@ function MyApp({ Component, pageProps }) {
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
-          color: black;
-        }
+            color: black;
+          }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -318,8 +338,8 @@ function MyApp({ Component, pageProps }) {
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
-          color: black;
-        }
+            color: black;
+          }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -514,8 +534,8 @@ function MyApp({ Component, pageProps }) {
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
-          color: white;
-        }
+            color: white;
+          }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -712,8 +732,8 @@ function MyApp({ Component, pageProps }) {
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
-          color: white;
-        }
+            color: white;
+          }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
@@ -910,8 +930,8 @@ function MyApp({ Component, pageProps }) {
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
-          color: white;
-        }
+            color: white;
+          }
           /* OCULTAR DROPDOWN DE PRODUCTOS */
           .ulProducts {
             display: none;
