@@ -1,6 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import LazyLoad from "react-lazy-load";
+
 class Nosotros extends React.Component {
   constructor(props) {
     super(props);
