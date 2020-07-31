@@ -4,46 +4,82 @@ import Head from "next/head";
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.functionInterval='';
-    this.state = {
-      
-    };
+    this.functionInterval = "";
+    this.state = {};
   }
 
-  buttonDer(){
-    if (document.querySelector(".containerCarrouselContent").style.marginLeft =="0%") {
-      document.querySelector(".containerCarrouselContent").style.marginLeft = `-100%`;
-    } else if (document.querySelector(".containerCarrouselContent").style.marginLeft =="-100%") {
-      document.querySelector(".containerCarrouselContent").style.marginLeft = `-200%`;
+  buttonDer() {
+    if (
+      document.querySelector(".containerCarrouselContent").style.marginLeft ==
+      "0%"
+    ) {
+      document.querySelector(
+        ".containerCarrouselContent"
+      ).style.marginLeft = `-100%`;
     } else if (
-      document.querySelector(".containerCarrouselContent").style.marginLeft =="-200%") {
-      document.querySelector(".containerCarrouselContent").style.marginLeft = `0%`;
+      document.querySelector(".containerCarrouselContent").style.marginLeft ==
+      "-100%"
+    ) {
+      document.querySelector(
+        ".containerCarrouselContent"
+      ).style.marginLeft = `-200%`;
+    } else if (
+      document.querySelector(".containerCarrouselContent").style.marginLeft ==
+      "-200%"
+    ) {
+      document.querySelector(
+        ".containerCarrouselContent"
+      ).style.marginLeft = `0%`;
     }
-  };
-  buttonIzq(){
-    if (document.querySelector(".containerCarrouselContent").style.marginLeft =="-100%") {
-      document.querySelector(".containerCarrouselContent").style.marginLeft = `0%`;
-    } else if (document.querySelector(".containerCarrouselContent").style.marginLeft =="-200%") {
-      document.querySelector(".containerCarrouselContent").style.marginLeft = `-100%`;
+  }
+  buttonIzq() {
+    if (
+      document.querySelector(".containerCarrouselContent").style.marginLeft ==
+      "-100%"
+    ) {
+      document.querySelector(
+        ".containerCarrouselContent"
+      ).style.marginLeft = `0%`;
+    } else if (
+      document.querySelector(".containerCarrouselContent").style.marginLeft ==
+      "-200%"
+    ) {
+      document.querySelector(
+        ".containerCarrouselContent"
+      ).style.marginLeft = `-100%`;
     }
-  };
+  }
 
-componentDidMount(){
-  this.functionInterval=setInterval(()=> {
+  componentDidMount() {
+    this.functionInterval = setInterval(() => {
+      if (
+        document.querySelector(".containerCarrouselContent").style.marginLeft ==
+        "0%"
+      ) {
+        document.querySelector(
+          ".containerCarrouselContent"
+        ).style.marginLeft = `-100%`;
+      } else if (
+        document.querySelector(".containerCarrouselContent").style.marginLeft ==
+        "-100%"
+      ) {
+        document.querySelector(
+          ".containerCarrouselContent"
+        ).style.marginLeft = `-200%`;
+      } else if (
+        document.querySelector(".containerCarrouselContent").style.marginLeft ==
+        "-200%"
+      ) {
+        document.querySelector(
+          ".containerCarrouselContent"
+        ).style.marginLeft = `0%`;
+      }
+    }, 5000);
+  }
 
-    if (document.querySelector(".containerCarrouselContent").style.marginLeft == "0%") {
-      document.querySelector(".containerCarrouselContent").style.marginLeft = `-100%`;
-    } else if (document.querySelector(".containerCarrouselContent").style.marginLeft == "-100%") {
-      document.querySelector(".containerCarrouselContent").style.marginLeft = `-200%`;
-    } else if (document.querySelector(".containerCarrouselContent").style.marginLeft == "-200%") {
-      document.querySelector(".containerCarrouselContent").style.marginLeft = `0%`;
-    }
-  }, 5000)
-}
-
-componentWillUnmount(){
-  clearInterval(this.functionInterval)
-}
+  componentWillUnmount() {
+    clearInterval(this.functionInterval);
+  }
 
   render() {
     return (
@@ -367,6 +403,7 @@ componentWillUnmount(){
 
             .imagenOneSlider {
               width: 100%;
+              object-fit: contain;
             }
 
             .divContainerOneSlider {
@@ -650,6 +687,7 @@ componentWillUnmount(){
             }
             .imagenOneSlider {
               width: 100%;
+              object-fit: contain;
             }
 
             .divContainerOneSlider {
@@ -939,6 +977,7 @@ componentWillUnmount(){
 
             .imagenOneSlider {
               width: 100%;
+              object-fit: contain;
             }
 
             .divContainerOneSlider {
@@ -1227,6 +1266,7 @@ componentWillUnmount(){
 
             .imagenOneSlider {
               width: 100%;
+              object-fit: contain;
             }
 
             .divContainerOneSlider {
@@ -1520,6 +1560,7 @@ componentWillUnmount(){
 
             .imagenOneSlider {
               width: 100%;
+              object-fit: contain;
             }
 
             .divContainerOneSlider {
