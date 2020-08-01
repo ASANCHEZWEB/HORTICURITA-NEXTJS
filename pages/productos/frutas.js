@@ -46,6 +46,7 @@ class TodaFruta extends React.Component {
       
       //aqui va la llamada ajax de que se ha metido al carro
 
+      
     }
   };
 
