@@ -1,7 +1,7 @@
-import React from "react";
+import React, { createElement } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import axios from 'axios';
+import axios from "axios";
 
 import { getLocalData } from "../../components/getLocalStorage";
 
@@ -15,6 +15,46 @@ class TodaFruta extends React.Component {
       productProps: [...this.props.data],
       screenSize: 0,
     };
+  }
+  mostrarCuadro(product) {
+    let tipo = "";
+    if (product.type == "kilogramos") {
+      tipo = "0.5 Kg";
+    } else {
+      tipo = "1 Ud";
+    }
+    if (document.querySelector(".addCartContainer")) {
+      //asignamos html a la etiqueta
+      document.querySelector(".addCartContainer").innerHTML = `
+      <img src=${product.imageUrl} alt="producto añadido" width="90px" height="90px">
+      <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
+      <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Añadido ${tipo} de ${product.name} al carrito</span>
+      <a style="color: white;" href="/carrito">VER CARRITO</a>
+      </div>`;
+      document.querySelector(".addCartContainer").style.display = "";
+      //lo eliminamos
+      setTimeout(() => {
+        document.querySelector(".addCartContainer").innerHTML = "";
+        document.querySelector(".addCartContainer").style.display = "none";
+      }, 5000);
+    } else {
+      //asignamos html a la etiqueta
+      let elementDiv = document.createElement("div");
+      elementDiv.setAttribute("class", "addCartContainer");
+      elementDiv.innerHTML = `
+      <img src=${product.imageUrl} alt="producto añadido" width="90px" height="90px">
+      <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
+      <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Añadido ${tipo} de ${product.name} al carrito</span>
+      <a style="color: white;" href="/carrito">VER CARRITO</a>
+      </div>`;
+      document.querySelector("body").appendChild(elementDiv);
+      document.querySelector(".addCartContainer").style.display = "";
+      //lo eliminamos
+      setTimeout(() => {
+        document.querySelector(".addCartContainer").innerHTML = "";
+        document.querySelector(".addCartContainer").style.display = "none";
+      }, 5000);
+    }
   }
 
   addNewProduct = (product) => {
@@ -41,12 +81,12 @@ class TodaFruta extends React.Component {
         );
         this.actualizarLS();
       });
-
-      axios.post('https://gestorhorticurita.herokuapp.com/api/addedCart/', {id: product._id})
-      
       //aqui va la llamada ajax de que se ha metido al carro
-
-
+      axios.post("https://gestorhorticurita.herokuapp.com/api/addedCart/", {
+        id: product._id,
+      });
+      //aqui va la ejecución del cartel de carrito actualizado
+      this.mostrarCuadro(product);
     }
   };
 

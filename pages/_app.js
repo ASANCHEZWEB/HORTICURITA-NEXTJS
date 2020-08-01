@@ -52,6 +52,22 @@ function MyApp({ Component, pageProps }) {
         main {
           padding-top: 66px;
         }
+        .addCartContainer {
+          position: fixed;
+          height: 90px;
+          width: 77vw;
+          background-color: #5dcd71;
+          top: 70px;
+          border: solid;
+          border-width: 1px;
+          border-color: yellow;
+          color: white;
+          font-family: Pacifico;
+          right: 4%;
+          max-width: 327px;
+          display: flex;
+          align-items: center;
+        }
         button {
           touch-action: manipulation;
         }
