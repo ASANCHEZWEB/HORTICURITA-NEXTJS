@@ -42,11 +42,11 @@ class TodaFruta extends React.Component {
         this.actualizarLS();
       });
 
-      axios.post('https://gestorhorticurita.herokuapp.com/api/addedCart', {id: product._id})
+      axios.post('https://gestorhorticurita.herokuapp.com/api/addedCart/', {id: product._id})
       
       //aqui va la llamada ajax de que se ha metido al carro
 
-      
+
     }
   };
 
