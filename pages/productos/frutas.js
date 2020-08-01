@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
+import axios from 'axios';
 
 import { getLocalData } from "../../components/getLocalStorage";
 
@@ -19,26 +20,33 @@ class TodaFruta extends React.Component {
   addNewProduct = (product) => {
     let arrayLsCopy = [...this.state.productInLS];
 
-    if (product.added !== 0) {
-      //SI YA ESTA EN EL CARRO MODIFICAMOS EL QUE YA ESTA
+    if (product.stock == "si") {
+      if (product.added !== 0) {
+        //SI YA ESTA EN EL CARRO MODIFICAMOS EL QUE YA ESTA
 
-      arrayLsCopy.forEach((elLS) => {
-        if (elLS._id == product._id) {
-          elLS.added++;
-        }
+        arrayLsCopy.forEach((elLS) => {
+          if (elLS._id == product._id) {
+            elLS.added++;
+          }
+        });
+      } else {
+        product.added += 1;
+        arrayLsCopy.push(product);
+      }
+
+      this.setState({ productInLS: arrayLsCopy }, function () {
+        localStorage.setItem(
+          "cartProducts",
+          JSON.stringify(this.state.productInLS)
+        );
+        this.actualizarLS();
       });
-    } else {
-      product.added += 1;
-      arrayLsCopy.push(product);
-    }
 
-    this.setState({ productInLS: arrayLsCopy }, function () {
-      localStorage.setItem(
-        "cartProducts",
-        JSON.stringify(this.state.productInLS)
-      );
-      this.actualizarLS();
-    });
+      axios.post('https://gestorhorticurita.herokuapp.com/api/addedCart', {id: product._id})
+      
+      //aqui va la llamada ajax de que se ha metido al carro
+
+    }
   };
 
   restProduct = (product) => {
@@ -109,7 +117,6 @@ class TodaFruta extends React.Component {
             name="description"
             content="Fruta al mejor precio , calidad insuperable"
           ></meta>
-         
         </Head>
 
         <div className="metaDiv">
@@ -470,7 +477,6 @@ class TodaFruta extends React.Component {
             }
           }
         `}</style>
-        
       </>
     );
   }

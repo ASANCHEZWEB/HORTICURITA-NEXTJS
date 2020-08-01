@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Link from "next/link";
 
 class Home extends React.Component {
   constructor(props) {
@@ -105,13 +106,16 @@ class Home extends React.Component {
                   Frutas y verduras <br></br>online
                 </h1>
                 <p>CALIDAD Y SABOR | PRECIOS IMBATIBLES</p>
-                <a>VER CATÁLOGO</a>
+
+                <Link href="/productos">
+                  <a>VER CATÁLOGO</a>
+                </Link>
               </div>
 
               <img
                 className="imagenOneSlider"
                 src="home/comida-organica-verduras-canasta_135427-2767.jpg"
-                alt=""
+                alt="frutas y verduras"
               />
             </div>
             <div>
@@ -120,13 +124,15 @@ class Home extends React.Component {
                   Productores propios <br></br>gran variedad
                 </h1>
                 <p>CALIDAD Y SABOR | PRECIOS IMBATIBLES</p>
-                <a>SOBRE NOSOTROS</a>
+                <Link href="/sobre-nosotros">
+                  <a>SOBRE NOSOTROS</a>
+                </Link>
               </div>
 
               <img
                 className="imagenOneSlider"
                 src="home/comida-organica-verduras-canasta_135427-2767.jpg"
-                alt=""
+                alt=" frutas y verduras"
               />
             </div>
             <div>
@@ -139,7 +145,7 @@ class Home extends React.Component {
               <img
                 className="imagenOneSlider"
                 src="home/repartidor.jpg"
-                alt=""
+                alt="repartidor"
               />
             </div>
           </div>
@@ -166,13 +172,13 @@ class Home extends React.Component {
           <h2>Bienvenido a horticurita</h2>
           <div className="containerWelcome">
             <div>
-              <img src="home/icono-lechuga.png" alt="" />
+              <img src="home/icono-lechuga.png" alt=" icono lechuga" />
               <span>100% Fresco</span>
               <p>
                 Productos siempre recolectados a pedido.Nunca almacenados en
                 cámaras frigoríficas
               </p>
-              <img src="home/icono-tarjeta-visa.png" alt="" />
+              <img src="home/icono-tarjeta-visa.png" alt="icono tarjeta visa" />
 
               <span>Pago seguro</span>
               <p>
@@ -181,16 +187,16 @@ class Home extends React.Component {
               </p>
             </div>
             <div>
-              <img src="home/monton-de-frutas.jpg" alt="" />
+              <img src="home/monton-de-frutas.jpg" alt="monton de frutas" />
             </div>
             <div>
-              <img src="home/buena-calidad.png" alt="" />
+              <img src="home/buena-calidad.png" alt="icono buena calidad" />
               <span>Calidad</span>
               <p>
                 Somos productores propios, cultivamos sin abonos artificiales ,
                 aseguramos el producto sin daños
               </p>
-              <img src="home/icono-coche-de-envios.png" alt="" />
+              <img src="home/icono-coche-de-envios.png" alt="icono coche envíos" />
               <span>Envios 24/48h</span>
               <p>
                 Trabajamos con la más rápida y mejor agencia de envíos , tu
@@ -199,7 +205,7 @@ class Home extends React.Component {
             </div>
           </div>
           <div>
-            <img src="home/icono-reembolso.png" alt="" />
+            <img src="home/icono-reembolso.png" alt="icono reembolso" />
             <span>Devoluciones</span>
             <p>
               Si tu pedido ha sufrido daños ,le devolveremos el dinero sin
@@ -212,103 +218,123 @@ class Home extends React.Component {
           <h3>Categorías</h3>
           <div className="containerCategories">
             <div>
-              <a>
-                <img src="home/albaricoque.jpg" />
-                <span>Frutas</span>
-              </a>
+              <Link href="/productos/frutas">
+                <a>
+                  <img src="home/albaricoque.jpg" alt="albaricoque"/>
+                  <span>Frutas</span>
+                </a>
+              </Link>
             </div>
             <div>
-              <a>
-                <img src="home/pimiento-rojo.jpg" />
-                <span>Verduras y hortalizas</span>
-              </a>
+              <Link href="/productos/verduras-y-hortalizas">
+                <a>
+                  <img src="home/pimiento-rojo.jpg" alt="pimiento rojo"/>
+                  <span>Verduras y hortalizas</span>
+                </a>
+              </Link>
             </div>
             <div>
-              <a>
-                <img src="home/lentejas.jpg" />
-                <span>Legumbres</span>
-              </a>
+              <Link href="/productos/legumbres">
+                <a>
+                  <img src="home/lentejas.jpg" alt="lentejas"/>
+                  <span>Legumbres</span>
+                </a>
+              </Link>
             </div>
             <div>
-              <a>
-                <img src="home/nuez.jpg" />
-                <span>Frutos secos</span>
-              </a>
+              <Link href="/productos/frutos-secos">
+                <a>
+                  <img src="home/nuez.jpg" alt="nueces"/>
+                  <span>Frutos secos</span>
+                </a>
+              </Link>
             </div>
             <div>
-              <a>
-                <img src="home/manzanilla-con-pepinillo.jpg" />
-                <span>Encurtidos</span>
-              </a>
+              <Link href="/productos/encurtidos">
+                <a>
+                  <img src="home/manzanilla-con-pepinillo.jpg" alt="encurtidos"/>
+                  <span>Encurtidos</span>
+                </a>
+              </Link>
             </div>
             <div>
-              <a>
-                <img src="home/pimenton-dulce.jpg" />
-                <span>Especias</span>
-              </a>
+              <Link href="/productos/especias">
+                <a>
+                  <img src="home/pimenton-dulce.jpg" alt="Pimentón dulce"/>
+                  <span>Especias</span>
+                </a>
+              </Link>
             </div>
             <div>
-              <a>
-                <img src="home/bollo-chocolate.jpg" />
-                <span>Dulces</span>
-              </a>
+              <Link href="/productos/dulces">
+                <a>
+                  <img src="home/bollo-chocolate.jpg" alt="bollo de chocolate"/>
+                  <span>Dulces</span>
+                </a>
+              </Link>
             </div>
             <div>
-              <a>
-                <img src="home/galletas-caseras.jpg" />
-                <span>Galletas y cereales</span>
-              </a>
+              <Link href="/productos/galletas-y-cereales">
+                <a>
+                  <img src="home/galletas-caseras.jpg" alt="galletas caseras"/>
+                  <span>Galletas y cereales</span>
+                </a>
+              </Link>
             </div>
             <div>
-              <a>
-                <img src="home/aperitivo-snack.jpg" />
-                <span>Aperitivos snack</span>
-              </a>
+              <Link href="/productos/aperitivos-snack">
+                <a>
+                  <img src="home/aperitivo-snack.jpg" alt="apetivos snacks"/>
+                  <span>Aperitivos snack</span>
+                </a>
+              </Link>
             </div>
           </div>
-          <a className="buttonVerTodo">Ver todo</a>
+          <Link href="/productos">
+            <a className="buttonVerTodo">Ver todo</a>
+          </Link>
         </section>
         <section id="sectionPopulares">
           <h4>Productos populares</h4>
           <div className="containerPopulares">
             <div>
-              <img src="home/tomates.jpg" />
+              <img src="home/tomates.jpg" alt="tomates"/>
               <span>Tomate</span>
               <p>1.50€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/sandia.jpg" />
+              <img src="home/sandia.jpg" alt="sandia"/>
               <span>Sandía</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/melon.jpg" />
+              <img src="home/melon.jpg" alt="melón"/>
               <span>Melón</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/ciruela.jpg" />
+              <img src="home/ciruela.jpg" alt="ciruela"/>
               <span>Ciruelas</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/melocoton.jpg" />
+              <img src="home/melocoton.jpg" alt="melocotón"/>
               <span>Melocotón</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/paraguaya.jpg" />
+              <img src="home/paraguaya.jpg" alt="paraguaya"/>
               <span>Paraguayo</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/nictarina.jpg" />
+              <img src="home/nictarina.jpg" alt="nectarina"/>
               <span>Nectarina</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
@@ -340,8 +366,6 @@ class Home extends React.Component {
         <style jsx>{`
           #sectionOne {
             overflow-y: hidden;
-          }
-          .containerCarrouselContent {
           }
           .buttonLeft {
             object-fit: contain;
