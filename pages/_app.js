@@ -52,6 +52,7 @@ function MyApp({ Component, pageProps }) {
         main {
           padding-top: 66px;
         }
+
         .addCartContainer {
           position: fixed;
           height: 90px;
@@ -70,6 +71,7 @@ function MyApp({ Component, pageProps }) {
         }
         button {
           touch-action: manipulation;
+          cursor: pointer;
         }
 
         a {
@@ -272,7 +274,6 @@ function MyApp({ Component, pageProps }) {
           .cartStyleLI > a {
             display: flex;
             align-items: center;
-            margin-bottom: 29px;
           }
 
           .cartStyleLI > a > img {
@@ -308,7 +309,6 @@ function MyApp({ Component, pageProps }) {
           .buttonCart > img {
             width: 23px;
             object-fit: contain;
-
           }
         }
 
@@ -468,7 +468,6 @@ function MyApp({ Component, pageProps }) {
           .cartStyleLI > a {
             display: flex;
             align-items: center;
-            margin-bottom: 29px;
           }
 
           .cartStyleLI > a > img {
@@ -637,6 +636,7 @@ function MyApp({ Component, pageProps }) {
             font-size: 14px;
             font-weight: 600;
             color: black;
+            display: -webkit-box;
           }
 
           .ulFruits {
@@ -675,6 +675,7 @@ function MyApp({ Component, pageProps }) {
             font-size: 14px;
             font-weight: 600;
             color: black;
+            display: -webkit-box;
           }
 
           .showVerduras > li > a > img {
@@ -836,6 +837,7 @@ function MyApp({ Component, pageProps }) {
             font-size: 14px;
             font-weight: 600;
             color: black;
+            display: -webkit-box;
           }
 
           .ulFruits {
@@ -874,6 +876,7 @@ function MyApp({ Component, pageProps }) {
             font-size: 14px;
             font-weight: 600;
             color: black;
+            display: -webkit-box;
           }
 
           .showVerduras > li > a > img {
@@ -1035,6 +1038,7 @@ function MyApp({ Component, pageProps }) {
             font-size: 14px;
             font-weight: 600;
             color: black;
+            display: -webkit-box;
           }
 
           .ulFruits {
@@ -1073,6 +1077,7 @@ function MyApp({ Component, pageProps }) {
             font-size: 14px;
             font-weight: 600;
             color: black;
+            display: -webkit-box;
           }
 
           .showVerduras > li > a > img {
