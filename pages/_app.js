@@ -307,6 +307,8 @@ function MyApp({ Component, pageProps }) {
           }
           .buttonCart > img {
             width: 23px;
+            object-fit: contain;
+
           }
         }
 
@@ -500,6 +502,7 @@ function MyApp({ Component, pageProps }) {
           }
           .buttonCart > img {
             width: 28px;
+            object-fit: contain;
           }
         }
 
@@ -698,6 +701,7 @@ function MyApp({ Component, pageProps }) {
           }
           .buttonCart > img {
             width: 28px;
+            object-fit: contain;
           }
         }
 
@@ -896,6 +900,7 @@ function MyApp({ Component, pageProps }) {
           }
           .buttonCart > img {
             width: 28px;
+            object-fit: contain;
           }
         }
 
@@ -1094,6 +1099,7 @@ function MyApp({ Component, pageProps }) {
           }
           .buttonCart > img {
             width: 28px;
+            object-fit: contain;
           }
         }
       `}</style>

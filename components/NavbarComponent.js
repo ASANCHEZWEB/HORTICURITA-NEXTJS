@@ -576,7 +576,7 @@ class NavbarComponent extends React.Component {
             <a className="buttonCart disableZoombutton">
               <span>Carrito: </span>
                <img
-                src="https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_30,q_10,w_30/v1593638701/iconosHorticurita/carritoIcons_mgpns6.png"
+                src="/icono-carrito-blanco.png"
                 alt="icono carrito blanco"
               /> 
               ( {this.state.cartItems.length} )
