@@ -269,12 +269,12 @@ class TodaFruta extends React.Component {
                   <span>
                     {product.stock === "si" ? (
                       <p>
-                        {/* <img
+                         <img
                           src={
                             "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_20,q_10,w_20/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"
                           }
                           alt="icono disponible"
-                        /> */}
+                        /> 
                         Disponible
                       </p>
                     ) : (
