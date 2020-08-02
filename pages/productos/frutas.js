@@ -233,19 +233,18 @@ class TodaFruta extends React.Component {
                     <picture>
                       <source
                         media="(max-width: 767.98px)"
-                        srcSet="/141pxImages/pruebajp.jpg"
-                      />
+                        srcSet={`/141pxImages/${product.imageName}`}/>
                       <source
                         media="(max-width: 1199.98px) and (min-width: 768px)"
-                        srcSet="/174pxImages/pruebajp.jpg"
+                        srcSet={`/174pxImages/${product.imageName}`}
                       />
                       <source
                         media="(min-width: 1200px)"
-                        srcSet="/270pxImages/pruebajp.jpg"
+                        srcSet={`/270pxImages/${product.imageName}`}
                       />
                       <img
                         className="imagenProduct"
-                        src="/141pxImages/pruebajp.jpg"
+                        src={`/141pxImages/${product.imageName}`}
                         alt={product.imageAlt}
                       />
                     </picture>
@@ -587,6 +586,7 @@ export async function getStaticProps() {
             type: product.type,
             stock: product.stock,
             urlRoute: product.urlRoute,
+            imageName: product.imageName,
             added: 0,
           };
         } else {
