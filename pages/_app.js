@@ -157,8 +157,7 @@ function MyApp({ Component, pageProps }) {
             width: 100%;
             margin-top: 18px;
             margin-left: -2%;
-            padding-top: 16px;
-            padding-bottom: 6vh;
+            
             overflow: scroll;
             height: 84vh;
           }
@@ -355,8 +354,7 @@ function MyApp({ Component, pageProps }) {
             width: 100%;
             margin-top: 18px;
             margin-left: -2%;
-            padding-top: 16px;
-            padding-bottom: 6vh;
+            
             overflow: scroll;
             height: 84vh;
           }
