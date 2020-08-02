@@ -144,7 +144,10 @@ function MyApp({ Component, pageProps }) {
 
           /* MOSTRAR MENÚ NAV*/
           .showList {
+            display: -webkit-box;
+
             display: flex;
+
             flex-direction: column;
             position: absolute;
             background: white;
@@ -155,7 +158,7 @@ function MyApp({ Component, pageProps }) {
             margin-top: 18px;
             margin-left: -2%;
             padding-top: 16px;
-            padding-bottom: 100%;
+            padding-bottom: 6vh;
             overflow: scroll;
             height: 84vh;
           }
@@ -339,7 +342,10 @@ function MyApp({ Component, pageProps }) {
 
           /* MOSTRAR MENÚ NAV*/
           .showList {
+            display: -webkit-box;
+
             display: flex;
+
             flex-direction: column;
             position: absolute;
             background: white;
@@ -350,7 +356,7 @@ function MyApp({ Component, pageProps }) {
             margin-top: 18px;
             margin-left: -2%;
             padding-top: 16px;
-            padding-bottom: 100%;
+            padding-bottom: 6vh;
             overflow: scroll;
             height: 84vh;
           }
