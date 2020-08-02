@@ -145,9 +145,7 @@ function MyApp({ Component, pageProps }) {
           /* MOSTRAR MENÚ NAV*/
           .showList {
             display: -webkit-box;
-
             display: flex;
-
             flex-direction: column;
             position: absolute;
             background: white;
@@ -156,10 +154,9 @@ function MyApp({ Component, pageProps }) {
             padding: 0px;
             width: 100%;
             margin-top: 18px;
-            margin-left: -2%;
-            
+            left: 0px;
             overflow: scroll;
-            height: 84vh;
+            height: 89vh;
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
@@ -269,8 +266,9 @@ function MyApp({ Component, pageProps }) {
             border-top-style: solid;
             padding-top: 11px;
             margin-top: 8px;
+            padding-bottom: 12%;
             margin-bottom: 40px;
-            width: 92%;
+            width: 87%;
           }
 
           .cartStyleLI > a {
@@ -342,9 +340,7 @@ function MyApp({ Component, pageProps }) {
           /* MOSTRAR MENÚ NAV*/
           .showList {
             display: -webkit-box;
-
             display: flex;
-
             flex-direction: column;
             position: absolute;
             background: white;
@@ -353,10 +349,9 @@ function MyApp({ Component, pageProps }) {
             padding: 0px;
             width: 100%;
             margin-top: 18px;
-            margin-left: -2%;
-            
+            left: 0px;
             overflow: scroll;
-            height: 84vh;
+            height: 89vh;
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
@@ -465,8 +460,9 @@ function MyApp({ Component, pageProps }) {
             border-top-style: solid;
             padding-top: 11px;
             margin-top: 8px;
+            padding-bottom: 12%;
             margin-bottom: 40px;
-            width: 92%;
+            width: 87%;
           }
 
           .cartStyleLI > a {
