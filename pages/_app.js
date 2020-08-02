@@ -266,7 +266,7 @@ function MyApp({ Component, pageProps }) {
             border-top-style: solid;
             padding-top: 11px;
             margin-top: 8px;
-            padding-bottom: 93px;
+            padding-bottom: 200px;
             margin-bottom: 40px;
             width: 87%;
           }
@@ -460,7 +460,7 @@ function MyApp({ Component, pageProps }) {
             border-top-style: solid;
             padding-top: 11px;
             margin-top: 8px;
-            padding-bottom: 93px;
+            padding-bottom: 200px;
             margin-bottom: 40px;
             width: 87%;
           }
