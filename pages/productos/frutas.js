@@ -267,19 +267,14 @@ class TodaFruta extends React.Component {
                     {product.stock === "si" ? (
                       <p>
                         <img
-                          src={
-                            "/icono-stock-disponible.png"
-                          }
+                          src={"/icono-stock-disponible.png"}
                           alt="icono disponible"
                         />
                         Disponible
                       </p>
                     ) : (
                       <p>
-                        <img
-                          src="/icono-sin-stock.png"
-                          alt="icono sin stock"
-                        />
+                        <img src="/icono-sin-stock.png" alt="icono sin stock" />
                         No disponible
                       </p>
                     )}
@@ -311,6 +306,9 @@ class TodaFruta extends React.Component {
           })}
         </div>
         <style jsx>{`
+          .buttonCart > img {
+            object-fit: contain;
+          }
           .metaDiv {
             max-width: 768px;
             margin: 0 auto;
@@ -346,6 +344,7 @@ class TodaFruta extends React.Component {
           }
           .container > div > span > p > img {
             width: 20px;
+            object-fit: contain;
           }
           .metaDiv > div > h1 {
             text-align: center;
