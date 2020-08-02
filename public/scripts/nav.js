@@ -105,10 +105,7 @@ window.onclick = function (event) {
   let menuVerduras = document
     .querySelector(".verdurasListButton")
     .contains(event.target);
-  let ulMobile = document.querySelector(" header > nav > div:nth-child(2) > ul").contains(event.target);   
-  let ulFrutasPc=document.querySelector("header > nav > div:nth-child(2) > ul > li:nth-child(2) > ul > li:nth-child(4) > ul").contains(event.target);
-  let lisFrutaPc = document.querySelector("header > nav > div:nth-child(2) > ul > li:nth-child(2) > ul > li:nth-child(3) > ul > li").contains(event.target);
-  if (!mobileMenu && !desktopMenu && !menuFrutas && !menuVerduras && !ulMobile && !ulFrutasPc && !lisFrutaPc) {
+  if (!mobileMenu && !desktopMenu && !menuFrutas && !menuVerduras) {
     if (document.querySelector(".showList")) {
       showList();
     }
