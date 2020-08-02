@@ -8,16 +8,13 @@ import { getLocalData } from "../../components/getLocalStorage";
 class TodaFruta extends React.Component {
   constructor(props) {
     super(props);
-
     this.myVar = "";
-
     this.myFunction = () => {
       this.myVar = setTimeout(function () {
         document.querySelector(".addCartContainer").innerHTML = "";
         document.querySelector(".addCartContainer").style.display = "none";
       }, 5000);
     };
-
     this.myStopFunction = () => {
       clearTimeout(this.myVar);
     };
@@ -269,12 +266,12 @@ class TodaFruta extends React.Component {
                   <span>
                     {product.stock === "si" ? (
                       <p>
-                         <img
+                        <img
                           src={
                             "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_20,q_10,w_20/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"
                           }
                           alt="icono disponible"
-                        /> 
+                        />
                         Disponible
                       </p>
                     ) : (
