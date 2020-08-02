@@ -60,7 +60,7 @@ function MyApp({ Component, pageProps }) {
           top: 70px;
           border: solid;
           border-width: 1px;
-          border-color: yellow;
+          border-color: #5dcd71;
           color: white;
           font-family: Pacifico;
           right: 4%;

@@ -8,6 +8,20 @@ import { getLocalData } from "../../components/getLocalStorage";
 class TodaFruta extends React.Component {
   constructor(props) {
     super(props);
+
+    this.myVar = "";
+
+    this.myFunction = () => {
+      this.myVar = setTimeout(function () {
+        document.querySelector(".addCartContainer").innerHTML = "";
+        document.querySelector(".addCartContainer").style.display = "none";
+      }, 5000);
+    };
+
+    this.myStopFunction = () => {
+      clearTimeout(this.myVar);
+    };
+
     this.state = {
       // ARRAY DE LOCALSTORAGE
       productInLS: [],
@@ -33,10 +47,8 @@ class TodaFruta extends React.Component {
       </div>`;
       document.querySelector(".addCartContainer").style.display = "";
       //lo eliminamos
-      setTimeout(() => {
-        document.querySelector(".addCartContainer").innerHTML = "";
-        document.querySelector(".addCartContainer").style.display = "none";
-      }, 5000);
+      this.myStopFunction();
+      this.myFunction();
     } else {
       //asignamos html a la etiqueta
       let elementDiv = document.createElement("div");
@@ -50,13 +62,46 @@ class TodaFruta extends React.Component {
       document.querySelector("body").appendChild(elementDiv);
       document.querySelector(".addCartContainer").style.display = "";
       //lo eliminamos
-      setTimeout(() => {
-        document.querySelector(".addCartContainer").innerHTML = "";
-        document.querySelector(".addCartContainer").style.display = "none";
-      }, 5000);
+      this.myStopFunction();
+      this.myFunction();
     }
   }
-
+  restarCuadro = (product) => {
+    let tipo = "";
+    if (product.type == "kilogramos") {
+      tipo = "0.5 Kg";
+    } else {
+      tipo = "1 Ud";
+    }
+    if (document.querySelector(".addCartContainer")) {
+      //asignamos html a la etiqueta
+      document.querySelector(".addCartContainer").innerHTML = `
+      <img src=${product.imageUrl} alt="producto añadido" width="90px" height="90px">
+      <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
+      <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Eliminado ${tipo} de ${product.name} del carrito</span>
+      <a style="color: white;" href="/carrito">VER CARRITO</a>
+      </div>`;
+      document.querySelector(".addCartContainer").style.display = "";
+      //lo eliminamos
+      this.myStopFunction();
+      this.myFunction();
+    } else {
+      //asignamos html a la etiqueta
+      let elementDiv = document.createElement("div");
+      elementDiv.setAttribute("class", "addCartContainer");
+      elementDiv.innerHTML = `
+      <img src=${product.imageUrl} alt="producto añadido" width="90px" height="90px">
+      <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
+      <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Eliminado ${tipo} de ${product.name} del carrito</span>
+      <a style="color: white;" href="/carrito">VER CARRITO</a>
+      </div>`;
+      document.querySelector("body").appendChild(elementDiv);
+      document.querySelector(".addCartContainer").style.display = "";
+      //lo eliminamos
+      this.myStopFunction();
+      this.myFunction();
+    }
+  };
   addNewProduct = (product) => {
     let arrayLsCopy = [...this.state.productInLS];
 
@@ -106,6 +151,7 @@ class TodaFruta extends React.Component {
           });
         }
       });
+      this.restarCuadro(product);
     }
     if (product.added > 1) {
       arrayLsCopy.forEach((elLS) => {
@@ -113,6 +159,7 @@ class TodaFruta extends React.Component {
           elLS.added--;
         }
       });
+      this.restarCuadro(product);
     }
 
     this.setState(
