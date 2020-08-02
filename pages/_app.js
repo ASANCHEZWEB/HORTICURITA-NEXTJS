@@ -156,7 +156,7 @@ function MyApp({ Component, pageProps }) {
             margin-top: 18px;
             left: 0px;
             overflow: scroll;
-            height: 89vh;
+            height: 100vh;
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
@@ -351,7 +351,7 @@ function MyApp({ Component, pageProps }) {
             margin-top: 18px;
             left: 0px;
             overflow: scroll;
-            height: 89vh;
+            height: 100vh;
           }
           /* COLOR DE LOS TEXTOS A */
           .listProducts > li > a {
