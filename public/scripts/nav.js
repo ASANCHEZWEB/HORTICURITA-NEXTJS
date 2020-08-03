@@ -105,7 +105,9 @@ window.onclick = function (event) {
   let menuVerduras = document
     .querySelector(".verdurasListButton")
     .contains(event.target);
-  if (!mobileMenu && !desktopMenu && !menuFrutas && !menuVerduras) {
+    let muenuUlMobile= document.querySelector("header > nav > div:nth-child(2) > ul").contains(event.target);
+
+  if (!mobileMenu && !desktopMenu && !menuFrutas && !menuVerduras && !muenuUlMobile) {
     if (document.querySelector(".showList")) {
       showList();
     }
