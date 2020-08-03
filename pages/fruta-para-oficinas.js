@@ -4,9 +4,57 @@ class ParaOficinas extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = {
+        name: "",
+        email: "",
+        tel: "",
+        description: "",
+        checkBox: "",
+        formPage: "oficina",
+        empresa:"",
+        enviado: false,
+      };
+      this.handleInputChange = this.handleInputChange.bind(this);
+      this.handleChange = this.handleChange.bind(this);
+      this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleChange(event) {
+    this.setState({ description: event.target.value });
+  }
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.name === "checkBox" ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
   }
 
+  handleSubmit(event) {
+    axios
+      .post(
+        "https://gestorhorticurita.herokuapp.com/api/formContacts/",
+        this.state
+      )
+      .then((response) => {
+        this.setState({ enviado: response.data.enviado });
+      })
+      .catch((response) => {
+        this.setState({ enviado: false });
+      });
+    event.preventDefault();
+
+    this.setState({
+      enviado: true,
+      name: "",
+      email: "",
+      tel: "",
+      empresa:"",
+      description: "",
+      checkBox: "",
+    });
+  }
   render() {
     return (
       <>
@@ -30,37 +78,55 @@ class ParaOficinas extends React.Component {
       </div>
 
       <div className="formDiv">
-          <form action="/action_page.php" method="get">
+          <form onSubmit={this.handleSubmit}>
               <h2>Formulario de contacto</h2>
               <hr></hr>
               <div>
                   <label>Nombre:</label>
-                  <input type="text" name="nombre" placeholder=" Nombre"/>
+                  <input name="name" type="text" placeholder=" Nombre" value={this.state.name} onChange={this.handleInputChange} required/>
               </div>
               <div>
                   <label>Email:</label>
-                  <input type="text" name="email" placeholder=" Ejemplo@empresa.com"/>
+                  <input name="email" type="text" placeholder=" Ejemplo@empresa.com" value={this.state.email} onChange={this.handleInputChange} required/>
               </div>
               <div>
                   <label>Empresa:</label>
-                  <input type="text" name="empresa" placeholder=" Ejemplo empresa"/>
+                  <input name="empresa" type="text" placeholder=" Ejemplo.SL" value={this.state.empresa} onChange={this.handleInputChange} required/>
               </div>
               <div>
                   <label>Teléfono de contacto:</label>
-                  <input type="text" name="telefono" placeholder=" Ej. 612345678"/>
+                  <input name="tel" type="text" placeholder=" Ej. 612345678" value={this.state.tel} onChange={this.handleInputChange} required/>
               </div>
               <div><label>
                       Descripción:</label>
-                  <textarea className="textAreaOfi" value="" onChange="{this.handleChange}"
-                      placeholder="¿Que necesitas?"></textarea>
+                      <textarea className="textAreaOfi" value={this.state.description} onChange={this.handleChange} placeholder="¿Que necesitas?" required/>
               </div>
               <div>
-                  <label className="rgpdCheckbox"><input type="checkbox" id="cbox1" value="first_checkbox" required/> He leído y
+                  <label className="rgpdCheckbox"> <input
+                    name="checkBox"
+                    type="checkbox"
+                    checked={this.state.checkBox}
+                    onChange={this.handleInputChange}
+                    required
+                  /> He leído y
                       acepto los terminos y condiciones de esta web.</label>
               </div>
 
-              <div><input className="buttonOfiForm" type="submit" value="ENVIAR"/></div>
-
+              <div><input className="buttonOfiForm" type="submit" value="ENVIAR" /></div>
+              {this.state.enviado == true ? (
+                <span
+                  style={{
+                    margin: "0 auto",
+                    marginBottom: "40px",
+                    textAlign: "center",
+                  }}
+                >
+                  <img src="/icono-stock-disponible.png"></img>Mensaje enviado
+                  correctamente
+                </span>
+              ) : (
+                ""
+              )}
           </form>
 
       </div>
