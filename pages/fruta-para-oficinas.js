@@ -71,6 +71,7 @@ class ParaOficinas extends React.Component {
         }
       });
   }
+  
   render() {
     return (
       <>
