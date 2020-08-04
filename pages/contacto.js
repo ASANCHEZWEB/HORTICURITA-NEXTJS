@@ -37,28 +37,38 @@ class Contacto extends React.Component {
   handleSubmit(event) {
     this.recaptcha.execute();
     event.preventDefault();
-    
   }
-  onResolved(){
+  onResolved() {
+    let tokenCaptcha = this.recaptcha.getResponse();
+    let data = {
+      token: tokenCaptcha,
+    };
+
     axios
-    .post(
-      "https://gestorhorticurita.herokuapp.com/api/formContacts/",
-      this.state
-    )
-    .then((response) => {
-      this.setState({ enviado: response.data.enviado });
-    })
-    .catch((response) => {
-      this.setState({ enviado: false });
-    });
-  this.setState({
-    enviado: true,
-    name: "",
-    email: "",
-    tel: "",
-    description: "",
-    checkBox: "",
-  });
+      .post("https://gestorhorticurita.herokuapp.com/api/send-recaptcha", data)
+      .then((res) => {
+        if (res.data.success === true && res.data.score >= 0.5) {
+          axios
+            .post(
+              "https://gestorhorticurita.herokuapp.com/api/formContacts/",
+              this.state
+            )
+            .then((response) => {
+              this.setState({ enviado: response.data.enviado });
+            })
+            .catch((response) => {
+              this.setState({ enviado: false });
+            });
+          this.setState({
+            enviado: true,
+            name: "",
+            email: "",
+            tel: "",
+            description: "",
+            checkBox: "",
+          });
+        }
+      });
   }
   render() {
     return (

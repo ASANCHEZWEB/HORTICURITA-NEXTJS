@@ -41,35 +41,35 @@ class ParaOficinas extends React.Component {
   }
   onResolved() {
     let tokenCaptcha = this.recaptcha.getResponse();
-    console.log(tokenCaptcha)
-    axios.post('https://www.google.com/recaptcha/api/siteverify', {
-        secret: '6LcHZ7oZAAAAAPXIgujWrR8GssszKXZEglIQJW2v',
-        response: tokenCaptcha
-      })
-      .then(function (response) {
-        console.log(response);
-      })
-    
-    // axios
-    //   .post(
-    //     "https://gestorhorticurita.herokuapp.com/api/formContacts/",
-    //     this.state
-    //   )
-    //   .then((response) => {
-    //     this.setState({ enviado: response.data.enviado });
-    //   })
-    //   .catch((response) => {
-    //     this.setState({ enviado: false });
-    //   });
-    // this.setState({
-    //   enviado: true,
-    //   name: "",
-    //   email: "",
-    //   empresa: "",
-    //   tel: "",
-    //   description: "",
-    //   checkBox: "",
-    // });
+    let data = {
+      token: tokenCaptcha,
+    };
+
+    axios
+      .post("https://gestorhorticurita.herokuapp.com/api/send-recaptcha", data)
+      .then((res) => {
+        if (res.data.success === true && res.data.score >= 0.5) {
+          axios.post(
+              "https://gestorhorticurita.herokuapp.com/api/formContacts/",
+              this.state
+            )
+            .then((response) => {
+              this.setState({ enviado: response.data.enviado });
+            })
+            .catch((response) => {
+              this.setState({ enviado: false });
+            });
+          this.setState({
+            enviado: true,
+            name: "",
+            email: "",
+            empresa: "",
+            tel: "",
+            description: "",
+            checkBox: "",
+          });
+        }
+      });
   }
   render() {
     return (
