@@ -42,11 +42,13 @@ class ParaOficinas extends React.Component {
   onResolved() {
     let tokenCaptcha = this.recaptcha.getResponse();
     console.log(tokenCaptcha)
-     axios.get(`https://www.google.com/recaptcha/api/siteverify?secret=6LcHZ7oZAAAAAPXIgujWrR8GssszKXZEglIQJW2v&response=${tokenCaptcha}`)
-     .then(function (response) {
-     
-      console.log(response);
-     })
+    axios.post('https://www.google.com/recaptcha/api/siteverify', {
+        secret: '6LcHZ7oZAAAAAPXIgujWrR8GssszKXZEglIQJW2v',
+        response: tokenCaptcha
+      })
+      .then(function (response) {
+        console.log(response);
+      })
     
     // axios
     //   .post(
