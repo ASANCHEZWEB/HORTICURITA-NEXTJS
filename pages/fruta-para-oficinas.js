@@ -1,84 +1,88 @@
 import React from "react";
 import Head from "next/head";
-import axios from 'axios'
+import axios from "axios";
+import Recaptcha from "react-google-invisible-recaptcha";
+
 class ParaOficinas extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-        name: "",
-        email: "",
-        tel: "",
-        empresa:"",
-        description: "",
-        checkBox: "",
-        formPage: "oficina",
-        enviado: false,
-      };
-      this.handleInputChange = this.handleInputChange.bind(this);
-      this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
-    }
-    handleChange(event) {
-      this.setState({ description: event.target.value });
-    }
-    handleInputChange(event) {
-      const target = event.target;
-      const value = target.name === "checkBox" ? target.checked : target.value;
-      const name = target.name;
-  
-      this.setState({
-        [name]: value,
+      name: "",
+      email: "",
+      tel: "",
+      empresa: "",
+      description: "",
+      checkBox: "",
+      formPage: "oficina",
+      enviado: false,
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.onResolved = this.onResolved.bind(this);
+  }
+  handleChange(event) {
+    this.setState({ description: event.target.value });
+  }
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.name === "checkBox" ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  handleSubmit(event) {
+    this.recaptcha.execute();
+    event.preventDefault();
+  }
+  onResolved() {
+    axios
+      .post(
+        "https://gestorhorticurita.herokuapp.com/api/formContacts/",
+        this.state
+      )
+      .then((response) => {
+        this.setState({ enviado: response.data.enviado });
+      })
+      .catch((response) => {
+        this.setState({ enviado: false });
       });
-    }
-  
-    handleSubmit(event) {
-      axios
-        .post(
-          "https://gestorhorticurita.herokuapp.com/api/formContacts/",
-          this.state
-        )
-        .then((response) => {
-          this.setState({ enviado: response.data.enviado });
-        })
-        .catch((response) => {
-          this.setState({ enviado: false });
-        });
-      event.preventDefault();
-  
-      this.setState({
-        enviado: true,
-        name: "",
-        email: "",
-        empresa:"",
-        tel: "",
-        description: "",
-        checkBox: "",
-      });
-    }
+    this.setState({
+      enviado: true,
+      name: "",
+      email: "",
+      empresa: "",
+      tel: "",
+      description: "",
+      checkBox: "",
+    });
+  }
   render() {
     return (
       <>
-<Head>
-          <title>
-            Horticurita | Fruta para oficinas | Alta calidad 
-          </title>
+        <Head>
+          <title>Horticurita | Fruta para oficinas | Alta calidad</title>
           <meta
             name="description"
             content="Realiza tu pedido personalizado para tu oficina con entrega diaria o semanal a tu gusto. En horticurita.es disponemos de gran variedad de productos siempre frescos y de alta calidad.¿Te apetece fresas , manzanas o chocolate?, no importa . Lo tenemos"
           ></meta>
         </Head>
-      <div className="oficinaFormContainer">
-      <div className="infoOficina">
-          <h1>Fruta para oficinas</h1>
-          <p>Realiza tu pedido personalizado para tu oficina con entrega diaria o semanal a tu gusto. En
-              horticurita.es
-              disponemos de gran variedad de productos siempre frescos y de alta calidad.¿Te apetece fresas , manzanas
-              o
-              chocolate?, no importa . Lo tenemos 😉</p>
-      </div>
+        <div className="oficinaFormContainer">
+          <div className="infoOficina">
+            <h1>Fruta para oficinas</h1>
+            <p>
+              Realiza tu pedido personalizado para tu oficina con entrega diaria
+              o semanal a tu gusto. En horticurita.es disponemos de gran
+              variedad de productos siempre frescos y de alta calidad.¿Te
+              apetece fresas , manzanas o chocolate?, no importa . Lo tenemos 😉
+            </p>
+          </div>
 
-      <div className="formDiv">
+          <div className="formDiv">
             <form onSubmit={this.handleSubmit}>
               <h2>Formulario de contacto</h2>
               <hr></hr>
@@ -166,6 +170,11 @@ class ParaOficinas extends React.Component {
               ) : (
                 ""
               )}
+              <Recaptcha
+                ref={(ref) => (this.recaptcha = ref)}
+                sitekey="6LcHZ7oZAAAAAJe250_R2rtP_h7CO8SZRvwna1JU"
+                onResolved={this.onResolved}
+              />
             </form>
           </div>
           <h3>O utiliza un botón :</h3>
@@ -309,7 +318,7 @@ class ParaOficinas extends React.Component {
           }
         `}</style>
       </>
-    )
+    );
   }
 }
 

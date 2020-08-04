@@ -24,6 +24,7 @@ function MyApp({ Component, pageProps }) {
       fontCharge.setAttribute("rel", "stylesheet");
       document.querySelector("head").appendChild(fontCharge);
       sumarUno();
+
     };
     if (firstVisitCount == 1) {
       ReactGA.initialize("UA-169048148-3");
@@ -36,7 +37,7 @@ function MyApp({ Component, pageProps }) {
       <Helmet>
         <html lang="es"></html>
       </Helmet>
-
+      
       <header>
         <NavbarComponent />
       </header>
