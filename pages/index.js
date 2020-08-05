@@ -1,19 +1,53 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-
+import axios from "axios";
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.functionInterval = "";
-    this.state = {};
+    this.state = {
+      email: "",
+      checkBox: false,
+      enviado: "no",
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  handleInputChange(event) {
+    const target = event.target;
+    const value = target.name === "checkBox" ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
+  }
+  handleSubmit(event) {
+    if (this.state.email !== "" && this.state.checkBox !== false) {
+      axios
+        .post(
+          "https://gestorhorticurita.herokuapp.com/api/addEmail/",
+          this.state
+        )
+        .then((response) => {
+          if (response.data.guardado === "si") {
+            this.setState({
+              email: "",
+              checkBox: false,
+              enviado: "si",
+            });
+          }
+        });
+    }
+
+    event.preventDefault();
   }
 
   buttonDer() {
     if (
-      document.querySelector(".containerCarrouselContent").style.marginLeft ==
-      "0%"
-    ) {
+      document.querySelector(".containerCarrouselContent").style.marginLeft =="0%") {
       document.querySelector(
         ".containerCarrouselContent"
       ).style.marginLeft = `-100%`;
@@ -196,7 +230,10 @@ class Home extends React.Component {
                 Somos productores propios, cultivamos sin abonos artificiales ,
                 aseguramos el producto sin daños
               </p>
-              <img src="home/icono-coche-de-envios.png" alt="icono coche envíos" />
+              <img
+                src="home/icono-coche-de-envios.png"
+                alt="icono coche envíos"
+              />
               <span>Envios 24/48h</span>
               <p>
                 Trabajamos con la más rápida y mejor agencia de envíos , tu
@@ -220,7 +257,7 @@ class Home extends React.Component {
             <div>
               <Link href="/productos/frutas">
                 <a>
-                  <img src="home/albaricoque.jpg" alt="albaricoque"/>
+                  <img src="home/albaricoque.jpg" alt="albaricoque" />
                   <span>Frutas</span>
                 </a>
               </Link>
@@ -228,7 +265,7 @@ class Home extends React.Component {
             <div>
               <Link href="/productos/verduras-y-hortalizas">
                 <a>
-                  <img src="home/pimiento-rojo.jpg" alt="pimiento rojo"/>
+                  <img src="home/pimiento-rojo.jpg" alt="pimiento rojo" />
                   <span>Verduras y hortalizas</span>
                 </a>
               </Link>
@@ -236,7 +273,7 @@ class Home extends React.Component {
             <div>
               <Link href="/productos/legumbres">
                 <a>
-                  <img src="home/lentejas.jpg" alt="lentejas"/>
+                  <img src="home/lentejas.jpg" alt="lentejas" />
                   <span>Legumbres</span>
                 </a>
               </Link>
@@ -244,7 +281,7 @@ class Home extends React.Component {
             <div>
               <Link href="/productos/frutos-secos">
                 <a>
-                  <img src="home/nuez.jpg" alt="nueces"/>
+                  <img src="home/nuez.jpg" alt="nueces" />
                   <span>Frutos secos</span>
                 </a>
               </Link>
@@ -252,7 +289,10 @@ class Home extends React.Component {
             <div>
               <Link href="/productos/encurtidos">
                 <a>
-                  <img src="home/manzanilla-con-pepinillo.jpg" alt="encurtidos"/>
+                  <img
+                    src="home/manzanilla-con-pepinillo.jpg"
+                    alt="encurtidos"
+                  />
                   <span>Encurtidos</span>
                 </a>
               </Link>
@@ -260,7 +300,7 @@ class Home extends React.Component {
             <div>
               <Link href="/productos/especias">
                 <a>
-                  <img src="home/pimenton-dulce.jpg" alt="Pimentón dulce"/>
+                  <img src="home/pimenton-dulce.jpg" alt="Pimentón dulce" />
                   <span>Especias</span>
                 </a>
               </Link>
@@ -268,7 +308,10 @@ class Home extends React.Component {
             <div>
               <Link href="/productos/dulces">
                 <a>
-                  <img src="home/bollo-chocolate.jpg" alt="bollo de chocolate"/>
+                  <img
+                    src="home/bollo-chocolate.jpg"
+                    alt="bollo de chocolate"
+                  />
                   <span>Dulces</span>
                 </a>
               </Link>
@@ -276,7 +319,7 @@ class Home extends React.Component {
             <div>
               <Link href="/productos/galletas-y-cereales">
                 <a>
-                  <img src="home/galletas-caseras.jpg" alt="galletas caseras"/>
+                  <img src="home/galletas-caseras.jpg" alt="galletas caseras" />
                   <span>Galletas y cereales</span>
                 </a>
               </Link>
@@ -284,7 +327,7 @@ class Home extends React.Component {
             <div>
               <Link href="/productos/aperitivos-snack">
                 <a>
-                  <img src="home/aperitivo-snack.jpg" alt="apetivos snacks"/>
+                  <img src="home/aperitivo-snack.jpg" alt="apetivos snacks" />
                   <span>Aperitivos snack</span>
                 </a>
               </Link>
@@ -298,43 +341,43 @@ class Home extends React.Component {
           <h4>Productos populares</h4>
           <div className="containerPopulares">
             <div>
-              <img src="home/tomates.jpg" alt="tomates"/>
+              <img src="home/tomates.jpg" alt="tomates" />
               <span>Tomate</span>
               <p>1.50€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/sandia.jpg" alt="sandia"/>
+              <img src="home/sandia.jpg" alt="sandia" />
               <span>Sandía</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/melon.jpg" alt="melón"/>
+              <img src="home/melon.jpg" alt="melón" />
               <span>Melón</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/ciruela.jpg" alt="ciruela"/>
+              <img src="home/ciruela.jpg" alt="ciruela" />
               <span>Ciruelas</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/melocoton.jpg" alt="melocotón"/>
+              <img src="home/melocoton.jpg" alt="melocotón" />
               <span>Melocotón</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/paraguaya.jpg" alt="paraguaya"/>
+              <img src="home/paraguaya.jpg" alt="paraguaya" />
               <span>Paraguayo</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
             </div>
             <div>
-              <img src="home/nictarina.jpg" alt="nectarina"/>
+              <img src="home/nictarina.jpg" alt="nectarina" />
               <span>Nectarina</span>
               <p>2.30€/Kg</p>
               <a>Ver producto</a>
@@ -347,20 +390,43 @@ class Home extends React.Component {
             Recibe ofertas especiales,productos regalados , grandes descuentos ,
             sorteos.
           </p>
-          <form className="formNewsLetter">
+          <form onSubmit={this.handleSubmit} className="formNewsLetter">
             <label>
-              <input type="text" name="lname" placeholder="Escribe tu email" />
+              <input
+                name="email"
+                type="text"
+                value={this.state.email}
+                onChange={this.handleInputChange}
+                placeholder="Escribe tu email"
+                required
+              />
             </label>
             <label>
               <input
                 type="checkbox"
                 id="cbox1"
-                value="first_checkbox"
+                name="checkBox"
+                checked={this.state.checkBox}
+                onChange={this.handleInputChange}
                 required
               />{" "}
               Acepto los terminos y condiciones de horticurita.es
             </label>
+
             <input type="submit" value="Suscribirme" />
+            {this.state.enviado === "si" ? (
+                <span
+                  style={{
+                    margin: "0 auto",
+                    marginBottom: "40px",
+                    textAlign: "center",
+                  }}
+                >
+                  <img src="/icono-stock-disponible.png"></img>Suscrito correctamente
+                </span>
+              ) : (
+                ""
+              )}
           </form>
         </div>
         <style jsx>{`
