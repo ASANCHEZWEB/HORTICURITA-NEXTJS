@@ -37,7 +37,7 @@ class TodaFruta extends React.Component {
     if (document.querySelector(".addCartContainer")) {
       //asignamos html a la etiqueta
       document.querySelector(".addCartContainer").innerHTML = `
-      <img src=${product.imageUrl} alt="producto añadido" width="90px" height="90px">
+      <img src="/141pxImages/${product.imageName}" alt="producto añadido" width="90px" height="90px">
       <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
       <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Añadido ${tipo} de ${product.name} al carrito</span>
       <a style="color: white;" href="/carrito">VER CARRITO</a>
@@ -51,7 +51,7 @@ class TodaFruta extends React.Component {
       let elementDiv = document.createElement("div");
       elementDiv.setAttribute("class", "addCartContainer");
       elementDiv.innerHTML = `
-      <img src=${product.imageUrl} alt="producto añadido" width="90px" height="90px">
+      <img src="/141pxImages/${product.imageName}" alt="producto añadido" width="90px" height="90px">
       <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
       <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Añadido ${tipo} de ${product.name} al carrito</span>
       <a style="color: white;" href="/carrito">VER CARRITO</a>
@@ -73,7 +73,7 @@ class TodaFruta extends React.Component {
     if (document.querySelector(".addCartContainer")) {
       //asignamos html a la etiqueta
       document.querySelector(".addCartContainer").innerHTML = `
-      <img src=${product.imageUrl} alt="producto añadido" width="90px" height="90px">
+      <img src="/141pxImages/${product.imageName}" alt="producto añadido" width="90px" height="90px">
       <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
       <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Eliminado ${tipo} de ${product.name} del carrito</span>
       <a style="color: white;" href="/carrito">VER CARRITO</a>
@@ -87,7 +87,7 @@ class TodaFruta extends React.Component {
       let elementDiv = document.createElement("div");
       elementDiv.setAttribute("class", "addCartContainer");
       elementDiv.innerHTML = `
-      <img src=${product.imageUrl} alt="producto añadido" width="90px" height="90px">
+      <img src="/141pxImages/${product.imageName}" alt="producto añadido" width="90px" height="90px">
       <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
       <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Eliminado ${tipo} de ${product.name} del carrito</span>
       <a style="color: white;" href="/carrito">VER CARRITO</a>
