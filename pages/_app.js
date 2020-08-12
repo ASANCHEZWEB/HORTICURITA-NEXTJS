@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import { Helmet } from "react-helmet";
 import ReactGA from "react-ga";
 import { useEffect } from "react";
-import Head from "next/head";
+
 let firstVisitCount = 0;
 
 function MyApp({ Component, pageProps }) {
@@ -37,9 +37,7 @@ function MyApp({ Component, pageProps }) {
       <Helmet>
         <html lang="es"></html>
       </Helmet>
-      <Head>
-      <script data-ad-client="ca-pub-7995539186878592" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      </Head>
+     
       <header>
         <NavbarComponent />
       </header>
