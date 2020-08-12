@@ -580,6 +580,7 @@ export async function getStaticProps() {
             name: product.name,
             price: product.price,
             description: product.description,
+            category:product.category,
             generalcategory: product.generalcategory,
             imageUrl: product.imageUrl,
             imageAlt: product.imageAlt,

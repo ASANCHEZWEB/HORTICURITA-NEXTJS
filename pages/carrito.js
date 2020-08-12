@@ -3,10 +3,29 @@ import React from "react";
 class Carrito extends React.Component {
   constructor(props) {
     super(props);
+    this.functionActualizarCarro = "";
 
-    this.state = {};
+    this.state = {
+      cartItems: [],
+    };
   }
 
+
+
+  cogerProductos(){
+    this.functionActualizarCarro = setInterval(() => {
+      let miStorage = JSON.parse(localStorage.getItem('cartProducts'));
+      this.setState({ cartItems: miStorage });
+    }, 500);
+  }
+
+ componentWillUnmount(){
+   clearInterval(this.functionActualizarCarro)
+ }
+ componentDidMount(){
+    this.cogerProductos()
+
+ }
   render() {
     return (
       <>
@@ -14,30 +33,28 @@ class Carrito extends React.Component {
       <h1>CARRITO</h1>
       <div className="containerCart">
           <div className="containerProducts">
-              <div className="individualProdCont">
+          {this.state.cartItems.map(element=>{
+            console.log(element)
+            return (<div key={element._id} className="individualProdCont">
                   <div className="deleteProduct"><img src="/carritoImages/icono-eliminar.png" alt="icono contenedor"/></div>
-                  <div className="centerImageProd"><img src="/carritoImages/manzana.jpg" alt="manzana"/></div>
-                  <div className="divNames"><span>PRODUCTO:</span><span>Manzana</span></div>
-                  <div className="divNames"><span>PRECIO KG:</span><span>1.25€/Kg</span></div>
+                  <div className="centerImageProd"><a><img src={`/174pxImages/${element.imageName}`} alt={element.imageAlt}/></a></div>
+                  <div className="divNames"><span>PRODUCTO:</span><a><span>{element.name}</span></a></div>
+                  <div className="divNames"><span>PRECIO {element.type==="kilogramos" ? 'KG' : 'UD'}:</span><span>{element.price}€/{element.type==="kilogramos" ? 'Kg' : 'Ud'}</span></div>
                   <div className="divNames">
                       <span>CANTIDAD:</span>
-                      <div><button className="buttonIzq">-</button><span className="spanCant">0.5</span><button className="buttonDer">+</button></div>
+                      <div><button className="buttonIzq">-</button>{element.type==="kilogramos" ? <span className="spanCant">{element.added/2}</span> : <span className="spanCant">{element.added}</span>}<button className="buttonDer">+</button></div>
                   </div>
-                  <div className="divNames subTotal"><span>SUBTOTAL:</span><span>5.76€</span></div>
+                  {element.type==="kilogramos" && element.added==1 ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{element.price}€</span></div> : ""}
+                  {element.type==="kilogramos" && element.added>=2 ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{((element.price*element.added)/2).toFixed(2)}€</span></div> : ""}
+                  {element.type!=="kilogramos" ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{element.price*element.added}€</span></div>:""}
+
                   <hr></hr>
-              </div>
-              <div className="individualProdCont">
-                  <div className="deleteProduct"><img src="/carritoImages/icono-eliminar.png" alt="icono contenedor"/></div>
-                  <div className="centerImageProd"><img src="/carritoImages/naranja-mesa.jpg" alt="manzana"/></div>
-                  <div className="divNames"><span>PRODUCTO:</span><span>Naranja</span></div>
-                  <div className="divNames"><span>PRECIO KG:</span><span>5.59€/Kg</span></div>
-                  <div className="divNames">
-                      <span>CANTIDAD:</span>
-                      <div><button className="buttonIzq">-</button><span className="spanCant">0.5</span><button className="buttonDer">+</button></div>
-                  </div>
-                  <div className="divNames subTotal"><span>SUBTOTAL:</span><span>832€</span></div>
-                  <hr></hr>
-              </div>
+              </div> )
+          })}
+          
+
+          
+           
           </div>
           <div className="cuponContainer">
               <form className="formDesc" onSubmit={this.handleSubmit}>
@@ -90,7 +107,7 @@ input::placeholder {
         justify-content: center;
     }
 
-    .centerImageProd>img {
+    .centerImageProd>a>img {
         width: auto;
         height: 36vw;
     }
@@ -242,7 +259,7 @@ input::placeholder {
         justify-content: center;
     }
 
-    .centerImageProd>img {
+    .centerImageProd>a>img {
         width: auto;
         height: 36vw;
     }
@@ -388,7 +405,7 @@ input::placeholder {
         margin: 0 auto;
     }
 
-    .centerImageProd>img {
+    .centerImageProd>a>img {
         width: 65px;
         height: auto;
     }
@@ -546,7 +563,7 @@ input::placeholder {
         font-size: 18px;
     }
 
-    .centerImageProd>img {
+    .centerImageProd>a>img {
         width: 100px;
         height: auto;
     }
@@ -708,7 +725,7 @@ input::placeholder {
         font-size: 18px;
     }
 
-    .centerImageProd>img {
+    .centerImageProd>a>img {
         width: 100px;
         height: auto;
     }
