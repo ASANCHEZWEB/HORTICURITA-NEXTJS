@@ -51,20 +51,26 @@ class Carrito extends React.Component {
   }
 
   calculateSubTotal() {
-    let arrayOfSubtotals = this.state.cartItems.map(element => {
-      if (element.type === "kilogramos" && element.added == 1) {
-        return element.price
-      }
-      if (element.type === "kilogramos" && element.added >= 2) {
-        return Number(((element.price * element.added) / 2).toFixed(2))
-      }
-      if (element.type !== "kilogramos") {
-        return element.price * element.added
-      }
-    }).reduce((accumulator, currentValue) => {
-      return accumulator + currentValue;
-    });
-    return arrayOfSubtotals
+    if (this.state.cartItems.length !== 0) {
+      let arrayOfSubtotals = this.state.cartItems.map(element => {
+        if (element.type === "kilogramos" && element.added == 1) {
+          return element.price
+        }
+        if (element.type === "kilogramos" && element.added >= 2) {
+          return Number(((element.price * element.added) / 2).toFixed(2))
+        }
+        if (element.type !== "kilogramos") {
+          return element.price * element.added
+        }
+      }).reduce((accumulator, currentValue) => {
+        return accumulator + currentValue;
+      });
+      return arrayOfSubtotals
+
+    } else {
+      return 0
+    }
+
 
   }
 
@@ -97,6 +103,22 @@ class Carrito extends React.Component {
       <h1>CARRITO</h1>
       <div className="containerCart">
           <div className="containerProducts">
+          {
+            this.state.cartItems.length == 0 ? <span style = {
+              {
+                display: "flex",
+                justifyContent: "center",
+                fontFamily: "Montserrat",
+                backgroundColor: "#ff0000",
+                height: "46px",
+                alignItems: "center",
+                border: "solid",
+                borderWidth: "1px",
+                color: "white",
+                padding: "12px 24px 12px 24px",
+                borderRadius: "21px"
+              }
+            } > ¡Tu carrito esta vacío! 😧 ¡Navega por el menu y añade productos! 😉 </span>:""}
           {this.state.cartItems.map(element=>{
             return (<div key={element._id} className="individualProdCont">
                   <div className="deleteProduct"><img src="/carritoImages/icono-eliminar.png" alt="icono contenedor"/></div>
