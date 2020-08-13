@@ -46,8 +46,12 @@ class Carrito extends React.Component {
 
 
 
-  eliminarProducto(product){
-console.log(product)
+  eliminarProducto(product) {
+    let miStorage = [...JSON.parse(localStorage.getItem('cartProducts'))];
+    let arrayActualizado = miStorage.filter(element => {
+      return element._id !== product._id
+    })
+    localStorage.setItem('cartProducts', JSON.stringify(arrayActualizado));
   }
   calculateTotal() {
     let totalMasIva = this.state.subTotal + (this.state.subTotal * (this.state.impuesto / 100));
