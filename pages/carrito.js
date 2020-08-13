@@ -103,22 +103,7 @@ class Carrito extends React.Component {
       <h1>CARRITO</h1>
       <div className="containerCart">
           <div className="containerProducts">
-          {
-            this.state.cartItems.length == 0 ? <span style = {
-              {
-                display: "flex",
-                justifyContent: "center",
-                fontFamily: "Montserrat",
-                backgroundColor: "#ff0000",
-                height: "46px",
-                alignItems: "center",
-                border: "solid",
-                borderWidth: "1px",
-                color: "white",
-                padding: "12px 24px 12px 24px",
-                borderRadius: "21px"
-              }
-            } > ¡Tu carrito esta vacío! 😧 ¡Navega por el menu y añade productos! 😉 </span>:""}
+          {this.state.cartItems.length == 0 ? <span className="carritoVacio"> ¡Tu carrito esta vacío! 😧 ¡Navega por el menu y añade productos! 😉 </span>:""}
           {this.state.cartItems.map(element=>{
             return (<div key={element._id} className="individualProdCont">
                   <div className="deleteProduct"><img src="/carritoImages/icono-eliminar.png" alt="icono contenedor"/></div>
@@ -129,8 +114,7 @@ class Carrito extends React.Component {
                       <span>CANTIDAD:</span>
                       <div><button className="buttonIzq">-</button>{element.type==="kilogramos" ? <span className="spanCant">{element.added/2}</span> : <span className="spanCant">{element.added}</span>}<button className="buttonDer">+</button></div>
                   </div>
-                  {element.type==="kilogramos" && element.added==1 ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{element.price}€</span></div> : ""}
-                  {element.type==="kilogramos" && element.added>=2 ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{((element.price*element.added)/2).toFixed(2)}€</span></div> : ""}
+                  {element.type==="kilogramos"? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{((element.price*element.added)/2).toFixed(2)}€</span></div> : ""}
                   {element.type!=="kilogramos" ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{element.price*element.added}€</span></div>:""}
                   <hr></hr>
               </div> 
@@ -169,6 +153,19 @@ class Carrito extends React.Component {
     font-family: montserrat;
     color: green;
     margin-top: 63px;
+}
+.carritoVacio {
+  display: flex;
+  justify-content: center;
+  font-family: Montserrat;
+  background-color: #ff0000;
+  height: 46px;
+  align-items: center;
+  border: solid;
+  border-width: 1 px;
+  color: white;
+  padding: 12px 24px 12px 24px;
+  border-radius: 21px
 }
 
 input::placeholder {
