@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios";
 
 class Carrito extends React.Component {
   constructor(props) {
@@ -7,25 +8,88 @@ class Carrito extends React.Component {
 
     this.state = {
       cartItems: [],
+      subTotal:0,
+      impuesto:21,
+      descuento:0,
+      codigoCupon:"",
+      cuponEncontrado:"",
+      gastosEnvio:3.99,
+      total:0
     };
+    this.actualizarCupon = this.actualizarCupon.bind(this);
+    this.probarCupon = this.probarCupon.bind(this);
+  }
+
+  actualizarCupon(event){
+    this.setState({codigoCupon: event.target.value});
+  }
+  probarCupon(event) {
+    axios.post("https://gestorhorticurita.herokuapp.com/api/testCodigoCupon/", {
+      cuponCode: this.state.codigoCupon
+    }).then(res => {
+      if (res.data.found == true) {
+        this.setState({
+          descuento: res.data.cuponInfo.aplicar,
+          cuponEncontrado: true
+        })
+      } else {
+        this.setState({
+          descuento: 0,
+          cuponEncontrado: false
+        })
+      }
+    })
+
+    event.preventDefault();
   }
 
 
+  calculateTotal() {
+    let totalMasIva = this.state.subTotal + (this.state.subTotal * (this.state.impuesto / 100));
+    let totalConDescuento = totalMasIva - (totalMasIva * (this.state.descuento / 100));
+    return Number(totalConDescuento.toFixed(2))
+  }
 
-  cogerProductos(){
+  calculateSubTotal() {
+    let arrayOfSubtotals = this.state.cartItems.map(element => {
+      if (element.type === "kilogramos" && element.added == 1) {
+        return element.price
+      }
+      if (element.type === "kilogramos" && element.added >= 2) {
+        return Number(((element.price * element.added) / 2).toFixed(2))
+      }
+      if (element.type !== "kilogramos") {
+        return element.price * element.added
+      }
+    }).reduce((accumulator, currentValue) => {
+      return accumulator + currentValue;
+    });
+    return arrayOfSubtotals
+
+  }
+
+
+  actualizarCarro() {
     this.functionActualizarCarro = setInterval(() => {
       let miStorage = JSON.parse(localStorage.getItem('cartProducts'));
-      this.setState({ cartItems: miStorage });
+      this.setState({
+        cartItems: miStorage
+      });
+      this.setState({
+        subTotal: this.calculateSubTotal()
+      });
+      this.setState({
+        total: this.calculateTotal()
+      });
     }, 500);
   }
 
- componentWillUnmount(){
-   clearInterval(this.functionActualizarCarro)
- }
- componentDidMount(){
-    this.cogerProductos()
-
- }
+  componentWillUnmount() {
+    clearInterval(this.functionActualizarCarro)
+  }
+  componentDidMount() {
+    this.actualizarCarro()
+  }
   render() {
     return (
       <>
@@ -34,7 +98,6 @@ class Carrito extends React.Component {
       <div className="containerCart">
           <div className="containerProducts">
           {this.state.cartItems.map(element=>{
-            console.log(element)
             return (<div key={element._id} className="individualProdCont">
                   <div className="deleteProduct"><img src="/carritoImages/icono-eliminar.png" alt="icono contenedor"/></div>
                   <div className="centerImageProd"><a><img src={`/174pxImages/${element.imageName}`} alt={element.imageAlt}/></a></div>
@@ -47,34 +110,34 @@ class Carrito extends React.Component {
                   {element.type==="kilogramos" && element.added==1 ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{element.price}€</span></div> : ""}
                   {element.type==="kilogramos" && element.added>=2 ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{((element.price*element.added)/2).toFixed(2)}€</span></div> : ""}
                   {element.type!=="kilogramos" ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{element.price*element.added}€</span></div>:""}
-
                   <hr></hr>
-              </div> )
+              </div> 
+              )
+              
           })}
-          
-
-          
-           
           </div>
           <div className="cuponContainer">
-              <form className="formDesc" onSubmit={this.handleSubmit}>
+              <form className="formDesc" onSubmit={this.probarCupon}>
                   <label> <img src="/carritoImages/icono-descuento.png" alt="icono descuento"/>Código descuento o influencer<img src="/carritoImages/icono-descuento.png" alt="icono descuento"/></label>
-                  <input type="text" placeholder="        Si tienes un código aplícalo aquí!😉" />
+                  <input type="text" value={this.state.codigoCupon} onChange={this.actualizarCupon} placeholder="        Si tienes un código aplícalo aquí!😉" />
                   <button type="submit">APLICAR</button>
               </form>
+              {this.state.cuponEncontrado===true? <span style={{display: "flex",justifyContent: "center",fontFamily: "Montserrat"}}><img style={{width: "25px",height: "25px"}} src="/icono-stock-disponible.png" alt="icono descuento aplicado"/>¡Descuento aplicado!😉</span>:""}
+              {this.state.cuponEncontrado===false? <span style={{display: "flex",justifyContent: "center",fontFamily: "Montserrat"}}><img style={{width: "25px",height: "25px"}} src="/icono-sin-stock.png" alt="icono codigo no encontrado"/>Código no encontrado😭</span>:""}
           </div>
           <div className="containerTotal">
               <div className="containerTexts">
                   <div><span className="totalCarrito">TOTAL CARRITO</span></div>
                   <hr></hr>
-                  <div><span>SubTotal:</span><span>22.5€</span></div>
-                  <div><span>Impuestos(IVA):</span><span>21%</span></div>
-                  <div><span>Descuento:</span><span>0%</span></div>
-                  <div><span>Gastos de envío:</span><span> Desde 3,99€</span></div>
+                  <div><span>SubTotal:</span><span>{this.state.subTotal}€</span></div>
+                  <div><span>Impuestos(IVA):</span><span>{this.state.impuesto}%</span></div>
+                  <div><span>Descuento:</span><span>{this.state.descuento}%</span></div>
+                  <div><span>Gastos de envío:</span><span> Desde {this.state.gastosEnvio}€</span></div>
                   <hr></hr>
-                  <div><span>TOTAL:</span><span>4,99€</span></div>
+                  <div><span>TOTAL:</span><span>{this.state.total}€</span></div>
               </div>
               <div className="finalizarCompra"><button>FINALIZAR COMPRA</button></div>
+              
           </div>
       </div>
   </section>
