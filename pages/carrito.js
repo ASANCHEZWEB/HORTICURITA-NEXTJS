@@ -77,12 +77,19 @@ console.log(product)
     }
   }
 
+getItems(){
+  let miStorage = JSON.parse(localStorage.getItem('cartProducts'));
+  if(miStorage==undefined || null){
+    miStorage=[];
+  }
+  return miStorage
+}
 
   actualizarCarro() {
     this.functionActualizarCarro = setInterval(() => {
-      let miStorage = JSON.parse(localStorage.getItem('cartProducts'));
+      
       this.setState({
-        cartItems: miStorage
+        cartItems: this.getItems()
       });
       this.setState({
         subTotal: this.calculateSubTotal()

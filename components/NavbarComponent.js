@@ -11,11 +11,16 @@ class NavbarComponent extends React.Component {
     };
   }
 
+  getCarrito(){
+    let miStorage = JSON.parse(localStorage.getItem('cartProducts'));
+    if(miStorage==undefined || null){
+      miStorage=[];
+    }
+    return miStorage
+  }
   actualizarCarro = () => {
      setInterval(() => {
-      let miStorage = JSON.parse(window.localStorage.cartProducts);
-
-       this.setState({ cartItems: miStorage });
+       this.setState({ cartItems: this.getCarrito() });
    }, 500);
   };
 
