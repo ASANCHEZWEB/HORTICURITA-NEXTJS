@@ -18,6 +18,7 @@ class Carrito extends React.Component {
     };
     this.actualizarCupon = this.actualizarCupon.bind(this);
     this.probarCupon = this.probarCupon.bind(this);
+    this.eliminarProducto = this.eliminarProducto.bind(this);
   }
 
   actualizarCupon(event){
@@ -44,6 +45,10 @@ class Carrito extends React.Component {
   }
 
 
+
+  eliminarProducto(product){
+console.log(product)
+  }
   calculateTotal() {
     let totalMasIva = this.state.subTotal + (this.state.subTotal * (this.state.impuesto / 100));
     let totalConDescuento = totalMasIva - (totalMasIva * (this.state.descuento / 100));
@@ -67,11 +72,9 @@ class Carrito extends React.Component {
       });
       return arrayOfSubtotals
 
-    } else {
+    } else{
       return 0
     }
-
-
   }
 
 
@@ -106,7 +109,7 @@ class Carrito extends React.Component {
           {this.state.cartItems.length == 0 ? <span className="carritoVacio"> ¡Tu carrito esta vacío! 😧 ¡Navega por el menu y añade productos! 😉 </span>:""}
           {this.state.cartItems.map(element=>{
             return (<div key={element._id} className="individualProdCont">
-                  <div className="deleteProduct"><img src="/carritoImages/icono-eliminar.png" alt="icono contenedor"/></div>
+                  <div className="deleteProduct"><img src="/carritoImages/icono-eliminar.png" alt="icono contenedor" onClick={() => this.eliminarProducto(element)}/></div>
                   <div className="centerImageProd"><a><img src={`/174pxImages/${element.imageName}`} alt={element.imageAlt}/></a></div>
                   <div className="divNames"><span>PRODUCTO:</span><a><span>{element.name}</span></a></div>
                   <div className="divNames"><span>PRECIO {element.type==="kilogramos" ? 'KG' : 'UD'}:</span><span>{element.price}€/{element.type==="kilogramos" ? 'Kg' : 'Ud'}</span></div>
@@ -203,6 +206,7 @@ input::placeholder {
 
     .deleteProduct>img {
         width: 25px;
+        cursor: pointer;
         height: 25px;
     }
 
@@ -356,6 +360,7 @@ input::placeholder {
     .deleteProduct>img {
         width: 25px;
         height: 25px;
+        cursor: pointer;
     }
 
     .buttonIzq {
@@ -503,6 +508,7 @@ input::placeholder {
     .deleteProduct>img {
         width: 25px;
         height: 25px;
+        cursor: pointer;
     }
 
     .buttonIzq {
@@ -661,6 +667,7 @@ input::placeholder {
     .deleteProduct>img {
         width: 25px;
         height: 25px;
+        cursor: pointer;
     }
 
     .buttonIzq {
@@ -823,6 +830,7 @@ input::placeholder {
     .deleteProduct>img {
         width: 25px;
         height: 25px;
+        cursor: pointer;
     }
 
     .buttonIzq {
