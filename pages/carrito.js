@@ -19,7 +19,8 @@ class Carrito extends React.Component {
     this.actualizarCupon = this.actualizarCupon.bind(this);
     this.probarCupon = this.probarCupon.bind(this);
     this.eliminarProducto = this.eliminarProducto.bind(this);
-    this.addQty=this.addQty.bind(this)
+    this.addQty=this.addQty.bind(this);
+    this.restQty=this.restQty.bind(this)
   }
 
   actualizarCupon(event){
@@ -41,9 +42,14 @@ class Carrito extends React.Component {
         })
       }
     })
-
     event.preventDefault();
   }
+
+restQty(product){
+  console.log("hola")
+}
+
+
 
 addQty(product) {
   let miStorage = [...JSON.parse(localStorage.getItem('cartProducts'))];
@@ -57,6 +63,7 @@ addQty(product) {
   })
   localStorage.setItem('cartProducts', JSON.stringify(newArray));
 }
+
 
   eliminarProducto(product) {
     let miStorage = [...JSON.parse(localStorage.getItem('cartProducts'))];
@@ -134,7 +141,7 @@ getItems(){
                   <div className="divNames"><span>PRECIO {element.type==="kilogramos" ? 'KG' : 'UD'}:</span><span>{element.price}€/{element.type==="kilogramos" ? 'Kg' : 'Ud'}</span></div>
                   <div className="divNames">
                       <span>CANTIDAD:</span>
-                      <div><button className="buttonIzq">-</button>{element.type==="kilogramos" ? <span className="spanCant">{element.added/2}</span> : <span className="spanCant">{element.added}</span>}<button className="buttonDer" onClick={() => this.addQty(element)}>+</button></div>
+                      <div><button className="buttonIzq" onClick={() => this.restQty(element)}>-</button>{element.type==="kilogramos" ? <span className="spanCant">{element.added/2}</span> : <span className="spanCant">{element.added}</span>}<button className="buttonDer" onClick={() => this.addQty(element)}>+</button></div>
                   </div>
                   {element.type==="kilogramos"? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{Number(((element.price*element.added)/2)).toFixed(2)}€</span></div> : ""}
                   {element.type!=="kilogramos" ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{Number(element.price*element.added).toFixed(2)}€</span></div>:""}
@@ -560,6 +567,7 @@ input::placeholder {
         justify-content: space-evenly;
         align-items: center;
         font-family: montserrat;
+        font-size: 1.5vw;
     }
 
     .individualProdCont>hr {
@@ -719,6 +727,7 @@ input::placeholder {
         justify-content: space-evenly;
         align-items: center;
         font-family: montserrat;
+        font-size: 1.5vw;
     }
 
     .individualProdCont>hr {
