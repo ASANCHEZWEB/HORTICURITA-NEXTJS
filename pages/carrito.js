@@ -46,7 +46,18 @@ class Carrito extends React.Component {
   }
 
 restQty(product){
-  console.log("hola")
+  let miStorage = [...JSON.parse(localStorage.getItem('cartProducts'))];
+  let newArray = miStorage.map(element => {
+    if (element._id == product._id && element.added!==0) {
+      element.added -= 1
+      return element
+    } else {
+      return element
+    }
+  })
+  localStorage.setItem('cartProducts', JSON.stringify(newArray));
+
+  console.log(product,newArray)
 }
 
 
