@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Link from 'next/link';
 
 class Carrito extends React.Component {
   constructor(props) {
@@ -112,6 +113,7 @@ getItems(){
   if(miStorage==undefined || null){
     miStorage=[];
   }
+  console.log(miStorage)
   return miStorage
 }
 
@@ -157,8 +159,15 @@ deleteCeroProds() {
           {this.state.cartItems.map(element=>{
             return (<div key={element._id} className="individualProdCont">
                   <div className="deleteProduct"><img src="/carritoImages/icono-eliminar.png" alt="icono contenedor" onClick={() => this.eliminarProducto(element)}/></div>
-                  <div className="centerImageProd"><a><img src={`/174pxImages/${element.imageName}`} alt={element.imageAlt}/></a></div>
-                  <div className="divNames"><span>PRODUCTO:</span><a><span>{element.name}</span></a></div>
+                  <div className="centerImageProd">
+                  <Link href={`productos/${element.category}/${element.subcategory}/${element.urlRoute}`}>
+                  <a><img src={`/174pxImages/${element.imageName}`} alt={element.imageAlt}/></a>
+                  </Link>
+                  </div>
+                  <div className="divNames"><span>PRODUCTO:</span>
+                  <Link href={`productos/${element.category}/${element.subcategory}/${element.urlRoute}`}>
+                  <a style={{color: "black"}}><span>{element.name}</span></a>
+                  </Link></div>
                   <div className="divNames"><span>PRECIO {element.type==="kilogramos" ? 'KG' : 'UD'}:</span><span>{element.price}€/{element.type==="kilogramos" ? 'Kg' : 'Ud'}</span></div>
                   <div className="divNames">
                       <span>CANTIDAD:</span>

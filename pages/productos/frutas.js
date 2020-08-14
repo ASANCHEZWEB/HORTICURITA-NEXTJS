@@ -574,13 +574,14 @@ export async function getStaticProps() {
   let dataMapped = () => {
     return [...data.productos]
       .map((product) => {
-        if (product.category === "fruta") {
+        if (product.category === "frutas") {
           return {
             _id: product._id,
             name: product.name,
             price: product.price,
             description: product.description,
             category:product.category,
+            subcategory:product.subcategory,
             generalcategory: product.generalcategory,
             imageUrl: product.imageUrl,
             imageAlt: product.imageAlt,
