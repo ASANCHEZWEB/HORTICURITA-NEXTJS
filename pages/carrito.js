@@ -19,6 +19,7 @@ class Carrito extends React.Component {
     this.actualizarCupon = this.actualizarCupon.bind(this);
     this.probarCupon = this.probarCupon.bind(this);
     this.eliminarProducto = this.eliminarProducto.bind(this);
+    this.addQty=this.addQty.bind(this)
   }
 
   actualizarCupon(event){
@@ -44,7 +45,18 @@ class Carrito extends React.Component {
     event.preventDefault();
   }
 
-
+addQty(product) {
+  let miStorage = [...JSON.parse(localStorage.getItem('cartProducts'))];
+  let newArray = miStorage.map(element => {
+    if (element._id == product._id) {
+      element.added += 1
+      return element
+    } else {
+      return element
+    }
+  })
+  localStorage.setItem('cartProducts', JSON.stringify(newArray));
+}
 
   eliminarProducto(product) {
     let miStorage = [...JSON.parse(localStorage.getItem('cartProducts'))];
@@ -62,20 +74,16 @@ class Carrito extends React.Component {
   calculateSubTotal() {
     if (this.state.cartItems.length !== 0) {
       let arrayOfSubtotals = this.state.cartItems.map(element => {
-        if (element.type === "kilogramos" && element.added == 1) {
-          return element.price
-        }
-        if (element.type === "kilogramos" && element.added >= 2) {
-          return Number(((element.price * element.added) / 2).toFixed(2))
+        if (element.type === "kilogramos") {
+          return (element.price * element.added) / 2
         }
         if (element.type !== "kilogramos") {
           return element.price * element.added
         }
       }).reduce((accumulator, currentValue) => {
-        return accumulator + currentValue;
+        return accumulator + currentValue
       });
-      return arrayOfSubtotals
-
+      return Number(arrayOfSubtotals.toFixed(2))
     } else{
       return 0
     }
@@ -126,10 +134,10 @@ getItems(){
                   <div className="divNames"><span>PRECIO {element.type==="kilogramos" ? 'KG' : 'UD'}:</span><span>{element.price}€/{element.type==="kilogramos" ? 'Kg' : 'Ud'}</span></div>
                   <div className="divNames">
                       <span>CANTIDAD:</span>
-                      <div><button className="buttonIzq">-</button>{element.type==="kilogramos" ? <span className="spanCant">{element.added/2}</span> : <span className="spanCant">{element.added}</span>}<button className="buttonDer">+</button></div>
+                      <div><button className="buttonIzq">-</button>{element.type==="kilogramos" ? <span className="spanCant">{element.added/2}</span> : <span className="spanCant">{element.added}</span>}<button className="buttonDer" onClick={() => this.addQty(element)}>+</button></div>
                   </div>
-                  {element.type==="kilogramos"? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{((element.price*element.added)/2).toFixed(2)}€</span></div> : ""}
-                  {element.type!=="kilogramos" ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{element.price*element.added}€</span></div>:""}
+                  {element.type==="kilogramos"? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{Number(((element.price*element.added)/2)).toFixed(2)}€</span></div> : ""}
+                  {element.type!=="kilogramos" ? <div className="divNames subTotal"><span>SUBTOTAL:</span><span>{Number(element.price*element.added).toFixed(2)}€</span></div>:""}
                   <hr></hr>
               </div> 
               )
