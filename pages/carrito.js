@@ -127,7 +127,7 @@ getItems(){
       this.setState({
         total: this.calculateTotal()
       });
-    }, 500);
+    }, 200);
   }
 
 deleteCeroProds() {
