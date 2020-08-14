@@ -130,8 +130,18 @@ getItems(){
     }, 500);
   }
 
+deleteCeroProds() {
+  let miStorage = [...JSON.parse(localStorage.getItem('cartProducts'))];
+  let nuevoArray = miStorage.filter(producto => {
+    return producto.added !== 0
+  })
+  localStorage.setItem('cartProducts', JSON.stringify(nuevoArray))
+}
+
   componentWillUnmount() {
     clearInterval(this.functionActualizarCarro)
+    this.deleteCeroProds()
+
   }
   componentDidMount() {
     this.actualizarCarro()
