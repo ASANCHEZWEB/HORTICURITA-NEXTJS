@@ -57,8 +57,6 @@ restQty(product){
     }
   })
   localStorage.setItem('cartProducts', JSON.stringify(newArray));
-
-  console.log(product,newArray)
 }
 
 
@@ -113,7 +111,6 @@ getItems(){
   if(miStorage==undefined || null){
     miStorage=[];
   }
-  console.log(miStorage)
   return miStorage
 }
 
