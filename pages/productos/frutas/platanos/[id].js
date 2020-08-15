@@ -126,7 +126,6 @@ this.buscarProductoLS()
               alt={this.state.imageAlt}
             />
           </div>
-
           <div>
             <h1>{this.state.name}</h1>
             <span>
