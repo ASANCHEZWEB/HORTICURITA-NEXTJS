@@ -4,7 +4,16 @@ import React from "react";
 class Platano extends React.Component {
   constructor(props) {
     super(props);
-
+    this.myVar = "";
+    this.myFunction = () => {
+      this.myVar = setTimeout(function () {
+        document.querySelector(".addCartContainer").innerHTML = "";
+        document.querySelector(".addCartContainer").style.display = "none";
+      }, 5000);
+    };
+    this.myStopFunction = () => {
+      clearTimeout(this.myVar);
+    };
     this.state = {
            _id: props.objectProp._id,
             name: props.objectProp.name,
@@ -27,7 +36,42 @@ class Platano extends React.Component {
   }
 
 
-
+  mostrarCuadro(product) {
+    let tipo = "";
+    if (product.type == "kilogramos") {
+      tipo = "0.5 Kg";
+    } else {
+      tipo = "1 Ud";
+    }
+    if (document.querySelector(".addCartContainer")) {
+      //asignamos html a la etiqueta
+      document.querySelector(".addCartContainer").innerHTML = `
+      <img src="/141pxImages/${product.imageName}" alt="producto añadido" width="90px" height="90px">
+      <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
+      <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Añadido ${tipo} de ${product.name} al carrito</span>
+      <a style="color: white;" href="/carrito">VER CARRITO</a>
+      </div>`;
+      document.querySelector(".addCartContainer").style.display = "";
+      //lo eliminamos
+      this.myStopFunction();
+      this.myFunction();
+    } else {
+      //asignamos html a la etiqueta
+      let elementDiv = document.createElement("div");
+      elementDiv.setAttribute("class", "addCartContainer");
+      elementDiv.innerHTML = `
+      <img src="/141pxImages/${product.imageName}" alt="producto añadido" width="90px" height="90px">
+      <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
+      <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Añadido ${tipo} de ${product.name} al carrito</span>
+      <a style="color: white;" href="/carrito">VER CARRITO</a>
+      </div>`;
+      document.querySelector("body").appendChild(elementDiv);
+      document.querySelector(".addCartContainer").style.display = "";
+      //lo eliminamos
+      this.myStopFunction();
+      this.myFunction();
+    }
+  }
 
 
 
@@ -52,6 +96,7 @@ class Platano extends React.Component {
        })
        localStorage.setItem('cartProducts', JSON.stringify(myproduct))
      }
+     this.mostrarCuadro(product)
    }
    this.buscarProductoLS()
  }
