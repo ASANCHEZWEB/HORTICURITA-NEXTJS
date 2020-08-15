@@ -200,7 +200,9 @@ class TodaFruta extends React.Component {
           <title>Frutas</title>
           <meta
             name="description"
-            content="Fruta al mejor precio , calidad insuperable"
+            content="Disponemos de una gran variedad de fruta , ¡escoge desde tan solo
+              medio kilo!. Nuestra fruta y verdura es recogida unas horas
+              después de su pedido y será entregada en tan solo 24/48 horas."
           ></meta>
         </Head>
 
