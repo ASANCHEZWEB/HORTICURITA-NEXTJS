@@ -32,9 +32,25 @@ class Platano extends React.Component {
 
 
  addQty(product) {
-   
-   
-this.buscarProductoLS()
+   if (localStorage.getItem('cartProducts') !== null) {
+     let storageArray = [...JSON.parse(localStorage.getItem('cartProducts'))]
+     let myproduct = storageArray.map(element => {
+       if (element._id == this.state._id) {
+         element.added += 1
+         return element
+       } else {
+         return element
+       }
+     })
+     localStorage.setItem('cartProducts', JSON.stringify(myproduct))
+   } else {
+     let storageArray = [...JSON.parse(localStorage.getItem('cartProducts'))]
+     let myproduct = this.state;
+     myproduct.added += 1
+     storageArray.push(myproduct)
+     localStorage.setItem('cartProducts', JSON.stringify(storageArray))
+   }
+   this.buscarProductoLS()
  }
 
 buscarProductoLS() {
