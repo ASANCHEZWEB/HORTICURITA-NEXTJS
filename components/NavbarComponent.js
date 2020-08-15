@@ -145,7 +145,7 @@ class NavbarComponent extends React.Component {
       <nav>
         <div>
           <Link href="/">
-            <a><img src="/horticurita-logo.png"/></a>
+            <a><img src="/horticurita-logo.png" alt="logo horticurita"/></a>
           </Link>
         </div>
         <div>
