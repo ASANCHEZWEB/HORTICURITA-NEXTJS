@@ -88,7 +88,7 @@ function MyApp({ Component, pageProps }) {
           position: fixed;
           width: 100%;
           z-index: 9;
-          min-height: 64.34px;
+          height: 64.34px;
           box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
         }
 
