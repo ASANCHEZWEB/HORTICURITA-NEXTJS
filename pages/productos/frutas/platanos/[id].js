@@ -32,27 +32,27 @@ class Platano extends React.Component {
 
 
  addQty(product) {
-let cogerLocalArray= localStorage.getItem('cartProducts');
-if(this.state.stock =="si"){
-if(cogerLocalArray == "[]" || cogerLocalArray == null){
-   localStorage.setItem('cartProducts', JSON.stringify([]))
-    let cogerSt = [...JSON.parse(localStorage.getItem('cartProducts'))]
-     product.added += 1;
-    cogerSt.push(product)
-    localStorage.setItem('cartProducts', JSON.stringify(cogerSt))
-    }else {
-      let storageArray = [...JSON.parse(localStorage.getItem('cartProducts'))]
-      let myproduct = storageArray.map(element => {
-        if (element._id == this.state._id) {
-          element.added += 1
-          return element
-        } else {
-          return element
-        }
-      })
-      localStorage.setItem('cartProducts', JSON.stringify(myproduct))
-    }
-}
+   let cogerLocalArray = localStorage.getItem('cartProducts');
+   if (this.state.stock == "si") {
+     if (cogerLocalArray == "[]" || cogerLocalArray == null) {
+       localStorage.setItem('cartProducts', JSON.stringify([]))
+       let cogerSt = [...JSON.parse(localStorage.getItem('cartProducts'))]
+       product.added += 1;
+       cogerSt.push(product)
+       localStorage.setItem('cartProducts', JSON.stringify(cogerSt))
+     } else {
+       let storageArray = [...JSON.parse(localStorage.getItem('cartProducts'))]
+       let myproduct = storageArray.map(element => {
+         if (element._id == this.state._id) {
+           element.added += 1
+           return element
+         } else {
+           return element
+         }
+       })
+       localStorage.setItem('cartProducts', JSON.stringify(myproduct))
+     }
+   }
    this.buscarProductoLS()
  }
 
