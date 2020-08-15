@@ -5,30 +5,73 @@ class Platano extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
-    this.objectData = props.objectProp;
+    this.state = {
+           _id: props.objectProp._id,
+            name: props.objectProp.name,
+            price: props.objectProp.price,
+            description: props.objectProp.description,
+            category:props.objectProp.category,
+            subcategory:props.objectProp.subcategory,
+            generalcategory: props.objectProp.generalcategory,
+            imageUrl: props.objectProp.imageUrl,
+            imageAlt: props.objectProp.imageAlt,
+            type: props.objectProp.type,
+            stock: props.objectProp.stock,
+            urlRoute: props.objectProp.urlRoute,
+            imageName: props.objectProp.imageName,
+            added: props.objectProp.added,
+            origin: props.objectProp.origin
+    };
+    
+    this.addQty=this.addQty.bind(this)
   }
 
+
+
+
+
+
+ addQty(product) {
+   
+   
+this.buscarProductoLS()
+ }
+
+buscarProductoLS() {
+  if (localStorage.getItem('cartProducts') !== null) {
+    let storageArray = [...JSON.parse(localStorage.getItem('cartProducts'))]
+    let myproduct = storageArray.filter(element => {
+      return element._id == this.state._id
+    })
+    if (myproduct.length !== 0) {
+      this.setState({added: myproduct[0].added})
+    }
+  }
+}
+
+componentDidMount(){
+this.buscarProductoLS()
+}
   render() {
     return (
       <>
         <div className="containerDetail">
           <div>
             <img
-              src={this.objectData.imageUrl}
-              alt={this.objectData.imageAlt}
+              src={this.state.imageUrl}
+              alt={this.state.imageAlt}
             />
           </div>
 
           <div>
-            <h1>{this.objectData.name}</h1>
+            <h1>{this.state.name}</h1>
             <span>
-              {this.objectData.price} /
-              {this.objectData.type === "kilogramos" ? "Kg" : "Ud"}
+              {this.state.price} /
+              {this.state.type === "kilogramos" ? "Kg" : "Ud"}
             </span>
-            <p>Origen: {this.objectData.origin}</p>
+            <p>Origen: {this.state.origin}</p>
 
-            {this.objectData.stock === "si" ? (
+            {this.state.stock === "si" ? (
               <p>
                 <img
                   src="https://res.cloudinary.com/dfsni6m2x/image/upload/v1593730373/iconosHorticurita/icono_disponible_a932xs.png"
@@ -47,11 +90,11 @@ class Platano extends React.Component {
             )}
 
             <div className="buttonsCart">
-              <button type="button" className="buttonIzq">
+              <button type="button" className="buttonIzq" onClick={() => this.restQty(this.state)}>
                 -
               </button>
-              <input name="inputProduct" className="inputButtons" value="0" />
-              <button type="button" className="buttonDer">
+              <span className="inputButtons">{this.state.added==0? 0:this.state.added/2}</span>
+              <button type="button" className="buttonDer" onClick={() => this.addQty(this.state)}>
                 +
               </button>
             </div>
@@ -62,10 +105,22 @@ class Platano extends React.Component {
           <hr></hr>
           <span>DESCRIPCIÓN</span>
           <hr></hr>
-          <p>{this.objectData.description}</p>
+          <p>{this.state.description}</p>
         </div>
 
         <style jsx>{`
+        .inputButtons {
+              max-width: 90px;
+              text-align: center;
+              width: 70px;
+              padding: 6px;
+              border-width: thin;
+              border-left: none rgb(255, 235, 0);
+              border-right: none rgb(255, 235, 0);
+              border-color: rgb(255, 235, 0);
+              border-top: 1px solid rgb(255, 235, 0);
+              border-bottom: 1px solid rgb(255, 235, 0);
+            }
           @media (max-width: 575.98px) {
             .containerDetail {
               display: flex;
@@ -126,16 +181,6 @@ class Platano extends React.Component {
               text-decoration: none;
               outline: none;
               touch-action: manipulation;
-            }
-
-            .inputButtons {
-              max-width: 90px;
-              text-align: center;
-              border-width: thin;
-              border-left: none rgb(255, 235, 0);
-              border-right: none rgb(255, 235, 0);
-              border-color: rgb(255, 235, 0);
-              border-top: 1px solid rgb(255, 235, 0);
             }
 
             .buttonDer {
@@ -245,15 +290,7 @@ class Platano extends React.Component {
               touch-action: manipulation;
             }
 
-            .inputButtons {
-              max-width: 90px;
-              text-align: center;
-              border-width: thin;
-              border-left: none rgb(255, 235, 0);
-              border-right: none rgb(255, 235, 0);
-              border-color: rgb(255, 235, 0);
-              border-top: 1px solid rgb(255, 235, 0);
-            }
+           
 
             .buttonDer {
               border-radius: 0px 15px 15px 0px;
@@ -360,15 +397,7 @@ class Platano extends React.Component {
               touch-action: manipulation;
             }
 
-            .inputButtons {
-              max-width: 90px;
-              text-align: center;
-              border-width: thin;
-              border-left: none rgb(255, 235, 0);
-              border-right: none rgb(255, 235, 0);
-              border-color: rgb(255, 235, 0);
-              border-top: 1px solid rgb(255, 235, 0);
-            }
+           
 
             .buttonDer {
               border-radius: 0px 15px 15px 0px;
@@ -475,15 +504,8 @@ class Platano extends React.Component {
               touch-action: manipulation;
             }
 
-            .inputButtons {
-              max-width: 90px;
-              text-align: center;
-              border-width: thin;
-              border-left: none rgb(255, 235, 0);
-              border-right: none rgb(255, 235, 0);
-              border-color: rgb(255, 235, 0);
-              border-top: 1px solid rgb(255, 235, 0);
-            }
+            
+          
 
             .buttonDer {
               border-radius: 0px 15px 15px 0px;
@@ -590,15 +612,7 @@ class Platano extends React.Component {
               touch-action: manipulation;
             }
 
-            .inputButtons {
-              max-width: 90px;
-              text-align: center;
-              border-width: thin;
-              border-left: none rgb(255, 235, 0);
-              border-right: none rgb(255, 235, 0);
-              border-color: rgb(255, 235, 0);
-              border-top: 1px solid rgb(255, 235, 0);
-            }
+            
 
             .buttonDer {
               border-radius: 0px 15px 15px 0px;
@@ -674,17 +688,21 @@ export async function getStaticProps({ params }) {
   const product = await res.json();
 
   let objectProp = {
-    _id: product._id,
-    name: product.name,
-    price: product.price,
-    description: product.description,
-    generalcategory: product.generalcategory,
-    imageUrl: product.imageUrl,
-    imageAlt: product.imageAlt,
-    type: product.type,
-    stock: product.stock,
-    urlRoute: product.urlRoute,
-    origin:product.origin
+            _id: product._id,
+            name: product.name,
+            price: product.price,
+            description: product.description,
+            category:product.category,
+            subcategory:product.subcategory,
+            generalcategory: product.generalcategory,
+            imageUrl: product.imageUrl,
+            imageAlt: product.imageAlt,
+            type: product.type,
+            stock: product.stock,
+            urlRoute: product.urlRoute,
+            imageName: product.imageName,
+            added: 0,
+            origin: product.origin
   };
   // Pass post data to the page via props
   return { props: { objectProp } };

@@ -229,8 +229,8 @@ class TodaFruta extends React.Component {
               return (
                 <div className="containerDivInfo" key={product._id}>
                   <Link
-                    href="/productos/frutas/[id]"
-                    as={`/productos/frutas/${product.urlRoute}`}
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
                   >
                     <picture>
                       <source
@@ -253,8 +253,9 @@ class TodaFruta extends React.Component {
                   </Link>
 
                   <Link
-                    href="/productos/frutas/[id]"
-                    as={`/productos/frutas/${product.urlRoute}`}
+                  
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
                   >
                     <a>
                       <h2>{product.name}</h2>
