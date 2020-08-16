@@ -32,7 +32,8 @@ class Platano extends React.Component {
             origin: props.objectProp.origin
     };
     
-    this.addQty=this.addQty.bind(this)
+    this.addQty=this.addQty.bind(this);
+    this.restQty=this.restQty.bind(this);
   }
 
 
@@ -74,7 +75,9 @@ class Platano extends React.Component {
   }
 
 
-
+restQty(product){
+console.log(product)
+}
  addQty(product) {
    let cogerLocalArray = localStorage.getItem('cartProducts');
    if (this.state.stock == "si") {
@@ -121,10 +124,23 @@ this.buscarProductoLS()
       <>
         <div className="containerDetail">
           <div>
-            <img
-              src={this.state.imageUrl}
-              alt={this.state.imageAlt}
-            />
+                   <picture>
+                      <source
+                        media="(max-width: 767.98px)"
+                        srcSet={`/141pxImages/${this.state.imageName}`}/>
+                      <source
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        srcSet={`/174pxImages/${this.state.imageName}`}
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`/270pxImages/${this.state.imageName}`}
+                      />
+                      <img
+                        src={`/141pxImages/${this.state.imageName}`}
+                        alt={this.state.imageAlt}
+                      />
+                    </picture>
           </div>
           <div>
             <h1>{this.state.name}</h1>
