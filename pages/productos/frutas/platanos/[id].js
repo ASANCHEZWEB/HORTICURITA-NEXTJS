@@ -36,7 +36,42 @@ class Platano extends React.Component {
     this.restQty=this.restQty.bind(this);
   }
 
-
+  restarCuadro = (product) => {
+    let tipo = "";
+    if (product.type == "kilogramos") {
+      tipo = "0.5 Kg";
+    } else {
+      tipo = "1 Ud";
+    }
+    if (document.querySelector(".addCartContainer")) {
+      //asignamos html a la etiqueta
+      document.querySelector(".addCartContainer").innerHTML = `
+      <img src="/141pxImages/${product.imageName}" alt="producto añadido" width="90px" height="90px">
+      <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
+      <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Eliminado ${tipo} de ${product.name} del carrito</span>
+      <a style="color: white;" href="/carrito">VER CARRITO</a>
+      </div>`;
+      document.querySelector(".addCartContainer").style.display = "";
+      //lo eliminamos
+      this.myStopFunction();
+      this.myFunction();
+    } else {
+      //asignamos html a la etiqueta
+      let elementDiv = document.createElement("div");
+      elementDiv.setAttribute("class", "addCartContainer");
+      elementDiv.innerHTML = `
+      <img src="/141pxImages/${product.imageName}" alt="producto añadido" width="90px" height="90px">
+      <div style="height: 86%;width: 100%;display: flex;flex-direction: column;align-items: center;">
+      <span style="text-align: center;font-family: montserrat;font-size: smaller;"> Eliminado ${tipo} de ${product.name} del carrito</span>
+      <a style="color: white;" href="/carrito">VER CARRITO</a>
+      </div>`;
+      document.querySelector("body").appendChild(elementDiv);
+      document.querySelector(".addCartContainer").style.display = "";
+      //lo eliminamos
+      this.myStopFunction();
+      this.myFunction();
+    }
+  };
   mostrarCuadro(product) {
     let tipo = "";
     if (product.type == "kilogramos") {
@@ -75,9 +110,32 @@ class Platano extends React.Component {
   }
 
 
-restQty(product){
-console.log(product)
+restQty(product) {
+  if (this.state.added !== 0) {
+    let cogerSt = [...JSON.parse(localStorage.getItem('cartProducts'))]
+    let newArray = cogerSt.map(element => {
+      if (element._id == product._id) {
+        product.added--
+        return product
+      } else {
+        return element
+      }
+    })
+    if (product.added == 0) {
+      let deleted=newArray.filter(element => {
+        return element._id !== product._id
+      })
+      localStorage.setItem('cartProducts', JSON.stringify(deleted))
+      this.setState({added:0})
+    } else {
+      localStorage.setItem('cartProducts', JSON.stringify(newArray))
+    }
+  }
+  this.restarCuadro(product)
+  this.buscarProductoLS()
 }
+
+
  addQty(product) {
    let cogerLocalArray = localStorage.getItem('cartProducts');
    if (this.state.stock == "si") {
