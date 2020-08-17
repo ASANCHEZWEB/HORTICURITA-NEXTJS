@@ -127,11 +127,12 @@ restQty(product) {
       })
       localStorage.setItem('cartProducts', JSON.stringify(deleted))
       this.setState({added:0})
+      this.restarCuadro(product)
     } else {
       localStorage.setItem('cartProducts', JSON.stringify(newArray))
+      this.restarCuadro(product)
     }
   }
-  this.restarCuadro(product)
   this.buscarProductoLS()
 }
 
