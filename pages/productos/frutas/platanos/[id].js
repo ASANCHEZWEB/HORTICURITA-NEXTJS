@@ -231,7 +231,7 @@ this.buscarProductoLS()
               <button type="button" className="buttonIzq" onClick={() => this.restQty(this.state)}>
                 -
               </button>
-              <span className="inputButtons">{this.state.added==0? 0:this.state.added/2}</span>
+              <span className="inputButtons">{this.state.type=="kilogramos"? this.state.added/2:this.state.added}</span>
               <button type="button" className="buttonDer" onClick={() => this.addQty(this.state)}>
                 +
               </button>

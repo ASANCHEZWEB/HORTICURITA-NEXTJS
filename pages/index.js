@@ -617,6 +617,7 @@ class Home extends React.Component {
               font-style: normal;
               font-size: 19px;
               text-align: center;
+              color: black;
             }
 
             .buttonVerTodo {
@@ -901,6 +902,7 @@ class Home extends React.Component {
               font-style: normal;
               font-size: 19px;
               text-align: center;
+              color: black;
             }
 
             .buttonVerTodo {
@@ -1189,6 +1191,7 @@ class Home extends React.Component {
               font-style: normal;
               font-size: 19px;
               text-align: center;
+              color: black;
             }
 
             .buttonVerTodo {
@@ -1479,6 +1482,7 @@ class Home extends React.Component {
               font-style: normal;
               font-size: 19px;
               text-align: center;
+              color: black;
             }
 
             .buttonVerTodo {
@@ -1781,6 +1785,7 @@ class Home extends React.Component {
               font-style: normal;
               font-size: 19px;
               text-align: center;
+              color: black;
             }
 
             .buttonVerTodo {
