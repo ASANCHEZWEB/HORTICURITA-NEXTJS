@@ -63,6 +63,7 @@ class TodaFruta extends React.Component {
       this.myFunction();
     }
   }
+  
   restarCuadro = (product) => {
     let tipo = "";
     if (product.type == "kilogramos") {
