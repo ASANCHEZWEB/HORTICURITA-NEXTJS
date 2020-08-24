@@ -594,6 +594,7 @@ export async function getStaticProps() {
             urlRoute: product.urlRoute,
             imageName: product.imageName,
             added: 0,
+            minimunQty:product.minimunQty
           };
         } else {
           return {};

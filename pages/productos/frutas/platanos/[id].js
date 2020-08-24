@@ -29,7 +29,8 @@ class Platano extends React.Component {
             urlRoute: props.objectProp.urlRoute,
             imageName: props.objectProp.imageName,
             added: props.objectProp.added,
-            origin: props.objectProp.origin
+            origin: props.objectProp.origin,
+            minimunQty:props.objectProp.minimunQty
     };
     
     this.addQty=this.addQty.bind(this);
@@ -840,7 +841,8 @@ export async function getStaticProps({ params }) {
             urlRoute: product.urlRoute,
             imageName: product.imageName,
             added: 0,
-            origin: product.origin
+            origin: product.origin,
+            minimunQty:product.minimunQty
   };
   // Pass post data to the page via props
   return { props: { objectProp } };
