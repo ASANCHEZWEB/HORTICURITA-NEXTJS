@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import Link from 'next/link';
+import FinalizarCompra from "../components/finalizarCompra";
+import Head from "next/head";
 
 class Carrito extends React.Component {
   constructor(props) {
@@ -15,13 +17,17 @@ class Carrito extends React.Component {
       codigoCupon:"",
       cuponEncontrado:"",
       gastosEnvio:3.99,
-      total:0
+      total:0,
+      totalOk:false
+
     };
     this.actualizarCupon = this.actualizarCupon.bind(this);
     this.probarCupon = this.probarCupon.bind(this);
     this.eliminarProducto = this.eliminarProducto.bind(this);
     this.addQty=this.addQty.bind(this);
-    this.restQty=this.restQty.bind(this)
+    this.restQty=this.restQty.bind(this);
+    this.finalizarCompra=this.finalizarCompra.bind(this);
+    this.cambiarTotalOk=this.cambiarTotalOk.bind(this)
   }
 
   actualizarCupon(event){
@@ -72,6 +78,17 @@ addQty(product) {
     }
   })
   localStorage.setItem('cartProducts', JSON.stringify(newArray));
+}
+
+
+finalizarCompra() {
+
+    if (this.state.total > 12) {
+        this.setState({totalOk: true})
+    } else {
+        alert("El pedido mínimo en nuestra tienda es de 12 euros")
+    }
+
 }
 
 
@@ -137,6 +154,11 @@ deleteCeroProds() {
   localStorage.setItem('cartProducts', JSON.stringify(nuevoArray))
 }
 
+cambiarTotalOk(){
+
+    this.setState({totalOk:false})
+}
+
   componentWillUnmount() {
     clearInterval(this.functionActualizarCarro)
     this.deleteCeroProds()
@@ -146,8 +168,21 @@ deleteCeroProds() {
     this.actualizarCarro()
   }
   render() {
-    return (
-      <>
+
+    if (this.state.totalOk) {
+        return (
+        <>
+        <Head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous" async></script>
+       </Head>
+
+        <FinalizarCompra carritoInfo={this.state} cambiarTotalOk={this.cambiarTotalOk}/>
+        </>)
+      } else {
+        return <>
       <section>
       <h1>CARRITO</h1>
       <div className="containerCart">
@@ -203,7 +238,7 @@ deleteCeroProds() {
                   <hr></hr>
                   <div><span>TOTAL:</span><span>{this.state.total}€</span></div>
               </div>
-              <div className="finalizarCompra"><button>FINALIZAR COMPRA</button></div>
+              <div className="finalizarCompra"><button onClick={this.finalizarCompra}>FINALIZAR COMPRA</button></div>
               
           </div>
       </div>
@@ -1022,7 +1057,8 @@ input::placeholder {
 }
         `}</style>
   </>
-    )
+      }
+      
   }
 }
 

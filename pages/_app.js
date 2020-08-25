@@ -76,7 +76,7 @@ function MyApp({ Component, pageProps }) {
         }
 
         a {
-          text-decoration: none;
+          text-decoration: none !important;
         }
         /* CONTENEDOR BARRA DE NAVEGACIÓN */
         nav {
@@ -101,7 +101,9 @@ function MyApp({ Component, pageProps }) {
         button {
           outline: none;
         }
-
+        a.buttonCart:hover{
+          color:white
+        }
         /* LOGO */
         nav > div:nth-child(1) > a {
           display: block;
