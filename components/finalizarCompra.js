@@ -22,6 +22,7 @@ class FinalizarCompra extends React.Component {
 
   componentDidMount() {
     this.recibirInfoCart();
+    window.scrollTo(0, 0);
   }
   render() {
     return (
