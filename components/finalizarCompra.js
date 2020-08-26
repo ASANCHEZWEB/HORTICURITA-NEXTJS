@@ -6,26 +6,50 @@ class FinalizarCompra extends React.Component {
     super(props);
 
     this.state = {
-      carritoInfo: [],
+      cartItems: [],
+      subTotal:"",
+      impuesto:"",
+      descuento:0,
+      codigoCupon:"",
+      cuponEncontrado:"",
+      gastosEnvio:"",
+      total:"",
+      totalOk:""
     };
+
+    this.cogerProductos=this.cogerProductos.bind(this)
   }
 
-  recibirInfoCart() {
-    let miStorage = [...JSON.parse(localStorage.getItem("cartProducts"))];
+  
 
-    let newArrayStorage = miStorage.filter((element) => {
-      return element.added !== 0;
-    });
+cogerProductos(){
+  let miStorage = [...JSON.parse(localStorage.getItem('cartProducts'))];
+let newArrayLimpio= miStorage.filter(element=>{
+return element.added !==0;
+})
+console.log(newArrayLimpio)
+  this.setState({cartItems:newArrayLimpio})
 
-    this.setState({ carritoInfo: newArrayStorage });
-  }
+}
 
   componentWillUnmount(){
     location.reload()
   }
   componentDidMount() {
-    this.recibirInfoCart();
     window.scrollTo(0, 0);
+    this.setState({
+      cartItems: this.props.carritoInfo.cartItems,
+      subTotal:this.props.carritoInfo.subTotal,
+      impuesto:this.props.carritoInfo.impuesto,
+      descuento:this.props.carritoInfo.descuento,
+      codigoCupon:this.props.carritoInfo.codigoCupon,
+      cuponEncontrado:this.props.carritoInfo.cuponEncontrado,
+      gastosEnvio:this.props.carritoInfo.gastosEnvio,
+      total:this.props.carritoInfo.total,
+      totalOk:this.props.carritoInfo.totalOk
+    })
+this.cogerProductos()
+
   }
   render() {
     return (
@@ -55,40 +79,32 @@ class FinalizarCompra extends React.Component {
         <div class="col-md-4 order-md-2 mb-4">
           <h4 class="d-flex justify-content-between align-items-center mb-3">
             <span class="text-muted">Tu carrito</span>
-            <span class="badge badge-secondary badge-pill">3</span>
+            <span class="badge badge-secondary badge-pill">{this.state.cartItems.length}</span>
           </h4>
           <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+          {this.state.cartItems.map((product, index) => {
+
+           return(
+        <li key={index} class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
-                <h6 class="my-0">Nombre uno</h6>
-                <small class="text-muted">Brief description</small>
+                <h6 class="my-0">{product.name}</h6>
+                {product.type =="kilogramos"? <small class="text-muted">{product.added/2} Kilogramos</small>:<small class="text-muted">{product.added} Unidades</small>}
+                
               </div>
-              <span class="text-muted">$12</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Nombre dos</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$8</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Nombre tres</h6>
-                <small class="text-muted">Brief description</small>
-              </div>
-              <span class="text-muted">$5</span>
-            </li>
+              {product.type =="kilogramos"? <span class="text-muted">{Number(((product.price*product.added)/2).toFixed(2))}€</span>:<span class="text-muted">{(product.price*product.added).toFixed(2)}€</span>}
+              
+            </li>)
+          })}
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
                 <h6 class="my-0">Código descuento</h6>
-                <small>EXAMPLECODE</small>
+                <small>{this.state.codigoCupon}</small>
               </div>
-              <span class="text-success">-$5</span>
+              <span class="text-success">-{this.state.descuento}€</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total (EUR)</span>
-              <strong>20€</strong>
+              <span>Total + iva({this.state.impuesto}%)incl.</span>
+              <strong>{this.props.carritoInfo.total}€</strong>
             </li>
           </ul>
     
@@ -146,7 +162,7 @@ class FinalizarCompra extends React.Component {
     
             <div class="row">
               <div class="col-md-5 mb-3">
-                <label for="country">Country</label>
+                <label for="country">Provincia</label>
                 <select class="custom-select d-block w-100" id="country" required>
                   <option value="">Choose...</option>
                   <option>United States</option>
@@ -157,7 +173,7 @@ class FinalizarCompra extends React.Component {
               </div>
               
               <div class="col-md-4 mb-3">
-                <label for="state">State</label>
+                <label for="state">Localidad</label>
                 <select class="custom-select d-block w-100" id="state" required>
                   <option value="">Choose...</option>
                   <option>California</option>
@@ -175,15 +191,6 @@ class FinalizarCompra extends React.Component {
               </div>
             </div>
             <hr class="mb-4"></hr>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="same-address"/>
-              <label class="custom-control-label" for="same-address">La dirección de envío es la misma que mi dirección de facturación</label>
-            </div>
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="save-info"/>
-              <label class="custom-control-label" for="save-info">Save this information for next time</label>
-            </div>
-            <hr class="mb-4"></hr>
     
             <h4 class="mb-3">Método de pago</h4>
     
@@ -192,10 +199,10 @@ class FinalizarCompra extends React.Component {
                 <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required/>
                 <label class="custom-control-label" for="credit">Tarjeta de crédito</label>
               </div>
-              <div class="custom-control custom-radio">
+              {/* <div class="custom-control custom-radio">
                 <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required/>
                 <label class="custom-control-label" for="debit">Tarjeta de débito</label>
-              </div>
+              </div> */}
               
             </div>
             <div class="row">
