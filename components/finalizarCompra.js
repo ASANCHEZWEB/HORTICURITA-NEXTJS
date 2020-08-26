@@ -20,6 +20,9 @@ class FinalizarCompra extends React.Component {
     this.setState({ carritoInfo: newArrayStorage });
   }
 
+  componentWillUnmount(){
+    location.reload()
+  }
   componentDidMount() {
     this.recibirInfoCart();
     window.scrollTo(0, 0);
