@@ -27,28 +27,35 @@ class Carrito extends React.Component {
     this.addQty=this.addQty.bind(this);
     this.restQty=this.restQty.bind(this);
     this.finalizarCompra=this.finalizarCompra.bind(this);
-    this.cambiarTotalOk=this.cambiarTotalOk.bind(this)
+    this.cambiarTotalOk=this.cambiarTotalOk.bind(this);
+    this.enviarCupon=this.enviarCupon.bind(this)
   }
 
   actualizarCupon(event){
-    this.setState({codigoCupon: event.target.value});
+      let codigoInput= event
+    this.setState({codigoCupon: codigoInput.target.value});
   }
-  probarCupon(event) {
+
+  enviarCupon(codigoCupon){
+      
     axios.post("https://gestorhorticurita.herokuapp.com/api/testCodigoCupon/", {
-      cuponCode: this.state.codigoCupon
-    }).then(res => {
-      if (res.data.found == true) {
-        this.setState({
-          descuento: res.data.cuponInfo.aplicar,
-          cuponEncontrado: true
-        })
-      } else {
-        this.setState({
-          descuento: 0,
-          cuponEncontrado: false
-        })
-      }
-    })
+        cuponCode: codigoCupon
+      }).then(res => {
+        if (res.data.found == true) {
+          this.setState({
+            descuento: res.data.cuponInfo.aplicar,
+            cuponEncontrado: true
+          })
+        } else {
+          this.setState({
+            descuento: 0,
+            cuponEncontrado: false
+          })
+        }
+      })
+  }
+  probarCupon(event) {  
+    this.enviarCupon(this.state.codigoCupon)
     event.preventDefault();
   }
 
@@ -173,7 +180,7 @@ cambiarTotalOk(){
         return (
         <>
         
-        <FinalizarCompra carritoInfo={this.state} cambiarTotalOk={this.cambiarTotalOk}/>
+        <FinalizarCompra carritoInfo={this.state} cambiarTotalOk={this.cambiarTotalOk} cuponProbar={this.enviarCupon}/>
         </>)
       } else {
         return <>

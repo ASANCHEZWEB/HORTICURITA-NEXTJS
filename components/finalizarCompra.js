@@ -4,30 +4,54 @@ import Head from "next/head";
 class FinalizarCompra extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       cartItems: [],
-      subTotal:"",
-      impuesto:"",
-      descuento:0,
-      codigoCupon:"",
-      cuponEncontrado:"",
-      gastosEnvio:"",
-      total:"",
-      totalOk:""
+      subTotal:this.props.carritoInfo.subTotal,
+      impuesto:this.props.carritoInfo.impuesto,
+      codigoCupon:this.props.carritoInfo.codigoCupon,
+      cuponEncontrado:this.props.carritoInfo.cuponEncontrado,
+      gastosEnvio:this.props.carritoInfo.gastosEnvio,
+      total:this.props.carritoInfo.total,
+      descuento:this.props.carritoInfo.descuento,
+      totalOk:this.props.carritoInfo.totalOk
     };
 
-    this.cogerProductos=this.cogerProductos.bind(this)
+   this.cogerProductos=this.cogerProductos.bind(this);
+   this.actualizarCupon=this.actualizarCupon.bind(this)
+   this.enviarCupon=this.enviarCupon.bind(this)
   }
 
   
+  enviarCupon(event){
+     event.preventDefault();
+    this.props.cuponProbar(this.state.codigoCupon);
+    setInterval(() => {
+      this.setState({
+      subTotal:this.props.carritoInfo.subTotal,
+      impuesto:this.props.carritoInfo.impuesto,
+      cuponEncontrado:this.props.carritoInfo.cuponEncontrado,
+      gastosEnvio:this.props.carritoInfo.gastosEnvio,
+      total:this.props.carritoInfo.total,
+      descuento:this.props.carritoInfo.descuento,
+      totalOk:this.props.carritoInfo.totalOk
+      })
+      console.log(this.state)
+    }, 500);
+
+}
+  actualizarCupon(event){
+    this.setState({codigoCupon: event.target.value});
+  }
+
+
+
 
 cogerProductos(){
   let miStorage = [...JSON.parse(localStorage.getItem('cartProducts'))];
 let newArrayLimpio= miStorage.filter(element=>{
 return element.added !==0;
 })
-console.log(newArrayLimpio)
+
   this.setState({cartItems:newArrayLimpio})
 
 }
@@ -35,22 +59,14 @@ console.log(newArrayLimpio)
   componentWillUnmount(){
     location.reload()
   }
+  
   componentDidMount() {
     window.scrollTo(0, 0);
-    this.setState({
-      cartItems: this.props.carritoInfo.cartItems,
-      subTotal:this.props.carritoInfo.subTotal,
-      impuesto:this.props.carritoInfo.impuesto,
-      descuento:this.props.carritoInfo.descuento,
-      codigoCupon:this.props.carritoInfo.codigoCupon,
-      cuponEncontrado:this.props.carritoInfo.cuponEncontrado,
-      gastosEnvio:this.props.carritoInfo.gastosEnvio,
-      total:this.props.carritoInfo.total,
-      totalOk:this.props.carritoInfo.totalOk
-    })
 this.cogerProductos()
 
+
   }
+ 
   render() {
     return (
       <>
@@ -107,7 +123,7 @@ this.cogerProductos()
                 <h6 class="my-0">Código descuento</h6>
                 <small>{this.state.codigoCupon}</small>
               </div>
-              <span class="text-success">-{this.state.descuento}€</span>
+              <span class="text-success">-{this.props.carritoInfo.descuento}€</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total + iva({this.state.impuesto}%)incl.</span>
@@ -115,9 +131,9 @@ this.cogerProductos()
             </li>
           </ul>
     
-           <form class="card p-2">
+          <form class="card p-2" onSubmit={this.enviarCupon}>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Código descuento"/>
+              <input type="text" class="form-control" value={this.state.codigoCupon} onChange={this.actualizarCupon} placeholder="Código descuento"/>
               <div class="input-group-append">
                 <button type="submit" class="btn btn-secondary">Probar</button>
               </div>
