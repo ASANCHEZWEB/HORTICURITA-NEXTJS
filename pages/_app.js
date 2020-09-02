@@ -36,6 +36,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Helmet>
         <html lang="es"></html>
+        <meta name="google-site-verification" content="xNVGHPndXCWiyVOrPTjj-_PvASUC0TI0K1sEXDCvMZ0" />
       </Helmet>
      
       <header>
