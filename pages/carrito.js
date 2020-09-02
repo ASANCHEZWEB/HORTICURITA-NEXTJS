@@ -16,7 +16,7 @@ class Carrito extends React.Component {
       descuento:0,
       codigoCupon:"",
       cuponEncontrado:"",
-      gastosEnvio:3.99,
+      gastosEnvio:0,
       total:0,
       totalOk:false
 
@@ -37,7 +37,7 @@ class Carrito extends React.Component {
   }
 
   enviarCupon(codigoCupon){
-      
+     
     axios.post("https://gestorhorticurita.herokuapp.com/api/testCodigoCupon/", {
         cuponCode: codigoCupon
       }).then(res => {
@@ -180,7 +180,7 @@ cambiarTotalOk(){
         return (
         <>
         
-        <FinalizarCompra carritoInfo={this.state} cambiarTotalOk={this.cambiarTotalOk} cuponProbar={this.enviarCupon}/>
+        <FinalizarCompra carritoInfo={this.state} cambiarTotalOk={this.cambiarTotalOk} cuponProbar={this.enviarCupon} actualizarCode={this.actualizarCupon}/>
         </>)
       } else {
         return <>
@@ -238,7 +238,7 @@ cambiarTotalOk(){
                   <div><span>SubTotal:</span><span>{this.state.subTotal}€</span></div>
                   <div><span>Impuestos(IVA):</span><span>{this.state.impuesto}%</span></div>
                   <div><span>Descuento:</span><span>{this.state.descuento}%</span></div>
-                  <div><span>Gastos de envío:</span><span> Desde {this.state.gastosEnvio}€</span></div>
+                  <div><span>Gastos de envío:</span><span> Desde 3.99€</span></div>
                   <hr></hr>
                   <div><span>TOTAL:</span><span>{this.state.total}€</span></div>
               </div>

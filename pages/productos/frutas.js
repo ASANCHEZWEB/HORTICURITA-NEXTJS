@@ -193,7 +193,9 @@ class TodaFruta extends React.Component {
 
     this.setState({ screenSize: 767 });
   }
-
+componentWillUnmount(){
+  this.myStopFunction()
+}
   render() {
     return (
       <>
