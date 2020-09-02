@@ -127,6 +127,7 @@ class Home extends React.Component {
             name="description"
             content="Fruta al mejor precio , calidad insuperable"
           ></meta>
+          <meta name="google-site-verification" content="xNVGHPndXCWiyVOrPTjj-_PvASUC0TI0K1sEXDCvMZ0" />
         </Head>
 
         <section id="sectionOne">
