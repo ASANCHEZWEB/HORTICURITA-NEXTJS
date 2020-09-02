@@ -28,7 +28,8 @@ class Carrito extends React.Component {
     this.restQty=this.restQty.bind(this);
     this.finalizarCompra=this.finalizarCompra.bind(this);
     this.cambiarTotalOk=this.cambiarTotalOk.bind(this);
-    this.enviarCupon=this.enviarCupon.bind(this)
+    this.enviarCupon=this.enviarCupon.bind(this);
+    this.actualizarCarro=this.actualizarCarro.bind(this)
   }
 
   actualizarCupon(event){
