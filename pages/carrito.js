@@ -12,7 +12,7 @@ class Carrito extends React.Component {
     this.state = {
       cartItems: [],
       subTotal:0,
-      impuesto:21,
+      impuesto:0,
       descuento:0,
       codigoCupon:"",
       cuponEncontrado:"",
@@ -29,7 +29,8 @@ class Carrito extends React.Component {
     this.finalizarCompra=this.finalizarCompra.bind(this);
     this.cambiarTotalOk=this.cambiarTotalOk.bind(this);
     this.enviarCupon=this.enviarCupon.bind(this);
-    this.actualizarCarro=this.actualizarCarro.bind(this)
+    this.actualizarCarro=this.actualizarCarro.bind(this);
+    this.calculateTotal=this.calculateTotal.bind(this)
   }
 
   actualizarCupon(event){
@@ -107,12 +108,44 @@ finalizarCompra() {
     })
     localStorage.setItem('cartProducts', JSON.stringify(arrayActualizado));
   }
+
+
+
+
   calculateTotal() {
-    let totalMasIva = this.state.subTotal + (this.state.subTotal * (this.state.impuesto / 100));
-    let totalConDescuento = totalMasIva - (totalMasIva * (this.state.descuento / 100));
-    return Number(totalConDescuento.toFixed(2))
+      if (this.state.cartItems.length !== 0) {
+          let newArraySum = this.state.cartItems.map(element => {
+              let subTotal = 0;
+              if (element.type == "kilogramos") {
+                  subTotal = Number(((element.price * element.added) / 2).toFixed(2))
+              }
+              if (element.type !== "kilogramos") {
+                  subTotal = Number((element.price * element.added).toFixed(2))
+              }
+              //AQUÍ TENGO QUE AÑADIR EL IVA CORRESPONDIENTE A AL RESTO DE CATEGORÍAS
+              if (element.category == "frutas") {
+                  return Number((subTotal * 0.04).toFixed(2))
+              }
+          }).reduce((acc, cv) => acc + cv)
+          this.setState({
+              impuesto: Number(newArraySum.toFixed(2))
+          })
+      } else {
+          this.setState({
+              impuesto: 0
+          })
+      }
+      let totalSinDescuento = Number((this.state.impuesto + this.state.subTotal).toFixed(2))
+      if (this.state.descuento !== 0) {
+          let descuentoCalculado = Number((totalSinDescuento - (totalSinDescuento * (this.state.descuento / 100))).toFixed(2))
+          return descuentoCalculado
+      } else {
+          return totalSinDescuento
+      }
   }
 
+
+  
   calculateSubTotal() {
     if (this.state.cartItems.length !== 0) {
       let arrayOfSubtotals = this.state.cartItems.map(element => {
@@ -141,7 +174,6 @@ getItems(){
 
   actualizarCarro() {
     this.functionActualizarCarro = setInterval(() => {
-      
       this.setState({
         cartItems: this.getItems()
       });
@@ -237,8 +269,8 @@ cambiarTotalOk(){
                   <div><span className="totalCarrito">TOTAL CARRITO</span></div>
                   <hr></hr>
                   <div><span>SubTotal:</span><span>{this.state.subTotal}€</span></div>
-                  <div><span>Impuestos(IVA):</span><span>{this.state.impuesto}%</span></div>
-                  <div><span>Descuento:</span><span>{this.state.descuento}%</span></div>
+                  <div><span>Impuestos(IVA):</span><span>{this.state.impuesto}€</span></div>
+                  <div><span>Descuento:</span><span>-{this.state.descuento}%</span></div>
                   <div><span>Gastos de envío:</span><span> Desde 3.99€</span></div>
                   <hr></hr>
                   <div><span>TOTAL:</span><span>{this.state.total}€</span></div>

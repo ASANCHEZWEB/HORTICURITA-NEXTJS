@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from 'next/link';
-
+import axios from 'axios';
 class FinalizarCompra extends React.Component {
   constructor(props) {
     super(props);
@@ -18,6 +18,7 @@ class FinalizarCompra extends React.Component {
       formName:"",
       formSurName:"",
       formEmail:"",
+      formDniCif:"",
       formDirectionOne:"",
       formDirectionTwo:"",
       formProvincia:"",
@@ -88,6 +89,15 @@ class FinalizarCompra extends React.Component {
 
   enviarFormCompra(event){
     console.log(this.state)
+    axios.post('http://localhost:5000/api/sendPurchaseData', this.state)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+
     event.preventDefault();
   }
 
@@ -121,7 +131,9 @@ this.cogerProductos()
       <>
       <Head>
         <meta name="robots" content="noindex" />
+        <script src="https://sis-t.redsys.es:25443/sis/NC/sandbox/redsysV2.js"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+        <script src="/scripts/redsysValidation.js"></script>
        </Head>
       <button onClick={this.props.cambiarTotalOk} style={{
     marginTop: "20px",
@@ -169,7 +181,7 @@ this.cogerProductos()
                 <h6 class="my-0">Código descuento</h6>
                 <small>{this.state.codigoCupon}</small>
               </div>
-              <span class="text-success">-{this.props.carritoInfo.descuento}€</span>
+              <span class="text-success">-{this.props.carritoInfo.descuento}%</span>
             </li>
             <li class="list-group-item d-flex justify-content-between lh-condensed">
               <div>
@@ -181,7 +193,7 @@ this.cogerProductos()
               
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total + iva({this.state.impuesto}%)incl.</span>
+              <span>Total + iva({this.state.impuesto}€)incl.</span>
               <strong>{this.props.carritoInfo.total}€</strong>
             </li>
           </ul>
@@ -200,29 +212,32 @@ this.cogerProductos()
          <form class="needs-validation" onSubmit={this.enviarFormCompra}>
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="firstName">Nombre</label>
+                <label>Nombre</label>
                 <input type="text" class="form-control" name="formName" placeholder="Nombre aquí" value={this.state.formName} onChange={this.handleInputChange} required />
               </div>
               <div class="col-md-6 mb-3">
-                <label for="lastName">Apellidos</label>
+                <label >Apellidos</label>
                 <input type="text" class="form-control"  name="formSurName" placeholder="Apellidos aquí" value={this.state.formSurName} onChange={this.handleInputChange} required />
               </div>
             </div>
      
-            
+            <div class="mb-3">
+              <label > DNI O CIF</label>
+              <input type="text" class="form-control" name="formDniCif" placeholder="12345678P" value={this.state.formDniCif} onChange={this.handleInputChange} required/>
+            </div>
     
             <div class="mb-3">
-              <label for="email">Email <span class="text-muted">(envío de factura)</span></label>
+              <label >Email <span class="text-muted">(envío de factura)</span></label>
               <input type="email" class="form-control" name="formEmail" placeholder="ejemplo@tucorreo.com" value={this.state.formEmail} onChange={this.handleInputChange} required/>
             </div>
     
             <div class="mb-3">
-              <label for="address">Dirección</label>
+              <label>Dirección</label>
               <input type="text" class="form-control" name="formDirectionOne" placeholder="calle ejemplo,51" value={this.state.formDirectionOne} onChange={this.handleInputChange} required />
             </div>
     
             <div class="mb-3">
-              <label for="address2">Dirección 2 <span class="text-muted">(Optional)</span></label>
+              <label >Dirección 2 <span class="text-muted">(Optional)</span></label>
               <input type="text" class="form-control" name="formDirectionTwo" placeholder="planta 4, puerta b" value={this.state.formDirectionTwo} onChange={this.handleInputChange} />
             </div>
     
@@ -283,11 +298,11 @@ this.cogerProductos()
               </div>
               
               <div class="col-md-4 mb-3">
-              <label for="zip">Localidad/ciudad</label>
+              <label>Localidad/ciudad</label>
                 <input type="text" class="form-control" name="formLocalidad" placeholder="Madrid" value={this.state.formLocalidad} onChange={this.handleInputChange} required/>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="zip">Código postal</label>
+                <label>Código postal</label>
                 <input type="text" class="form-control" name="formCp" placeholder="28015" value={this.state.formCp} onChange={this.handleInputChange} required/>
               </div>
             </div>
@@ -298,7 +313,7 @@ this.cogerProductos()
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
                 <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required/>
-                <label class="custom-control-label" for="credit">Tarjeta de crédito, débito o prepago (100% seguro) <img style={{width:"30px",marginLeft:"4px"}} src="/amex.svg"></img><img style={{width:"30px",marginLeft:"4px"}} src="/visa.svg"></img><img style={{width:"30px",marginLeft:"4px"}} src="/mastercard.svg"></img></label>
+                <label class="custom-control-label" >Tarjeta de crédito, débito o prepago (100% seguro) <img style={{width:"30px",marginLeft:"4px"}} src="/amex.svg"></img><img style={{width:"30px",marginLeft:"4px"}} src="/visa.svg"></img><img style={{width:"30px",marginLeft:"4px"}} src="/mastercard.svg"></img></label>
               </div>
               {/* <div class="custom-control custom-radio">
                 <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required/>
@@ -308,19 +323,19 @@ this.cogerProductos()
             </div>
             <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="cc-name">Nombre en la tarjeta</label>
+                <label >Nombre en la tarjeta</label>
                 <input type="text" class="form-control" name="formNameCard" placeholder="Nombre en la tarjeta" value={this.state.formNameCard} onChange={this.handleInputChange} required/>
                 <small class="text-muted">Nombre completo visible en la tarjeta física o virtual</small>
               </div>
               <div class="col-md-6 mb-3">
-                <label for="cc-number">Número de tarjeta</label>
+                <label >Número de tarjeta</label>
                 <input type="text" class="form-control" name="formCardNumber" placeholder="1234 1234 1234 1234" value={this.state.formCardNumber} onChange={this.handleInputChange} required/>
                 
               </div>
             </div>
             <div class="row">
               <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Fecha de caducidad</label>
+                <label >Fecha de caducidad</label>
                 <div style={{display: "flex", alignItems: "center",fontSize: "28px"}}>
                 <input style={{width: "50px",margin: "0px 8px 0px 0px"}} maxlength="2" type="text" class="form-control" name="formCardMonth" placeholder="MM" value={this.state.formCardMonth} onChange={this.handleInputChange} required/>
                 /
@@ -328,7 +343,7 @@ this.cogerProductos()
                 </div>
               </div>
               <div class="col-md-3 mb-3">
-                <label for="cc-cvv">CVV</label>
+                <label >CVV</label>
                 <input type="text" class="form-control" name="formCardCvv" placeholder="123" value={this.state.formCardCvv} onChange={this.handleInputChange} required/>
               </div>
             </div>
@@ -350,10 +365,11 @@ this.cogerProductos()
             >Finalizar pago</button>
             
           </form> 
-
+          
         </div>
       </div>
       </div>
+      
       </>
   )
       
