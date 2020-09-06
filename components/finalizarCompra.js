@@ -89,7 +89,7 @@ class FinalizarCompra extends React.Component {
 
   enviarFormCompra(event){
     console.log(this.state)
-    axios.post('http://localhost:5000/api/sendPurchaseData', this.state)
+    axios.post('https://gestorhorticurita.herokuapp.com/api/sendPurchaseData', this.state)
     .then(function (response) {
       console.log(response);
     })

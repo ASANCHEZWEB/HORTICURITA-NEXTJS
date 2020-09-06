@@ -69,7 +69,7 @@ jsPdfGenerator = () => {
 }
 
 getFacturaInfo(){
-    axios.post('http://localhost:5000/api/getFacturaInfo', {
+    axios.post('https://gestorhorticurita.herokuapp.com/api/getFacturaInfo', {
         _id: this.state.urlFactura
       })
       .then(function (response) {
