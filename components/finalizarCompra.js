@@ -19,6 +19,7 @@ class FinalizarCompra extends React.Component {
       formSurName:"",
       formEmail:"",
       formDniCif:"",
+      formTel:"",
       formDirectionOne:"",
       formDirectionTwo:"",
       formProvincia:"",
@@ -226,6 +227,10 @@ this.cogerProductos()
               <input type="text" class="form-control" name="formDniCif" placeholder="12345678P" value={this.state.formDniCif} onChange={this.handleInputChange} required/>
             </div>
     
+            <div class="mb-3">
+              <label > Teléfono</label>
+              <input type="text" class="form-control" name="formTel" placeholder="612345678" value={this.state.formTel} onChange={this.handleInputChange} required/>
+            </div>
             <div class="mb-3">
               <label >Email <span class="text-muted">(envío de factura)</span></label>
               <input type="email" class="form-control" name="formEmail" placeholder="ejemplo@tucorreo.com" value={this.state.formEmail} onChange={this.handleInputChange} required/>
