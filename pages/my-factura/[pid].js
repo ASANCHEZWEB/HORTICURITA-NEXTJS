@@ -10,7 +10,10 @@ class MyFactura extends React.Component{
        
         this.state = {
             urlFactura:"",
-            infoFactura:""
+            infoFactura:"",
+            listadoIVAS : {
+              frutas:4
+            }
         }
         
        this.getFacturaInfo=this.getFacturaInfo.bind(this)
@@ -49,8 +52,8 @@ jsPdfGenerator = () => {
     doc.setTextColor(150);
     doc.text(`${this.state.infoFactura.formEmail}`, 115, 90);
     doc.text(`${this.state.infoFactura.formDirectionOne},${this.state.infoFactura.formCp},${this.state.infoFactura.formProvincia}`, 115, 100);
-    doc.text(`Piso/planta/puerta: ${this.state.infoFactura.formDirectionTwo}`, 115, 110);
-    doc.text("Tfno.: 4234342343", 115, 120);
+    doc.text(`Piso/puerta: ${this.state.infoFactura.formDirectionTwo}`, 115, 110);
+    doc.text(`Tfno.: ${this.state.infoFactura.formTel}`, 115, 120);
     doc.text("NIF/CIF: 43434545P", 115, 130);
 
     doc.setDrawColor(150, 150, 150);
@@ -58,22 +61,37 @@ jsPdfGenerator = () => {
 
     doc.setFontSize(10);
     doc.setTextColor(150);
-    doc.text("Número: 87yug87huyt87g78", 20, 150);
-    doc.text("Fecha: 06/09/2020", 20, 155);
+    doc.text(`Número: ${this.state.urlFactura}`, 20, 150);
+    
+    
+    doc.text(`Fecha: ${this.state.infoFactura.createdAt.slice(0,10)}; Hora: ${this.state.infoFactura.createdAt.slice(11,19)}`, 20, 155);
     doc.text("Condiciones: 5 días", 20, 160);
-    doc.text("Debido: 11/09/2020", 20, 165);
+
+    let date = new Date(this.state.infoFactura.createdAt.slice(0,10));
+    let numberOfDaysToAdd = 5;
+    date.setDate(date.getDate() + numberOfDaysToAdd);
+    let dd = date.getDate();
+    let mm = date.getMonth() + 1;
+    let y = date.getFullYear();
+    let dateExpire = y + '-'+ mm + '-'+ dd;
+    doc.text(`Debido: ${dateExpire}`, 20, 165);
 
 
+
+    // TABLA PRIMERA PÁGINA
+    //rectangulo verde tabla
     doc.setDrawColor(0);
     doc.setFillColor(46, 204, 113);
     doc.rect(18, 180, 170, 10, "F");
     
+    //textos de tabla
     doc.setTextColor(255, 255, 255);
     doc.text("Descripción", 25, 186);
     
     doc.setTextColor(255, 255, 255);
-    doc.text("Precio", 110, 186);
-    
+    doc.text("Precio (    )", 100, 186);
+    doc.addImage("https://res.cloudinary.com/dfsni6m2x/image/upload/v1599850771/icono-euro_ysmnxb.png", "PNG", 112, 183, 0, 4);
+
     doc.setTextColor(255, 255, 255);
     doc.text("Cantidad", 128, 186);
 
@@ -84,29 +102,235 @@ jsPdfGenerator = () => {
     doc.text("Importe", 170, 186);
     
     //lineas tabla
-    doc.setDrawColor(46, 204, 113);
-    doc.line(18, 200, 188, 200);
+    let lineasAlturaPrimera=200;
+ for(i=0;i<5;i++){
+  doc.setDrawColor(46, 204, 113);
+  doc.line(18, lineasAlturaPrimera, 188, lineasAlturaPrimera);
+  lineasAlturaPrimera+=10
+ }
     
-    doc.setDrawColor(46, 204, 113);
-    doc.line(18, 210, 188, 210);
-    
-    doc.setDrawColor(46, 204, 113);
-    doc.line(18, 220, 188, 220);
-    
-    doc.setDrawColor(46, 204, 113);
-    doc.line(18, 230, 188, 230);
-    
-    doc.setDrawColor(46, 204, 113);
-    doc.line(18, 240, 188, 240);
-  //nueva pagina
-  
-  doc.setTextColor(150);
-  doc.addPage("a4", "0");
-  doc.text("Do you like that?", 20, 20);
-  
-    //GUARDAR PDF
+  //productos y paginado
 
-  doc.save(`${this.state. urlFactura}.pdf`);
+  //PRESENTACION UNICAMENTE DE LOS 5 PRIMEROS PRODUCTOS
+  let alturaInicialName=196;
+    for(i=0;i<5;i++){
+      if(this.state.infoFactura.cartItems[i]){
+    doc.setFontSize(10);
+    doc.setTextColor(150);
+    doc.text(`${this.state.infoFactura.cartItems[i].name}`, 20, alturaInicialName);
+    if(this.state.infoFactura.cartItems[i].type=="kilogramos"){
+      doc.text(this.state.infoFactura.cartItems[i].price + '/Kg', 100, alturaInicialName);
+      doc.text(this.state.infoFactura.cartItems[i].added/2+' Kgs', 130, alturaInicialName);
+      doc.text(`${this.state.listadoIVAS[this.state.infoFactura.cartItems[i].category]} %`, 154, alturaInicialName);
+      doc.addImage("https://res.cloudinary.com/dfsni6m2x/image/upload/v1600008080/icono_euro_negro_jkmtrf.png", "PNG", 170, alturaInicialName-3.5, 0, 5);
+      doc.text(`${((this.state.infoFactura.cartItems[i].price*this.state.infoFactura.cartItems[i].added)/2).toFixed(2)}`, 174, alturaInicialName);
+      
+    }else{
+      doc.text(this.state.infoFactura.cartItems[i].price  + '/Ud', 100, alturaInicialName);
+      doc.text(this.state.infoFactura.cartItems[i].added+' Uds', 130, alturaInicialName);
+      doc.text(`${this.state.listadoIVAS[this.state.infoFactura.cartItems[i].category]} %`, 154, alturaInicialName);
+      doc.addImage("https://res.cloudinary.com/dfsni6m2x/image/upload/v1600008080/icono_euro_negro_jkmtrf.png", "PNG", 170, alturaInicialName-3.5, 0, 5);
+      doc.text(`${(this.state.infoFactura.cartItems[i].price*this.state.infoFactura.cartItems[i].added).toFixed(2)}`, 174, alturaInicialName);
+   
+    }
+    
+
+    alturaInicialName+=10;
+  }
+  }
+  
+  
+//PRESENTACION por encima de los  5 productos
+if(this.state.infoFactura.cartItems.length>5 ){
+  //generate new page
+  doc.addPage("a4", "0");
+  //rectangulo verde tabla
+  doc.setDrawColor(0);
+  doc.setFillColor(46, 204, 113);
+  doc.rect(18, 10, 170, 10, "F");
+  
+  //textos de tabla
+  doc.setTextColor(255, 255, 255);
+  doc.text("Descripción", 25, 16);
+  
+  doc.setTextColor(255, 255, 255);
+  doc.text("Precio (    )", 100, 16);
+  doc.addImage("https://res.cloudinary.com/dfsni6m2x/image/upload/v1599850771/icono-euro_ysmnxb.png", "PNG", 112, 13, 0, 4);
+
+  doc.setTextColor(255, 255, 255);
+  doc.text("Cantidad", 128, 16);
+
+  doc.setTextColor(255, 255, 255);
+  doc.text("IVA (%)", 150, 16);
+  
+  doc.setTextColor(255, 255, 255);
+  doc.text("Importe", 170, 16);
+  
+ //lineas tabla
+ let lineasAltura=30;
+ for(i=0;i<22;i++){
+  doc.setDrawColor(46, 204, 113);
+  doc.line(18, lineasAltura, 188, lineasAltura);
+  lineasAltura+=10
+ }
+
+ 
+
+  //bucle de pintado
+   alturaInicialName=27;
+
+  for(i=5;i<27;i++){
+    
+if(this.state.infoFactura.cartItems[i]){
+doc.setFontSize(10);
+      doc.setTextColor(150);
+      doc.text(`${this.state.infoFactura.cartItems[i].name}`, 20, alturaInicialName);
+      if(this.state.infoFactura.cartItems[i].type=="kilogramos"){
+        doc.text(this.state.infoFactura.cartItems[i].price + '/Kg', 100, alturaInicialName);
+        doc.text(this.state.infoFactura.cartItems[i].added/2+' Kgs', 130, alturaInicialName);
+        doc.text(`${this.state.listadoIVAS[this.state.infoFactura.cartItems[i].category]} %`, 154, alturaInicialName);
+        doc.addImage("https://res.cloudinary.com/dfsni6m2x/image/upload/v1600008080/icono_euro_negro_jkmtrf.png", "PNG", 170, alturaInicialName-3.5, 0, 5);
+        doc.text(`${((this.state.infoFactura.cartItems[i].price*this.state.infoFactura.cartItems[i].added)/2).toFixed(2)}`, 174, alturaInicialName);
+        
+      }else{
+        doc.text(this.state.infoFactura.cartItems[i].price  + '/Ud', 100, alturaInicialName);
+        doc.text(this.state.infoFactura.cartItems[i].added+' Uds', 130, alturaInicialName);
+        doc.text(`${this.state.listadoIVAS[this.state.infoFactura.cartItems[i].category]} %`, 154, alturaInicialName);
+        doc.addImage("https://res.cloudinary.com/dfsni6m2x/image/upload/v1600008080/icono_euro_negro_jkmtrf.png", "PNG", 170, alturaInicialName-3.5, 0, 5);
+        doc.text(`${(this.state.infoFactura.cartItems[i].price*this.state.infoFactura.cartItems[i].added).toFixed(2)}`, 174, alturaInicialName);
+     
+      }
+      
+    
+      alturaInicialName+=10;
+  
+
+}
+    
+      
+      
+
+    }
+  
+
+}
+  
+//PRESENTACION por encima de los  5 productos
+if(this.state.infoFactura.cartItems.length>27 ){
+  //generate new page
+  doc.addPage("a4", "0");
+  //rectangulo verde tabla
+  doc.setDrawColor(0);
+  doc.setFillColor(46, 204, 113);
+  doc.rect(18, 10, 170, 10, "F");
+  
+  //textos de tabla
+  doc.setTextColor(255, 255, 255);
+  doc.text("Descripción", 25, 16);
+  
+  doc.setTextColor(255, 255, 255);
+  doc.text("Precio (    )", 100, 16);
+  doc.addImage("https://res.cloudinary.com/dfsni6m2x/image/upload/v1599850771/icono-euro_ysmnxb.png", "PNG", 112, 13, 0, 4);
+
+  doc.setTextColor(255, 255, 255);
+  doc.text("Cantidad", 128, 16);
+
+  doc.setTextColor(255, 255, 255);
+  doc.text("IVA (%)", 150, 16);
+  
+  doc.setTextColor(255, 255, 255);
+  doc.text("Importe", 170, 16);
+  
+ //lineas tabla
+ let lineasAltura=30;
+ for(i=0;i<22;i++){
+  doc.setDrawColor(46, 204, 113);
+  doc.line(18, lineasAltura, 188, lineasAltura);
+  lineasAltura+=10
+ }
+
+ 
+
+  //bucle de pintado
+   alturaInicialName=27;
+
+  for(i=27;i<49;i++){
+    
+if(this.state.infoFactura.cartItems[i]){
+doc.setFontSize(10);
+      doc.setTextColor(150);
+      doc.text(`${this.state.infoFactura.cartItems[i].name}`, 20, alturaInicialName);
+      if(this.state.infoFactura.cartItems[i].type=="kilogramos"){
+        doc.text(this.state.infoFactura.cartItems[i].price + '/Kg', 100, alturaInicialName);
+        doc.text(this.state.infoFactura.cartItems[i].added/2+' Kgs', 130, alturaInicialName);
+        doc.text(`${this.state.listadoIVAS[this.state.infoFactura.cartItems[i].category]} %`, 154, alturaInicialName);
+        doc.addImage("https://res.cloudinary.com/dfsni6m2x/image/upload/v1600008080/icono_euro_negro_jkmtrf.png", "PNG", 170, alturaInicialName-3.5, 0, 5);
+        doc.text(`${((this.state.infoFactura.cartItems[i].price*this.state.infoFactura.cartItems[i].added)/2).toFixed(2)}`, 174, alturaInicialName);
+        
+      }else{
+        doc.text(this.state.infoFactura.cartItems[i].price  + '/Ud', 100, alturaInicialName);
+        doc.text(this.state.infoFactura.cartItems[i].added+' Uds', 130, alturaInicialName);
+        doc.text(`${this.state.listadoIVAS[this.state.infoFactura.cartItems[i].category]} %`, 154, alturaInicialName);
+        doc.addImage("https://res.cloudinary.com/dfsni6m2x/image/upload/v1600008080/icono_euro_negro_jkmtrf.png", "PNG", 170, alturaInicialName-3.5, 0, 5);
+        doc.text(`${(this.state.infoFactura.cartItems[i].price*this.state.infoFactura.cartItems[i].added).toFixed(2)}`, 174, alturaInicialName);
+     
+      }
+      
+    
+      alturaInicialName+=10;
+  
+
+}
+    
+      
+      
+
+    }
+  
+
+}
+
+
+  
+
+  //CALCULO DEL TOTAL AL FINAL DE LA  ULTIMA PÁGINA
+  doc.setTextColor(0);
+
+
+  let newArrayBruto= Number(this.state.infoFactura.cartItems.map(element=>{
+    if(element.type!=="kilogramos"){
+      return element.price*element.added;
+    }else{
+      return (element.price*element.added)/2
+    }
+    
+  }).reduce((accumulator, currentValue) => accumulator + currentValue).toFixed(2))
+
+
+
+  doc.text(`BRUTO:   ${newArrayBruto} euros`, 120, 260);
+  
+
+let totalFactura = Number((newArrayBruto+this.state.infoFactura.impuesto).toFixed(2));
+
+
+  doc.text(`IMPUESTOS(IVA):   ${this.state.infoFactura.impuesto} euros`, 120, 265);
+  if(this.state.infoFactura.cuponEncontrado=="true"){
+    let calcularDescuento=Number((totalFactura*(this.state.infoFactura.descuento/100)).toFixed(2));
+    totalFactura-=calcularDescuento;
+    doc.text(`DESCUENTOS(${this.state.infoFactura.descuento}%): -${calcularDescuento} euros`, 120, 270);
+  }else{
+    doc.text(`DESCUENTO: 0 euros`, 120, 270);
+  }
+  
+
+  doc.text(`GASTOS DE ENVÍO: ${this.state.infoFactura.gastosEnvio} euros`, 120, 275);
+  totalFactura+=this.state.infoFactura.gastosEnvio;
+  doc.line(120, 280, 180, 280);
+  doc.text(`TOTAL FACTURA: ${totalFactura.toFixed(2)} euros`, 120, 285);
+    //GUARDAR PDF
+    
+ doc.save(`${this.state.urlFactura}.pdf`);
 
 
 

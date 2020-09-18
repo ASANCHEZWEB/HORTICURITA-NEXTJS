@@ -16,7 +16,7 @@ class Carrito extends React.Component {
       descuento:0,
       codigoCupon:"",
       cuponEncontrado:"",
-      gastosEnvio:0,
+      gastosEnvio:4,
       total:0,
       totalOk:false
 

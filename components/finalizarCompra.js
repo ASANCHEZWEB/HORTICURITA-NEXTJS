@@ -195,7 +195,7 @@ this.cogerProductos()
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total + iva({this.state.impuesto}€)incl.</span>
-              <strong>{this.props.carritoInfo.total}€</strong>
+              <strong>{this.props.carritoInfo.total+this.state.gastosEnvio}€</strong>
             </li>
           </ul>
     
