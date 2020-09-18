@@ -1,6 +1,6 @@
 // pages/posts/[id].js
 import React from "react";
-
+import axios from 'axios';
 class Platano extends React.Component {
   constructor(props) {
     super(props);
@@ -159,6 +159,10 @@ restQty(product) {
        })
        localStorage.setItem('cartProducts', JSON.stringify(myproduct))
      }
+     //aqui va la llamada ajax de que se ha metido al carro
+     axios.post("https://gestorhorticurita.herokuapp.com/api/addedCart/", {
+      id: product._id,
+    });
      this.mostrarCuadro(product)
    }
    this.buscarProductoLS()
