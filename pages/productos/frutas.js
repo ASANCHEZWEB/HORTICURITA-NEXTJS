@@ -26,6 +26,8 @@ class TodaFruta extends React.Component {
       productProps: [...this.props.data],
       screenSize: 0,
     };
+
+   
   }
   mostrarCuadro(product) {
     let tipo = "";
@@ -194,7 +196,11 @@ class TodaFruta extends React.Component {
     this.setState({ screenSize: 767 });
   }
 componentWillUnmount(){
-  this.myStopFunction()
+  this.myStopFunction();
+  if(document.querySelector(".addCartContainer")){
+        document.querySelector(".addCartContainer").innerHTML = "";
+        document.querySelector(".addCartContainer").style.display = "none";
+  }
 }
   render() {
     return (

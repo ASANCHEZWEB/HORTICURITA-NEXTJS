@@ -196,6 +196,10 @@ class Platanos extends React.Component {
   }
 componentWillUnmount(){
   this.myStopFunction()
+  if(document.querySelector(".addCartContainer")){
+    document.querySelector(".addCartContainer").innerHTML = "";
+    document.querySelector(".addCartContainer").style.display = "none";
+}
 }
   render() {
     return (
