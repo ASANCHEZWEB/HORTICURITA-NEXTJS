@@ -872,9 +872,7 @@ componentWillUnmount(){
           <div>
             <h1>Verduras y hortalizas</h1>
             <p>
-            Disponemos de una gran variedad de fruta , ¡escoge desde tan solo
-              medio kilo!. Nuestra fruta y verdura es recogida unas horas
-              después de su pedido y será entregada en tan solo 24/48 horas.
+            Disponemos de una gran variedad de verduras y hortalizas , ¡escoge desde tan solo medio kilo!. Nuestra fruta y verdura es recogida unas horas después de su pedido y será entregada en tan solo 24/48 horas.
             </p>
             {/* <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" /> */}
           </div>
@@ -882,6 +880,763 @@ componentWillUnmount(){
         <div className="container">
           {this.props.data.map((product, index) => {
             if (product.category=="verduras-y-hortalizas") {
+              return (
+                <div className="containerDivInfo" key={product._id}>
+                  <Link
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <picture>
+                      <source
+                        media="(max-width: 767.98px)"
+                        srcSet={`/141pxImages/${product.imageName}`}/>
+                      <source
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        srcSet={`/174pxImages/${product.imageName}`}
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`/270pxImages/${product.imageName}`}
+                      />
+                      <img
+                        className="imagenProduct"
+                        src={`/141pxImages/${product.imageName}`}
+                        alt={product.imageAlt}
+                      />
+                    </picture>
+                  </Link>
+
+                  <Link
+                  
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <a>
+                      <h2>{product.name}</h2>
+                    </a>
+                  </Link>
+                  <span>
+                    {product.price}€ /
+                    {product.type === "kilogramos" ? "Kg" : "Ud"}
+                  </span>
+                  <span>
+                    {product.stock === "si" ? (
+                      <p>
+                        <img
+                          src={"/icono-stock-disponible.png"}
+                          alt="icono disponible"
+                        />
+                        Disponible
+                      </p>
+                    ) : (
+                      <p>
+                        <img src="/icono-sin-stock.png" alt="icono sin stock" />
+                        No disponible
+                      </p>
+                    )}
+                  </span>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => this.restProduct(product)}
+                    >
+                      -
+                    </button>
+
+                    <p className="inputProducts">
+                      {product.type === "kilogramos"
+                        ? this.state.productProps[index].added / 2
+                        : this.state.productProps[index].added}
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => this.addNewProduct(product)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+          })}
+        </div>
+        <div className="metaDiv" style={{borderBottom:"none"}}>
+          <div>
+            <h1>Legumbres</h1>
+            <p>
+            Disponemos de variedad en legumbres , escoge la cantidad deseada , a partir de un kilo. Envíos 24/48h
+            </p>
+            {/* <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" /> */}
+          </div>
+        </div>
+        <div className="container">
+          {this.props.data.map((product, index) => {
+            if (product.category=="legumbres") {
+              return (
+                <div className="containerDivInfo" key={product._id}>
+                  <Link
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <picture>
+                      <source
+                        media="(max-width: 767.98px)"
+                        srcSet={`/141pxImages/${product.imageName}`}/>
+                      <source
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        srcSet={`/174pxImages/${product.imageName}`}
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`/270pxImages/${product.imageName}`}
+                      />
+                      <img
+                        className="imagenProduct"
+                        src={`/141pxImages/${product.imageName}`}
+                        alt={product.imageAlt}
+                      />
+                    </picture>
+                  </Link>
+
+                  <Link
+                  
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <a>
+                      <h2>{product.name}</h2>
+                    </a>
+                  </Link>
+                  <span>
+                    {product.price}€ /
+                    {product.type === "kilogramos" ? "Kg" : "Ud"}
+                  </span>
+                  <span>
+                    {product.stock === "si" ? (
+                      <p>
+                        <img
+                          src={"/icono-stock-disponible.png"}
+                          alt="icono disponible"
+                        />
+                        Disponible
+                      </p>
+                    ) : (
+                      <p>
+                        <img src="/icono-sin-stock.png" alt="icono sin stock" />
+                        No disponible
+                      </p>
+                    )}
+                  </span>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => this.restProduct(product)}
+                    >
+                      -
+                    </button>
+
+                    <p className="inputProducts">
+                      {product.type === "kilogramos"
+                        ? this.state.productProps[index].added / 2
+                        : this.state.productProps[index].added}
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => this.addNewProduct(product)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+          })}
+        </div>
+
+        <div className="metaDiv" style={{borderBottom:"none"}}>
+          <div>
+            <h1>Frutos secos</h1>
+            <p>
+            Perfectos para la despensa! Añade al carrito desde un kilo. Envíos 24/48h
+            </p>
+            {/* <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" /> */}
+          </div>
+        </div>
+        <div className="container">
+          {this.props.data.map((product, index) => {
+            if (product.category=="frutos-secos") {
+              return (
+                <div className="containerDivInfo" key={product._id}>
+                  <Link
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <picture>
+                      <source
+                        media="(max-width: 767.98px)"
+                        srcSet={`/141pxImages/${product.imageName}`}/>
+                      <source
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        srcSet={`/174pxImages/${product.imageName}`}
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`/270pxImages/${product.imageName}`}
+                      />
+                      <img
+                        className="imagenProduct"
+                        src={`/141pxImages/${product.imageName}`}
+                        alt={product.imageAlt}
+                      />
+                    </picture>
+                  </Link>
+
+                  <Link
+                  
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <a>
+                      <h2>{product.name}</h2>
+                    </a>
+                  </Link>
+                  <span>
+                    {product.price}€ /
+                    {product.type === "kilogramos" ? "Kg" : "Ud"}
+                  </span>
+                  <span>
+                    {product.stock === "si" ? (
+                      <p>
+                        <img
+                          src={"/icono-stock-disponible.png"}
+                          alt="icono disponible"
+                        />
+                        Disponible
+                      </p>
+                    ) : (
+                      <p>
+                        <img src="/icono-sin-stock.png" alt="icono sin stock" />
+                        No disponible
+                      </p>
+                    )}
+                  </span>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => this.restProduct(product)}
+                    >
+                      -
+                    </button>
+
+                    <p className="inputProducts">
+                      {product.type === "kilogramos"
+                        ? this.state.productProps[index].added / 2
+                        : this.state.productProps[index].added}
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => this.addNewProduct(product)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+          })}
+        </div>
+
+        <div className="metaDiv" style={{borderBottom:"none"}}>
+          <div>
+            <h1>Encurtidos</h1>
+            <p>
+            Prueba un solo bocado de estos encurtidos y te aseguramos que repetirás!😉. Envíos 24/48h
+            </p>
+            {/* <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" /> */}
+          </div>
+        </div>
+        <div className="container">
+          {this.props.data.map((product, index) => {
+            if (product.category=="encurtidos") {
+              return (
+                <div className="containerDivInfo" key={product._id}>
+                  <Link
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <picture>
+                      <source
+                        media="(max-width: 767.98px)"
+                        srcSet={`/141pxImages/${product.imageName}`}/>
+                      <source
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        srcSet={`/174pxImages/${product.imageName}`}
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`/270pxImages/${product.imageName}`}
+                      />
+                      <img
+                        className="imagenProduct"
+                        src={`/141pxImages/${product.imageName}`}
+                        alt={product.imageAlt}
+                      />
+                    </picture>
+                  </Link>
+
+                  <Link
+                  
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <a>
+                      <h2>{product.name}</h2>
+                    </a>
+                  </Link>
+                  <span>
+                    {product.price}€ /
+                    {product.type === "kilogramos" ? "Kg" : "Ud"}
+                  </span>
+                  <span>
+                    {product.stock === "si" ? (
+                      <p>
+                        <img
+                          src={"/icono-stock-disponible.png"}
+                          alt="icono disponible"
+                        />
+                        Disponible
+                      </p>
+                    ) : (
+                      <p>
+                        <img src="/icono-sin-stock.png" alt="icono sin stock" />
+                        No disponible
+                      </p>
+                    )}
+                  </span>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => this.restProduct(product)}
+                    >
+                      -
+                    </button>
+
+                    <p className="inputProducts">
+                      {product.type === "kilogramos"
+                        ? this.state.productProps[index].added / 2
+                        : this.state.productProps[index].added}
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => this.addNewProduct(product)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+          })}
+        </div>
+
+
+        <div className="metaDiv" style={{borderBottom:"none"}}>
+          <div>
+            <h1>Especias</h1>
+            <p>
+            Condimenta tus recetas con estas especias y dale un toque de sabor. Envíos 24/48h
+            </p>
+            {/* <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" /> */}
+          </div>
+        </div>
+        <div className="container">
+          {this.props.data.map((product, index) => {
+            if (product.category=="especias") {
+              return (
+                <div className="containerDivInfo" key={product._id}>
+                  <Link
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <picture>
+                      <source
+                        media="(max-width: 767.98px)"
+                        srcSet={`/141pxImages/${product.imageName}`}/>
+                      <source
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        srcSet={`/174pxImages/${product.imageName}`}
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`/270pxImages/${product.imageName}`}
+                      />
+                      <img
+                        className="imagenProduct"
+                        src={`/141pxImages/${product.imageName}`}
+                        alt={product.imageAlt}
+                      />
+                    </picture>
+                  </Link>
+
+                  <Link
+                  
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <a>
+                      <h2>{product.name}</h2>
+                    </a>
+                  </Link>
+                  <span>
+                    {product.price}€ /
+                    {product.type === "kilogramos" ? "Kg" : "Ud"}
+                  </span>
+                  <span>
+                    {product.stock === "si" ? (
+                      <p>
+                        <img
+                          src={"/icono-stock-disponible.png"}
+                          alt="icono disponible"
+                        />
+                        Disponible
+                      </p>
+                    ) : (
+                      <p>
+                        <img src="/icono-sin-stock.png" alt="icono sin stock" />
+                        No disponible
+                      </p>
+                    )}
+                  </span>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => this.restProduct(product)}
+                    >
+                      -
+                    </button>
+
+                    <p className="inputProducts">
+                      {product.type === "kilogramos"
+                        ? this.state.productProps[index].added / 2
+                        : this.state.productProps[index].added}
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => this.addNewProduct(product)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+          })}
+        </div>
+
+
+
+        <div className="metaDiv" style={{borderBottom:"none"}}>
+          <div>
+            <h1>Miel</h1>
+            <p>
+            Colaboramos con productores de miel locales para ofrecerte miel de calidad a un precio justo 😉. Envíos 24/48h
+            </p>
+            {/* <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" /> */}
+          </div>
+        </div>
+        <div className="container">
+          {this.props.data.map((product, index) => {
+            if (product.category=="miel") {
+              return (
+                <div className="containerDivInfo" key={product._id}>
+                  <Link
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <picture>
+                      <source
+                        media="(max-width: 767.98px)"
+                        srcSet={`/141pxImages/${product.imageName}`}/>
+                      <source
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        srcSet={`/174pxImages/${product.imageName}`}
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`/270pxImages/${product.imageName}`}
+                      />
+                      <img
+                        className="imagenProduct"
+                        src={`/141pxImages/${product.imageName}`}
+                        alt={product.imageAlt}
+                      />
+                    </picture>
+                  </Link>
+
+                  <Link
+                  
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <a>
+                      <h2>{product.name}</h2>
+                    </a>
+                  </Link>
+                  <span>
+                    {product.price}€ /
+                    {product.type === "kilogramos" ? "Kg" : "Ud"}
+                  </span>
+                  <span>
+                    {product.stock === "si" ? (
+                      <p>
+                        <img
+                          src={"/icono-stock-disponible.png"}
+                          alt="icono disponible"
+                        />
+                        Disponible
+                      </p>
+                    ) : (
+                      <p>
+                        <img src="/icono-sin-stock.png" alt="icono sin stock" />
+                        No disponible
+                      </p>
+                    )}
+                  </span>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => this.restProduct(product)}
+                    >
+                      -
+                    </button>
+
+                    <p className="inputProducts">
+                      {product.type === "kilogramos"
+                        ? this.state.productProps[index].added / 2
+                        : this.state.productProps[index].added}
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => this.addNewProduct(product)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+          })}
+        </div>
+
+        <div className="metaDiv" style={{borderBottom:"none"}}>
+          <div>
+            <h1>Dulces</h1>
+            <p>
+            Colaboramos con una panaderia local de calidad , estamos seguros de que repetirá😋. Envíos 24/48h
+            </p>
+            {/* <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" /> */}
+          </div>
+        </div>
+        <div className="container">
+          {this.props.data.map((product, index) => {
+            if (product.category=="dulces") {
+              return (
+                <div className="containerDivInfo" key={product._id}>
+                  <Link
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <picture>
+                      <source
+                        media="(max-width: 767.98px)"
+                        srcSet={`/141pxImages/${product.imageName}`}/>
+                      <source
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        srcSet={`/174pxImages/${product.imageName}`}
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`/270pxImages/${product.imageName}`}
+                      />
+                      <img
+                        className="imagenProduct"
+                        src={`/141pxImages/${product.imageName}`}
+                        alt={product.imageAlt}
+                      />
+                    </picture>
+                  </Link>
+
+                  <Link
+                  
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <a>
+                      <h2>{product.name}</h2>
+                    </a>
+                  </Link>
+                  <span>
+                    {product.price}€ /
+                    {product.type === "kilogramos" ? "Kg" : "Ud"}
+                  </span>
+                  <span>
+                    {product.stock === "si" ? (
+                      <p>
+                        <img
+                          src={"/icono-stock-disponible.png"}
+                          alt="icono disponible"
+                        />
+                        Disponible
+                      </p>
+                    ) : (
+                      <p>
+                        <img src="/icono-sin-stock.png" alt="icono sin stock" />
+                        No disponible
+                      </p>
+                    )}
+                  </span>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => this.restProduct(product)}
+                    >
+                      -
+                    </button>
+
+                    <p className="inputProducts">
+                      {product.type === "kilogramos"
+                        ? this.state.productProps[index].added / 2
+                        : this.state.productProps[index].added}
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => this.addNewProduct(product)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+          })}
+        </div>
+
+
+        <div className="metaDiv" style={{borderBottom:"none"}}>
+          <div>
+            <h1>Galletas y cereales</h1>
+            <p>
+            Añade a tu cesta galletas y cereales al gusto y con variedad!🍪
+            </p>
+            {/* <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" /> */}
+          </div>
+        </div>
+        <div className="container">
+          {this.props.data.map((product, index) => {
+            if (product.category=="galletas-y-cereales") {
+              return (
+                <div className="containerDivInfo" key={product._id}>
+                  <Link
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <picture>
+                      <source
+                        media="(max-width: 767.98px)"
+                        srcSet={`/141pxImages/${product.imageName}`}/>
+                      <source
+                        media="(max-width: 1199.98px) and (min-width: 768px)"
+                        srcSet={`/174pxImages/${product.imageName}`}
+                      />
+                      <source
+                        media="(min-width: 1200px)"
+                        srcSet={`/270pxImages/${product.imageName}`}
+                      />
+                      <img
+                        className="imagenProduct"
+                        src={`/141pxImages/${product.imageName}`}
+                        alt={product.imageAlt}
+                      />
+                    </picture>
+                  </Link>
+
+                  <Link
+                  
+                    href={`/productos/${product.category}/${product.subcategory}/[id]`}
+                    as={`/productos/${product.category}/${product.subcategory}/${product.urlRoute}`}
+                  >
+                    <a>
+                      <h2>{product.name}</h2>
+                    </a>
+                  </Link>
+                  <span>
+                    {product.price}€ /
+                    {product.type === "kilogramos" ? "Kg" : "Ud"}
+                  </span>
+                  <span>
+                    {product.stock === "si" ? (
+                      <p>
+                        <img
+                          src={"/icono-stock-disponible.png"}
+                          alt="icono disponible"
+                        />
+                        Disponible
+                      </p>
+                    ) : (
+                      <p>
+                        <img src="/icono-sin-stock.png" alt="icono sin stock" />
+                        No disponible
+                      </p>
+                    )}
+                  </span>
+                  <div>
+                    <button
+                      type="button"
+                      onClick={() => this.restProduct(product)}
+                    >
+                      -
+                    </button>
+
+                    <p className="inputProducts">
+                      {product.type === "kilogramos"
+                        ? this.state.productProps[index].added / 2
+                        : this.state.productProps[index].added}
+                    </p>
+
+                    <button
+                      type="button"
+                      onClick={() => this.addNewProduct(product)}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
+              );
+            }
+          })}
+        </div>
+
+
+
+        <div className="metaDiv" style={{borderBottom:"none"}}>
+          <div>
+            <h1>Aperitivos Snack</h1>
+            <p>
+            Ademas de la gran variedad de productos que tenemos , también tenemos snacks! Añadelos a tu carrito.
+            </p>
+            {/* <img src="/frutas_y_verduras.jpg" alt="frutas y verduras" /> */}
+          </div>
+        </div>
+        <div className="container">
+          {this.props.data.map((product, index) => {
+            if (product.category=="aperitivos-snack") {
               return (
                 <div className="containerDivInfo" key={product._id}>
                   <Link

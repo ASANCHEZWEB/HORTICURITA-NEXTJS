@@ -243,7 +243,7 @@ componentWillUnmount(){
           <div>
             <h1>{this.state.name}</h1>
             <span>
-              {this.state.price} /
+              {this.state.price} €/
               {this.state.type === "kilogramos" ? "Kg" : "Ud"}
             </span>
             <p>Origen: {this.state.origin}</p>

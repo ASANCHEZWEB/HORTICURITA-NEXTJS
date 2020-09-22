@@ -1,5 +1,7 @@
+
 // pages/posts/[id].js
 import React from "react";
+import axios from 'axios';
 
 class Pera extends React.Component {
   constructor(props) {
@@ -29,11 +31,15 @@ class Pera extends React.Component {
             urlRoute: props.objectProp.urlRoute,
             imageName: props.objectProp.imageName,
             added: props.objectProp.added,
-            origin: props.objectProp.origin
+            origin: props.objectProp.origin,
+            minimunQty:props.objectProp.minimunQty
     };
     
     this.addQty=this.addQty.bind(this);
     this.restQty=this.restQty.bind(this);
+    this.buscarProductoLS=this.buscarProductoLS.bind(this);
+    this.restarCuadro=this.restarCuadro.bind(this);
+    this.mostrarCuadro=this.mostrarCuadro.bind(this);
   }
 
   restarCuadro = (product) => {
@@ -111,66 +117,89 @@ class Pera extends React.Component {
 
 
 restQty(product) {
-  if (this.state.added !== 0) {
-    let cogerSt = [...JSON.parse(localStorage.getItem('cartProducts'))]
-    let newArray = cogerSt.map(element => {
-      if (element._id == product._id) {
-        product.added--
-        return product
-      } else {
+   // si no esta creado el array del carrito lo creamos vacío
+   if(localStorage.getItem('cartProducts')==null){
+    localStorage.setItem("cartProducts","[]");
+  }
+ let buscarProducto = [...JSON.parse(localStorage.getItem('cartProducts')).filter(producto => {
+    return producto._id === product._id
+  })];
+
+  if(buscarProducto.length!==0){
+   buscarProducto[0].added--
+   if(buscarProducto[0].added<1){
+    let actualizarCarro= [...JSON.parse(localStorage.getItem('cartProducts'))].filter(element=>{
+      element._id!==product._id
+    });
+    localStorage.setItem("cartProducts",JSON.stringify(actualizarCarro))
+    this.setState({added:0})
+   }else{
+    let actualizarCarro= [...JSON.parse(localStorage.getItem('cartProducts'))].map(element=>{
+      if(element._id==product._id){
+        return buscarProducto[0]
+      }else{
         return element
       }
-    })
-    if (product.added == 0) {
-      let deleted=newArray.filter(element => {
-        return element._id !== product._id
-      })
-      localStorage.setItem('cartProducts', JSON.stringify(deleted))
-      this.setState({added:0})
-      this.restarCuadro(product)
-    } else {
-      localStorage.setItem('cartProducts', JSON.stringify(newArray))
-      this.restarCuadro(product)
-    }
+    });
+    localStorage.setItem("cartProducts",JSON.stringify(actualizarCarro))
+    
+   }
+
+this.restarCuadro(product)
+
   }
-  this.buscarProductoLS()
+ this.buscarProductoLS()
+
 }
 
 
  addQty(product) {
-   let cogerLocalArray = localStorage.getItem('cartProducts');
-   if (this.state.stock == "si") {
-     if (cogerLocalArray == "[]" || cogerLocalArray == null) {
-       localStorage.setItem('cartProducts', JSON.stringify([]))
-       let cogerSt = [...JSON.parse(localStorage.getItem('cartProducts'))]
-       product.added += 1;
-       cogerSt.push(product)
-       localStorage.setItem('cartProducts', JSON.stringify(cogerSt))
-     } else {
-       let storageArray = [...JSON.parse(localStorage.getItem('cartProducts'))]
-       let myproduct = storageArray.map(element => {
-         if (element._id == this.state._id) {
-           element.added += 1
-           return element
-         } else {
-           return element
-         }
-       })
-       localStorage.setItem('cartProducts', JSON.stringify(myproduct))
-     }
-     this.mostrarCuadro(product)
-   }
-   this.buscarProductoLS()
+   // si no esta creado el array del carrito lo creamos vacío
+  if(localStorage.getItem('cartProducts')==null){
+    localStorage.setItem("cartProducts","[]");
+  }
+  //comprobamos si el producto tiene stock y añadimos o no
+  if(this.state.stock=="si"){
+//buscamos el producto para ver si esta añadido
+let arrayCarrito = [...JSON.parse(localStorage.getItem('cartProducts')).filter(producto => {
+  return producto._id === product._id
+  })]
+//si no se encuenta en el carro lo añadimos tal cual esta en el state pero con added + 1
+if(arrayCarrito.length==0){
+  let carritoArray= [...JSON.parse(localStorage.getItem('cartProducts'))];
+   product.added++;
+   carritoArray.push(product);
+   localStorage.setItem("cartProducts",JSON.stringify(carritoArray))
+}else{
+  let actualizarCarro= [...JSON.parse(localStorage.getItem('cartProducts'))].map(element=>{
+    if(element._id==product._id){
+      element.added++
+      return element
+    }else{
+      return element
+    }
+  });
+  localStorage.setItem("cartProducts",JSON.stringify(actualizarCarro))
+}
+this.mostrarCuadro(product);
+
+//aqui va la llamada ajax de que se ha metido al carro
+axios.post("https://gestorhorticurita.herokuapp.com/api/addedCart/", {
+  id: product._id,
+});
+  }
+  this.buscarProductoLS()
  }
+
+
 
 buscarProductoLS() {
   if (localStorage.getItem('cartProducts') !== null) {
-    let storageArray = [...JSON.parse(localStorage.getItem('cartProducts'))]
-    let myproduct = storageArray.filter(element => {
-      return element._id == this.state._id
-    })
-    if (myproduct.length !== 0) {
-      this.setState({added: myproduct[0].added})
+    let buscarProducto = [...JSON.parse(localStorage.getItem('cartProducts')).filter(producto => {
+      return producto._id === this.state._id
+    })];
+    if (buscarProducto.length !== 0) {
+      this.setState({added: buscarProducto[0].added})
     }
   }
 }
@@ -178,6 +207,17 @@ buscarProductoLS() {
 componentDidMount(){
 this.buscarProductoLS()
 }
+
+
+
+componentWillUnmount(){
+  this.myStopFunction();
+  if(document.querySelector(".addCartContainer")){
+        document.querySelector(".addCartContainer").innerHTML = "";
+        document.querySelector(".addCartContainer").style.display = "none";
+  }
+}
+
   render() {
     return (
       <>
@@ -204,7 +244,7 @@ this.buscarProductoLS()
           <div>
             <h1>{this.state.name}</h1>
             <span>
-              {this.state.price} /
+              {this.state.price} €/
               {this.state.type === "kilogramos" ? "Kg" : "Ud"}
             </span>
             <p>Origen: {this.state.origin}</p>
@@ -840,7 +880,8 @@ export async function getStaticProps({ params }) {
             urlRoute: product.urlRoute,
             imageName: product.imageName,
             added: 0,
-            origin: product.origin
+            origin: product.origin,
+            minimunQty:product.minimunQty
   };
   // Pass post data to the page via props
   return { props: { objectProp } };
