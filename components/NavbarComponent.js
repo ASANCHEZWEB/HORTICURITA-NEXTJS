@@ -128,6 +128,8 @@ class NavbarComponent extends React.Component {
         "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638701/iconosHorticurita/galleta_wwldkz.png",
         "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_22,q_10,w_22/v1593638720/iconosHorticurita/aperitivos_snack_wqkwwb.png",
         "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_40,q_10,w_40/v1593638701/iconosHorticurita/carritomenu_nsscxy.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_40,q_10,w_40/v1600898504/iconosHorticurita/aceite-de-oliva_jzzjmk.png",
+        "https://res.cloudinary.com/dfsni6m2x/image/upload/c_scale,h_40,q_10,w_40/v1600898675/iconosHorticurita/queso_tr4rbq.png"
       ],
     });
   }
@@ -543,6 +545,28 @@ class NavbarComponent extends React.Component {
                         alt="aperitivo snack"
                       />{" "} 
                       Aperitivos Snack
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/productos/aceites">
+                    <a>
+                       <img
+                        src={this.state.imagenesNavBar[34]}
+                        alt="aceite"
+                      />{" "} 
+                      Aceites
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/productos/quesos">
+                    <a>
+                       <img
+                        src={this.state.imagenesNavBar[35]}
+                        alt="queso"
+                      />{" "} 
+                      Quesos
                     </a>
                   </Link>
                 </li>

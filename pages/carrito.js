@@ -229,19 +229,31 @@ cambiarTotalOk(){
             return (<div key={element._id} className="individualProdCont">
                   <div className="deleteProduct"><img src="/carritoImages/icono-eliminar.png" alt="icono contenedor" onClick={() => this.eliminarProducto(element)}/></div>
                   <div className="centerImageProd">
-                  <Link 
+                  {element.subcategory=="sin-subcategoria"?<Link 
+                   href={`/productos/${element.category}/[id]`}
+                    as={`/productos/${element.category}/${element.urlRoute}`}
+                  
+                  >
+                  <a><img src={`/174pxImages/${element.imageName}`} alt={element.imageAlt}/></a>
+                  </Link>:<Link 
                    href={`/productos/${element.category}/${element.subcategory}/[id]`}
                     as={`/productos/${element.category}/${element.subcategory}/${element.urlRoute}`}
                   
                   >
                   <a><img src={`/174pxImages/${element.imageName}`} alt={element.imageAlt}/></a>
-                  </Link>
+                  </Link>}
+
+                  
                   </div>
                   <div className="divNames"><span>PRODUCTO:</span>
-                  <Link href={`/productos/${element.category}/${element.subcategory}/[id]`}
+                  {element.subcategory=="sin-subcategoria"?<Link href={`/productos/${element.category}/[id]`}
+                    as={`/productos/${element.category}/${element.urlRoute}`}>
+                  <a style={{color: "black"}}><span>{element.name}</span></a>
+                  </Link>:<Link href={`/productos/${element.category}/${element.subcategory}/[id]`}
                     as={`/productos/${element.category}/${element.subcategory}/${element.urlRoute}`}>
                   <a style={{color: "black"}}><span>{element.name}</span></a>
-                  </Link></div>
+                  </Link>}
+                </div>
                   <div className="divNames"><span>PRECIO {element.type==="kilogramos" ? 'KG' : 'UD'}:</span><span>{element.price}€/{element.type==="kilogramos" ? 'Kg' : 'Ud'}</span></div>
                   <div className="divNames">
                       <span>CANTIDAD:</span>
