@@ -12,7 +12,19 @@ class MyFactura extends React.Component{
             urlFactura:"",
             infoFactura:"",
             listadoIVAS : {
-              frutas:4
+              frutas:4,
+              "verduras-y-hortalizas":4,
+              legumbres:4,
+              "frutos-secos":10,
+              encurtidos:10,
+              especias:10,
+              miel:10,
+              dulces:10,
+              "galletas-y-cereales":10,
+              "aperitivos-snack":10,
+              aceites:10,
+              quesos:4
+
             }
         }
         
@@ -215,7 +227,7 @@ doc.setFontSize(10);
 
 }
   
-//PRESENTACION por encima de los  5 productos
+//PRESENTACION por encima de los  27 productos
 if(this.state.infoFactura.cartItems.length>27 ){
   //generate new page
   doc.addPage("a4", "0");

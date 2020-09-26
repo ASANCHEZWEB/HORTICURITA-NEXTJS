@@ -123,9 +123,12 @@ finalizarCompra() {
                   subTotal = Number((element.price * element.added).toFixed(2))
               }
               //AQUÍ TENGO QUE AÑADIR EL IVA CORRESPONDIENTE A AL RESTO DE CATEGORÍAS
-              if (element.category == "frutas") {
+              if (element.category == "frutas" || element.category == "verduras-y-hortalizas" || element.category == "legumbres" || element.category == "quesos") {
                   return Number((subTotal * 0.04).toFixed(2))
+              }else{
+                return Number((subTotal * 0.10).toFixed(2))
               }
+
           }).reduce((acc, cv) => acc + cv)
           this.setState({
               impuesto: Number(newArraySum.toFixed(2))
