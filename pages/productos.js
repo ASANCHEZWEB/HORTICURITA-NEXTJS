@@ -198,6 +198,7 @@ class TodoCatalogo extends React.Component {
   }
 componentWillUnmount(){
   this.myStopFunction();
+  this.actualizarLS();
   if(document.querySelector(".addCartContainer")){
         document.querySelector(".addCartContainer").innerHTML = "";
         document.querySelector(".addCartContainer").style.display = "none";
