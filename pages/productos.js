@@ -203,6 +203,7 @@ componentWillUnmount(){
         document.querySelector(".addCartContainer").innerHTML = "";
         document.querySelector(".addCartContainer").style.display = "none";
   }
+  
 }
   render() {
     return (
